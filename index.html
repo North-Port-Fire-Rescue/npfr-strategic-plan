@@ -338,27 +338,36 @@ function renderOverview() {
 
   const cardsHtml = PLAN.pillars.map(p => {
     const {total,done} = pillarCounts(p);
-    const pct = total ? Math.round(done/total*100) : 0;
     const gateCount = p.goals.filter(g=>gates[g.id]).length;
-    const yrBreakdown = years.map(yr => {
-      const count = p.goals.filter(g=>g.year===yr).length;
-      return count ? `<span class="oc-yr-pill">${yr}: ${count}</span>` : '';
-    }).join('');
     const pIdx = PLAN.pillars.indexOf(p) + 1;
+    const accentVar = `var(--pillar-${pIdx}-accent)`;
+
+    // Per-FY progress rows
+    const fyProgress = years.map(yr => {
+      const yrGoals = p.goals.filter(g => g.year === yr);
+      if (!yrGoals.length) return '';
+      const yrTotal = yrGoals.reduce((a,g) => a + g.tasks.length, 0);
+      const yrDone  = yrGoals.reduce((a,g) => a + g.tasks.filter(t=>t.status==='complete').length, 0);
+      const yrPct   = yrTotal ? Math.round(yrDone/yrTotal*100) : 0;
+      return `<div class="oc-fy-row">
+        <span class="oc-fy-label">${yr}</span>
+        <div class="oc-fy-track">
+          <div class="oc-fy-fill" style="width:${yrPct}%;background:${accentVar}"></div>
+        </div>
+        <span class="oc-fy-count">${yrDone}/${yrTotal}</span>
+      </div>`;
+    }).join('');
+
     return `<div class="overview-card pillar-color-${pIdx}" data-pillar="${p.id}" onclick="navigatePillar('${p.id}')">
       <div class="oc-num">${p.id}</div>
       <div class="oc-name">${p.name}</div>
       <div class="oc-steward">Steward: ${p.steward}</div>
-      <div class="oc-purpose">${p.purpose.substring(0,105)}…</div>
+      <div class="oc-purpose">${p.purpose}</div>
       <div class="oc-meta">
         <span class="oc-badge oc-badge-g">${p.goals.length} Goals</span>
         ${gateCount ? `<span class="oc-badge oc-badge-gate">${gateCount} Gate${gateCount>1?'s':''}</span>` : ''}
       </div>
-      <div class="oc-years">${yrBreakdown}</div>
-      <div class="progress-wrap">
-        <div class="progress-label"><span>Task progress</span><span>${done}/${total}</span></div>
-        <div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div>
-      </div>
+      <div class="oc-fy-progress">${fyProgress}</div>
     </div>`;
   }).join('');
 
@@ -638,13 +647,11 @@ function refreshSidebar() {
 }
 
 function refreshOverviewCard(pillarId) {
-  const p=PLAN.pillars.find(x=>x.id===pillarId);if(!p)return;
-  const {total,done}=pillarCounts(p);const pct=total?Math.round(done/total*100):0;
-  const grid=document.getElementById('overview-grid');if(!grid)return;
-  const cards=grid.querySelectorAll('.overview-card');
-  const idx=PLAN.pillars.findIndex(x=>x.id===pillarId);const card=cards[idx];if(!card)return;
-  const label=card.querySelector('.progress-label span:last-child');if(label)label.textContent=`${done}/${total}`;
-  const fill=card.querySelector('.progress-fill');if(fill)fill.style.width=pct+'%';
+  // Full re-render of the overview grid when a task status changes
+  // simpler than trying to update individual FY rows in place
+  if (document.getElementById('view-overview').classList.contains('active')) {
+    renderOverview();
+  }
 }
 
 /* ── Edit mode ── */
