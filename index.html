@@ -216,7 +216,66 @@ let _unsaved = false;
 let _editMode = false;
 let _snapshots = [];
 let _viewingSnapshot = null;
-const THEME_KEY = 'npfr_splan_theme';
+const THEME_KEY  = 'npfr_splan_theme';
+const DRAFT_KEY  = 'npfr_splan_draft';
+const EDIT_KEY   = 'npfr_edit_unlocked';
+
+/* ── Draft auto-save ── */
+function saveDraft() {
+  try {
+    localStorage.setItem(DRAFT_KEY, JSON.stringify({
+      savedAt:   new Date().toISOString(),
+      plan:      PLAN,
+      changelog: _changelog
+    }));
+  } catch(e) { console.warn('Draft save failed:', e); }
+}
+
+function clearDraft() {
+  try { localStorage.removeItem(DRAFT_KEY); } catch(e) {}
+}
+
+function loadDraftIfAny() {
+  try {
+    const raw = localStorage.getItem(DRAFT_KEY);
+    if (!raw) return false;
+    const draft = JSON.parse(raw);
+    if (!draft || !draft.plan) return false;
+    const when = new Date(draft.savedAt);
+    const stamp = when.toLocaleDateString(undefined, {month:'short',day:'numeric',year:'numeric'})
+                + ' at ' + when.toLocaleTimeString(undefined, {hour:'numeric',minute:'2-digit'});
+    // Stash the draft — live plan is already rendered before this is called
+    window._pendingDraft = draft;
+    showBanner('banner-unsaved',
+      `⚠ Unsaved draft from <strong>${stamp}</strong> — restore or discard? ` +
+      `<button class="banner-btn" onclick="restoreDraft()">Restore draft</button>` +
+      `<button class="banner-btn" style="margin-left:6px;background:var(--danger)" onclick="discardDraft()">Discard</button>`
+    );
+    return true;
+  } catch(e) { return false; }
+}
+
+function restoreDraft() {
+  const draft = window._pendingDraft;
+  if (!draft) return;
+  PLAN       = draft.plan;
+  _changelog = draft.changelog || [];
+  _unsaved   = true;
+  window._pendingDraft = null;
+  renderSnapshotDropdown();
+  renderAll();
+  showBanner('banner-unsaved',
+    `⚠ Draft restored (${_changelog.length} change${_changelog.length!==1?'s':''}) — export the JSON to publish.` +
+    ` <button class="banner-btn" onclick="openExportModal()">Export JSON</button>`
+  );
+}
+
+function discardDraft() {
+  clearDraft();
+  window._pendingDraft = null;
+  hideBanner('banner-unsaved');
+}
+
 
 /* ── Load ── */
 async function loadPlan() {
@@ -230,7 +289,12 @@ async function loadPlan() {
     if (!res.ok) { showOfflineWarning(); return; }
     PLAN = await res.json();
     renderSnapshotDropdown();
-    renderAll();
+    renderAll();          // always show the live plan first
+    loadDraftIfAny();     // then overlay the restore prompt if a draft exists
+
+
+
+
   } catch(e) {
     console.warn('Load failed:', e);
     showOfflineWarning();
@@ -655,6 +719,18 @@ function refreshOverviewCard(pillarId) {
 }
 
 /* ── Edit mode ── */
+(function(){
+  // Unlock if ?edit=true is in the URL, and remember it in localStorage
+  try {
+    if (new URLSearchParams(window.location.search).get('edit') === 'true') {
+      localStorage.setItem(EDIT_KEY, '1');
+    }
+    const unlocked = localStorage.getItem(EDIT_KEY) === '1';
+    const btn = document.getElementById('edit-toggle');
+    if (btn) btn.style.display = unlocked ? '' : 'none';
+  } catch(e) {}
+})();
+
 function toggleEditMode() {
   _editMode = !_editMode;
   document.body.classList.toggle('edit-mode', _editMode);
@@ -892,6 +968,7 @@ function doExportJSON() {
   const blob=new Blob([JSON.stringify(PLAN,null,2)],{type:'application/json'});
   const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`statuses_${dateStr}.json`;a.click();URL.revokeObjectURL(a.href);
   _unsaved=false;hideBanner('banner-unsaved');
+  clearDraft();
   closeModal('modal-export');
 }
 
@@ -932,8 +1009,9 @@ function adjustBannerLayout() {
 }
 
 function markUnsaved() {
-  if (_unsaved) return;
   _unsaved = true;
+  saveDraft();
+  if (document.querySelector('#banner-unsaved.visible') && !window._pendingDraft) return;
   showBanner('banner-unsaved',
     `⚠ Unsaved changes — export the JSON file and load it into <code>/data</code> to publish.
      <button class="banner-btn" onclick="openExportModal()">Export JSON</button>`

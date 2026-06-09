@@ -1,9 +1,9 @@
-# NPFR Strategic Plan — `/splan`
+# NPFR Strategic Plan — `/npfr-strategic-plan`
 
 Interactive web application for viewing, navigating, and tracking the North Port Fire Rescue Strategic Plan (FY2026–FY2029). Hosted on GitHub Pages at:
 
 ```
-https://northportfirerescue.github.io/splan
+https://northportfirerescue.github.io/npfr-strategic-plan
 ```
 
 ---
@@ -11,7 +11,7 @@ https://northportfirerescue.github.io/splan
 ## Repository structure
 
 ```
-splan/
+npfr-strategic-plan/
 ├── index.html                        # Application shell and all JS logic
 ├── style.css                         # All styles — themes, pillar colors, layout
 ├── build.py                          # Pre-push build script (index + Excel)
@@ -131,7 +131,7 @@ Changes are tracked in a session changelog. Nothing persists until exported.
 
 ```powershell
 # 1. Start local server
-cd C:\Users\rwilbert\splan
+cd C:\Users\rwilbert\npfr-strategic-plan
 python -m http.server 8080
 # Open http://localhost:8080
 
@@ -226,7 +226,7 @@ The workbook contains:
 No build step, no bundler, no Node.js required.
 
 ```bash
-cd C:\Users\rwilbert\splan
+cd C:\Users\rwilbert\npfr-strategic-plan
 python -m http.server 8080
 # Open http://localhost:8080
 ```
@@ -240,7 +240,7 @@ Edit `index.html` or `style.css` directly and refresh. The app fetches `data/ind
 ```bash
 # Check remote (should point to the org)
 git remote -v
-# origin  https://github.com/NorthPortFireRescue/splan.git
+# origin  https://github.com/NorthPortFireRescue/npfr-strategic-plan.git
 
 # Standard update cycle
 git add .
@@ -249,7 +249,7 @@ git push origin main
 ```
 
 GitHub Actions deploys to Pages automatically on every push to `main`. Monitor at:
-`https://github.com/NorthPortFireRescue/splan/actions`
+`https://github.com/NorthPortFireRescue/npfr-strategic-plan/actions`
 
 ---
 
