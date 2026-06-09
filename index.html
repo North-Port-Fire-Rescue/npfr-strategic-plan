@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NPFR Strategic Plan 2026–2029</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+/* ══ THEME: DARK (default) ══ */
+:root{
+  --bg:#0d0d1a; --surface:#13131f; --card:#1a1a2e; --card-hover:#20203a;
+  --border:#3a3a5c; --accent:#4a90d9; --accent-dim:rgba(74,144,217,0.15);
+  --accent-border:rgba(74,144,217,0.4);
+  --gold:#4a90d9; --gold-light:#6aaae8; --gold-dim:rgba(74,144,217,0.15); --gold-border:rgba(74,144,217,0.4);
+  --text:#e0e0ff; --text-muted:#8888aa; --text-dim:#55556a;
+  --header-bg:#13131f; --header-border:#3a3a5c; --header-accent:#B71C1C;
+  --sidebar-bg:#13131f; --sidebar-border:#3a3a5c;
+  --pill-gate-bg:rgba(74,144,217,0.18); --pill-gate-text:#6aaae8;
+  --pill-req-bg:rgba(106,27,154,0.25);  --pill-req-text:#ce93d8;
+  --pill-year-bg:rgba(255,255,255,0.08); --pill-year-text:#aaaacc;
+  --c-comp:#0d2b1a;  --c-comp-t:#4ade80;  --c-comp-b:#1a5c38;
+  --c-inp:#1a1a08;   --c-inp-t:#d4d46a;   --c-inp-b:#4a4a18;
+  --c-ns:rgba(255,255,255,0.03); --c-ns-t:#55556a; --c-ns-b:#3a3a5c;
+  --year-band:#1e1e3a; --year-text:#6a90d9;
+  --modal-bg:rgba(0,0,0,0.6);
+  --input-bg:#13131f; --input-border:#3a3a5c; --input-text:#e0e0ff;
+  --sidebar-w:260px; --header-h:56px; --radius:8px; --radius-lg:12px;
+}
+body.theme-npfr{
+  --bg:#1C0505; --surface:#2a0808; --card:#320a0a; --card-hover:#3d0c0c;
+  --border:#5a1a1a; --accent:#C8A040; --accent-dim:rgba(200,160,64,0.15);
+  --accent-border:rgba(200,160,64,0.4);
+  --gold:#C8A040; --gold-light:#E8C870; --gold-dim:rgba(200,160,64,0.15); --gold-border:rgba(200,160,64,0.4);
+  --text:#F5E6C8; --text-muted:#A07850; --text-dim:#6B4A30;
+  --header-bg:#4A0A0C; --header-border:#C8A040; --header-accent:#C8A040;
+  --sidebar-bg:#4A0A0C; --sidebar-border:#5a1a1a;
+  --pill-gate-bg:rgba(200,160,64,0.18); --pill-gate-text:#E8C870;
+  --pill-req-bg:rgba(123,20,22,0.35);   --pill-req-text:#F5A0A0;
+  --pill-year-bg:rgba(255,255,255,0.06); --pill-year-text:#C8A878;
+  --c-comp:#0d3320; --c-comp-t:#4ade80; --c-comp-b:#1a5c38;
+  --c-inp:#2a2a0a;  --c-inp-t:#d4c46a;  --c-inp-b:#4a4a18;
+  --c-ns:rgba(255,255,255,0.03); --c-ns-t:#6B4A30; --c-ns-b:#5a1a1a;
+  --year-band:#3a0808; --year-text:#C8A040;
+  --input-bg:#2a0808; --input-border:#5a1a1a; --input-text:#F5E6C8;
+}
+body.theme-light{
+  --bg:#eef0f6; --surface:#f8f9fc; --card:#f8f9fc; --card-hover:#eef0f6;
+  --border:#c4c8dc; --accent:#0055bb; --accent-dim:rgba(0,85,187,0.08);
+  --accent-border:rgba(0,85,187,0.3);
+  --gold:#0055bb; --gold-light:#0066dd; --gold-dim:rgba(0,85,187,0.08); --gold-border:rgba(0,85,187,0.3);
+  --text:#1a1a2e; --text-muted:#565672; --text-dim:#8888aa;
+  --header-bg:#f8f9fc; --header-border:#c4c8dc; --header-accent:#B71C1C;
+  --sidebar-bg:#f8f9fc; --sidebar-border:#c4c8dc;
+  --pill-gate-bg:rgba(0,85,187,0.1);   --pill-gate-text:#0055bb;
+  --pill-req-bg:rgba(106,27,154,0.1);  --pill-req-text:#6a1b9a;
+  --pill-year-bg:rgba(0,0,0,0.06);     --pill-year-text:#565672;
+  --c-comp:#dcfce7; --c-comp-t:#166534; --c-comp-b:#bbf7d0;
+  --c-inp:#fef9c3;  --c-inp-t:#854d0e;  --c-inp-b:#fde68a;
+  --c-ns:rgba(0,0,0,0.03); --c-ns-t:#8888aa; --c-ns-b:#c4c8dc;
+  --year-band:#e4e7f0; --year-text:#0055bb;
+  --modal-bg:rgba(0,0,0,0.3);
+  --input-bg:#fff; --input-border:#c4c8dc; --input-text:#1a1a2e;
+}
+
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;font-size:14px;line-height:1.6;transition:background .2s,color .2s}
+body.theme-npfr #main::before{content:'';position:fixed;top:50%;left:50%;transform:translate(-40%,-50%);width:520px;height:520px;background:url('public/LogoDark.png') center/contain no-repeat;opacity:0.04;pointer-events:none;z-index:0}
+
+/* ══ Header ══ */
+#header{position:fixed;top:0;left:0;right:0;height:var(--header-h);background:var(--header-bg);border-bottom:2px solid var(--header-border);display:flex;align-items:center;padding:0 16px;z-index:200;gap:10px;flex-wrap:nowrap}
+.agency{font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;color:var(--text);display:flex;align-items:center;gap:8px;white-space:nowrap}
+.badge{background:var(--header-accent);color:#fff;font-size:10px;font-weight:700;letter-spacing:0.08em;padding:2px 7px;border-radius:4px;text-transform:uppercase}
+body.theme-npfr .badge{color:#1C0505}
+.plan-title{color:var(--text-muted);font-size:12px;border-left:1px solid var(--border);padding-left:10px;white-space:nowrap}
+.hdr-spacer{flex:1}
+.nav-tabs{display:flex;gap:3px}
+.nav-tab{padding:5px 12px;border-radius:6px;font-size:12px;font-weight:500;cursor:pointer;border:none;background:transparent;color:var(--text-muted);transition:all .15s;white-space:nowrap}
+.nav-tab:hover{color:var(--text);background:rgba(255,255,255,0.06)}
+.nav-tab.active{color:var(--accent);background:var(--accent-dim);border:1px solid var(--accent-border)}
+body.theme-light .nav-tab:hover{background:rgba(0,0,0,0.05)}
+#edit-toggle{padding:5px 12px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid var(--border);background:transparent;color:var(--text-muted);transition:all .15s;white-space:nowrap}
+#edit-toggle.active{background:var(--c-inp);color:var(--c-inp-t);border-color:var(--c-inp-b)}
+#edit-toggle:hover{color:var(--text)}
+.theme-switcher{display:flex;border:1px solid var(--header-border);border-radius:6px;overflow:hidden;flex-shrink:0}
+.theme-btn{font-size:11px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;padding:4px 10px;border:none;background:transparent;color:var(--text-muted);cursor:pointer;transition:all .15s;white-space:nowrap}
+.theme-btn:not(:last-child){border-right:1px solid var(--header-border)}
+.theme-btn:hover{color:var(--text);background:rgba(255,255,255,0.06)}
+.theme-btn.active{background:rgba(255,255,255,0.12);color:var(--text)}
+body.theme-light .theme-btn:hover{background:rgba(0,0,0,0.05)}
+body.theme-light .theme-btn.active{background:rgba(0,0,0,0.08);color:var(--text)}
+#snapshot-select{background:var(--card);border:1px solid var(--border);color:var(--text);font-size:11px;padding:4px 8px;border-radius:5px;cursor:pointer;max-width:130px}
+.hdr-btn{padding:5px 13px;border-radius:6px;font-size:12px;font-weight:700;border:none;cursor:pointer;letter-spacing:0.04em;text-transform:uppercase;transition:background .15s;white-space:nowrap}
+.hdr-btn-pri{background:var(--accent);color:#fff}
+body.theme-npfr .hdr-btn-pri{color:#1C0505}
+.hdr-btn-pri:hover{background:var(--gold-light)}
+.hdr-btn-sec{background:transparent;color:var(--accent);border:1px solid var(--accent-border)}
+.hdr-btn-sec:hover{background:var(--accent-dim)}
+
+/* ══ Banners ══ */
+#banner-wrap{position:fixed;top:var(--header-h);left:0;right:0;z-index:190;display:flex;flex-direction:column}
+.banner{display:none;padding:7px 20px;font-size:12px;font-weight:500;align-items:center;gap:8px;width:100%}
+.banner.visible{display:flex}
+.banner-warn{background:#2a1a00;border-bottom:1px solid #8a5a00;color:#e8b84b}
+.banner-info{background:var(--surface);border-bottom:1px solid var(--border);color:var(--text-muted)}
+.banner-edit{background:rgba(74,144,217,0.12);border-bottom:1px solid rgba(74,144,217,0.3);color:#6aaae8}
+body.theme-light .banner-warn{background:#fff8e1;border-bottom-color:#f0c040;color:#7a5000}
+body.theme-light .banner-info{background:var(--surface);border-bottom-color:var(--border);color:var(--text-muted)}
+body.theme-light .banner-edit{background:rgba(0,85,187,0.08);border-bottom-color:rgba(0,85,187,0.2);color:#0055bb}
+.banner code{background:rgba(255,255,255,0.15);padding:1px 5px;border-radius:3px;font-size:11px}
+body.theme-light .banner code{background:rgba(0,0,0,0.08)}
+.banner-btn{margin-left:8px;padding:2px 10px;border-radius:4px;border:1px solid currentColor;background:transparent;color:inherit;cursor:pointer;font-size:11px;font-weight:600}
+
+/* ══ Layout ══ */
+:root{ --banner-h: 0px; }
+#layout{display:flex;margin-top:calc(var(--header-h) + var(--banner-h));min-height:calc(100vh - var(--header-h) - var(--banner-h));transition:margin-top .15s}
+
+/* ══ Sidebar ══ */
+#sidebar{width:var(--sidebar-w);min-width:var(--sidebar-w);background:var(--sidebar-bg);border-right:1px solid var(--sidebar-border);position:sticky;top:calc(var(--header-h) + var(--banner-h));height:calc(100vh - var(--header-h) - var(--banner-h));overflow-y:auto;padding:0 0 20px;display:flex;flex-direction:column;gap:2px;transition:top .15s,height .15s}
+.sidebar-label{font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);padding:0 18px 6px}
+
+/* Sidebar logo block */
+.sidebar-logo{display:flex;align-items:center;justify-content:center;padding:20px 18px 14px;border-bottom:1px solid var(--sidebar-border);margin-bottom:8px;flex-shrink:0}
+.sidebar-logo img{width:135px;height:135px;object-fit:contain;opacity:0.85;transition:opacity .2s}
+body.theme-light .sidebar-logo img{filter:none;opacity:1}
+.sidebar-logo:hover img{opacity:1}
+.pillar-nav{display:flex;align-items:center;padding:9px 18px;cursor:pointer;border-left:3px solid transparent;transition:all .15s;gap:10px}
+.pillar-nav:hover{background:rgba(255,255,255,0.04)}
+body.theme-light .pillar-nav:hover{background:rgba(0,0,0,0.04)}
+.pillar-nav.active{background:var(--accent-dim);border-left-color:var(--accent)}
+.pillar-num{font-family:'DM Sans',sans-serif;font-size:20px;font-weight:300;color:var(--text-dim);line-height:1;min-width:28px;transition:color .15s}
+.pillar-nav.active .pillar-num{color:var(--accent)}
+.pillar-nav-text{flex:1;min-width:0}
+.pillar-nav-name{font-size:12px;font-weight:500;color:var(--text-muted);line-height:1.3;transition:color .15s}
+.pillar-nav.active .pillar-nav-name{color:var(--text)}
+.pillar-nav-meta{font-size:10px;color:var(--text-dim);margin-top:2px}
+.pillar-nav-bar{height:3px;background:var(--border);border-radius:2px;margin-top:4px;overflow:hidden}
+.pillar-nav-bar-fill{height:100%;border-radius:2px;background:var(--accent);transition:width .4s}
+.sidebar-sep{height:1px;background:var(--border);margin:8px 18px}
+
+/* ══ Main ══ */
+#main{flex:1;padding:28px 36px;max-width:980px;position:relative;z-index:1}
+.view{display:none}.view.active{display:block}
+
+/* ══ Section heading ══ */
+.section-heading{font-family:'DM Sans',sans-serif;font-size:18px;font-weight:600;color:var(--text);margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+
+/* ══ Agency block ══ */
+.agency-block{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:22px 26px;margin-bottom:28px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.agency-item-label{font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);margin-bottom:5px}
+.agency-item-value{font-size:13px;color:var(--text);line-height:1.5}
+.values-list{display:flex;flex-wrap:wrap;gap:5px;margin-top:3px}
+.value-tag{font-size:11px;font-weight:500;padding:2px 8px;border-radius:20px;background:var(--accent-dim);color:var(--accent);border:1px solid var(--accent-border)}
+.edit-inline{display:none}
+body.edit-mode .edit-inline{display:inline-block}
+body.edit-mode .view-only{display:none}
+
+/* ══ Overview grid ══ */
+#overview-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(275px,1fr));gap:14px;margin-bottom:32px}
+.overview-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px;cursor:pointer;transition:all .15s;border-left:3px solid var(--border)}
+.overview-card:hover{background:var(--card-hover);transform:translateY(-1px);border-left-color:var(--accent)}
+.oc-num{font-family:'DM Sans',sans-serif;font-size:28px;font-weight:300;color:var(--accent);opacity:0.6;line-height:1;margin-bottom:6px}
+.oc-name{font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:var(--text);margin-bottom:3px}
+.oc-steward{font-size:11px;color:var(--text-dim);margin-bottom:6px}
+.oc-purpose{font-size:11px;color:var(--text-muted);line-height:1.5;margin-bottom:10px}
+.oc-meta{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
+.oc-badge{font-size:10px;font-weight:600;padding:2px 7px;border-radius:4px;letter-spacing:0.04em}
+.oc-badge-g{background:var(--pill-req-bg);color:var(--pill-req-text)}
+.oc-badge-gate{background:var(--pill-gate-bg);color:var(--pill-gate-text)}
+/* Year breakdown in overview card */
+.oc-years{display:flex;gap:5px;flex-wrap:wrap;margin-top:6px}
+.oc-yr-pill{font-size:10px;font-weight:600;padding:2px 7px;border-radius:12px;background:var(--year-band);color:var(--year-text);border:1px solid var(--border)}
+/* Progress */
+.progress-wrap{margin-top:8px}
+.progress-label{font-size:10px;color:var(--text-dim);margin-bottom:3px;display:flex;justify-content:space-between}
+.progress-track{height:4px;background:var(--border);border-radius:2px;overflow:hidden}
+.progress-fill{height:100%;border-radius:2px;background:var(--accent);transition:width .4s}
+.add-pillar-card{border:2px dashed var(--border);background:transparent;display:flex;align-items:center;justify-content:center;gap:8px;font-size:13px;color:var(--text-dim);min-height:120px}
+.add-pillar-card:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
+
+/* ══ Year view ══ */
+.year-band{background:var(--year-band);border-left:4px solid var(--accent);padding:10px 16px;margin-bottom:8px;margin-top:20px;border-radius:0 var(--radius) var(--radius) 0;display:flex;align-items:center;gap:12px}
+.year-band:first-child{margin-top:0}
+.year-label{font-family:'DM Sans',sans-serif;font-size:20px;font-weight:600;color:var(--year-text)}
+.year-meta{font-size:12px;color:var(--text-dim)}
+.year-goal-row{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:12px 16px;margin-bottom:6px;display:grid;grid-template-columns:100px 80px 1fr 140px 110px;gap:12px;align-items:center;cursor:pointer;transition:border-color .15s}
+.year-goal-row:hover{border-color:var(--accent-border)}
+.ygr-id{font-size:10px;font-weight:700;color:var(--accent);background:var(--accent-dim);padding:3px 7px;border-radius:4px;text-align:center;white-space:nowrap}
+.ygr-pillar{font-size:11px;color:var(--text-dim)}
+.ygr-stmt{font-size:13px;color:var(--text);line-height:1.4}
+.ygr-owner{font-size:11px;color:var(--text-dim);text-align:right}
+.ygr-status{font-size:10px;font-weight:600;padding:3px 8px;border-radius:4px;text-align:center;white-space:nowrap}
+
+/* ══ Pillar header ══ */
+.pillar-section{margin-bottom:44px;scroll-margin-top:80px}
+.pillar-header{margin-bottom:20px}
+.ph-eyebrow{font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);border-left:3px solid var(--accent);padding-left:8px;margin-bottom:5px}
+.ph-title{font-family:'DM Sans',sans-serif;font-size:24px;font-weight:600;color:var(--text);margin-bottom:3px;line-height:1.2}
+.ph-steward{font-size:12px;color:var(--text-dim);margin-bottom:7px}
+.ph-purpose{font-size:13px;color:var(--text-muted);line-height:1.7;max-width:680px;margin-bottom:12px}
+.ph-progress-wrap{display:flex;align-items:center;gap:10px;margin-bottom:4px}
+.ph-progress-track{flex:1;max-width:280px;height:5px;background:var(--border);border-radius:3px;overflow:hidden}
+.ph-progress-fill{height:100%;border-radius:3px;background:var(--accent);transition:width .4s}
+.ph-progress-label{font-size:12px;color:var(--text-muted)}
+.edit-btn{font-size:10px;font-weight:600;padding:2px 8px;border-radius:4px;border:1px solid var(--border);background:transparent;color:var(--text-dim);cursor:pointer;display:none;transition:all .15s}
+.edit-btn:hover{border-color:var(--accent);color:var(--accent)}
+body.edit-mode .edit-btn{display:inline-flex;align-items:center;gap:4px}
+
+/* ══ Year band in pillar ══ */
+.yr-divider{display:flex;align-items:center;gap:12px;margin:18px 0 10px;padding:8px 14px;background:var(--year-band);border-left:4px solid var(--accent);border-radius:0 var(--radius) var(--radius) 0}
+.yr-divider-label{font-family:'DM Sans',sans-serif;font-size:16px;font-weight:600;color:var(--year-text)}
+.yr-divider-meta{font-size:11px;color:var(--text-dim)}
+.add-goal-btn{display:none;width:100%;padding:8px;border:2px dashed var(--border);background:transparent;border-radius:var(--radius);color:var(--text-dim);cursor:pointer;font-size:12px;margin-bottom:8px;transition:all .15s}
+.add-goal-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
+body.edit-mode .add-goal-btn{display:block}
+
+/* ══ Goal cards ══ */
+.goal-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);margin-bottom:10px;overflow:hidden;transition:border-color .15s}
+.goal-card:hover{border-color:var(--gold-border)}
+.goal-card.is-gate{border-left:3px solid var(--accent)}
+.gc-header{padding:14px 18px;display:flex;align-items:flex-start;gap:10px;cursor:pointer;user-select:none}
+.gc-id{font-size:10px;font-weight:700;letter-spacing:0.08em;color:#fff;background:var(--accent);padding:3px 7px;border-radius:4px;white-space:nowrap;margin-top:2px;flex-shrink:0}
+body.theme-npfr .gc-id{color:#1C0505}
+.gc-main{flex:1;min-width:0}
+.gc-statement{font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;color:var(--text);line-height:1.4;margin-bottom:7px}
+.gc-pills{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.pill{font-size:10px;font-weight:600;padding:2px 7px;border-radius:4px;letter-spacing:0.04em;white-space:nowrap}
+.pill-year{background:var(--pill-year-bg);color:var(--pill-year-text)}
+.pill-gate{background:var(--pill-gate-bg);color:var(--pill-gate-text)}
+.pill-req{background:var(--pill-req-bg);color:var(--pill-req-text)}
+.pill-owner{background:rgba(255,255,255,0.05);color:var(--text-dim)}
+.pill-comp{background:var(--c-comp);color:var(--c-comp-t);border:1px solid var(--c-comp-b)}
+.pill-inp{background:var(--c-inp);color:var(--c-inp-t);border:1px solid var(--c-inp-b)}
+.pill-ns{background:var(--c-ns);color:var(--c-ns-t);border:1px solid var(--c-ns-b)}
+.gc-pips{display:flex;align-items:center;gap:6px;margin-top:5px}
+.gc-pip-row{display:flex;gap:2px}
+.gc-pip{width:10px;height:4px;border-radius:2px;background:var(--border);transition:background .2s}
+.gc-pip.comp{background:var(--c-comp-t)}.gc-pip.inp{background:var(--c-inp-t)}
+.gc-pip-lbl{font-size:10px;color:var(--text-dim)}
+.gc-actions{display:flex;gap:6px;flex-shrink:0;margin-top:2px;align-items:flex-start}
+.gc-toggle{color:var(--text-dim);font-size:18px;transition:transform .2s;cursor:pointer}
+.goal-card.open .gc-toggle{transform:rotate(180deg)}
+.gc-body{display:none;padding:0 18px 16px;border-top:1px solid var(--border)}
+.goal-card.open .gc-body{display:block}
+.gc-section{margin-top:12px}
+.gc-section-label{font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);margin-bottom:7px}
+.gc-metric{font-size:13px;color:var(--text-muted);line-height:1.6;background:rgba(255,255,255,0.03);border-left:2px solid var(--gold-dim);border-radius:0 4px 4px 0;padding:7px 11px;margin-top:3px}
+
+/* ══ Task list ══ */
+.task-list{list-style:none;display:flex;flex-direction:column;gap:5px}
+.task-item{display:flex;align-items:flex-start;gap:8px;padding:7px 9px;border-radius:6px;border:1px solid var(--border);background:rgba(255,255,255,0.02);transition:border-color .15s,background .15s}
+.task-item.comp{background:var(--c-comp);border-color:var(--c-comp-b)}
+.task-item.inp{background:var(--c-inp);border-color:var(--c-inp-b)}
+.task-num{font-size:10px;font-weight:700;color:var(--text-dim);min-width:18px;margin-top:2px;letter-spacing:0.04em;flex-shrink:0}
+.task-item.comp .task-num{color:var(--c-comp-t);text-decoration:line-through}
+.task-item.inp .task-num{color:var(--c-inp-t)}
+.task-text{flex:1;font-size:13px;color:var(--text);line-height:1.5}
+.task-item.comp .task-text{color:var(--text-muted);text-decoration:line-through;opacity:0.75}
+.task-item.inp .task-text{color:var(--text)}
+.task-ctrl{display:flex;gap:3px;flex-shrink:0;margin-top:1px}
+.tbtn{font-size:9px;font-weight:700;letter-spacing:0.05em;padding:2px 5px;border-radius:3px;border:1px solid;cursor:pointer;transition:all .15s;background:transparent;white-space:nowrap}
+.tbtn-ns{color:var(--text-dim);border-color:var(--border)}
+.tbtn-ns.on,.tbtn-ns:hover{background:var(--c-ns);color:var(--text-muted);border-color:var(--c-ns-b)}
+.tbtn-ip{color:var(--c-inp-t);border-color:var(--c-inp-b)}
+.tbtn-ip.on,.tbtn-ip:hover{background:var(--c-inp);border-color:var(--c-inp-b)}
+.tbtn-co{color:var(--c-comp-t);border-color:var(--c-comp-b)}
+.tbtn-co.on,.tbtn-co:hover{background:var(--c-comp);border-color:var(--c-comp-b)}
+.task-edit-btn{color:var(--text-dim);border-color:transparent;display:none}
+body.edit-mode .task-edit-btn{display:inline-block}
+.add-task-btn{display:none;width:100%;padding:6px;border:1px dashed var(--border);background:transparent;border-radius:5px;color:var(--text-dim);cursor:pointer;font-size:11px;margin-top:4px;transition:all .15s}
+.add-task-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
+body.edit-mode .add-task-btn{display:block}
+
+/* ══ Dep view ══ */
+.dep-view-title{font-family:'DM Sans',sans-serif;font-size:22px;font-weight:600;color:var(--text);margin-bottom:5px}
+.dep-view-sub{font-size:13px;color:var(--text-muted);margin-bottom:24px}
+.dep-chain{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:16px 20px;margin-bottom:12px}
+.dep-chain-label{font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);margin-bottom:10px}
+.dep-chain-flow{display:flex;align-items:flex-start;flex-wrap:wrap;gap:0}
+.dep-node{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:9px 12px;cursor:pointer;transition:border-color .15s;min-width:120px;max-width:160px}
+.dep-node:hover{border-color:var(--accent)}
+.dep-node.is-gate{border-color:var(--accent-border);background:var(--accent-dim)}
+.dep-node-id{font-size:10px;font-weight:700;color:var(--accent);letter-spacing:0.06em;margin-bottom:2px}
+.dep-node-stmt{font-size:11px;color:var(--text-muted);line-height:1.3}
+.dep-arrow{font-size:16px;color:var(--text-dim);padding:10px 6px 0;flex-shrink:0}
+
+/* ══ Modal ══ */
+.modal-overlay{display:none;position:fixed;inset:0;background:var(--modal-bg);z-index:500;align-items:center;justify-content:center}
+.modal-overlay.open{display:flex}
+.modal{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;width:min(600px,94vw);max-height:88vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,0.5)}
+.modal-title{font-family:'DM Sans',sans-serif;font-size:18px;font-weight:600;color:var(--text);margin-bottom:20px}
+.modal-close{float:right;background:none;border:none;color:var(--text-dim);font-size:20px;cursor:pointer;margin-top:-4px}
+.modal-close:hover{color:var(--text)}
+.form-group{margin-bottom:14px}
+.form-label{display:block;font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-dim);margin-bottom:5px}
+.form-input,.form-select,.form-textarea{width:100%;background:var(--input-bg);border:1px solid var(--input-border);color:var(--input-text);font-family:'Inter',sans-serif;font-size:13px;padding:8px 10px;border-radius:6px;transition:border-color .15s;outline:none}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--accent)}
+.form-textarea{resize:vertical;min-height:72px;line-height:1.5}
+.form-select option{background:var(--surface);color:var(--text)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.modal-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:20px;padding-top:16px;border-top:1px solid var(--border)}
+.modal-btn{padding:8px 18px;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;border:none;transition:all .15s}
+.modal-btn-pri{background:var(--accent);color:#fff}
+body.theme-npfr .modal-btn-pri{color:#1C0505}
+.modal-btn-pri:hover{background:var(--gold-light)}
+.modal-btn-sec{background:transparent;color:var(--text-muted);border:1px solid var(--border)}
+.modal-btn-sec:hover{color:var(--text);border-color:var(--text-dim)}
+.modal-btn-danger{background:transparent;color:#e24b4a;border:1px solid #5a2020}
+.modal-btn-danger:hover{background:rgba(226,75,74,0.12)}
+/* Export modal changelog */
+.changelog-preview{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:10px;max-height:180px;overflow-y:auto;font-size:11px;color:var(--text-muted);line-height:1.6}
+.cl-entry{padding:3px 0;border-bottom:1px solid var(--border)}
+.cl-entry:last-child{border-bottom:none}
+.cl-ts{color:var(--text-dim);font-size:10px}
+
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+
+@media(max-width:700px){
+  #sidebar{display:none}
+  #main{padding:16px}
+  .agency-block{grid-template-columns:1fr}
+  #overview-grid{grid-template-columns:1fr}
+  .year-goal-row{grid-template-columns:80px 1fr 90px;grid-template-rows:auto auto}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header id="header">
+  <div class="agency">North Port Fire Rescue</div>
+  <div class="plan-title">Strategic Plan 2026–2029</div>
+  <div class="hdr-spacer"></div>
+  <select id="snapshot-select" onchange="loadSnapshot(this.value)" title="View historical snapshot">
+    <option value="">Current</option>
+  </select>
+  <nav class="nav-tabs">
+    <button class="nav-tab active" onclick="showView('overview')">Overview</button>
+    <button class="nav-tab" onclick="showView('year')">By Year</button>
+    <button class="nav-tab" onclick="showView('pillars')">Pillars</button>
+    <button class="nav-tab" onclick="showView('dependencies')">Dependencies</button>
+  </nav>
+  <button id="edit-toggle" onclick="toggleEditMode()">✎ Edit</button>
+  <div class="theme-switcher">
+    <button class="theme-btn active" onclick="setTheme('dark',this)">Dark</button>
+    <button class="theme-btn" onclick="setTheme('npfr',this)">RED</button>
+    <button class="theme-btn" onclick="setTheme('light',this)">Light</button>
+  </div>
+  <button class="hdr-btn hdr-btn-sec" onclick="openExportModal()" title="Export JSON for /data">↑ Export</button>
+  <button class="hdr-btn hdr-btn-pri" onclick="downloadExcel()">↓ Excel</button>
+</header>
+
+<!-- Banners — stacked in a fixed wrapper so they never overlap -->
+<div id="banner-wrap">
+  <div id="banner-unsaved" class="banner banner-warn"></div>
+  <div id="banner-snapshot" class="banner banner-info"></div>
+  <div id="banner-edit"    class="banner banner-edit">✎ Edit mode active — changes are session-only until exported.</div>
+</div>
+
+<!-- ═══ LAYOUT ═══ -->
+<div id="layout">
+  <aside id="sidebar">
+    <div class="sidebar-logo">
+      <img src="public/Logo.png" alt="North Port Fire Rescue" title="North Port Fire Rescue">
+    </div>
+    <div class="sidebar-label">Pillars</div>
+    <div id="sidebar-nav"></div>
+    <div class="sidebar-sep"></div>
+    <div class="sidebar-label" style="margin-top:4px">Views</div>
+    <div class="pillar-nav" onclick="showView('year')">
+      <span class="pillar-num" style="font-size:14px;margin-top:3px">📅</span>
+      <div class="pillar-nav-text">
+        <div class="pillar-nav-name">By Fiscal Year</div>
+        <div class="pillar-nav-meta">All goals across all pillars</div>
+      </div>
+    </div>
+    <div class="pillar-nav" onclick="showView('dependencies')">
+      <span class="pillar-num" style="font-size:14px;margin-top:3px">⬡</span>
+      <div class="pillar-nav-text">
+        <div class="pillar-nav-name">Dependency Map</div>
+        <div class="pillar-nav-meta">Gate relationships</div>
+      </div>
+    </div>
+  </aside>
+
+  <main id="main">
+    <div id="view-overview"  class="view active"></div>
+    <div id="view-year"      class="view"></div>
+    <div id="view-pillars"   class="view"></div>
+    <div id="view-dependencies" class="view">
+      <div class="dep-view-title">Dependency Map</div>
+      <div class="dep-view-sub">Goals with a gold left border are gates — their completion is required before downstream goals can begin. Click any node to jump to that goal.</div>
+      <div id="dep-content"></div>
+    </div>
+  </main>
+</div>
+
+<!-- ═══ MODALS ═══ -->
+
+<!-- Export modal -->
+<div class="modal-overlay" id="modal-export">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-export')">✕</button>
+    <div class="modal-title">Export Status JSON</div>
+    <div class="form-group">
+      <label class="form-label">Export label</label>
+      <input class="form-input" id="export-label" placeholder="e.g. Q2 review — updated P2 goals">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Session changes (<span id="cl-count">0</span>)</label>
+      <div class="changelog-preview" id="cl-preview">No changes this session.</div>
+    </div>
+    <div class="modal-actions">
+      <button class="modal-btn modal-btn-sec" onclick="closeModal('modal-export')">Cancel</button>
+      <button class="modal-btn modal-btn-pri" onclick="doExportJSON()">Download JSON</button>
+    </div>
+  </div>
+</div>
+
+<!-- Goal edit modal -->
+<div class="modal-overlay" id="modal-goal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-goal')">✕</button>
+    <div class="modal-title" id="goal-modal-title">Edit Goal</div>
+    <input type="hidden" id="ge-orig-id">
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Goal ID</label>
+        <input class="form-input" id="ge-id" placeholder="P1.26.G1">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Fiscal Year</label>
+        <select class="form-select" id="ge-year">
+          <option>FY26</option><option>FY27</option><option>FY28</option><option>FY29</option><option>FY30</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Pillar</label>
+        <select class="form-select" id="ge-pillar"></select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Predecessor Goal ID</label>
+        <select class="form-select" id="ge-predecessor"></select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Goal Statement</label>
+      <textarea class="form-textarea" id="ge-statement" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Owner</label>
+      <input class="form-input" id="ge-owner" placeholder="Name or TBD">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Success Metric</label>
+      <textarea class="form-textarea" id="ge-metric" rows="2"></textarea>
+    </div>
+    <div class="modal-actions">
+      <button class="modal-btn modal-btn-danger" id="ge-delete-btn" onclick="deleteGoal()">Delete Goal</button>
+      <div style="flex:1"></div>
+      <button class="modal-btn modal-btn-sec" onclick="closeModal('modal-goal')">Cancel</button>
+      <button class="modal-btn modal-btn-pri" onclick="saveGoalEdit()">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- Task edit modal -->
+<div class="modal-overlay" id="modal-task">
+  <div class="modal" style="max-width:480px">
+    <button class="modal-close" onclick="closeModal('modal-task')">✕</button>
+    <div class="modal-title">Edit Task</div>
+    <input type="hidden" id="te-goal-id">
+    <input type="hidden" id="te-task-idx">
+    <div class="form-group">
+      <label class="form-label">Task text</label>
+      <textarea class="form-textarea" id="te-text" rows="3"></textarea>
+    </div>
+    <div class="modal-actions">
+      <button class="modal-btn modal-btn-danger" onclick="deleteTask()">Delete Task</button>
+      <div style="flex:1"></div>
+      <button class="modal-btn modal-btn-sec" onclick="closeModal('modal-task')">Cancel</button>
+      <button class="modal-btn modal-btn-pri" onclick="saveTaskEdit()">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- Pillar edit modal -->
+<div class="modal-overlay" id="modal-pillar">
+  <div class="modal" style="max-width:480px">
+    <button class="modal-close" onclick="closeModal('modal-pillar')">✕</button>
+    <div class="modal-title" id="pillar-modal-title">Edit Pillar</div>
+    <input type="hidden" id="pe-orig-id">
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Pillar ID</label>
+        <input class="form-input" id="pe-id" placeholder="P7">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Steward</label>
+        <input class="form-input" id="pe-steward">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Pillar Name</label>
+      <input class="form-input" id="pe-name">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Purpose</label>
+      <textarea class="form-textarea" id="pe-purpose" rows="3"></textarea>
+    </div>
+    <div class="modal-actions">
+      <button class="modal-btn modal-btn-danger" id="pe-delete-btn" onclick="deletePillar()">Delete Pillar</button>
+      <div style="flex:1"></div>
+      <button class="modal-btn modal-btn-sec" onclick="closeModal('modal-pillar')">Cancel</button>
+      <button class="modal-btn modal-btn-pri" onclick="savePillarEdit()">Save</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   PLAN — loaded from data/index.json → latest statuses_*.json
+   No plan data is hardcoded here.
+   ============================================================ */
+let PLAN = null;
+let _changelog = [];
+let _unsaved = false;
+let _editMode = false;
+let _snapshots = [];
+let _viewingSnapshot = null;
+const THEME_KEY = 'npfr_splan_theme';
+
+/* ── Load ── */
+async function loadPlan() {
+  try {
+    const idxRes = await fetch('data/index.json');
+    if (!idxRes.ok) { showOfflineWarning(); return; }
+    const idx = await idxRes.json();
+    _snapshots = idx.files || [];
+    if (!idx.latest) { showOfflineWarning(); return; }
+    const res = await fetch(`data/${idx.latest}`);
+    if (!res.ok) { showOfflineWarning(); return; }
+    PLAN = await res.json();
+    renderSnapshotDropdown();
+    renderAll();
+  } catch(e) {
+    console.warn('Load failed:', e);
+    showOfflineWarning();
+  }
+}
+
+function showOfflineWarning() {
+  showBanner('banner-unsaved', '⚠ Could not load data/index.json. Run the app via <code>python -m http.server 8080</code> — opening index.html directly as a file does not support fetch().');
+}
+
+async function loadSnapshot(filename) {
+  if (!filename) {
+    _viewingSnapshot = null;
+    hideBanner('banner-snapshot');
+    await loadPlan();
+    return;
+  }
+  try {
+    const res = await fetch(`data/${filename}`);
+    if (!res.ok) return;
+    PLAN = await res.json();
+    _viewingSnapshot = filename;
+    const date = filename.replace('statuses_','').replace('.json','');
+    const fmt = date.length===8 ? `${date.slice(0,4)}-${date.slice(4,6)}-${date.slice(6,8)}` : date;
+    renderAll();
+    showBanner('banner-snapshot',
+      `Viewing snapshot: ${fmt}${PLAN.label ? ' — '+PLAN.label : ''}.
+       <button class="banner-btn" onclick="document.getElementById('snapshot-select').value='';loadSnapshot('')">Back to current</button>`
+    );
+  } catch(e) { console.warn('Snapshot load failed:', e); }
+}
+
+/* ── Derived data helpers ── */
+function allGoals() { return PLAN.pillars.flatMap(p => p.goals); }
+
+function buildGates() {
+  const m = {};
+  allGoals().forEach(g => { if (g.predecessor) { (m[g.predecessor]=m[g.predecessor]||[]).push(g.id); } });
+  return m;
+}
+
+function getGoalById(id) { return allGoals().find(g => g.id === id); }
+function getPillarOfGoal(id) { return PLAN.pillars.find(p => p.goals.some(g => g.id === id)); }
+
+function deriveGoalStatus(g) {
+  const s = g.tasks.map(t => t.status);
+  if (s.every(x=>x==='complete'))    return 'complete';
+  if (s.every(x=>x==='not-started')) return 'not-started';
+  return 'in-progress';
+}
+
+function statusLabel(s) { return {complete:'Complete','in-progress':'In Progress','not-started':'Not Started'}[s] || s; }
+function statusPillClass(s) { return {complete:'pill-comp','in-progress':'pill-inp','not-started':'pill-ns'}[s]; }
+
+function taskCounts(g) {
+  const done = g.tasks.filter(t=>t.status==='complete').length;
+  const inp  = g.tasks.filter(t=>t.status==='in-progress').length;
+  return { total:g.tasks.length, done, inp };
+}
+
+function pillarCounts(p) {
+  let total=0,done=0;
+  p.goals.forEach(g=>g.tasks.forEach(t=>{ total++; if(t.status==='complete')done++; }));
+  return {total,done};
+}
+
+/* ── Render all ── */
+function renderAll() {
+  if (!PLAN) return;
+  renderSidebar();
+  renderOverview();
+  renderYearView();
+  renderPillars();
+  renderDependencies();
+}
+
+/* ── Sidebar ── */
+function renderSidebar() {
+  const nav = document.getElementById('sidebar-nav');
+  nav.innerHTML = PLAN.pillars.map(p => {
+    const {total,done} = pillarCounts(p);
+    const pct = total ? Math.round(done/total*100) : 0;
+    const gates = buildGates();
+    const gateCount = p.goals.filter(g=>gates[g.id]).length;
+    return `<div class="pillar-nav" data-pillar="${p.id}" onclick="navigatePillar('${p.id}')">
+      <span class="pillar-num">${p.id.replace('P','')}</span>
+      <div class="pillar-nav-text">
+        <div class="pillar-nav-name">${p.name}</div>
+        <div class="pillar-nav-meta">${p.goals.length} goals · ${done}/${total} tasks</div>
+        <div class="pillar-nav-bar"><div class="pillar-nav-bar-fill" style="width:${pct}%"></div></div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+/* ── Overview ── */
+function renderOverview() {
+  const gates = buildGates();
+  const years = [...new Set(allGoals().map(g=>g.year))].sort();
+  // Agency block
+  const agencyHtml = `
+    <div class="agency-block">
+      <div>
+        <div class="agency-item-label">Mission</div>
+        <div class="agency-item-value view-only">${PLAN.mission}</div>
+        <input class="form-input edit-inline" value="${escHtml(PLAN.mission)}" oninput="PLAN.mission=this.value" style="margin-top:4px">
+      </div>
+      <div>
+        <div class="agency-item-label">Vision</div>
+        <div class="agency-item-value view-only">${PLAN.vision||''}</div>
+        <input class="form-input edit-inline" value="${escHtml(PLAN.vision||'')}" oninput="PLAN.vision=this.value" style="margin-top:4px">
+      </div>
+      <div>
+        <div class="agency-item-label">Values</div>
+        <div class="values-list view-only">${(PLAN.values||[]).map(v=>`<span class="value-tag">${v}</span>`).join('')}</div>
+        <input class="form-input edit-inline" value="${(PLAN.values||[]).join(', ')}" oninput="PLAN.values=this.value.split(',').map(s=>s.trim())" style="margin-top:4px" placeholder="Comma-separated values">
+      </div>
+    </div>`;
+
+  const cardsHtml = PLAN.pillars.map(p => {
+    const {total,done} = pillarCounts(p);
+    const pct = total ? Math.round(done/total*100) : 0;
+    const gateCount = p.goals.filter(g=>gates[g.id]).length;
+    const yrBreakdown = years.map(yr => {
+      const count = p.goals.filter(g=>g.year===yr).length;
+      return count ? `<span class="oc-yr-pill">${yr}: ${count}</span>` : '';
+    }).join('');
+    return `<div class="overview-card" onclick="navigatePillar('${p.id}')">
+      <div class="oc-num">${p.id}</div>
+      <div class="oc-name">${p.name}</div>
+      <div class="oc-steward">Steward: ${p.steward}</div>
+      <div class="oc-purpose">${p.purpose.substring(0,105)}…</div>
+      <div class="oc-meta">
+        <span class="oc-badge oc-badge-g">${p.goals.length} Goals</span>
+        ${gateCount ? `<span class="oc-badge oc-badge-gate">${gateCount} Gate${gateCount>1?'s':''}</span>` : ''}
+      </div>
+      <div class="oc-years">${yrBreakdown}</div>
+      <div class="progress-wrap">
+        <div class="progress-label"><span>Task progress</span><span>${done}/${total}</span></div>
+        <div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div>
+      </div>
+    </div>`;
+  }).join('');
+
+  const addCard = `<div class="overview-card add-pillar-card edit-inline" onclick="openAddPillar()" style="display:none">
+    + Add Pillar
+  </div>`;
+
+  document.getElementById('view-overview').innerHTML =
+    agencyHtml +
+    `<div class="section-heading">Strategic Pillars</div>
+     <div id="overview-grid">${cardsHtml}${addCard}</div>`;
+}
+
+/* ── Year view ── */
+function renderYearView() {
+  const gates = buildGates();
+  const years = [...new Set(allGoals().map(g=>g.year))].sort();
+  let html = '';
+  years.forEach(yr => {
+    const yrGoals = PLAN.pillars.flatMap(p => p.goals.filter(g=>g.year===yr).map(g=>({g,p})));
+    const yrDone = yrGoals.reduce((acc,{g})=>acc+g.tasks.filter(t=>t.status==='complete').length,0);
+    const yrTotal = yrGoals.reduce((acc,{g})=>acc+g.tasks.length,0);
+    html += `<div class="year-band">
+      <span class="year-label">${yr}</span>
+      <span class="year-meta">${yrGoals.length} goals · ${yrDone}/${yrTotal} tasks</span>
+    </div>`;
+    yrGoals.forEach(({g,p}) => {
+      const gs = deriveGoalStatus(g);
+      const scls = {complete:'pill-comp','in-progress':'pill-inp','not-started':'pill-ns'}[gs];
+      const {done,total} = taskCounts(g);
+      html += `<div class="year-goal-row" onclick="navigatePillar('${p.id}');setTimeout(()=>scrollToCard('${g.id}'),200)">
+        <span class="ygr-id">${g.id}</span>
+        <span class="ygr-pillar">${p.id} · ${p.name.split(' ')[0]}</span>
+        <span class="ygr-stmt">${g.statement}</span>
+        <span class="ygr-owner">${g.owner||''}</span>
+        <span class="ygr-status pill ${scls}">${statusLabel(gs)} ${done}/${total}</span>
+      </div>`;
+    });
+  });
+  document.getElementById('view-year').innerHTML = `<div class="section-heading">Goals by Fiscal Year</div>${html}`;
+}
+
+/* ── Goal card HTML ── */
+function goalCardHtml(g, gates) {
+  const gs = deriveGoalStatus(g);
+  const {done,inp,total} = taskCounts(g);
+  const gatedGoals = gates[g.id]||[];
+  const pred = g.predecessor ? getGoalById(g.predecessor) : null;
+  const isGate = !!gates[g.id];
+
+  const pips = g.tasks.map(t=>`<div class="gc-pip${t.status==='complete'?' comp':t.status==='in-progress'?' inp':''}"></div>`).join('');
+  const pills = [
+    `<span class="pill pill-year">${g.year}</span>`,
+    `<span class="pill ${statusPillClass(gs)}">${statusLabel(gs)}</span>`,
+    isGate ? `<span class="pill pill-gate">Gates: ${gatedGoals.join(', ')}</span>` : '',
+    pred   ? `<span class="pill pill-req">Requires: ${g.predecessor}</span>` : '',
+    g.owner&&g.owner!=='TBD' ? `<span class="pill pill-owner">${g.owner}</span>` : ''
+  ].filter(Boolean).join('');
+
+  const tasks = g.tasks.map((t,i) => {
+    const ts = t.status;
+    const cls = ts==='complete'?'comp':ts==='in-progress'?'inp':'';
+    const gid = g.id.replace(/\./g,'_');
+    return `<li class="task-item ${cls}" id="task-${gid}-${i}">
+      <span class="task-num">T${i+1}</span>
+      <span class="task-text">${escHtml(t.text)}</span>
+      <div class="task-ctrl">
+        <button class="tbtn tbtn-ns${ts==='not-started'?' on':''}" onclick="setTask('${g.id}',${i},'not-started',event)">—</button>
+        <button class="tbtn tbtn-ip${ts==='in-progress'?' on':''}" onclick="setTask('${g.id}',${i},'in-progress',event)">IP</button>
+        <button class="tbtn tbtn-co${ts==='complete'?' on':''}" onclick="setTask('${g.id}',${i},'complete',event)">✓</button>
+        <button class="tbtn task-edit-btn" onclick="openTaskEdit('${g.id}',${i},event)">✎</button>
+      </div>
+    </li>`;
+  }).join('');
+
+  return `<div class="goal-card${isGate?' is-gate':''}" id="card-${g.id.replace(/\./g,'_')}">
+    <div class="gc-header" onclick="toggleCard(this.parentElement)">
+      <span class="gc-id">${g.id}</span>
+      <div class="gc-main">
+        <div class="gc-statement">${escHtml(g.statement)}</div>
+        <div class="gc-pills">${pills}</div>
+        <div class="gc-pips">
+          <div class="gc-pip-row">${pips}</div>
+          <span class="gc-pip-lbl">${done}/${total} complete${inp?` · ${inp} in progress`:''}</span>
+        </div>
+      </div>
+      <div class="gc-actions">
+        <button class="edit-btn" onclick="openGoalEdit('${g.id}',event)">✎ Edit goal</button>
+        <span class="gc-toggle">⌄</span>
+      </div>
+    </div>
+    <div class="gc-body">
+      <div class="gc-section">
+        <div class="gc-section-label">Tasks</div>
+        <ul class="task-list">${tasks}</ul>
+        <button class="add-task-btn" onclick="addTask('${g.id}')">+ Add task</button>
+      </div>
+      ${pred?`<div class="gc-section">
+        <div class="gc-section-label">Predecessor goal</div>
+        <div class="gc-metric" style="border-left-color:var(--pill-req-bg)">
+          <strong style="color:var(--pill-req-text)">${pred.id}</strong> — ${escHtml(pred.statement)}
+        </div>
+      </div>`:''}
+      ${gatedGoals.length?`<div class="gc-section">
+        <div class="gc-section-label">This goal gates</div>
+        ${gatedGoals.map(id=>{const dg=getGoalById(id);return dg?`<div class="gc-metric" style="border-left-color:var(--accent);margin-bottom:5px"><strong style="color:var(--accent)">${id}</strong> — ${escHtml(dg.statement)}</div>`:''}).join('')}
+      </div>`:''}
+      <div class="gc-section">
+        <div class="gc-section-label">Success metric</div>
+        <div class="gc-metric">${escHtml(g.metric)}</div>
+      </div>
+    </div>
+  </div>`;
+}
+
+/* ── Pillars view ── */
+function renderPillars() {
+  const gates = buildGates();
+  const html = PLAN.pillars.map(p => {
+    const {total,done} = pillarCounts(p);
+    const pct = total ? Math.round(done/total*100) : 0;
+    const years = [...new Set(p.goals.map(g=>g.year))].sort();
+    const yearSections = years.map(yr => {
+      const yrGoals = p.goals.filter(g=>g.year===yr);
+      const yrDone = yrGoals.reduce((a,g)=>a+g.tasks.filter(t=>t.status==='complete').length,0);
+      const yrTotal = yrGoals.reduce((a,g)=>a+g.tasks.length,0);
+      return `<div class="yr-divider">
+          <span class="yr-divider-label">${yr}</span>
+          <span class="yr-divider-meta">${yrGoals.length} goal${yrGoals.length>1?'s':''} · ${yrDone}/${yrTotal} tasks</span>
+        </div>
+        ${yrGoals.map(g=>goalCardHtml(g,gates)).join('')}
+        <button class="add-goal-btn" onclick="openAddGoal('${p.id}','${yr}')">+ Add goal in ${yr}</button>`;
+    }).join('');
+
+    return `<div class="pillar-section" id="pillar-${p.id}">
+      <div class="pillar-header">
+        <div class="ph-eyebrow">${p.id} — Strategic Pillar <button class="edit-btn" onclick="openPillarEdit('${p.id}',event)">✎ Edit pillar</button></div>
+        <div class="ph-title">${escHtml(p.name)}</div>
+        <div class="ph-steward">Steward: ${escHtml(p.steward)}</div>
+        <div class="ph-purpose">${escHtml(p.purpose)}</div>
+        <div class="ph-progress-wrap">
+          <div class="ph-progress-track"><div class="ph-progress-fill" style="width:${pct}%"></div></div>
+          <span class="ph-progress-label">${done} of ${total} tasks complete</span>
+        </div>
+      </div>
+      ${yearSections}
+      <button class="add-goal-btn" onclick="openAddGoal('${p.id}','FY26')" style="margin-top:8px">+ Add goal to ${p.id}</button>
+    </div>`;
+  }).join('');
+
+  document.getElementById('view-pillars').innerHTML = html;
+}
+
+/* ── Dependencies ── */
+function renderDependencies() {
+  const gates = buildGates();
+  const rendered = new Set();
+  function buildChain(startId) {
+    const chain=[startId]; let cur=startId;
+    while(gates[cur]&&gates[cur].length===1){cur=gates[cur][0];chain.push(cur);if(chain.length>12)break;}
+    if(gates[cur]&&gates[cur].length>1) gates[cur].forEach(id=>chain.push(id));
+    return chain;
+  }
+  let html='';
+  PLAN.pillars.forEach(p=>{
+    p.goals.filter(g=>gates[g.id]&&!g.predecessor).forEach(gateGoal=>{
+      if(rendered.has(gateGoal.id))return;
+      const chain=buildChain(gateGoal.id);
+      chain.forEach(id=>rendered.add(id));
+      const nodes=chain.map(id=>{
+        const g=getGoalById(id);if(!g)return'';
+        const {done,total}=taskCounts(g);
+        return `<div class="dep-node${gates[id]&&!g.predecessor?' is-gate':''}"
+          onclick="navigatePillar('${id.split('.')[0]}');setTimeout(()=>scrollToCard('${id}'),200)">
+          <div class="dep-node-id">${id} <span style="font-size:9px;color:var(--text-dim)">${done}/${total}</span></div>
+          <div class="dep-node-stmt">${g.statement.substring(0,60)}…</div>
+        </div>`;
+      });
+      const flow=nodes.reduce((acc,n,i)=>i<nodes.length-1?[...acc,n,'<div class="dep-arrow">→</div>']:[...acc,n],[]).join('');
+      html+=`<div class="dep-chain">
+        <div class="dep-chain-label">${p.name} — chain from ${gateGoal.id}</div>
+        <div class="dep-chain-flow">${flow}</div>
+      </div>`;
+    });
+  });
+  document.getElementById('dep-content').innerHTML=html||'<div style="color:var(--text-muted);font-size:13px">No dependency chains found.</div>';
+}
+
+/* ── Navigation ── */
+function showView(v) {
+  document.querySelectorAll('.view').forEach(el=>el.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(el=>el.classList.remove('active'));
+  document.getElementById('view-'+v).classList.add('active');
+  const tabMap={overview:0,year:1,pillars:2,dependencies:3};
+  if(tabMap[v]!==undefined) document.querySelectorAll('.nav-tab')[tabMap[v]].classList.add('active');
+  if(v!=='pillars') document.querySelectorAll('.pillar-nav[data-pillar]').forEach(el=>el.classList.remove('active'));
+}
+
+function navigatePillar(pillarId) {
+  showView('pillars');
+  document.querySelectorAll('.pillar-nav[data-pillar]').forEach(el=>el.classList.remove('active'));
+  const sEl=document.querySelector(`.pillar-nav[data-pillar="${pillarId}"]`);
+  if(sEl)sEl.classList.add('active');
+  setTimeout(()=>{ const el=document.getElementById('pillar-'+pillarId); if(el)el.scrollIntoView({behavior:'smooth',block:'start'}); },50);
+}
+
+function scrollToCard(goalId) {
+  const el=document.getElementById('card-'+goalId.replace(/\./g,'_'));
+  if(el){el.scrollIntoView({behavior:'smooth',block:'start'});el.classList.add('open');}
+}
+
+function toggleCard(el){el.classList.toggle('open');}
+
+/* ── Task status ── */
+function setTask(goalId, taskIdx, newStatus, event) {
+  event.stopPropagation();
+  if(_viewingSnapshot)return;
+  const g=getGoalById(goalId);if(!g)return;
+  const old=g.tasks[taskIdx].status;
+  if(old===newStatus)return;
+  _changelog.push({timestamp:new Date().toISOString(),type:'status',goalId,taskIdx,taskText:g.tasks[taskIdx].text,from:old,to:newStatus});
+  g.tasks[taskIdx].status=newStatus;
+  markUnsaved();
+  // Re-render just this card
+  const gates=buildGates();
+  const cardEl=document.getElementById('card-'+goalId.replace(/\./g,'_'));
+  const wasOpen=cardEl&&cardEl.classList.contains('open');
+  const tmp=document.createElement('div');tmp.innerHTML=goalCardHtml(g,gates);
+  const newCard=tmp.firstElementChild;
+  if(wasOpen)newCard.classList.add('open');
+  cardEl.replaceWith(newCard);
+  refreshSidebar();
+  refreshOverviewCard(goalId.split('.')[0]);
+}
+
+function refreshSidebar() {
+  PLAN.pillars.forEach(p=>{
+    const {total,done}=pillarCounts(p);
+    const pct=total?Math.round(done/total*100):0;
+    const navEl=document.querySelector(`.pillar-nav[data-pillar="${p.id}"]`);if(!navEl)return;
+    const meta=navEl.querySelector('.pillar-nav-meta');if(meta)meta.textContent=`${p.goals.length} goals · ${done}/${total} tasks`;
+    const fill=navEl.querySelector('.pillar-nav-bar-fill');if(fill)fill.style.width=pct+'%';
+  });
+}
+
+function refreshOverviewCard(pillarId) {
+  const p=PLAN.pillars.find(x=>x.id===pillarId);if(!p)return;
+  const {total,done}=pillarCounts(p);const pct=total?Math.round(done/total*100):0;
+  const grid=document.getElementById('overview-grid');if(!grid)return;
+  const cards=grid.querySelectorAll('.overview-card');
+  const idx=PLAN.pillars.findIndex(x=>x.id===pillarId);const card=cards[idx];if(!card)return;
+  const label=card.querySelector('.progress-label span:last-child');if(label)label.textContent=`${done}/${total}`;
+  const fill=card.querySelector('.progress-fill');if(fill)fill.style.width=pct+'%';
+}
+
+/* ── Edit mode ── */
+function toggleEditMode() {
+  _editMode = !_editMode;
+  document.body.classList.toggle('edit-mode', _editMode);
+  const btn = document.getElementById('edit-toggle');
+  btn.classList.toggle('active', _editMode);
+  btn.textContent = _editMode ? '✎ Editing' : '✎ Edit';
+  if (_editMode) showBanner('banner-edit');
+  else hideBanner('banner-edit');
+}
+
+/* ── Goal edit modal ── */
+function openGoalEdit(goalId, event) {
+  event && event.stopPropagation();
+  const g=getGoalById(goalId);if(!g)return;
+  document.getElementById('ge-orig-id').value=goalId;
+  document.getElementById('ge-id').value=g.id;
+  document.getElementById('ge-year').value=g.year;
+  document.getElementById('ge-statement').value=g.statement;
+  document.getElementById('ge-owner').value=g.owner||'';
+  document.getElementById('ge-metric').value=g.metric||'';
+  document.getElementById('goal-modal-title').textContent=`Edit Goal — ${goalId}`;
+  document.getElementById('ge-delete-btn').style.display='inline-block';
+  // Pillar dropdown
+  const pillarSel=document.getElementById('ge-pillar');
+  pillarSel.innerHTML=PLAN.pillars.map(p=>`<option value="${p.id}"${p.goals.some(gg=>gg.id===goalId)?'selected':''}>${p.id} — ${p.name}</option>`).join('');
+  // Predecessor dropdown
+  const predSel=document.getElementById('ge-predecessor');
+  predSel.innerHTML='<option value="">None</option>'+allGoals().filter(gg=>gg.id!==goalId).map(gg=>`<option value="${gg.id}"${g.predecessor===gg.id?'selected':''}>${gg.id}</option>`).join('');
+  openModal('modal-goal');
+}
+
+function openAddGoal(pillarId, year) {
+  const p=PLAN.pillars.find(x=>x.id===pillarId);if(!p)return;
+  // Auto-assign ID: P1.27.G3 → next available
+  const yrNum=year.replace('FY','');
+  const existing=p.goals.filter(g=>g.year===year).length;
+  const newId=`${pillarId}.${yrNum}.G${existing+1}`;
+  document.getElementById('ge-orig-id').value='';
+  document.getElementById('ge-id').value=newId;
+  document.getElementById('ge-year').value=year;
+  document.getElementById('ge-statement').value='';
+  document.getElementById('ge-owner').value='TBD';
+  document.getElementById('ge-metric').value='';
+  document.getElementById('goal-modal-title').textContent='Add New Goal';
+  document.getElementById('ge-delete-btn').style.display='none';
+  const pillarSel=document.getElementById('ge-pillar');
+  pillarSel.innerHTML=PLAN.pillars.map(p2=>`<option value="${p2.id}"${p2.id===pillarId?'selected':''}>${p2.id} — ${p2.name}</option>`).join('');
+  document.getElementById('ge-predecessor').innerHTML='<option value="">None</option>'+allGoals().map(g=>`<option value="${g.id}">${g.id}</option>`).join('');
+  openModal('modal-goal');
+}
+
+function saveGoalEdit() {
+  const origId=document.getElementById('ge-orig-id').value;
+  const newId=document.getElementById('ge-id').value.trim();
+  const year=document.getElementById('ge-year').value;
+  const targetPillarId=document.getElementById('ge-pillar').value;
+  const predecessor=document.getElementById('ge-predecessor').value||null;
+  const statement=document.getElementById('ge-statement').value.trim();
+  const owner=document.getElementById('ge-owner').value.trim()||'TBD';
+  const metric=document.getElementById('ge-metric').value.trim();
+  if(!newId||!statement){alert('Goal ID and statement are required.');return;}
+
+  if(origId) {
+    // Edit existing
+    const srcPillar=getPillarOfGoal(origId);
+    const g=getGoalById(origId);
+    if(!g||!srcPillar)return;
+    const tgtPillar=PLAN.pillars.find(p=>p.id===targetPillarId);
+    // Move between pillars if needed
+    if(srcPillar.id!==targetPillarId&&tgtPillar) {
+      srcPillar.goals=srcPillar.goals.filter(x=>x.id!==origId);
+      g.id=newId;
+      tgtPillar.goals.push(g);
+      _changelog.push({timestamp:new Date().toISOString(),type:'move_goal',goalId:origId,note:`Moved from ${srcPillar.id} to ${targetPillarId}, new ID: ${newId}`});
+    } else {
+      g.id=newId;
+    }
+    g.year=year;g.predecessor=predecessor;g.statement=statement;g.owner=owner;g.metric=metric;
+    _changelog.push({timestamp:new Date().toISOString(),type:'edit_goal',goalId:newId,note:`Edited: year=${year}, predecessor=${predecessor||'none'}`});
+  } else {
+    // New goal
+    const tgtPillar=PLAN.pillars.find(p=>p.id===targetPillarId);if(!tgtPillar)return;
+    tgtPillar.goals.push({id:newId,year,predecessor,owner,statement,metric,tasks:[]});
+    _changelog.push({timestamp:new Date().toISOString(),type:'add_goal',goalId:newId,note:`Added to ${targetPillarId}`});
+  }
+  markUnsaved();
+  closeModal('modal-goal');
+  renderAll();
+}
+
+function deleteGoal() {
+  const id=document.getElementById('ge-orig-id').value;
+  if(!id||!confirm(`Delete goal ${id}? This cannot be undone.`))return;
+  const p=getPillarOfGoal(id);if(!p)return;
+  p.goals=p.goals.filter(g=>g.id!==id);
+  _changelog.push({timestamp:new Date().toISOString(),type:'delete_goal',goalId:id});
+  markUnsaved();closeModal('modal-goal');renderAll();
+}
+
+/* ── Task edit modal ── */
+function openTaskEdit(goalId, taskIdx, event) {
+  event&&event.stopPropagation();
+  const g=getGoalById(goalId);if(!g||!g.tasks[taskIdx])return;
+  document.getElementById('te-goal-id').value=goalId;
+  document.getElementById('te-task-idx').value=taskIdx;
+  document.getElementById('te-text').value=g.tasks[taskIdx].text;
+  openModal('modal-task');
+}
+
+function saveTaskEdit() {
+  const goalId=document.getElementById('te-goal-id').value;
+  const idx=parseInt(document.getElementById('te-task-idx').value);
+  const text=document.getElementById('te-text').value.trim();
+  if(!text){alert('Task text is required.');return;}
+  const g=getGoalById(goalId);if(!g)return;
+  g.tasks[idx].text=text;
+  _changelog.push({timestamp:new Date().toISOString(),type:'edit_task',goalId,taskIdx:idx,note:text.substring(0,60)});
+  markUnsaved();closeModal('modal-task');renderAll();
+}
+
+function deleteTask() {
+  const goalId=document.getElementById('te-goal-id').value;
+  const idx=parseInt(document.getElementById('te-task-idx').value);
+  if(!confirm('Delete this task?'))return;
+  const g=getGoalById(goalId);if(!g)return;
+  g.tasks.splice(idx,1);
+  _changelog.push({timestamp:new Date().toISOString(),type:'delete_task',goalId,taskIdx:idx});
+  markUnsaved();closeModal('modal-task');renderAll();
+}
+
+function addTask(goalId) {
+  const g=getGoalById(goalId);if(!g)return;
+  g.tasks.push({text:'New task — click ✎ to edit.',status:'not-started'});
+  const idx=g.tasks.length-1;
+  _changelog.push({timestamp:new Date().toISOString(),type:'add_task',goalId,taskIdx:idx});
+  markUnsaved();renderAll();
+  // Open the card and immediately open edit for the new task
+  setTimeout(()=>{
+    scrollToCard(goalId);
+    openTaskEdit(goalId,idx,null);
+  },200);
+}
+
+/* ── Pillar edit modal ── */
+function openPillarEdit(pillarId, event) {
+  event&&event.stopPropagation();
+  const p=PLAN.pillars.find(x=>x.id===pillarId);if(!p)return;
+  document.getElementById('pe-orig-id').value=pillarId;
+  document.getElementById('pe-id').value=p.id;
+  document.getElementById('pe-name').value=p.name;
+  document.getElementById('pe-steward').value=p.steward;
+  document.getElementById('pe-purpose').value=p.purpose;
+  document.getElementById('pillar-modal-title').textContent=`Edit Pillar — ${pillarId}`;
+  document.getElementById('pe-delete-btn').style.display=p.goals.length?'none':'inline-block';
+  openModal('modal-pillar');
+}
+
+function openAddPillar() {
+  const nextNum=PLAN.pillars.length+1;
+  document.getElementById('pe-orig-id').value='';
+  document.getElementById('pe-id').value=`P${nextNum}`;
+  document.getElementById('pe-name').value='';
+  document.getElementById('pe-steward').value='TBD';
+  document.getElementById('pe-purpose').value='';
+  document.getElementById('pillar-modal-title').textContent='Add New Pillar';
+  document.getElementById('pe-delete-btn').style.display='none';
+  openModal('modal-pillar');
+}
+
+function savePillarEdit() {
+  const origId=document.getElementById('pe-orig-id').value;
+  const newId=document.getElementById('pe-id').value.trim();
+  const name=document.getElementById('pe-name').value.trim();
+  const steward=document.getElementById('pe-steward').value.trim();
+  const purpose=document.getElementById('pe-purpose').value.trim();
+  if(!newId||!name){alert('Pillar ID and name are required.');return;}
+  if(origId) {
+    const p=PLAN.pillars.find(x=>x.id===origId);if(!p)return;
+    p.id=newId;p.name=name;p.steward=steward;p.purpose=purpose;
+    _changelog.push({timestamp:new Date().toISOString(),type:'edit_pillar',note:`${origId} → ${newId}: ${name}`});
+  } else {
+    PLAN.pillars.push({id:newId,name,steward,purpose,goals:[]});
+    _changelog.push({timestamp:new Date().toISOString(),type:'add_pillar',note:`Added ${newId}: ${name}`});
+  }
+  markUnsaved();closeModal('modal-pillar');renderAll();
+}
+
+function deletePillar() {
+  const id=document.getElementById('pe-orig-id').value;
+  if(!id||!confirm(`Delete pillar ${id}? Only possible if it has no goals.`))return;
+  const p=PLAN.pillars.find(x=>x.id===id);
+  if(p&&p.goals.length){alert('Remove all goals from this pillar before deleting.');return;}
+  PLAN.pillars=PLAN.pillars.filter(x=>x.id!==id);
+  _changelog.push({timestamp:new Date().toISOString(),type:'delete_pillar',note:`Deleted ${id}`});
+  markUnsaved();closeModal('modal-pillar');renderAll();
+}
+
+/* ── Snapshot dropdown ── */
+function renderSnapshotDropdown() {
+  const sel=document.getElementById('snapshot-select');
+  sel.innerHTML='<option value="">Current</option>'+
+    _snapshots.map(f=>{
+      const d=f.replace('statuses_','').replace('.json','');
+      const fmt=d.length===8?`${d.slice(0,4)}-${d.slice(4,6)}-${d.slice(6,8)}`:d;
+      return `<option value="${f}">${fmt}</option>`;
+    }).join('');
+}
+
+/* ── Export ── */
+function openExportModal() {
+  document.getElementById('export-label').value=PLAN.label||'';
+  document.getElementById('cl-count').textContent=_changelog.length;
+  const preview=document.getElementById('cl-preview');
+  if(_changelog.length===0){
+    preview.innerHTML='<div style="color:var(--text-dim);font-style:italic">No changes this session.</div>';
+  } else {
+    preview.innerHTML=[..._changelog].reverse().map(e=>`<div class="cl-entry">
+      <span class="cl-ts">${new Date(e.timestamp).toLocaleTimeString()}</span>
+      <span style="margin:0 6px;color:var(--accent)">${e.type}</span>
+      <span>${e.goalId||''} ${e.note||e.taskText||''} ${e.from?`${e.from}→${e.to}`:''}</span>
+    </div>`).join('');
+  }
+  openModal('modal-export');
+}
+
+function doExportJSON() {
+  PLAN.label=document.getElementById('export-label').value.trim();
+  PLAN.exported=new Date().toISOString();
+  // Merge session changelog into plan changelog
+  PLAN.changelog=[...(PLAN.changelog||[]),..._changelog];
+  _changelog=[];
+  const now=new Date();
+  const pad=n=>String(n).padStart(2,'0');
+  const dateStr=`${now.getFullYear()}${pad(now.getMonth()+1)}${pad(now.getDate())}`;
+  const blob=new Blob([JSON.stringify(PLAN,null,2)],{type:'application/json'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`statuses_${dateStr}.json`;a.click();URL.revokeObjectURL(a.href);
+  _unsaved=false;hideBanner('banner-unsaved');
+  closeModal('modal-export');
+}
+
+async function downloadExcel() {
+  try {
+    const res=await fetch('data/index.json');
+    if(res.ok){
+      const idx=await res.json();
+      const date=idx.latest?idx.latest.replace('statuses_','').replace('.json',''):new Date().toISOString().slice(0,10).replace(/-/g,'');
+      const a=document.createElement('a');a.href=`exports/NPFR_Strategic_Plan_${date}.xlsx`;a.download=`NPFR_Strategic_Plan_${date}.xlsx`;a.click();
+      return;
+    }
+  } catch(e){}
+  alert('Excel file not found. Run build.py first.');
+}
+
+/* ── Banners ── */
+function showBanner(id, html) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  if (html !== undefined) el.innerHTML = html;
+  el.classList.add('visible');
+  adjustBannerLayout();
+}
+
+function hideBanner(id) {
+  const el = document.getElementById(id);
+  if (el) el.classList.remove('visible');
+  adjustBannerLayout();
+}
+
+function adjustBannerLayout() {
+  requestAnimationFrame(() => {
+    const wrap = document.getElementById('banner-wrap');
+    const h = wrap ? wrap.getBoundingClientRect().height : 0;
+    document.documentElement.style.setProperty('--banner-h', h + 'px');
+  });
+}
+
+function markUnsaved() {
+  if (_unsaved) return;
+  _unsaved = true;
+  showBanner('banner-unsaved',
+    `⚠ Unsaved changes — export the JSON file and load it into <code>/data</code> to publish.
+     <button class="banner-btn" onclick="openExportModal()">Export JSON</button>`
+  );
+}
+
+/* ── Modal helpers ── */
+function openModal(id){document.getElementById(id).classList.add('open');}
+function closeModal(id){document.getElementById(id).classList.remove('open');}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.modal-overlay.open').forEach(m=>m.classList.remove('open'));});
+
+/* ── Theme ── */
+function setTheme(theme,btn){
+  document.body.classList.remove('theme-npfr','theme-light');
+  if(theme==='npfr')document.body.classList.add('theme-npfr');
+  if(theme==='light')document.body.classList.add('theme-light');
+  document.querySelectorAll('.theme-btn').forEach(b=>b.classList.remove('active'));
+  if(btn)btn.classList.add('active');
+  try{localStorage.setItem(THEME_KEY,theme);}catch(e){}
+}
+(function(){
+  try{
+    const saved=localStorage.getItem(THEME_KEY)||'light';
+    if(saved!=='dark'){document.body.classList.add('theme-'+saved);}
+    document.querySelectorAll('.theme-btn').forEach(b=>{b.classList.toggle('active',b.textContent.toLowerCase()===saved);});
+  }catch(e){}
+})();
+
+/* ── Utility ── */
+function escHtml(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+/* ── Init ── */
+loadPlan();
+
+// Keep --banner-h in sync if banners resize (e.g. text wraps on narrow screens)
+const _bannerObserver = new ResizeObserver(() => adjustBannerLayout());
+const _bannerWrap = document.getElementById('banner-wrap');
+if (_bannerWrap) _bannerObserver.observe(_bannerWrap);
+</script>
+</body>
+</html>
