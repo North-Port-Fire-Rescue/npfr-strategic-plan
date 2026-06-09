@@ -47,6 +47,7 @@
   <aside id="sidebar">
     <div class="sidebar-logo">
       <img src="public/Logo.png" alt="North Port Fire Rescue" title="North Port Fire Rescue">
+      <div class="sidebar-mission" id="sidebar-mission-text"></div>
     </div>
     <div class="sidebar-label">Pillars</div>
     <div id="sidebar-nav"></div>
@@ -330,25 +331,10 @@ function renderSidebar() {
 function renderOverview() {
   const gates = buildGates();
   const years = [...new Set(allGoals().map(g=>g.year))].sort();
-  // Agency block
-  const agencyHtml = `
-    <div class="agency-block">
-      <div>
-        <div class="agency-item-label">Mission</div>
-        <div class="agency-item-value view-only">${PLAN.mission}</div>
-        <input class="form-input edit-inline" value="${escHtml(PLAN.mission)}" oninput="PLAN.mission=this.value" style="margin-top:4px">
-      </div>
-      <div>
-        <div class="agency-item-label">Vision</div>
-        <div class="agency-item-value view-only">${PLAN.vision||''}</div>
-        <input class="form-input edit-inline" value="${escHtml(PLAN.vision||'')}" oninput="PLAN.vision=this.value" style="margin-top:4px">
-      </div>
-      <div>
-        <div class="agency-item-label">Values</div>
-        <div class="values-list view-only">${(PLAN.values||[]).map(v=>`<span class="value-tag">${v}</span>`).join('')}</div>
-        <input class="form-input edit-inline" value="${(PLAN.values||[]).join(', ')}" oninput="PLAN.values=this.value.split(',').map(s=>s.trim())" style="margin-top:4px" placeholder="Comma-separated values">
-      </div>
-    </div>`;
+
+  // Populate sidebar mission text
+  const missionEl = document.getElementById('sidebar-mission-text');
+  if (missionEl) missionEl.textContent = PLAN.mission || '';
 
   const cardsHtml = PLAN.pillars.map(p => {
     const {total,done} = pillarCounts(p);
@@ -381,7 +367,6 @@ function renderOverview() {
   </div>`;
 
   document.getElementById('view-overview').innerHTML =
-    agencyHtml +
     `<div class="section-heading">Strategic Pillars</div>
      <div id="overview-grid">${cardsHtml}${addCard}</div>`;
 }
