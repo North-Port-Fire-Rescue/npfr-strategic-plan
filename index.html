@@ -7,328 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-
-/* ══ THEME: DARK (default) ══ */
-:root{
-  --bg:#0d0d1a; --surface:#13131f; --card:#1a1a2e; --card-hover:#20203a;
-  --border:#3a3a5c; --accent:#4a90d9; --accent-dim:rgba(74,144,217,0.15);
-  --accent-border:rgba(74,144,217,0.4);
-  --gold:#4a90d9; --gold-light:#6aaae8; --gold-dim:rgba(74,144,217,0.15); --gold-border:rgba(74,144,217,0.4);
-  --text:#e0e0ff; --text-muted:#8888aa; --text-dim:#55556a;
-  --header-bg:#13131f; --header-border:#3a3a5c; --header-accent:#B71C1C;
-  --sidebar-bg:#13131f; --sidebar-border:#3a3a5c;
-  --pill-gate-bg:rgba(74,144,217,0.18); --pill-gate-text:#6aaae8;
-  --pill-req-bg:rgba(106,27,154,0.25);  --pill-req-text:#ce93d8;
-  --pill-year-bg:rgba(255,255,255,0.08); --pill-year-text:#aaaacc;
-  --c-comp:#0d2b1a;  --c-comp-t:#4ade80;  --c-comp-b:#1a5c38;
-  --c-inp:#1a1a08;   --c-inp-t:#d4d46a;   --c-inp-b:#4a4a18;
-  --c-ns:rgba(255,255,255,0.03); --c-ns-t:#55556a; --c-ns-b:#3a3a5c;
-  --year-band:#1e1e3a; --year-text:#6a90d9;
-  --modal-bg:rgba(0,0,0,0.6);
-  --input-bg:#13131f; --input-border:#3a3a5c; --input-text:#e0e0ff;
-  --sidebar-w:260px; --header-h:56px; --radius:8px; --radius-lg:12px;
-}
-body.theme-npfr{
-  --bg:#1C0505; --surface:#2a0808; --card:#320a0a; --card-hover:#3d0c0c;
-  --border:#5a1a1a; --accent:#C8A040; --accent-dim:rgba(200,160,64,0.15);
-  --accent-border:rgba(200,160,64,0.4);
-  --gold:#C8A040; --gold-light:#E8C870; --gold-dim:rgba(200,160,64,0.15); --gold-border:rgba(200,160,64,0.4);
-  --text:#F5E6C8; --text-muted:#A07850; --text-dim:#6B4A30;
-  --header-bg:#4A0A0C; --header-border:#C8A040; --header-accent:#C8A040;
-  --sidebar-bg:#4A0A0C; --sidebar-border:#5a1a1a;
-  --pill-gate-bg:rgba(200,160,64,0.18); --pill-gate-text:#E8C870;
-  --pill-req-bg:rgba(123,20,22,0.35);   --pill-req-text:#F5A0A0;
-  --pill-year-bg:rgba(255,255,255,0.06); --pill-year-text:#C8A878;
-  --c-comp:#0d3320; --c-comp-t:#4ade80; --c-comp-b:#1a5c38;
-  --c-inp:#2a2a0a;  --c-inp-t:#d4c46a;  --c-inp-b:#4a4a18;
-  --c-ns:rgba(255,255,255,0.03); --c-ns-t:#6B4A30; --c-ns-b:#5a1a1a;
-  --year-band:#3a0808; --year-text:#C8A040;
-  --input-bg:#2a0808; --input-border:#5a1a1a; --input-text:#F5E6C8;
-}
-body.theme-light{
-  --bg:#eef0f6; --surface:#f8f9fc; --card:#f8f9fc; --card-hover:#eef0f6;
-  --border:#c4c8dc; --accent:#0055bb; --accent-dim:rgba(0,85,187,0.08);
-  --accent-border:rgba(0,85,187,0.3);
-  --gold:#0055bb; --gold-light:#0066dd; --gold-dim:rgba(0,85,187,0.08); --gold-border:rgba(0,85,187,0.3);
-  --text:#1a1a2e; --text-muted:#565672; --text-dim:#8888aa;
-  --header-bg:#f8f9fc; --header-border:#c4c8dc; --header-accent:#B71C1C;
-  --sidebar-bg:#f8f9fc; --sidebar-border:#c4c8dc;
-  --pill-gate-bg:rgba(0,85,187,0.1);   --pill-gate-text:#0055bb;
-  --pill-req-bg:rgba(106,27,154,0.1);  --pill-req-text:#6a1b9a;
-  --pill-year-bg:rgba(0,0,0,0.06);     --pill-year-text:#565672;
-  --c-comp:#dcfce7; --c-comp-t:#166534; --c-comp-b:#bbf7d0;
-  --c-inp:#fef9c3;  --c-inp-t:#854d0e;  --c-inp-b:#fde68a;
-  --c-ns:rgba(0,0,0,0.03); --c-ns-t:#8888aa; --c-ns-b:#c4c8dc;
-  --year-band:#e4e7f0; --year-text:#0055bb;
-  --modal-bg:rgba(0,0,0,0.3);
-  --input-bg:#fff; --input-border:#c4c8dc; --input-text:#1a1a2e;
-}
-
-html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;font-size:14px;line-height:1.6;transition:background .2s,color .2s}
-body.theme-npfr #main::before{content:'';position:fixed;top:50%;left:50%;transform:translate(-40%,-50%);width:520px;height:520px;background:url('public/LogoDark.png') center/contain no-repeat;opacity:0.04;pointer-events:none;z-index:0}
-
-/* ══ Header ══ */
-#header{position:fixed;top:0;left:0;right:0;height:var(--header-h);background:var(--header-bg);border-bottom:2px solid var(--header-border);display:flex;align-items:center;padding:0 16px;z-index:200;gap:10px;flex-wrap:nowrap}
-.agency{font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;color:var(--text);display:flex;align-items:center;gap:8px;white-space:nowrap}
-.badge{background:var(--header-accent);color:#fff;font-size:10px;font-weight:700;letter-spacing:0.08em;padding:2px 7px;border-radius:4px;text-transform:uppercase}
-body.theme-npfr .badge{color:#1C0505}
-.plan-title{color:var(--text-muted);font-size:12px;border-left:1px solid var(--border);padding-left:10px;white-space:nowrap}
-.hdr-spacer{flex:1}
-.nav-tabs{display:flex;gap:3px}
-.nav-tab{padding:5px 12px;border-radius:6px;font-size:12px;font-weight:500;cursor:pointer;border:none;background:transparent;color:var(--text-muted);transition:all .15s;white-space:nowrap}
-.nav-tab:hover{color:var(--text);background:rgba(255,255,255,0.06)}
-.nav-tab.active{color:var(--accent);background:var(--accent-dim);border:1px solid var(--accent-border)}
-body.theme-light .nav-tab:hover{background:rgba(0,0,0,0.05)}
-#edit-toggle{padding:5px 12px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid var(--border);background:transparent;color:var(--text-muted);transition:all .15s;white-space:nowrap}
-#edit-toggle.active{background:var(--c-inp);color:var(--c-inp-t);border-color:var(--c-inp-b)}
-#edit-toggle:hover{color:var(--text)}
-.theme-switcher{display:flex;border:1px solid var(--header-border);border-radius:6px;overflow:hidden;flex-shrink:0}
-.theme-btn{font-size:11px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;padding:4px 10px;border:none;background:transparent;color:var(--text-muted);cursor:pointer;transition:all .15s;white-space:nowrap}
-.theme-btn:not(:last-child){border-right:1px solid var(--header-border)}
-.theme-btn:hover{color:var(--text);background:rgba(255,255,255,0.06)}
-.theme-btn.active{background:rgba(255,255,255,0.12);color:var(--text)}
-body.theme-light .theme-btn:hover{background:rgba(0,0,0,0.05)}
-body.theme-light .theme-btn.active{background:rgba(0,0,0,0.08);color:var(--text)}
-#snapshot-select{background:var(--card);border:1px solid var(--border);color:var(--text);font-size:11px;padding:4px 8px;border-radius:5px;cursor:pointer;max-width:130px}
-.hdr-btn{padding:5px 13px;border-radius:6px;font-size:12px;font-weight:700;border:none;cursor:pointer;letter-spacing:0.04em;text-transform:uppercase;transition:background .15s;white-space:nowrap}
-.hdr-btn-pri{background:var(--accent);color:#fff}
-body.theme-npfr .hdr-btn-pri{color:#1C0505}
-.hdr-btn-pri:hover{background:var(--gold-light)}
-.hdr-btn-sec{background:transparent;color:var(--accent);border:1px solid var(--accent-border)}
-.hdr-btn-sec:hover{background:var(--accent-dim)}
-
-/* ══ Banners ══ */
-#banner-wrap{position:fixed;top:var(--header-h);left:0;right:0;z-index:190;display:flex;flex-direction:column}
-.banner{display:none;padding:7px 20px;font-size:12px;font-weight:500;align-items:center;gap:8px;width:100%}
-.banner.visible{display:flex}
-.banner-warn{background:#2a1a00;border-bottom:1px solid #8a5a00;color:#e8b84b}
-.banner-info{background:var(--surface);border-bottom:1px solid var(--border);color:var(--text-muted)}
-.banner-edit{background:rgba(74,144,217,0.12);border-bottom:1px solid rgba(74,144,217,0.3);color:#6aaae8}
-body.theme-light .banner-warn{background:#fff8e1;border-bottom-color:#f0c040;color:#7a5000}
-body.theme-light .banner-info{background:var(--surface);border-bottom-color:var(--border);color:var(--text-muted)}
-body.theme-light .banner-edit{background:rgba(0,85,187,0.08);border-bottom-color:rgba(0,85,187,0.2);color:#0055bb}
-.banner code{background:rgba(255,255,255,0.15);padding:1px 5px;border-radius:3px;font-size:11px}
-body.theme-light .banner code{background:rgba(0,0,0,0.08)}
-.banner-btn{margin-left:8px;padding:2px 10px;border-radius:4px;border:1px solid currentColor;background:transparent;color:inherit;cursor:pointer;font-size:11px;font-weight:600}
-
-/* ══ Layout ══ */
-:root{ --banner-h: 0px; }
-#layout{display:flex;margin-top:calc(var(--header-h) + var(--banner-h));min-height:calc(100vh - var(--header-h) - var(--banner-h));transition:margin-top .15s}
-
-/* ══ Sidebar ══ */
-#sidebar{width:var(--sidebar-w);min-width:var(--sidebar-w);background:var(--sidebar-bg);border-right:1px solid var(--sidebar-border);position:sticky;top:calc(var(--header-h) + var(--banner-h));height:calc(100vh - var(--header-h) - var(--banner-h));overflow-y:auto;padding:0 0 20px;display:flex;flex-direction:column;gap:2px;transition:top .15s,height .15s}
-.sidebar-label{font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);padding:0 18px 6px}
-
-/* Sidebar logo block */
-.sidebar-logo{display:flex;align-items:center;justify-content:center;padding:20px 18px 14px;border-bottom:1px solid var(--sidebar-border);margin-bottom:8px;flex-shrink:0}
-.sidebar-logo img{width:135px;height:135px;object-fit:contain;opacity:0.85;transition:opacity .2s}
-body.theme-light .sidebar-logo img{filter:none;opacity:1}
-.sidebar-logo:hover img{opacity:1}
-.pillar-nav{display:flex;align-items:center;padding:9px 18px;cursor:pointer;border-left:3px solid transparent;transition:all .15s;gap:10px}
-.pillar-nav:hover{background:rgba(255,255,255,0.04)}
-body.theme-light .pillar-nav:hover{background:rgba(0,0,0,0.04)}
-.pillar-nav.active{background:var(--accent-dim);border-left-color:var(--accent)}
-.pillar-num{font-family:'DM Sans',sans-serif;font-size:20px;font-weight:300;color:var(--text-dim);line-height:1;min-width:28px;transition:color .15s}
-.pillar-nav.active .pillar-num{color:var(--accent)}
-.pillar-nav-text{flex:1;min-width:0}
-.pillar-nav-name{font-size:12px;font-weight:500;color:var(--text-muted);line-height:1.3;transition:color .15s}
-.pillar-nav.active .pillar-nav-name{color:var(--text)}
-.pillar-nav-meta{font-size:10px;color:var(--text-dim);margin-top:2px}
-.pillar-nav-bar{height:3px;background:var(--border);border-radius:2px;margin-top:4px;overflow:hidden}
-.pillar-nav-bar-fill{height:100%;border-radius:2px;background:var(--accent);transition:width .4s}
-.sidebar-sep{height:1px;background:var(--border);margin:8px 18px}
-
-/* ══ Main ══ */
-#main{flex:1;padding:28px 36px;max-width:980px;position:relative;z-index:1}
-.view{display:none}.view.active{display:block}
-
-/* ══ Section heading ══ */
-.section-heading{font-family:'DM Sans',sans-serif;font-size:18px;font-weight:600;color:var(--text);margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid var(--border)}
-
-/* ══ Agency block ══ */
-.agency-block{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:22px 26px;margin-bottom:28px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.agency-item-label{font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);margin-bottom:5px}
-.agency-item-value{font-size:13px;color:var(--text);line-height:1.5}
-.values-list{display:flex;flex-wrap:wrap;gap:5px;margin-top:3px}
-.value-tag{font-size:11px;font-weight:500;padding:2px 8px;border-radius:20px;background:var(--accent-dim);color:var(--accent);border:1px solid var(--accent-border)}
-.edit-inline{display:none}
-body.edit-mode .edit-inline{display:inline-block}
-body.edit-mode .view-only{display:none}
-
-/* ══ Overview grid ══ */
-#overview-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(275px,1fr));gap:14px;margin-bottom:32px}
-.overview-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px;cursor:pointer;transition:all .15s;border-left:3px solid var(--border)}
-.overview-card:hover{background:var(--card-hover);transform:translateY(-1px);border-left-color:var(--accent)}
-.oc-num{font-family:'DM Sans',sans-serif;font-size:28px;font-weight:300;color:var(--accent);opacity:0.6;line-height:1;margin-bottom:6px}
-.oc-name{font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:var(--text);margin-bottom:3px}
-.oc-steward{font-size:11px;color:var(--text-dim);margin-bottom:6px}
-.oc-purpose{font-size:11px;color:var(--text-muted);line-height:1.5;margin-bottom:10px}
-.oc-meta{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
-.oc-badge{font-size:10px;font-weight:600;padding:2px 7px;border-radius:4px;letter-spacing:0.04em}
-.oc-badge-g{background:var(--pill-req-bg);color:var(--pill-req-text)}
-.oc-badge-gate{background:var(--pill-gate-bg);color:var(--pill-gate-text)}
-/* Year breakdown in overview card */
-.oc-years{display:flex;gap:5px;flex-wrap:wrap;margin-top:6px}
-.oc-yr-pill{font-size:10px;font-weight:600;padding:2px 7px;border-radius:12px;background:var(--year-band);color:var(--year-text);border:1px solid var(--border)}
-/* Progress */
-.progress-wrap{margin-top:8px}
-.progress-label{font-size:10px;color:var(--text-dim);margin-bottom:3px;display:flex;justify-content:space-between}
-.progress-track{height:4px;background:var(--border);border-radius:2px;overflow:hidden}
-.progress-fill{height:100%;border-radius:2px;background:var(--accent);transition:width .4s}
-.add-pillar-card{border:2px dashed var(--border);background:transparent;display:flex;align-items:center;justify-content:center;gap:8px;font-size:13px;color:var(--text-dim);min-height:120px}
-.add-pillar-card:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
-
-/* ══ Year view ══ */
-.year-band{background:var(--year-band);border-left:4px solid var(--accent);padding:10px 16px;margin-bottom:8px;margin-top:20px;border-radius:0 var(--radius) var(--radius) 0;display:flex;align-items:center;gap:12px}
-.year-band:first-child{margin-top:0}
-.year-label{font-family:'DM Sans',sans-serif;font-size:20px;font-weight:600;color:var(--year-text)}
-.year-meta{font-size:12px;color:var(--text-dim)}
-.year-goal-row{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:12px 16px;margin-bottom:6px;display:grid;grid-template-columns:100px 80px 1fr 140px 110px;gap:12px;align-items:center;cursor:pointer;transition:border-color .15s}
-.year-goal-row:hover{border-color:var(--accent-border)}
-.ygr-id{font-size:10px;font-weight:700;color:var(--accent);background:var(--accent-dim);padding:3px 7px;border-radius:4px;text-align:center;white-space:nowrap}
-.ygr-pillar{font-size:11px;color:var(--text-dim)}
-.ygr-stmt{font-size:13px;color:var(--text);line-height:1.4}
-.ygr-owner{font-size:11px;color:var(--text-dim);text-align:right}
-.ygr-status{font-size:10px;font-weight:600;padding:3px 8px;border-radius:4px;text-align:center;white-space:nowrap}
-
-/* ══ Pillar header ══ */
-.pillar-section{margin-bottom:44px;scroll-margin-top:80px}
-.pillar-header{margin-bottom:20px}
-.ph-eyebrow{font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);border-left:3px solid var(--accent);padding-left:8px;margin-bottom:5px}
-.ph-title{font-family:'DM Sans',sans-serif;font-size:24px;font-weight:600;color:var(--text);margin-bottom:3px;line-height:1.2}
-.ph-steward{font-size:12px;color:var(--text-dim);margin-bottom:7px}
-.ph-purpose{font-size:13px;color:var(--text-muted);line-height:1.7;max-width:680px;margin-bottom:12px}
-.ph-progress-wrap{display:flex;align-items:center;gap:10px;margin-bottom:4px}
-.ph-progress-track{flex:1;max-width:280px;height:5px;background:var(--border);border-radius:3px;overflow:hidden}
-.ph-progress-fill{height:100%;border-radius:3px;background:var(--accent);transition:width .4s}
-.ph-progress-label{font-size:12px;color:var(--text-muted)}
-.edit-btn{font-size:10px;font-weight:600;padding:2px 8px;border-radius:4px;border:1px solid var(--border);background:transparent;color:var(--text-dim);cursor:pointer;display:none;transition:all .15s}
-.edit-btn:hover{border-color:var(--accent);color:var(--accent)}
-body.edit-mode .edit-btn{display:inline-flex;align-items:center;gap:4px}
-
-/* ══ Year band in pillar ══ */
-.yr-divider{display:flex;align-items:center;gap:12px;margin:18px 0 10px;padding:8px 14px;background:var(--year-band);border-left:4px solid var(--accent);border-radius:0 var(--radius) var(--radius) 0}
-.yr-divider-label{font-family:'DM Sans',sans-serif;font-size:16px;font-weight:600;color:var(--year-text)}
-.yr-divider-meta{font-size:11px;color:var(--text-dim)}
-.add-goal-btn{display:none;width:100%;padding:8px;border:2px dashed var(--border);background:transparent;border-radius:var(--radius);color:var(--text-dim);cursor:pointer;font-size:12px;margin-bottom:8px;transition:all .15s}
-.add-goal-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
-body.edit-mode .add-goal-btn{display:block}
-
-/* ══ Goal cards ══ */
-.goal-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);margin-bottom:10px;overflow:hidden;transition:border-color .15s}
-.goal-card:hover{border-color:var(--gold-border)}
-.goal-card.is-gate{border-left:3px solid var(--accent)}
-.gc-header{padding:14px 18px;display:flex;align-items:flex-start;gap:10px;cursor:pointer;user-select:none}
-.gc-id{font-size:10px;font-weight:700;letter-spacing:0.08em;color:#fff;background:var(--accent);padding:3px 7px;border-radius:4px;white-space:nowrap;margin-top:2px;flex-shrink:0}
-body.theme-npfr .gc-id{color:#1C0505}
-.gc-main{flex:1;min-width:0}
-.gc-statement{font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;color:var(--text);line-height:1.4;margin-bottom:7px}
-.gc-pills{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
-.pill{font-size:10px;font-weight:600;padding:2px 7px;border-radius:4px;letter-spacing:0.04em;white-space:nowrap}
-.pill-year{background:var(--pill-year-bg);color:var(--pill-year-text)}
-.pill-gate{background:var(--pill-gate-bg);color:var(--pill-gate-text)}
-.pill-req{background:var(--pill-req-bg);color:var(--pill-req-text)}
-.pill-owner{background:rgba(255,255,255,0.05);color:var(--text-dim)}
-.pill-comp{background:var(--c-comp);color:var(--c-comp-t);border:1px solid var(--c-comp-b)}
-.pill-inp{background:var(--c-inp);color:var(--c-inp-t);border:1px solid var(--c-inp-b)}
-.pill-ns{background:var(--c-ns);color:var(--c-ns-t);border:1px solid var(--c-ns-b)}
-.gc-pips{display:flex;align-items:center;gap:6px;margin-top:5px}
-.gc-pip-row{display:flex;gap:2px}
-.gc-pip{width:10px;height:4px;border-radius:2px;background:var(--border);transition:background .2s}
-.gc-pip.comp{background:var(--c-comp-t)}.gc-pip.inp{background:var(--c-inp-t)}
-.gc-pip-lbl{font-size:10px;color:var(--text-dim)}
-.gc-actions{display:flex;gap:6px;flex-shrink:0;margin-top:2px;align-items:flex-start}
-.gc-toggle{color:var(--text-dim);font-size:18px;transition:transform .2s;cursor:pointer}
-.goal-card.open .gc-toggle{transform:rotate(180deg)}
-.gc-body{display:none;padding:0 18px 16px;border-top:1px solid var(--border)}
-.goal-card.open .gc-body{display:block}
-.gc-section{margin-top:12px}
-.gc-section-label{font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);margin-bottom:7px}
-.gc-metric{font-size:13px;color:var(--text-muted);line-height:1.6;background:rgba(255,255,255,0.03);border-left:2px solid var(--gold-dim);border-radius:0 4px 4px 0;padding:7px 11px;margin-top:3px}
-
-/* ══ Task list ══ */
-.task-list{list-style:none;display:flex;flex-direction:column;gap:5px}
-.task-item{display:flex;align-items:flex-start;gap:8px;padding:7px 9px;border-radius:6px;border:1px solid var(--border);background:rgba(255,255,255,0.02);transition:border-color .15s,background .15s}
-.task-item.comp{background:var(--c-comp);border-color:var(--c-comp-b)}
-.task-item.inp{background:var(--c-inp);border-color:var(--c-inp-b)}
-.task-num{font-size:10px;font-weight:700;color:var(--text-dim);min-width:18px;margin-top:2px;letter-spacing:0.04em;flex-shrink:0}
-.task-item.comp .task-num{color:var(--c-comp-t);text-decoration:line-through}
-.task-item.inp .task-num{color:var(--c-inp-t)}
-.task-text{flex:1;font-size:13px;color:var(--text);line-height:1.5}
-.task-item.comp .task-text{color:var(--text-muted);text-decoration:line-through;opacity:0.75}
-.task-item.inp .task-text{color:var(--text)}
-.task-ctrl{display:flex;gap:3px;flex-shrink:0;margin-top:1px}
-.tbtn{font-size:9px;font-weight:700;letter-spacing:0.05em;padding:2px 5px;border-radius:3px;border:1px solid;cursor:pointer;transition:all .15s;background:transparent;white-space:nowrap}
-.tbtn-ns{color:var(--text-dim);border-color:var(--border)}
-.tbtn-ns.on,.tbtn-ns:hover{background:var(--c-ns);color:var(--text-muted);border-color:var(--c-ns-b)}
-.tbtn-ip{color:var(--c-inp-t);border-color:var(--c-inp-b)}
-.tbtn-ip.on,.tbtn-ip:hover{background:var(--c-inp);border-color:var(--c-inp-b)}
-.tbtn-co{color:var(--c-comp-t);border-color:var(--c-comp-b)}
-.tbtn-co.on,.tbtn-co:hover{background:var(--c-comp);border-color:var(--c-comp-b)}
-.task-edit-btn{color:var(--text-dim);border-color:transparent;display:none}
-body.edit-mode .task-edit-btn{display:inline-block}
-.add-task-btn{display:none;width:100%;padding:6px;border:1px dashed var(--border);background:transparent;border-radius:5px;color:var(--text-dim);cursor:pointer;font-size:11px;margin-top:4px;transition:all .15s}
-.add-task-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
-body.edit-mode .add-task-btn{display:block}
-
-/* ══ Dep view ══ */
-.dep-view-title{font-family:'DM Sans',sans-serif;font-size:22px;font-weight:600;color:var(--text);margin-bottom:5px}
-.dep-view-sub{font-size:13px;color:var(--text-muted);margin-bottom:24px}
-.dep-chain{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:16px 20px;margin-bottom:12px}
-.dep-chain-label{font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);margin-bottom:10px}
-.dep-chain-flow{display:flex;align-items:flex-start;flex-wrap:wrap;gap:0}
-.dep-node{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:9px 12px;cursor:pointer;transition:border-color .15s;min-width:120px;max-width:160px}
-.dep-node:hover{border-color:var(--accent)}
-.dep-node.is-gate{border-color:var(--accent-border);background:var(--accent-dim)}
-.dep-node-id{font-size:10px;font-weight:700;color:var(--accent);letter-spacing:0.06em;margin-bottom:2px}
-.dep-node-stmt{font-size:11px;color:var(--text-muted);line-height:1.3}
-.dep-arrow{font-size:16px;color:var(--text-dim);padding:10px 6px 0;flex-shrink:0}
-
-/* ══ Modal ══ */
-.modal-overlay{display:none;position:fixed;inset:0;background:var(--modal-bg);z-index:500;align-items:center;justify-content:center}
-.modal-overlay.open{display:flex}
-.modal{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;width:min(600px,94vw);max-height:88vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,0.5)}
-.modal-title{font-family:'DM Sans',sans-serif;font-size:18px;font-weight:600;color:var(--text);margin-bottom:20px}
-.modal-close{float:right;background:none;border:none;color:var(--text-dim);font-size:20px;cursor:pointer;margin-top:-4px}
-.modal-close:hover{color:var(--text)}
-.form-group{margin-bottom:14px}
-.form-label{display:block;font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-dim);margin-bottom:5px}
-.form-input,.form-select,.form-textarea{width:100%;background:var(--input-bg);border:1px solid var(--input-border);color:var(--input-text);font-family:'Inter',sans-serif;font-size:13px;padding:8px 10px;border-radius:6px;transition:border-color .15s;outline:none}
-.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--accent)}
-.form-textarea{resize:vertical;min-height:72px;line-height:1.5}
-.form-select option{background:var(--surface);color:var(--text)}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.modal-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:20px;padding-top:16px;border-top:1px solid var(--border)}
-.modal-btn{padding:8px 18px;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;border:none;transition:all .15s}
-.modal-btn-pri{background:var(--accent);color:#fff}
-body.theme-npfr .modal-btn-pri{color:#1C0505}
-.modal-btn-pri:hover{background:var(--gold-light)}
-.modal-btn-sec{background:transparent;color:var(--text-muted);border:1px solid var(--border)}
-.modal-btn-sec:hover{color:var(--text);border-color:var(--text-dim)}
-.modal-btn-danger{background:transparent;color:#e24b4a;border:1px solid #5a2020}
-.modal-btn-danger:hover{background:rgba(226,75,74,0.12)}
-/* Export modal changelog */
-.changelog-preview{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:10px;max-height:180px;overflow-y:auto;font-size:11px;color:var(--text-muted);line-height:1.6}
-.cl-entry{padding:3px 0;border-bottom:1px solid var(--border)}
-.cl-entry:last-child{border-bottom:none}
-.cl-ts{color:var(--text-dim);font-size:10px}
-
-::-webkit-scrollbar{width:5px;height:5px}
-::-webkit-scrollbar-track{background:transparent}
-::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
-
-@media(max-width:700px){
-  #sidebar{display:none}
-  #main{padding:16px}
-  .agency-block{grid-template-columns:1fr}
-  #overview-grid{grid-template-columns:1fr}
-  .year-goal-row{grid-template-columns:80px 1fr 90px;grid-template-rows:auto auto}
-}
-@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -635,7 +314,8 @@ function renderSidebar() {
     const pct = total ? Math.round(done/total*100) : 0;
     const gates = buildGates();
     const gateCount = p.goals.filter(g=>gates[g.id]).length;
-    return `<div class="pillar-nav" data-pillar="${p.id}" onclick="navigatePillar('${p.id}')">
+    const pIdx = PLAN.pillars.indexOf(p) + 1;
+    return `<div class="pillar-nav pillar-color-${pIdx}" data-pillar="${p.id}" onclick="navigatePillar('${p.id}')">
       <span class="pillar-num">${p.id.replace('P','')}</span>
       <div class="pillar-nav-text">
         <div class="pillar-nav-name">${p.name}</div>
@@ -678,7 +358,8 @@ function renderOverview() {
       const count = p.goals.filter(g=>g.year===yr).length;
       return count ? `<span class="oc-yr-pill">${yr}: ${count}</span>` : '';
     }).join('');
-    return `<div class="overview-card" onclick="navigatePillar('${p.id}')">
+    const pIdx = PLAN.pillars.indexOf(p) + 1;
+    return `<div class="overview-card pillar-color-${pIdx}" data-pillar="${p.id}" onclick="navigatePillar('${p.id}')">
       <div class="oc-num">${p.id}</div>
       <div class="oc-name">${p.name}</div>
       <div class="oc-steward">Steward: ${p.steward}</div>
@@ -710,27 +391,51 @@ function renderYearView() {
   const gates = buildGates();
   const years = [...new Set(allGoals().map(g=>g.year))].sort();
   let html = '';
+
   years.forEach(yr => {
+    // Count totals for the year header
     const yrGoals = PLAN.pillars.flatMap(p => p.goals.filter(g=>g.year===yr).map(g=>({g,p})));
-    const yrDone = yrGoals.reduce((acc,{g})=>acc+g.tasks.filter(t=>t.status==='complete').length,0);
-    const yrTotal = yrGoals.reduce((acc,{g})=>acc+g.tasks.length,0);
+    const yrDone  = yrGoals.reduce((a,{g})=>a+g.tasks.filter(t=>t.status==='complete').length,0);
+    const yrTotal = yrGoals.reduce((a,{g})=>a+g.tasks.length,0);
+
     html += `<div class="year-band">
       <span class="year-label">${yr}</span>
       <span class="year-meta">${yrGoals.length} goals · ${yrDone}/${yrTotal} tasks</span>
     </div>`;
-    yrGoals.forEach(({g,p}) => {
-      const gs = deriveGoalStatus(g);
-      const scls = {complete:'pill-comp','in-progress':'pill-inp','not-started':'pill-ns'}[gs];
-      const {done,total} = taskCounts(g);
-      html += `<div class="year-goal-row" onclick="navigatePillar('${p.id}');setTimeout(()=>scrollToCard('${g.id}'),200)">
-        <span class="ygr-id">${g.id}</span>
-        <span class="ygr-pillar">${p.id} · ${p.name.split(' ')[0]}</span>
-        <span class="ygr-stmt">${g.statement}</span>
-        <span class="ygr-owner">${g.owner||''}</span>
-        <span class="ygr-status pill ${scls}">${statusLabel(gs)} ${done}/${total}</span>
+
+    // Group goals by pillar within this year
+    PLAN.pillars.forEach(p => {
+      const pGoals = p.goals.filter(g => g.year === yr);
+      if (!pGoals.length) return;
+      const pIdx = PLAN.pillars.indexOf(p) + 1;
+      const accentVar = `var(--pillar-${pIdx}-accent)`;
+
+      // Pillar separator row
+      html += `<div class="yr-pillar-row" style="
+        border-left: 3px solid ${accentVar};
+        background: color-mix(in srgb, ${accentVar} 8%, transparent);
+        padding: 5px 12px; margin: 6px 0 4px;
+        border-radius: 0 var(--radius) var(--radius) 0;
+        display: flex; align-items: center; gap: 10px;">
+        <span style="font-size:11px;font-weight:700;color:${accentVar};letter-spacing:0.06em">${p.id}</span>
+        <span style="font-size:11px;color:var(--text-muted)">${p.name}</span>
+        <span style="font-size:10px;color:var(--text-dim);margin-left:auto">${pGoals.length} goal${pGoals.length>1?'s':''}</span>
       </div>`;
+
+      pGoals.forEach(g => {
+        const gs = deriveGoalStatus(g);
+        const scls = {complete:'pill-comp','in-progress':'pill-inp','not-started':'pill-ns'}[gs];
+        const {done,total} = taskCounts(g);
+        html += `<div class="year-goal-row" onclick="navigatePillar('${p.id}');setTimeout(()=>scrollToCard('${g.id}'),200)" style="margin-left:8px">
+          <span class="ygr-id" style="background:${accentVar};color:var(--pillar-${pIdx}-text)">${g.id}</span>
+          <span class="ygr-stmt">${g.statement}</span>
+          <span class="ygr-owner">${g.owner||''}</span>
+          <span class="ygr-status pill ${scls}">${statusLabel(gs)} ${done}/${total}</span>
+        </div>`;
+      });
     });
   });
+
   document.getElementById('view-year').innerHTML = `<div class="section-heading">Goals by Fiscal Year</div>${html}`;
 }
 
@@ -826,7 +531,8 @@ function renderPillars() {
         <button class="add-goal-btn" onclick="openAddGoal('${p.id}','${yr}')">+ Add goal in ${yr}</button>`;
     }).join('');
 
-    return `<div class="pillar-section" id="pillar-${p.id}">
+    const pIdx = PLAN.pillars.indexOf(p) + 1;
+    return `<div class="pillar-section pillar-color-${pIdx}" id="pillar-${p.id}">
       <div class="pillar-header">
         <div class="ph-eyebrow">${p.id} — Strategic Pillar <button class="edit-btn" onclick="openPillarEdit('${p.id}',event)">✎ Edit pillar</button></div>
         <div class="ph-title">${escHtml(p.name)}</div>
@@ -857,22 +563,31 @@ function renderDependencies() {
   }
   let html='';
   PLAN.pillars.forEach(p=>{
+    const pIdx = PLAN.pillars.indexOf(p) + 1;
+    const accentVar = `var(--pillar-${pIdx}-accent)`;
+    const textVar = `var(--pillar-${pIdx}-text)`;
     p.goals.filter(g=>gates[g.id]&&!g.predecessor).forEach(gateGoal=>{
       if(rendered.has(gateGoal.id))return;
       const chain=buildChain(gateGoal.id);
       chain.forEach(id=>rendered.add(id));
       const nodes=chain.map(id=>{
         const g=getGoalById(id);if(!g)return'';
+        const nodePillar=getPillarOfGoal(id);
+        const nIdx=nodePillar?PLAN.pillars.indexOf(nodePillar)+1:pIdx;
+        const nAccent=`var(--pillar-${nIdx}-accent)`;
+        const nText=`var(--pillar-${nIdx}-text)`;
         const {done,total}=taskCounts(g);
-        return `<div class="dep-node${gates[id]&&!g.predecessor?' is-gate':''}"
+        const isGateNode=gates[id]&&!g.predecessor;
+        return `<div class="dep-node${isGateNode?' is-gate':''}"
+          style="border-color:color-mix(in srgb,${nAccent} 40%,var(--border));${isGateNode?`background:color-mix(in srgb,${nAccent} 12%,transparent)`:''}"
           onclick="navigatePillar('${id.split('.')[0]}');setTimeout(()=>scrollToCard('${id}'),200)">
-          <div class="dep-node-id">${id} <span style="font-size:9px;color:var(--text-dim)">${done}/${total}</span></div>
+          <div class="dep-node-id" style="color:${nAccent}">${id} <span style="font-size:9px;color:var(--text-dim)">${done}/${total}</span></div>
           <div class="dep-node-stmt">${g.statement.substring(0,60)}…</div>
         </div>`;
       });
       const flow=nodes.reduce((acc,n,i)=>i<nodes.length-1?[...acc,n,'<div class="dep-arrow">→</div>']:[...acc,n],[]).join('');
-      html+=`<div class="dep-chain">
-        <div class="dep-chain-label">${p.name} — chain from ${gateGoal.id}</div>
+      html+=`<div class="dep-chain" style="border-top:2px solid color-mix(in srgb,${accentVar} 30%,var(--border))">
+        <div class="dep-chain-label" style="color:${accentVar}">${p.name} — chain from ${gateGoal.id}</div>
         <div class="dep-chain-flow">${flow}</div>
       </div>`;
     });

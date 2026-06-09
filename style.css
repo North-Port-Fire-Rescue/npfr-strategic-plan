@@ -1,0 +1,616 @@
+/* ============================================================
+   EXTRACTED CSS FROM INDEX.HTML WITH PILLAR COLOR ENHANCEMENTS
+   ============================================================ */
+
+/* ============================================================
+   PILLAR ACCENT COLORS — three sets, one per theme
+   Each pillar gets a distinct color tuned for its background.
+   ============================================================ */
+
+/* ── DARK theme pillar colors (bright enough to read as text on dark bg) ── */
+:root {
+  --pillar-1-accent: #4DB6AC; /* Teal        — Operational Readiness      */
+  --pillar-2-accent: #EF7C6B; /* Coral        — Workforce Development      */
+  --pillar-3-accent: #FFB74D; /* Amber        — Personnel Health           */
+  --pillar-4-accent: #B39DDB; /* Soft violet  — Community Risk Reduction   */
+  --pillar-5-accent: #7CB87A; /* Sage green   — Clinical Excellence        */
+  --pillar-6-accent: #4FC3F7; /* Sky blue     — Infrastructure             */
+
+  /* Text contrast on pillar-colored badge backgrounds (dark theme) */
+  --pillar-1-text: #0d1a19;
+  --pillar-2-text: #2a0a08;
+  --pillar-3-text: #1a1000;
+  --pillar-4-text: #0f0a1a;
+  --pillar-5-text: #0a1a0a;
+  --pillar-6-text: #051520;
+}
+
+/* ── RED theme pillar colors (warm-shifted, contrast against dark maroon bg) ── */
+body.theme-npfr {
+  --pillar-1-accent: #5EC4B8; /* Teal — slightly brighter against dark red  */
+  --pillar-2-accent: #F4907F; /* Coral — shifted warm to harmonise           */
+  --pillar-3-accent: #FFC86A; /* Amber — warmer gold tone                    */
+  --pillar-4-accent: #C3ACEE; /* Violet — lightened for maroon bg            */
+  --pillar-5-accent: #8FCA8D; /* Sage — brighter on dark maroon              */
+  --pillar-6-accent: #63CEFC; /* Sky — vivid against deep red                */
+
+  --pillar-1-text: #051a18;
+  --pillar-2-text: #1a0805;
+  --pillar-3-text: #1a1000;
+  --pillar-4-text: #100a1a;
+  --pillar-5-text: #071507;
+  --pillar-6-text: #031520;
+}
+
+/* ── LIGHT theme pillar colors (deeper/darker so they hold on white bg) ── */
+body.theme-light {
+  --pillar-1-accent: #00897B; /* Deep teal                                   */
+  --pillar-2-accent: #E53935; /* Deep coral-red — distinct from P1 links     */
+  --pillar-3-accent: #F57C00; /* Deep amber/orange                           */
+  --pillar-4-accent: #7B1FA2; /* Deep violet                                 */
+  --pillar-5-accent: #388E3C; /* Deep sage green                             */
+  --pillar-6-accent: #0277BD; /* Deep sky blue                               */
+
+  --pillar-1-text: #fff;
+  --pillar-2-text: #fff;
+  --pillar-3-text: #fff;
+  --pillar-4-text: #fff;
+  --pillar-5-text: #fff;
+  --pillar-6-text: #fff;
+}
+
+/* ══ THEME: DARK (default) ══ */
+:root{
+  --bg:#0d0d1a; --surface:#13131f; --card:#1a1a2e; --card-hover:#20203a;
+  --border:#3a3a5c; --accent:#4a90d9; --accent-dim:rgba(74,144,217,0.15);
+  --accent-border:rgba(74,144,217,0.4);
+  --gold:#4a90d9; --gold-light:#6aaae8; --gold-dim:rgba(74,144,217,0.15); --gold-border:rgba(74,144,217,0.4);
+  --text:#e0e0ff; --text-muted:#8888aa; --text-dim:#55556a;
+  --header-bg:#13131f; --header-border:#3a3a5c; --header-accent:#B71C1C;
+  --sidebar-bg:#13131f; --sidebar-border:#3a3a5c;
+  --pill-gate-bg:rgba(74,144,217,0.18); --pill-gate-text:#6aaae8;
+  --pill-req-bg:rgba(106,27,154,0.25);  --pill-req-text:#ce93d8;
+  --pill-year-bg:rgba(255,255,255,0.08); --pill-year-text:#aaaacc;
+  --c-comp:#0d2b1a;  --c-comp-t:#4ade80;  --c-comp-b:#1a5c38;
+  --c-inp:#1a1a08;   --c-inp-t:#d4d46a;   --c-inp-b:#4a4a18;
+  --c-ns:rgba(255,255,255,0.03); --c-ns-t:#55556a; --c-ns-b:#3a3a5c;
+  --year-band:#1e1e3a; --year-text:#6a90d9;
+  --modal-bg:rgba(0,0,0,0.6);
+  --input-bg:#13131f; --input-border:#3a3a5c; --input-text:#e0e0ff;
+  --sidebar-w:260px; --header-h:56px; --radius:8px; --radius-lg:12px;
+}
+body.theme-npfr{
+  --bg:#1C0505; --surface:#2a0808; --card:#320a0a; --card-hover:#3d0c0c;
+  --border:#5a1a1a; --accent:#C8A040; --accent-dim:rgba(200,160,64,0.15);
+  --accent-border:rgba(200,160,64,0.4);
+  --gold:#C8A040; --gold-light:#E8C870; --gold-dim:rgba(200,160,64,0.15); --gold-border:rgba(200,160,64,0.4);
+  --text:#F5E6C8; --text-muted:#A07850; --text-dim:#6B4A30;
+  --header-bg:#4A0A0C; --header-border:#C8A040; --header-accent:#C8A040;
+  --sidebar-bg:#4A0A0C; --sidebar-border:#5a1a1a;
+  --pill-gate-bg:rgba(200,160,64,0.18); --pill-gate-text:#E8C870;
+  --pill-req-bg:rgba(123,20,22,0.35);   --pill-req-text:#F5A0A0;
+  --pill-year-bg:rgba(255,255,255,0.06); --pill-year-text:#C8A878;
+  --c-comp:#0d3320; --c-comp-t:#4ade80; --c-comp-b:#1a5c38;
+  --c-inp:#2a2a0a;  --c-inp-t:#d4c46a;  --c-inp-b:#4a4a18;
+  --c-ns:rgba(255,255,255,0.03); --c-ns-t:#6B4A30; --c-ns-b:#5a1a1a;
+  --year-band:#3a0808; --year-text:#C8A040;
+  --input-bg:#2a0808; --input-border:#5a1a1a; --input-text:#F5E6C8;
+}
+body.theme-light{
+  --bg:#eef0f6; --surface:#f8f9fc; --card:#f8f9fc; --card-hover:#eef0f6;
+  --border:#c4c8dc; --accent:#0055bb; --accent-dim:rgba(0,85,187,0.08);
+  --accent-border:rgba(0,85,187,0.3);
+  --gold:#0055bb; --gold-light:#0066dd; --gold-dim:rgba(0,85,187,0.08); --gold-border:rgba(0,85,187,0.3);
+  --text:#1a1a2e; --text-muted:#565672; --text-dim:#8888aa;
+  --header-bg:#f8f9fc; --header-border:#c4c8dc; --header-accent:#B71C1C;
+  --sidebar-bg:#f8f9fc; --sidebar-border:#c4c8dc;
+  --pill-gate-bg:rgba(0,85,187,0.1);   --pill-gate-text:#0055bb;
+  --pill-req-bg:rgba(106,27,154,0.1);  --pill-req-text:#6a1b9a;
+  --pill-year-bg:rgba(0,0,0,0.06);     --pill-year-text:#565672;
+  --c-comp:#dcfce7; --c-comp-t:#166534; --c-comp-b:#bbf7d0;
+  --c-inp:#fef9c3;  --c-inp-t:#854d0e;  --c-inp-b:#fde68a;
+  --c-ns:rgba(0,0,0,0.03); --c-ns-t:#8888aa; --c-ns-b:#c4c8dc;
+  --year-band:#e4e7f0; --year-text:#0055bb;
+  --modal-bg:rgba(0,0,0,0.3);
+  --input-bg:#fff; --input-border:#c4c8dc; --input-text:#1a1a2e;
+}
+
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;font-size:14px;line-height:1.6;transition:background .2s,color .2s}
+body.theme-npfr #main::before{content:'';position:fixed;top:50%;left:50%;transform:translate(-40%,-50%);width:520px;height:520px;background:url('public/LogoDark.png') center/contain no-repeat;opacity:0.04;pointer-events:none;z-index:0}
+
+/* ══ Header ══ */
+#header{position:fixed;top:0;left:0;right:0;height:var(--header-h);background:var(--header-bg);border-bottom:2px solid var(--header-border);display:flex;align-items:center;padding:0 16px;z-index:200;gap:10px;flex-wrap:nowrap;-webkit-backdrop-filter:none;backdrop-filter:none}
+.agency{font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;color:var(--text);display:flex;align-items:center;gap:8px;white-space:nowrap}
+.badge{background:var(--header-accent);color:#fff;font-size:10px;font-weight:700;letter-spacing:0.08em;padding:2px 7px;border-radius:4px;text-transform:uppercase}
+body.theme-npfr .badge{color:#1C0505}
+.plan-title{color:var(--text-muted);font-size:12px;border-left:1px solid var(--border);padding-left:10px;white-space:nowrap}
+.hdr-spacer{flex:1}
+.nav-tabs{display:flex;gap:3px}
+.nav-tab{padding:5px 12px;border-radius:6px;font-size:12px;font-weight:500;cursor:pointer;border:none;background:transparent;color:var(--text-muted);transition:all .15s;white-space:nowrap}
+.nav-tab:hover{color:var(--text);background:rgba(255,255,255,0.06)}
+.nav-tab.active{color:var(--accent);background:var(--accent-dim);border:1px solid var(--accent-border)}
+body.theme-light .nav-tab:hover{background:rgba(0,0,0,0.05)}
+#edit-toggle{padding:5px 12px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid var(--border);background:transparent;color:var(--text-muted);transition:all .15s;white-space:nowrap}
+#edit-toggle.active{background:var(--c-inp);color:var(--c-inp-t);border-color:var(--c-inp-b)}
+#edit-toggle:hover{color:var(--text)}
+.theme-switcher{display:flex;border:1px solid var(--header-border);border-radius:6px;overflow:hidden;flex-shrink:0}
+.theme-btn{font-size:11px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;padding:4px 10px;border:none;background:transparent;color:var(--text-muted);cursor:pointer;transition:all .15s;white-space:nowrap}
+.theme-btn:not(:last-child){border-right:1px solid var(--header-border)}
+.theme-btn:hover{color:var(--text);background:rgba(255,255,255,0.06)}
+.theme-btn.active{background:rgba(255,255,255,0.12);color:var(--text)}
+body.theme-light .theme-btn:hover{background:rgba(0,0,0,0.05)}
+body.theme-light .theme-btn.active{background:rgba(0,0,0,0.08);color:var(--text)}
+#snapshot-select{background:var(--card);border:1px solid var(--border);color:var(--text);font-size:11px;padding:4px 8px;border-radius:5px;cursor:pointer;max-width:130px}
+.hdr-btn{padding:5px 13px;border-radius:6px;font-size:12px;font-weight:700;border:none;cursor:pointer;letter-spacing:0.04em;text-transform:uppercase;transition:background .15s;white-space:nowrap}
+.hdr-btn-pri{background:var(--accent);color:#fff}
+body.theme-npfr .hdr-btn-pri{color:#1C0505}
+.hdr-btn-pri:hover{background:var(--gold-light)}
+.hdr-btn-sec{background:transparent;color:var(--accent);border:1px solid var(--accent-border)}
+.hdr-btn-sec:hover{background:var(--accent-dim)}
+
+/* ══ Banners ══ */
+#banner-wrap{position:fixed;top:var(--header-h);left:0;right:0;z-index:190;display:flex;flex-direction:column}
+.banner{display:none;padding:7px 20px;font-size:12px;font-weight:500;align-items:center;gap:8px;width:100%}
+.banner.visible{display:flex}
+.banner-warn{background:#2a1a00;border-bottom:1px solid #8a5a00;color:#e8b84b}
+.banner-info{background:var(--surface);border-bottom:1px solid var(--border);color:var(--text-muted)}
+.banner-edit{background:#0e1e2e;border-bottom:1px solid rgba(74,144,217,0.4);color:#6aaae8}
+body.theme-npfr .banner-edit{background:#2a1a08;border-bottom-color:rgba(200,160,64,0.4);color:var(--gold)}
+body.theme-light .banner-warn{background:#fff8e1;border-bottom-color:#f0c040;color:#7a5000}
+body.theme-light .banner-info{background:var(--surface);border-bottom-color:var(--border);color:var(--text-muted)}
+body.theme-light .banner-edit{background:#e8f0fb;border-bottom-color:rgba(0,85,187,0.3);color:#0055bb}
+.banner code{background:rgba(255,255,255,0.15);padding:1px 5px;border-radius:3px;font-size:11px}
+body.theme-light .banner code{background:rgba(0,0,0,0.08)}
+.banner-btn{margin-left:8px;padding:2px 10px;border-radius:4px;border:1px solid currentColor;background:transparent;color:inherit;cursor:pointer;font-size:11px;font-weight:600}
+
+/* ══ Layout ══ */
+:root{ --banner-h: 0px; }
+#layout{display:flex;margin-top:calc(var(--header-h) + var(--banner-h));min-height:calc(100vh - var(--header-h) - var(--banner-h));transition:margin-top .15s}
+
+/* ══ Sidebar ══ */
+#sidebar{width:var(--sidebar-w);min-width:var(--sidebar-w);background:var(--sidebar-bg);border-right:1px solid var(--sidebar-border);position:sticky;top:calc(var(--header-h) + var(--banner-h));height:calc(100vh - var(--header-h) - var(--banner-h));overflow-y:auto;padding:0 0 20px;display:flex;flex-direction:column;gap:2px;transition:top .15s,height .15s}
+.sidebar-label{font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);padding:0 18px 6px}
+
+/* Sidebar logo block */
+.sidebar-logo{display:flex;align-items:center;justify-content:center;padding:20px 18px 14px;border-bottom:1px solid var(--sidebar-border);margin-bottom:8px;flex-shrink:0}
+.sidebar-logo img{width:135px;height:135px;object-fit:contain;opacity:0.85;transition:opacity .2s}
+body.theme-light .sidebar-logo img{filter:none;opacity:1}
+.sidebar-logo:hover img{opacity:1}
+.pillar-nav{display:flex;align-items:center;padding:9px 18px;cursor:pointer;border-left:3px solid transparent;transition:all .15s;gap:10px}
+.pillar-nav:hover{background:rgba(255,255,255,0.04)}
+body.theme-light .pillar-nav:hover{background:rgba(0,0,0,0.04)}
+.pillar-nav.active{background:var(--accent-dim);border-left-color:var(--accent)}
+.pillar-num{font-family:'DM Sans',sans-serif;font-size:20px;font-weight:300;color:var(--text-dim);line-height:1;min-width:28px;transition:color .15s}
+.pillar-nav.active .pillar-num{color:var(--accent)}
+.pillar-nav-text{flex:1;min-width:0}
+.pillar-nav-name{font-size:12px;font-weight:500;color:var(--text-muted);line-height:1.3;transition:color .15s}
+.pillar-nav.active .pillar-nav-name{color:var(--text)}
+.pillar-nav-meta{font-size:10px;color:var(--text-dim);margin-top:2px}
+.pillar-nav-bar{height:3px;background:var(--border);border-radius:2px;margin-top:4px;overflow:hidden}
+.pillar-nav-bar-fill{height:100%;border-radius:2px;background:var(--accent);transition:width .4s}
+.sidebar-sep{height:1px;background:var(--border);margin:8px 18px}
+
+/* ══ Main ══ */
+#main{flex:1;padding:28px 36px;max-width:980px;position:relative;z-index:1}
+.view{display:none}.view.active{display:block}
+
+/* ══ Section heading ══ */
+.section-heading{font-family:'DM Sans',sans-serif;font-size:18px;font-weight:600;color:var(--text);margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+
+/* ══ Agency block ══ */
+.agency-block{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:22px 26px;margin-bottom:28px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.agency-item-label{font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);margin-bottom:5px}
+.agency-item-value{font-size:13px;color:var(--text);line-height:1.5}
+.values-list{display:flex;flex-wrap:wrap;gap:5px;margin-top:3px}
+.value-tag{font-size:11px;font-weight:500;padding:2px 8px;border-radius:20px;background:var(--accent-dim);color:var(--accent);border:1px solid var(--accent-border)}
+.edit-inline{display:none}
+body.edit-mode .edit-inline{display:inline-block}
+body.edit-mode .view-only{display:none}
+
+/* ══ Overview grid ══ */
+#overview-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(275px,1fr));gap:14px;margin-bottom:32px}
+.overview-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px;cursor:pointer;transition:all .15s;border-left:3px solid var(--border)}
+.overview-card:hover{background:var(--card-hover);transform:translateY(-1px);border-left-color:var(--accent)}
+.oc-num{font-family:'DM Sans',sans-serif;font-size:28px;font-weight:300;color:var(--accent);opacity:0.6;line-height:1;margin-bottom:6px}
+.oc-name{font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:var(--text);margin-bottom:3px}
+.oc-steward{font-size:11px;color:var(--text-dim);margin-bottom:6px}
+.oc-purpose{font-size:11px;color:var(--text-muted);line-height:1.5;margin-bottom:10px}
+.oc-meta{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
+.oc-badge{font-size:10px;font-weight:600;padding:2px 7px;border-radius:4px;letter-spacing:0.04em}
+.oc-badge-g{background:var(--pill-req-bg);color:var(--pill-req-text)}
+.oc-badge-gate{background:var(--pill-gate-bg);color:var(--pill-gate-text)}
+/* Year breakdown in overview card */
+.oc-years{display:flex;gap:5px;flex-wrap:wrap;margin-top:6px}
+.oc-yr-pill{font-size:10px;font-weight:600;padding:2px 7px;border-radius:12px;background:var(--year-band);color:var(--year-text);border:1px solid var(--border)}
+/* Progress */
+.progress-wrap{margin-top:8px}
+.progress-label{font-size:10px;color:var(--text-dim);margin-bottom:3px;display:flex;justify-content:space-between}
+.progress-track{height:4px;background:var(--border);border-radius:2px;overflow:hidden}
+.progress-fill{height:100%;border-radius:2px;background:var(--accent);transition:width .4s}
+.add-pillar-card{border:2px dashed var(--border);background:transparent;display:flex;align-items:center;justify-content:center;gap:8px;font-size:13px;color:var(--text-dim);min-height:120px}
+.add-pillar-card:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
+
+/* ══ Year view ══ */
+.year-band{background:var(--year-band);border-left:4px solid var(--accent);padding:10px 16px;margin-bottom:8px;margin-top:20px;border-radius:0 var(--radius) var(--radius) 0;display:flex;align-items:center;gap:12px}
+.year-band:first-child{margin-top:0}
+.year-label{font-family:'DM Sans',sans-serif;font-size:20px;font-weight:600;color:var(--year-text)}
+.year-meta{font-size:12px;color:var(--text-dim)}
+.year-goal-row{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:10px 14px;margin-bottom:5px;display:grid;grid-template-columns:110px 1fr 130px 110px;gap:12px;align-items:center;cursor:pointer;transition:border-color .15s}
+.year-goal-row:hover{border-color:var(--accent-border)}
+.ygr-id{font-size:10px;font-weight:700;padding:3px 7px;border-radius:4px;text-align:center;white-space:nowrap;color:#fff}
+.ygr-stmt{font-size:13px;color:var(--text);line-height:1.4}
+.ygr-owner{font-size:11px;color:var(--text-dim);text-align:right}
+.ygr-status{font-size:10px;font-weight:600;padding:3px 8px;border-radius:4px;text-align:center;white-space:nowrap}
+
+/* ══ Pillar header ══ */
+.pillar-section{margin-bottom:44px;scroll-margin-top:80px}
+.pillar-header{margin-bottom:20px}
+.ph-eyebrow{font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);border-left:3px solid var(--accent);padding-left:8px;margin-bottom:5px}
+.ph-title{font-family:'DM Sans',sans-serif;font-size:24px;font-weight:600;color:var(--text);margin-bottom:3px;line-height:1.2}
+.ph-steward{font-size:12px;color:var(--text-dim);margin-bottom:7px}
+.ph-purpose{font-size:13px;color:var(--text-muted);line-height:1.7;max-width:680px;margin-bottom:12px}
+.ph-progress-wrap{display:flex;align-items:center;gap:10px;margin-bottom:4px}
+.ph-progress-track{flex:1;max-width:280px;height:5px;background:var(--border);border-radius:3px;overflow:hidden}
+.ph-progress-fill{height:100%;border-radius:3px;background:var(--accent);transition:width .4s}
+.ph-progress-label{font-size:12px;color:var(--text-muted)}
+.edit-btn{font-size:10px;font-weight:600;padding:2px 8px;border-radius:4px;border:1px solid var(--border);background:transparent;color:var(--text-dim);cursor:pointer;display:none;transition:all .15s}
+.edit-btn:hover{border-color:var(--accent);color:var(--accent)}
+body.edit-mode .edit-btn{display:inline-flex;align-items:center;gap:4px}
+
+/* ══ Year band in pillar ══ */
+.yr-divider{display:flex;align-items:center;gap:12px;margin:18px 0 10px;padding:8px 14px;background:var(--year-band);border-left:4px solid var(--accent);border-radius:0 var(--radius) var(--radius) 0}
+.yr-divider-label{font-family:'DM Sans',sans-serif;font-size:16px;font-weight:600;color:var(--year-text)}
+.yr-divider-meta{font-size:11px;color:var(--text-dim)}
+.add-goal-btn{display:none;width:100%;padding:8px;border:2px dashed var(--border);background:transparent;border-radius:var(--radius);color:var(--text-dim);cursor:pointer;font-size:12px;margin-bottom:8px;transition:all .15s}
+.add-goal-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
+body.edit-mode .add-goal-btn{display:block}
+
+/* ══ Goal cards ══ */
+.goal-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);margin-bottom:10px;overflow:hidden;transition:border-color .15s}
+.goal-card:hover{border-color:var(--gold-border)}
+.goal-card.is-gate{border-left:3px solid var(--accent)}
+.gc-header{padding:14px 18px;display:flex;align-items:flex-start;gap:10px;cursor:pointer;user-select:none}
+.gc-id{font-size:10px;font-weight:700;letter-spacing:0.08em;color:#fff;background:var(--accent);padding:3px 7px;border-radius:4px;white-space:nowrap;margin-top:2px;flex-shrink:0}
+body.theme-npfr .gc-id{color:#1C0505}
+.gc-main{flex:1;min-width:0}
+.gc-statement{font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;color:var(--text);line-height:1.4;margin-bottom:7px}
+.gc-pills{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.pill{font-size:10px;font-weight:600;padding:2px 7px;border-radius:4px;letter-spacing:0.04em;white-space:nowrap}
+.pill-year{background:var(--pill-year-bg);color:var(--pill-year-text)}
+.pill-gate{background:var(--pill-gate-bg);color:var(--pill-gate-text)}
+.pill-req{background:var(--pill-req-bg);color:var(--pill-req-text)}
+.pill-owner{background:rgba(255,255,255,0.05);color:var(--text-dim)}
+.pill-comp{background:var(--c-comp);color:var(--c-comp-t);border:1px solid var(--c-comp-b)}
+.pill-inp{background:var(--c-inp);color:var(--c-inp-t);border:1px solid var(--c-inp-b)}
+.pill-ns{background:var(--c-ns);color:var(--c-ns-t);border:1px solid var(--c-ns-b)}
+.gc-pips{display:flex;align-items:center;gap:6px;margin-top:5px}
+.gc-pip-row{display:flex;gap:2px}
+.gc-pip{width:10px;height:4px;border-radius:2px;background:var(--border);transition:background .2s}
+.gc-pip.comp{background:var(--c-comp-t)}.gc-pip.inp{background:var(--c-inp-t)}
+.gc-pip-lbl{font-size:10px;color:var(--text-dim)}
+.gc-actions{display:flex;gap:6px;flex-shrink:0;margin-top:2px;align-items:flex-start}
+.gc-toggle{color:var(--text-dim);font-size:18px;transition:transform .2s;cursor:pointer}
+.goal-card.open .gc-toggle{transform:rotate(180deg)}
+.gc-body{display:none;padding:0 18px 16px;border-top:1px solid var(--border)}
+.goal-card.open .gc-body{display:block}
+.gc-section{margin-top:12px}
+.gc-section-label{font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);margin-bottom:7px}
+.gc-metric{font-size:13px;color:var(--text-muted);line-height:1.6;background:rgba(255,255,255,0.03);border-left:2px solid var(--gold-dim);border-radius:0 4px 4px 0;padding:7px 11px;margin-top:3px}
+
+/* ══ Task list ══ */
+.task-list{list-style:none;display:flex;flex-direction:column;gap:5px}
+.task-item{display:flex;align-items:flex-start;gap:8px;padding:7px 9px;border-radius:6px;border:1px solid var(--border);background:rgba(255,255,255,0.02);transition:border-color .15s,background .15s}
+.task-item.comp{background:var(--c-comp);border-color:var(--c-comp-b)}
+.task-item.inp{background:var(--c-inp);border-color:var(--c-inp-b)}
+.task-num{font-size:10px;font-weight:700;color:var(--text-dim);min-width:18px;margin-top:2px;letter-spacing:0.04em;flex-shrink:0}
+.task-item.comp .task-num{color:var(--c-comp-t);text-decoration:line-through}
+.task-item.inp .task-num{color:var(--c-inp-t)}
+.task-text{flex:1;font-size:13px;color:var(--text);line-height:1.5}
+.task-item.comp .task-text{color:var(--text-muted);text-decoration:line-through;opacity:0.75}
+.task-item.inp .task-text{color:var(--text)}
+.task-ctrl{display:flex;gap:3px;flex-shrink:0;margin-top:1px}
+.tbtn{font-size:9px;font-weight:700;letter-spacing:0.05em;padding:2px 5px;border-radius:3px;border:1px solid;cursor:pointer;transition:all .15s;background:transparent;white-space:nowrap}
+.tbtn-ns{color:var(--text-dim);border-color:var(--border)}
+.tbtn-ns.on,.tbtn-ns:hover{background:var(--c-ns);color:var(--text-muted);border-color:var(--c-ns-b)}
+.tbtn-ip{color:var(--c-inp-t);border-color:var(--c-inp-b)}
+.tbtn-ip.on,.tbtn-ip:hover{background:var(--c-inp);border-color:var(--c-inp-b)}
+.tbtn-co{color:var(--c-comp-t);border-color:var(--c-comp-b)}
+.tbtn-co.on,.tbtn-co:hover{background:var(--c-comp);border-color:var(--c-comp-b)}
+.task-edit-btn{color:var(--text-dim);border-color:transparent;display:none}
+body.edit-mode .task-edit-btn{display:inline-block}
+.add-task-btn{display:none;width:100%;padding:6px;border:1px dashed var(--border);background:transparent;border-radius:5px;color:var(--text-dim);cursor:pointer;font-size:11px;margin-top:4px;transition:all .15s}
+.add-task-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
+body.edit-mode .add-task-btn{display:block}
+
+/* ══ Dep view ══ */
+.dep-view-title{font-family:'DM Sans',sans-serif;font-size:22px;font-weight:600;color:var(--text);margin-bottom:5px}
+.dep-view-sub{font-size:13px;color:var(--text-muted);margin-bottom:24px}
+.dep-chain{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:16px 20px;margin-bottom:12px}
+.dep-chain-label{font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);margin-bottom:10px}
+.dep-chain-flow{display:flex;align-items:flex-start;flex-wrap:wrap;gap:0}
+.dep-node{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:9px 12px;cursor:pointer;transition:border-color .15s;min-width:120px;max-width:160px}
+.dep-node:hover{border-color:var(--accent)}
+.dep-node.is-gate{border-color:var(--accent-border);background:var(--accent-dim)}
+.dep-node-id{font-size:10px;font-weight:700;color:var(--accent);letter-spacing:0.06em;margin-bottom:2px}
+.dep-node-stmt{font-size:11px;color:var(--text-muted);line-height:1.3}
+.dep-arrow{font-size:16px;color:var(--text-dim);padding:10px 6px 0;flex-shrink:0}
+
+/* ══ Modal ══ */
+.modal-overlay{display:none;position:fixed;inset:0;background:var(--modal-bg);z-index:500;align-items:center;justify-content:center}
+.modal-overlay.open{display:flex}
+.modal{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;width:min(600px,94vw);max-height:88vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,0.5)}
+.modal-title{font-family:'DM Sans',sans-serif;font-size:18px;font-weight:600;color:var(--text);margin-bottom:20px}
+.modal-close{float:right;background:none;border:none;color:var(--text-dim);font-size:20px;cursor:pointer;line-height:1;padding:0;margin:-4px -4px 0 0}
+.modal-close:hover{color:var(--text)}
+
+/* ══ Modal form fields ══ */
+.form-group{margin-bottom:14px}
+.form-label{display:block;font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-dim);margin-bottom:5px}
+.form-input,.form-select,.form-textarea{
+  width:100%;
+  background:var(--input-bg);
+  border:1px solid var(--input-border);
+  color:var(--input-text);
+  font-family:'Inter',sans-serif;
+  font-size:13px;
+  padding:8px 10px;
+  border-radius:6px;
+  transition:border-color .15s,box-shadow .15s;
+  outline:none;
+  appearance:auto;
+}
+.form-input:focus,.form-select:focus,.form-textarea:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px var(--accent-dim);
+}
+.form-textarea{resize:vertical;min-height:72px;line-height:1.5}
+.form-select option{background:var(--surface);color:var(--text)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+
+/* ══ Modal action buttons ══ */
+.modal-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:20px;padding-top:16px;border-top:1px solid var(--border)}
+.modal-btn{padding:8px 18px;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;border:none;transition:all .15s}
+.modal-btn-pri{background:var(--accent);color:#fff}
+body.theme-npfr .modal-btn-pri{color:#1C0505}
+.modal-btn-pri:hover{background:var(--gold-light)}
+.modal-btn-sec{background:transparent;color:var(--text-muted);border:1px solid var(--border)}
+.modal-btn-sec:hover{color:var(--text);border-color:var(--text-dim)}
+.modal-btn-danger{background:transparent;color:#e24b4a;border:1px solid #5a2020}
+.modal-btn-danger:hover{background:rgba(226,75,74,0.12)}
+
+/* ══ Export modal changelog preview ══ */
+.changelog-preview{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:6px;
+  padding:10px;
+  max-height:180px;
+  overflow-y:auto;
+  font-size:11px;
+  color:var(--text-muted);
+  line-height:1.6;
+}
+.cl-entry{padding:3px 0;border-bottom:1px solid var(--border)}
+.cl-entry:last-child{border-bottom:none}
+.cl-ts{color:var(--text-dim);font-size:10px}
+
+/* ══ Per-pillar color classes ══ */
+.pillar-color-1 { --pillar-accent: var(--pillar-1-accent); }
+.pillar-color-2 { --pillar-accent: var(--pillar-2-accent); }
+.pillar-color-3 { --pillar-accent: var(--pillar-3-accent); }
+.pillar-color-4 { --pillar-accent: var(--pillar-4-accent); }
+.pillar-color-5 { --pillar-accent: var(--pillar-5-accent); }
+.pillar-color-6 { --pillar-accent: var(--pillar-6-accent); }
+
+/* Pillar section — header, progress, year dividers, goal cards */
+.pillar-section .ph-eyebrow {
+  border-left-color: var(--pillar-accent, var(--accent));
+  color: var(--pillar-accent, var(--accent));
+}
+.pillar-section .ph-progress-fill {
+  background: var(--pillar-accent, var(--accent));
+}
+.pillar-section .yr-divider {
+  border-left-color: var(--pillar-accent, var(--accent));
+}
+.pillar-section .yr-divider-label {
+  color: var(--pillar-accent, var(--accent));
+}
+.pillar-section .goal-card.is-gate {
+  border-left-color: var(--pillar-accent, var(--accent));
+}
+.pillar-section .gc-id {
+  background: var(--pillar-accent, var(--accent));
+}
+.pillar-section .goal-card:hover {
+  border-color: color-mix(in srgb, var(--pillar-accent, var(--accent)) 50%, transparent);
+}
+.pillar-section .add-goal-btn:hover {
+  border-color: var(--pillar-accent, var(--accent));
+  color: var(--pillar-accent, var(--accent));
+  background: color-mix(in srgb, var(--pillar-accent, var(--accent)) 12%, transparent);
+}
+
+/* ══ Per-pillar color classes — explicit overrides ══ */
+
+/* ── Pillar section: left rail + background wash + rounded container ── */
+.pillar-section.pillar-color-1 { border-left: 4px solid var(--pillar-1-accent); background: color-mix(in srgb, var(--pillar-1-accent) 5%, transparent); border-radius: var(--radius-lg); padding: 20px 20px 24px 20px; }
+.pillar-section.pillar-color-2 { border-left: 4px solid var(--pillar-2-accent); background: color-mix(in srgb, var(--pillar-2-accent) 5%, transparent); border-radius: var(--radius-lg); padding: 20px 20px 24px 20px; }
+.pillar-section.pillar-color-3 { border-left: 4px solid var(--pillar-3-accent); background: color-mix(in srgb, var(--pillar-3-accent) 5%, transparent); border-radius: var(--radius-lg); padding: 20px 20px 24px 20px; }
+.pillar-section.pillar-color-4 { border-left: 4px solid var(--pillar-4-accent); background: color-mix(in srgb, var(--pillar-4-accent) 5%, transparent); border-radius: var(--radius-lg); padding: 20px 20px 24px 20px; }
+.pillar-section.pillar-color-5 { border-left: 4px solid var(--pillar-5-accent); background: color-mix(in srgb, var(--pillar-5-accent) 5%, transparent); border-radius: var(--radius-lg); padding: 20px 20px 24px 20px; }
+.pillar-section.pillar-color-6 { border-left: 4px solid var(--pillar-6-accent); background: color-mix(in srgb, var(--pillar-6-accent) 5%, transparent); border-radius: var(--radius-lg); padding: 20px 20px 24px 20px; }
+
+/* ── Year divider background — deeper tint, reads as section header ── */
+.pillar-section.pillar-color-1 .yr-divider { background: color-mix(in srgb, var(--pillar-1-accent) 14%, transparent) !important; }
+.pillar-section.pillar-color-2 .yr-divider { background: color-mix(in srgb, var(--pillar-2-accent) 14%, transparent) !important; }
+.pillar-section.pillar-color-3 .yr-divider { background: color-mix(in srgb, var(--pillar-3-accent) 14%, transparent) !important; }
+.pillar-section.pillar-color-4 .yr-divider { background: color-mix(in srgb, var(--pillar-4-accent) 14%, transparent) !important; }
+.pillar-section.pillar-color-5 .yr-divider { background: color-mix(in srgb, var(--pillar-5-accent) 14%, transparent) !important; }
+.pillar-section.pillar-color-6 .yr-divider { background: color-mix(in srgb, var(--pillar-6-accent) 14%, transparent) !important; }
+
+/* ── Goal card top border tint — ties cards to pillar without washing content ── */
+.pillar-section.pillar-color-1 .goal-card { border-top-color: color-mix(in srgb, var(--pillar-1-accent) 30%, var(--border)) !important; }
+.pillar-section.pillar-color-2 .goal-card { border-top-color: color-mix(in srgb, var(--pillar-2-accent) 30%, var(--border)) !important; }
+.pillar-section.pillar-color-3 .goal-card { border-top-color: color-mix(in srgb, var(--pillar-3-accent) 30%, var(--border)) !important; }
+.pillar-section.pillar-color-4 .goal-card { border-top-color: color-mix(in srgb, var(--pillar-4-accent) 30%, var(--border)) !important; }
+.pillar-section.pillar-color-5 .goal-card { border-top-color: color-mix(in srgb, var(--pillar-5-accent) 30%, var(--border)) !important; }
+.pillar-section.pillar-color-6 .goal-card { border-top-color: color-mix(in srgb, var(--pillar-6-accent) 30%, var(--border)) !important; }
+
+/* ── Overview card active border ── */
+.overview-card.pillar-color-1 { border-left-color: var(--pillar-1-accent) !important; }
+.overview-card.pillar-color-2 { border-left-color: var(--pillar-2-accent) !important; }
+.overview-card.pillar-color-3 { border-left-color: var(--pillar-3-accent) !important; }
+.overview-card.pillar-color-4 { border-left-color: var(--pillar-4-accent) !important; }
+.overview-card.pillar-color-5 { border-left-color: var(--pillar-5-accent) !important; }
+.overview-card.pillar-color-6 { border-left-color: var(--pillar-6-accent) !important; }
+
+/* ── Sidebar pillar num — always colored, not just on active ── */
+.pillar-nav.pillar-color-1 .pillar-num { color: var(--pillar-1-accent) !important; opacity: 0.7; }
+.pillar-nav.pillar-color-2 .pillar-num { color: var(--pillar-2-accent) !important; opacity: 0.7; }
+.pillar-nav.pillar-color-3 .pillar-num { color: var(--pillar-3-accent) !important; opacity: 0.7; }
+.pillar-nav.pillar-color-4 .pillar-num { color: var(--pillar-4-accent) !important; opacity: 0.7; }
+.pillar-nav.pillar-color-5 .pillar-num { color: var(--pillar-5-accent) !important; opacity: 0.7; }
+.pillar-nav.pillar-color-6 .pillar-num { color: var(--pillar-6-accent) !important; opacity: 0.7; }
+
+/* ── Sidebar progress bars ── */
+.pillar-nav.pillar-color-1 .pillar-nav-bar-fill { background: var(--pillar-1-accent) !important; }
+.pillar-nav.pillar-color-2 .pillar-nav-bar-fill { background: var(--pillar-2-accent) !important; }
+.pillar-nav.pillar-color-3 .pillar-nav-bar-fill { background: var(--pillar-3-accent) !important; }
+.pillar-nav.pillar-color-4 .pillar-nav-bar-fill { background: var(--pillar-4-accent) !important; }
+.pillar-nav.pillar-color-5 .pillar-nav-bar-fill { background: var(--pillar-5-accent) !important; }
+.pillar-nav.pillar-color-6 .pillar-nav-bar-fill { background: var(--pillar-6-accent) !important; }
+
+/* ── Sidebar active state ── */
+.pillar-nav.pillar-color-1.active { background: color-mix(in srgb, var(--pillar-1-accent) 15%, transparent) !important; border-left-color: var(--pillar-1-accent) !important; }
+.pillar-nav.pillar-color-1.active .pillar-num { color: var(--pillar-1-accent) !important; opacity: 1; }
+.pillar-nav.pillar-color-1.active .pillar-nav-name { color: var(--pillar-1-accent) !important; }
+
+.pillar-nav.pillar-color-2.active { background: color-mix(in srgb, var(--pillar-2-accent) 15%, transparent) !important; border-left-color: var(--pillar-2-accent) !important; }
+.pillar-nav.pillar-color-2.active .pillar-num { color: var(--pillar-2-accent) !important; opacity: 1; }
+.pillar-nav.pillar-color-2.active .pillar-nav-name { color: var(--pillar-2-accent) !important; }
+
+.pillar-nav.pillar-color-3.active { background: color-mix(in srgb, var(--pillar-3-accent) 15%, transparent) !important; border-left-color: var(--pillar-3-accent) !important; }
+.pillar-nav.pillar-color-3.active .pillar-num { color: var(--pillar-3-accent) !important; opacity: 1; }
+.pillar-nav.pillar-color-3.active .pillar-nav-name { color: var(--pillar-3-accent) !important; }
+
+.pillar-nav.pillar-color-4.active { background: color-mix(in srgb, var(--pillar-4-accent) 15%, transparent) !important; border-left-color: var(--pillar-4-accent) !important; }
+.pillar-nav.pillar-color-4.active .pillar-num { color: var(--pillar-4-accent) !important; opacity: 1; }
+.pillar-nav.pillar-color-4.active .pillar-nav-name { color: var(--pillar-4-accent) !important; }
+
+.pillar-nav.pillar-color-5.active { background: color-mix(in srgb, var(--pillar-5-accent) 15%, transparent) !important; border-left-color: var(--pillar-5-accent) !important; }
+.pillar-nav.pillar-color-5.active .pillar-num { color: var(--pillar-5-accent) !important; opacity: 1; }
+.pillar-nav.pillar-color-5.active .pillar-nav-name { color: var(--pillar-5-accent) !important; }
+
+.pillar-nav.pillar-color-6.active { background: color-mix(in srgb, var(--pillar-6-accent) 15%, transparent) !important; border-left-color: var(--pillar-6-accent) !important; }
+.pillar-nav.pillar-color-6.active .pillar-num { color: var(--pillar-6-accent) !important; opacity: 1; }
+.pillar-nav.pillar-color-6.active .pillar-nav-name { color: var(--pillar-6-accent) !important; }
+
+/* ── Overview cards ── */
+.overview-card.pillar-color-1 .oc-num { color: var(--pillar-1-accent) !important; opacity: 1; }
+.overview-card.pillar-color-1 .progress-fill { background: var(--pillar-1-accent) !important; }
+.overview-card.pillar-color-1:hover { border-left-color: var(--pillar-1-accent) !important; }
+
+.overview-card.pillar-color-2 .oc-num { color: var(--pillar-2-accent) !important; opacity: 1; }
+.overview-card.pillar-color-2 .progress-fill { background: var(--pillar-2-accent) !important; }
+.overview-card.pillar-color-2:hover { border-left-color: var(--pillar-2-accent) !important; }
+
+.overview-card.pillar-color-3 .oc-num { color: var(--pillar-3-accent) !important; opacity: 1; }
+.overview-card.pillar-color-3 .progress-fill { background: var(--pillar-3-accent) !important; }
+.overview-card.pillar-color-3:hover { border-left-color: var(--pillar-3-accent) !important; }
+
+.overview-card.pillar-color-4 .oc-num { color: var(--pillar-4-accent) !important; opacity: 1; }
+.overview-card.pillar-color-4 .progress-fill { background: var(--pillar-4-accent) !important; }
+.overview-card.pillar-color-4:hover { border-left-color: var(--pillar-4-accent) !important; }
+
+.overview-card.pillar-color-5 .oc-num { color: var(--pillar-5-accent) !important; opacity: 1; }
+.overview-card.pillar-color-5 .progress-fill { background: var(--pillar-5-accent) !important; }
+.overview-card.pillar-color-5:hover { border-left-color: var(--pillar-5-accent) !important; }
+
+.overview-card.pillar-color-6 .oc-num { color: var(--pillar-6-accent) !important; opacity: 1; }
+.overview-card.pillar-color-6 .progress-fill { background: var(--pillar-6-accent) !important; }
+.overview-card.pillar-color-6:hover { border-left-color: var(--pillar-6-accent) !important; }
+
+/* ── Pillar section: eyebrow, progress bar, year divider ── */
+.pillar-section.pillar-color-1 .ph-eyebrow { color: var(--pillar-1-accent) !important; border-left-color: var(--pillar-1-accent) !important; }
+.pillar-section.pillar-color-1 .ph-progress-fill { background: var(--pillar-1-accent) !important; }
+.pillar-section.pillar-color-1 .yr-divider { border-left-color: var(--pillar-1-accent) !important; }
+.pillar-section.pillar-color-1 .yr-divider-label { color: var(--pillar-1-accent) !important; }
+
+.pillar-section.pillar-color-2 .ph-eyebrow { color: var(--pillar-2-accent) !important; border-left-color: var(--pillar-2-accent) !important; }
+.pillar-section.pillar-color-2 .ph-progress-fill { background: var(--pillar-2-accent) !important; }
+.pillar-section.pillar-color-2 .yr-divider { border-left-color: var(--pillar-2-accent) !important; }
+.pillar-section.pillar-color-2 .yr-divider-label { color: var(--pillar-2-accent) !important; }
+
+.pillar-section.pillar-color-3 .ph-eyebrow { color: var(--pillar-3-accent) !important; border-left-color: var(--pillar-3-accent) !important; }
+.pillar-section.pillar-color-3 .ph-progress-fill { background: var(--pillar-3-accent) !important; }
+.pillar-section.pillar-color-3 .yr-divider { border-left-color: var(--pillar-3-accent) !important; }
+.pillar-section.pillar-color-3 .yr-divider-label { color: var(--pillar-3-accent) !important; }
+
+.pillar-section.pillar-color-4 .ph-eyebrow { color: var(--pillar-4-accent) !important; border-left-color: var(--pillar-4-accent) !important; }
+.pillar-section.pillar-color-4 .ph-progress-fill { background: var(--pillar-4-accent) !important; }
+.pillar-section.pillar-color-4 .yr-divider { border-left-color: var(--pillar-4-accent) !important; }
+.pillar-section.pillar-color-4 .yr-divider-label { color: var(--pillar-4-accent) !important; }
+
+.pillar-section.pillar-color-5 .ph-eyebrow { color: var(--pillar-5-accent) !important; border-left-color: var(--pillar-5-accent) !important; }
+.pillar-section.pillar-color-5 .ph-progress-fill { background: var(--pillar-5-accent) !important; }
+.pillar-section.pillar-color-5 .yr-divider { border-left-color: var(--pillar-5-accent) !important; }
+.pillar-section.pillar-color-5 .yr-divider-label { color: var(--pillar-5-accent) !important; }
+
+.pillar-section.pillar-color-6 .ph-eyebrow { color: var(--pillar-6-accent) !important; border-left-color: var(--pillar-6-accent) !important; }
+.pillar-section.pillar-color-6 .ph-progress-fill { background: var(--pillar-6-accent) !important; }
+.pillar-section.pillar-color-6 .yr-divider { border-left-color: var(--pillar-6-accent) !important; }
+.pillar-section.pillar-color-6 .yr-divider-label { color: var(--pillar-6-accent) !important; }
+
+/* ── Pillar section: goal card ID badges ── */
+.pillar-section.pillar-color-1 .gc-id { background: var(--pillar-1-accent) !important; }
+.pillar-section.pillar-color-2 .gc-id { background: var(--pillar-2-accent) !important; }
+.pillar-section.pillar-color-3 .gc-id { background: var(--pillar-3-accent) !important; }
+.pillar-section.pillar-color-4 .gc-id { background: var(--pillar-4-accent) !important; }
+.pillar-section.pillar-color-5 .gc-id { background: var(--pillar-5-accent) !important; }
+.pillar-section.pillar-color-6 .gc-id { background: var(--pillar-6-accent) !important; }
+
+/* ── Pillar section: gate card left border ── */
+.pillar-section.pillar-color-1 .goal-card.is-gate { border-left-color: var(--pillar-1-accent) !important; }
+.pillar-section.pillar-color-2 .goal-card.is-gate { border-left-color: var(--pillar-2-accent) !important; }
+.pillar-section.pillar-color-3 .goal-card.is-gate { border-left-color: var(--pillar-3-accent) !important; }
+.pillar-section.pillar-color-4 .goal-card.is-gate { border-left-color: var(--pillar-4-accent) !important; }
+.pillar-section.pillar-color-5 .goal-card.is-gate { border-left-color: var(--pillar-5-accent) !important; }
+.pillar-section.pillar-color-6 .goal-card.is-gate { border-left-color: var(--pillar-6-accent) !important; }
+
+/* ── Pillar section: goal card hover border ── */
+.pillar-section.pillar-color-1 .goal-card:hover { border-color: color-mix(in srgb, var(--pillar-1-accent) 50%, transparent) !important; }
+.pillar-section.pillar-color-2 .goal-card:hover { border-color: color-mix(in srgb, var(--pillar-2-accent) 50%, transparent) !important; }
+.pillar-section.pillar-color-3 .goal-card:hover { border-color: color-mix(in srgb, var(--pillar-3-accent) 50%, transparent) !important; }
+.pillar-section.pillar-color-4 .goal-card:hover { border-color: color-mix(in srgb, var(--pillar-4-accent) 50%, transparent) !important; }
+.pillar-section.pillar-color-5 .goal-card:hover { border-color: color-mix(in srgb, var(--pillar-5-accent) 50%, transparent) !important; }
+.pillar-section.pillar-color-6 .goal-card:hover { border-color: color-mix(in srgb, var(--pillar-6-accent) 50%, transparent) !important; }
+
+/* ── Pillar section: add goal button hover ── */
+.pillar-section.pillar-color-1 .add-goal-btn:hover { border-color: var(--pillar-1-accent) !important; color: var(--pillar-1-accent) !important; background: color-mix(in srgb, var(--pillar-1-accent) 12%, transparent) !important; }
+.pillar-section.pillar-color-2 .add-goal-btn:hover { border-color: var(--pillar-2-accent) !important; color: var(--pillar-2-accent) !important; background: color-mix(in srgb, var(--pillar-2-accent) 12%, transparent) !important; }
+.pillar-section.pillar-color-3 .add-goal-btn:hover { border-color: var(--pillar-3-accent) !important; color: var(--pillar-3-accent) !important; background: color-mix(in srgb, var(--pillar-3-accent) 12%, transparent) !important; }
+.pillar-section.pillar-color-4 .add-goal-btn:hover { border-color: var(--pillar-4-accent) !important; color: var(--pillar-4-accent) !important; background: color-mix(in srgb, var(--pillar-4-accent) 12%, transparent) !important; }
+.pillar-section.pillar-color-5 .add-goal-btn:hover { border-color: var(--pillar-5-accent) !important; color: var(--pillar-5-accent) !important; background: color-mix(in srgb, var(--pillar-5-accent) 12%, transparent) !important; }
+.pillar-section.pillar-color-6 .add-goal-btn:hover { border-color: var(--pillar-6-accent) !important; color: var(--pillar-6-accent) !important; background: color-mix(in srgb, var(--pillar-6-accent) 12%, transparent) !important; }
+
+/* ── gc-id text color — uses per-theme pillar text variables ── */
+.pillar-section.pillar-color-1 .gc-id { color: var(--pillar-1-text) !important; }
+.pillar-section.pillar-color-2 .gc-id { color: var(--pillar-2-text) !important; }
+.pillar-section.pillar-color-3 .gc-id { color: var(--pillar-3-text) !important; }
+.pillar-section.pillar-color-4 .gc-id { color: var(--pillar-4-text) !important; }
+.pillar-section.pillar-color-5 .gc-id { color: var(--pillar-5-text) !important; }
+.pillar-section.pillar-color-6 .gc-id { color: var(--pillar-6-text) !important; }
+
+/* ── Add task button hover per pillar ── */
+.pillar-section.pillar-color-1 .add-task-btn:hover { border-color: var(--pillar-1-accent) !important; color: var(--pillar-1-accent) !important; background: color-mix(in srgb, var(--pillar-1-accent) 10%, transparent) !important; }
+.pillar-section.pillar-color-2 .add-task-btn:hover { border-color: var(--pillar-2-accent) !important; color: var(--pillar-2-accent) !important; background: color-mix(in srgb, var(--pillar-2-accent) 10%, transparent) !important; }
+.pillar-section.pillar-color-3 .add-task-btn:hover { border-color: var(--pillar-3-accent) !important; color: var(--pillar-3-accent) !important; background: color-mix(in srgb, var(--pillar-3-accent) 10%, transparent) !important; }
+.pillar-section.pillar-color-4 .add-task-btn:hover { border-color: var(--pillar-4-accent) !important; color: var(--pillar-4-accent) !important; background: color-mix(in srgb, var(--pillar-4-accent) 10%, transparent) !important; }
+.pillar-section.pillar-color-5 .add-task-btn:hover { border-color: var(--pillar-5-accent) !important; color: var(--pillar-5-accent) !important; background: color-mix(in srgb, var(--pillar-5-accent) 10%, transparent) !important; }
+.pillar-section.pillar-color-6 .add-task-btn:hover { border-color: var(--pillar-6-accent) !important; color: var(--pillar-6-accent) !important; background: color-mix(in srgb, var(--pillar-6-accent) 10%, transparent) !important; }
+
+/* ── Year view goal row ID badge per pillar — requires data attribute ── */
+/* These are set via inline style in renderYearView since rows are not
+   wrapped in a pillar-color container. No CSS needed here — handled in JS. */
