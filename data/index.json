@@ -1,16 +1,16 @@
 {
   "files": [
-    "statuses_20260401.json",
-    "statuses_20261001.json",
+    "statuses_20260301.json",
+    "statuses_20260101.json",
     "statuses_20250701.json",
     "statuses_20250401.json",
     "statuses_20250101.json",
     "statuses_20241001.json"
   ],
-  "latest": "statuses_20260401.json",
+  "latest": "statuses_20260301.json",
   "labels": {
-    "statuses_20260401.json": "2026-Q2",
-    "statuses_20261001.json": "2026-Q1",
+    "statuses_20260301.json": "2026-Q2",
+    "statuses_20260101.json": "2026-Q1",
     "statuses_20250701.json": "2025-Q4",
     "statuses_20250401.json": "2025-Q3",
     "statuses_20250101.json": "2025-Q2",

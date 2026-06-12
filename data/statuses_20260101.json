@@ -48,6 +48,33 @@
           ]
         },
         {
+          "id": "P1.26.G2",
+          "year": "FY26",
+          "domain": "Equipment, Logistics, and Readiness",
+          "predecessor": null,
+          "owner": "Kyle Dent",
+          "statement": "Develop and implement a comprehensive station facility maintenance monitoring program that identifies all high-use items by responsible party (Facilities or FD), establishes service and replacement schedules for each category, and creates an internal tracking system to ensure timely completion of all maintenance actions by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Review and document items serviced by Facilities (A/C, garage doors, landscaping, etc.) and establish an internal monitoring process to track and prompt completion.",
+              "status": "not-started"
+            },
+            {
+              "text": "Identify and inventory all station items not covered by Facilities (stoves, ovens, mattresses, gym equipment, cascade systems, extractors, etc.) requiring FD-managed service schedules.",
+              "status": "not-started"
+            },
+            {
+              "text": "Explore service contracts with applicable vendors for FD-managed equipment and document service and replacement schedules for all identified items.",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop a budget line item reflecting ongoing service and replacement costs for station equipment.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
           "id": "P1.27.G1",
           "year": "FY27",
           "domain": "Incident Preparedness",
@@ -172,37 +199,6 @@
           ]
         },
         {
-          "id": "P1.29.G1",
-          "year": "FY29",
-          "domain": "Equipment, Logistics, and Readiness",
-          "predecessor": null,
-          "owner": "TBD",
-          "statement": "Complete a fleet readiness and maintenance assessment that analyzes program effectiveness, calculates annual maintenance costs by apparatus, measures downtime against manufacturer PM schedules, identifies highest-burden units, and establishes KPIs for apparatus availability by Q4.",
-          "metric": "",
-          "tasks": [
-            {
-              "text": "Analyze maintenance program effectiveness and collect data to determine apparatus downtime.",
-              "status": "not-started"
-            },
-            {
-              "text": "Compare PM schedule to that recommended by manufacturers.",
-              "status": "not-started"
-            },
-            {
-              "text": "Calculate annual maintenance cost for all apparatus and vehicles.",
-              "status": "not-started"
-            },
-            {
-              "text": "Identify which apparatus have the highest maintenance burden.",
-              "status": "not-started"
-            },
-            {
-              "text": "Create key performance indicators for apparatus availability rates.",
-              "status": "not-started"
-            }
-          ]
-        },
-        {
           "id": "P1.28.G2",
           "year": "FY28",
           "domain": "Interagency Collaboration",
@@ -252,6 +248,37 @@
             },
             {
               "text": "Draft updated mutual aid agreements where needed.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P1.29.G1",
+          "year": "FY29",
+          "domain": "Equipment, Logistics, and Readiness",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Complete a fleet readiness and maintenance assessment that analyzes program effectiveness, calculates annual maintenance costs by apparatus, measures downtime against manufacturer PM schedules, identifies highest-burden units, and establishes KPIs for apparatus availability by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Analyze maintenance program effectiveness and collect data to determine apparatus downtime.",
+              "status": "not-started"
+            },
+            {
+              "text": "Compare PM schedule to that recommended by manufacturers.",
+              "status": "not-started"
+            },
+            {
+              "text": "Calculate annual maintenance cost for all apparatus and vehicles.",
+              "status": "not-started"
+            },
+            {
+              "text": "Identify which apparatus have the highest maintenance burden.",
+              "status": "not-started"
+            },
+            {
+              "text": "Create key performance indicators for apparatus availability rates.",
               "status": "not-started"
             }
           ]
@@ -360,6 +387,33 @@
           ]
         },
         {
+          "id": "P2.26.G3",
+          "year": "FY26",
+          "domain": "Training Operations",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Establish documented roles, responsibilities, and reporting structure for all training division positions, and implement a continuous evaluation framework for workload, span of control, and operational needs by Q3.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Assess current staffing and workload distribution.",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop clear job descriptions and roles for specific training functions.",
+              "status": "not-started"
+            },
+            {
+              "text": "Establish reporting structure for division oversight.",
+              "status": "not-started"
+            },
+            {
+              "text": "Implement a continuous evaluation process for workload and span of control.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
           "id": "P2.26.G4",
           "year": "FY26",
           "domain": "Succession and Development",
@@ -423,19 +477,89 @@
           "domain": "Succession and Development",
           "predecessor": "P2.26.G1",
           "owner": "TBD",
-          "statement": "Plan Fire Academy",
+          "statement": "Conduct a comprehensive evaluation of training academy models, regional partnerships, and facility requirements to determine the feasibility and preferred approach for establishing an NPFR-hosted training academy, and present findings with a recommended implementation pathway to command staff by Q4.",
           "metric": "",
           "tasks": [
             {
-              "text": "Determine effectiveness of current programs.",
+              "text": "Research existing training academy models at comparable agencies.",
               "status": "not-started"
             },
             {
-              "text": "Develop action plan for new programs.",
+              "text": "Assess current NPFR training infrastructure, staffing, and resource gaps.",
               "status": "not-started"
             },
             {
-              "text": "Develop adjustments to current programs.",
+              "text": "Evaluate regional partnership opportunities and shared-resource potential.",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop feasibility report with cost estimates and recommended approach.",
+              "status": "not-started"
+            },
+            {
+              "text": "Present evaluation findings and recommended implementation pathway to command staff by Q4.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P2.27.G3",
+          "year": "FY27",
+          "domain": "Culture and Employee Wellness",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Complete a formal evaluation of sleep health challenges facing shift-based personnel, including review of current crew-quarters configuration, existing research on firefighter sleep deprivation, and peer agency solutions, and present findings with recommendations to command staff by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Review current literature and peer agency practices on firefighter sleep health and shift-based sleep deprivation.",
+              "status": "not-started"
+            },
+            {
+              "text": "Survey personnel to assess self-reported sleep quality and identified barriers within current station facilities.",
+              "status": "not-started"
+            },
+            {
+              "text": "Evaluate current crew-quarters configuration at each station for adequacy and improvement potential.",
+              "status": "not-started"
+            },
+            {
+              "text": "Identify facility and policy solutions including retrofit options, quiet-hour protocols, and scheduling adjustments.",
+              "status": "not-started"
+            },
+            {
+              "text": "Present sleep study findings and recommendations to command staff by Q4.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P2.27.G4",
+          "year": "FY27",
+          "domain": "Culture and Employee Wellness",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Design and launch a structured internal communication program that establishes regular information flow between command staff and line personnel through scheduled station visits covering all stations at least twice annually, a quarterly department periodical, and a digital communication platform for shift-based staff, with all three components operational by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Identify avenues for contact and exposure from officer to line personnel.",
+              "status": "not-started"
+            },
+            {
+              "text": "Explore creation of rotating schedule for all administrative officers to take turns visiting each station.",
+              "status": "not-started"
+            },
+            {
+              "text": "Design and launch a department periodical published at minimum quarterly.",
+              "status": "not-started"
+            },
+            {
+              "text": "Evaluate and implement a digital communication platform suitable for shift-based staff.",
+              "status": "not-started"
+            },
+            {
+              "text": "Assess program effectiveness at six and twelve months using personnel feedback.",
               "status": "not-started"
             }
           ]
@@ -467,6 +591,95 @@
             },
             {
               "text": "Present EMS supervisor evaluation findings and implementation recommendations by Q4.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P2.28.G2",
+          "year": "FY28",
+          "domain": "Training Operations",
+          "predecessor": "P2.27.G3",
+          "owner": "TBD",
+          "statement": "Execute formal partnership agreements with a minimum of four regional educational institutions, establish documented shared-resource access protocols for training infrastructure, and develop a joint recruitment pipeline pathway with at least two institutions by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Strengthen relationships with decision makers at regional educational institutions.",
+              "status": "not-started"
+            },
+            {
+              "text": "Establish or maintain articulation agreements with a minimum of four local institutions.",
+              "status": "not-started"
+            },
+            {
+              "text": "Inventory potential shared training resources including towers, props, and simulation equipment.",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop protocols for shared resource access across partner institutions.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P2.28.G3",
+          "year": "FY28",
+          "domain": "Training Operations",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Establish a functioning NPFR Training Academy by implementing the pathway recommended in the FY27 evaluation, securing necessary facility arrangements and partnerships, and delivering a minimum of one formally structured training program to internal personnel by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Implement facility and partnership agreements identified in FY27 evaluation.",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop formal curriculum and delivery structure for inaugural training program.",
+              "status": "not-started"
+            },
+            {
+              "text": "Recruit and assign qualified training staff or adjunct instructors.",
+              "status": "not-started"
+            },
+            {
+              "text": "Deliver a minimum of one formally structured training program to NPFR personnel by Q4.",
+              "status": "not-started"
+            },
+            {
+              "text": "Document program outcomes and identify improvements for FY29 expansion.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P2.28.G4",
+          "year": "FY28",
+          "domain": "Culture and Employee Wellness",
+          "predecessor": "P2.27.G3",
+          "owner": "TBD",
+          "statement": "Implement the sleep health improvement recommendations identified in the FY27 sleep study, including retrofit of individual sleeping rooms at Brix station and adoption of station-level sleep hygiene protocols, with all primary facility modifications complete by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Develop project scope and cost estimate for Brix station individual room retrofit.",
+              "status": "not-started"
+            },
+            {
+              "text": "Secure funding and initiate facility retrofit at Brix station by Q2.",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop and distribute station-level sleep hygiene protocols and wellness resources.",
+              "status": "not-started"
+            },
+            {
+              "text": "Complete primary facility modifications by Q4 and document outcomes.",
+              "status": "not-started"
+            },
+            {
+              "text": "Survey personnel post-implementation to assess improvement in self-reported sleep quality.",
               "status": "not-started"
             }
           ]
@@ -549,87 +762,6 @@
           ]
         },
         {
-          "id": "P2.26.G3",
-          "year": "FY26",
-          "domain": "Training Operations",
-          "predecessor": null,
-          "owner": "TBD",
-          "statement": "Establish documented roles, responsibilities, and reporting structure for all training division positions, and implement a continuous evaluation framework for workload, span of control, and operational needs by Q3.",
-          "metric": "",
-          "tasks": [
-            {
-              "text": "Assess current staffing and workload distribution.",
-              "status": "not-started"
-            },
-            {
-              "text": "Develop clear job descriptions and roles for specific training functions.",
-              "status": "not-started"
-            },
-            {
-              "text": "Establish reporting structure for division oversight.",
-              "status": "not-started"
-            },
-            {
-              "text": "Implement a continuous evaluation process for workload and span of control.",
-              "status": "not-started"
-            }
-          ]
-        },
-        {
-          "id": "P2.28.G2",
-          "year": "FY28",
-          "domain": "Training Operations",
-          "predecessor": "P2.27.G3",
-          "owner": "TBD",
-          "statement": "Execute formal partnership agreements with a minimum of four regional educational institutions, establish documented shared-resource access protocols for training infrastructure, and develop a joint recruitment pipeline pathway with at least two institutions by Q4.",
-          "metric": "",
-          "tasks": [
-            {
-              "text": "Strengthen relationships with decision makers at regional educational institutions.",
-              "status": "not-started"
-            },
-            {
-              "text": "Establish or maintain articulation agreements with a minimum of four local institutions.",
-              "status": "not-started"
-            },
-            {
-              "text": "Inventory potential shared training resources including towers, props, and simulation equipment.",
-              "status": "not-started"
-            },
-            {
-              "text": "Develop protocols for shared resource access across partner institutions.",
-              "status": "not-started"
-            }
-          ]
-        },
-        {
-          "id": "P2.28.G3",
-          "year": "FY28",
-          "domain": "Training Operations",
-          "predecessor": null,
-          "owner": "TBD",
-          "statement": "Establish Fire Academy",
-          "metric": "",
-          "tasks": [
-            {
-              "text": "Identify specialized areas of training aligned to operational needs.",
-              "status": "not-started"
-            },
-            {
-              "text": "Conduct low-acuity, high-risk training as identified.",
-              "status": "not-started"
-            },
-            {
-              "text": "Deliver live fire training within the fiscal year.",
-              "status": "not-started"
-            },
-            {
-              "text": "Assess initial training effectiveness and document findings for program refinement.",
-              "status": "not-started"
-            }
-          ]
-        },
-        {
           "id": "P2.29.G4",
           "year": "FY29",
           "domain": "Training Operations",
@@ -659,37 +791,6 @@
               "status": "not-started"
             }
           ]
-        },
-        {
-          "id": "P2.27.G4",
-          "year": "FY27",
-          "domain": "Culture and Internal Communication",
-          "predecessor": null,
-          "owner": "TBD",
-          "statement": "Design and launch a structured internal communication program that establishes regular information flow between command staff and line personnel through scheduled station visits covering all stations at least twice annually, a quarterly department periodical, and a digital communication platform for shift-based staff, with all three components operational by Q4.",
-          "metric": "",
-          "tasks": [
-            {
-              "text": "Identify avenues for contact and exposure from officer to line personnel.",
-              "status": "not-started"
-            },
-            {
-              "text": "Explore creation of rotating schedule for all administrative officers to take turns visiting each station.",
-              "status": "not-started"
-            },
-            {
-              "text": "Design and launch a department periodical published at minimum quarterly.",
-              "status": "not-started"
-            },
-            {
-              "text": "Evaluate and implement a digital communication platform suitable for shift-based staff.",
-              "status": "not-started"
-            },
-            {
-              "text": "Assess program effectiveness at six and twelve months using personnel feedback.",
-              "status": "not-started"
-            }
-          ]
         }
       ],
       "domains": [
@@ -702,8 +803,8 @@
           "purpose": "Establish a structured, regionally recognized training division with accredited programs, educational partnerships, and delivery capacity that supports both internal development and broader community training goals."
         },
         {
-          "name": "Culture and Internal Communication",
-          "purpose": "Foster a connected, informed organizational culture through consistent leadership visibility, structured communication channels, and platforms that keep all shift-based personnel engaged with department direction."
+          "name": "Culture and Employee Wellness",
+          "purpose": "Foster a department culture that actively supports the physical, behavioral, and professional wellbeing of every member, and maintains strong internal communication and cohesion at all organizational levels."
         }
       ]
     },
@@ -736,33 +837,6 @@
             },
             {
               "text": "Document baseline findings and present to CRR team.",
-              "status": "not-started"
-            }
-          ]
-        },
-        {
-          "id": "P3.28.G1",
-          "year": "FY28",
-          "domain": "Data and Risk Assessment",
-          "predecessor": "P3.27.G2",
-          "owner": "TBD",
-          "statement": "Gather updated CRR and EMS program data from all relevant sources, analyze incident trends to identify high-risk populations and areas, and deliver a written report documenting program strengths, weaknesses, and data-driven recommendations for program improvement by Q4.",
-          "metric": "",
-          "tasks": [
-            {
-              "text": "Access data from ImageTrend, CARES database, GIS, regional sources, and external surveys.",
-              "status": "not-started"
-            },
-            {
-              "text": "Analyze EMS incident data to identify high-risk areas and vulnerable populations.",
-              "status": "not-started"
-            },
-            {
-              "text": "Compare previous data to current to identify program performance markers.",
-              "status": "not-started"
-            },
-            {
-              "text": "Research and document program strengths and weaknesses for reporting.",
               "status": "not-started"
             }
           ]
@@ -884,43 +958,28 @@
           ]
         },
         {
-          "id": "P3.29.G1",
-          "year": "FY29",
-          "domain": "Program Development and Delivery",
-          "predecessor": "P3.28.G1",
+          "id": "P3.28.G1",
+          "year": "FY28",
+          "domain": "Data and Risk Assessment",
+          "predecessor": "P3.27.G2",
           "owner": "TBD",
-          "statement": "Expand the three highest-performing CRR programs identified through FY28 data analysis by increasing reach, delivery frequency, or target population coverage, with documented expansion outcomes reported by Q2.",
+          "statement": "Gather updated CRR and EMS program data from all relevant sources, analyze incident trends to identify high-risk populations and areas, and deliver a written report documenting program strengths, weaknesses, and data-driven recommendations for program improvement by Q4.",
           "metric": "",
           "tasks": [
             {
-              "text": "Identify the three programs with strongest performance data.",
+              "text": "Access data from ImageTrend, CARES database, GIS, regional sources, and external surveys.",
               "status": "not-started"
             },
             {
-              "text": "Expand upon proven strengths in reach, impact, and delivery.",
-              "status": "not-started"
-            }
-          ]
-        },
-        {
-          "id": "P3.29.G2",
-          "year": "FY29",
-          "domain": "Program Development and Delivery",
-          "predecessor": "P3.28.G1",
-          "owner": "TBD",
-          "statement": "Implement targeted improvement plans for the three lowest-performing CRR programs identified through FY28 data analysis, with all improvement actions executed and outcomes assessed by Q3.",
-          "metric": "",
-          "tasks": [
-            {
-              "text": "Identify three programs with weakest performance data.",
+              "text": "Analyze EMS incident data to identify high-risk areas and vulnerable populations.",
               "status": "not-started"
             },
             {
-              "text": "Discuss and list specific ways to improve each program.",
+              "text": "Compare previous data to current to identify program performance markers.",
               "status": "not-started"
             },
             {
-              "text": "Implement improvement plans for all three programs by Q3.",
+              "text": "Research and document program strengths and weaknesses for reporting.",
               "status": "not-started"
             }
           ]
@@ -979,6 +1038,48 @@
             },
             {
               "text": "Evaluate the potential of using retired firefighters as volunteers.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P3.29.G1",
+          "year": "FY29",
+          "domain": "Program Development and Delivery",
+          "predecessor": "P3.28.G1",
+          "owner": "TBD",
+          "statement": "Expand the three highest-performing CRR programs identified through FY28 data analysis by increasing reach, delivery frequency, or target population coverage, with documented expansion outcomes reported by Q2.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Identify the three programs with strongest performance data.",
+              "status": "not-started"
+            },
+            {
+              "text": "Expand upon proven strengths in reach, impact, and delivery.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P3.29.G2",
+          "year": "FY29",
+          "domain": "Program Development and Delivery",
+          "predecessor": "P3.28.G1",
+          "owner": "TBD",
+          "statement": "Implement targeted improvement plans for the three lowest-performing CRR programs identified through FY28 data analysis, with all improvement actions executed and outcomes assessed by Q3.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Identify three programs with weakest performance data.",
+              "status": "not-started"
+            },
+            {
+              "text": "Discuss and list specific ways to improve each program.",
+              "status": "not-started"
+            },
+            {
+              "text": "Implement improvement plans for all three programs by Q3.",
               "status": "not-started"
             }
           ]
@@ -1095,6 +1196,33 @@
           ]
         },
         {
+          "id": "P4.26.G3",
+          "year": "FY26",
+          "domain": "Clinical Quality",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Achieve the AHA Mission Lifeline Gold Rating by monitoring all required cardiac care metrics quarterly, verifying protocol alignment with current best practices, and submitting a complete Mission Lifeline application with supporting data by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Monitor current and future metrics.",
+              "status": "not-started"
+            },
+            {
+              "text": "Ensure protocols continue to meet best practices.",
+              "status": "not-started"
+            },
+            {
+              "text": "Quarterly reporting of data.",
+              "status": "not-started"
+            },
+            {
+              "text": "Submit measures for Mission Lifeline Gold Rating evaluation.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
           "id": "P4.27.G1",
           "year": "FY27",
           "domain": "Accreditation and Compliance",
@@ -1149,95 +1277,6 @@
           ]
         },
         {
-          "id": "P4.28.G1",
-          "year": "FY28",
-          "domain": "Accreditation and Compliance",
-          "predecessor": "P4.27.G2",
-          "owner": "TBD",
-          "statement": "Develop a centralized digital records management system including a complete record inventory, file mapping, access controls, migration of all active records not meeting retention, and completed disposition of records that have met retention requirements with the Clerk's office by Q4.",
-          "metric": "",
-          "tasks": [
-            {
-              "text": "Meet with staff to develop record inventory.",
-              "status": "not-started"
-            },
-            {
-              "text": "Develop record library system.",
-              "status": "not-started"
-            },
-            {
-              "text": "Migrate records that have not met retention to centralized record library.",
-              "status": "not-started"
-            },
-            {
-              "text": "Inventory electronic records having met retention, review with staff, and complete necessary disposals with the Clerk's office.",
-              "status": "not-started"
-            }
-          ]
-        },
-        {
-          "id": "P4.29.G1",
-          "year": "FY29",
-          "domain": "Accreditation and Compliance",
-          "predecessor": "P4.27.G1",
-          "owner": "TBD",
-          "statement": "Establish a Historical and Archive Committee with a formal mandate, recruited membership, and completed initial inventory of historical items by Q2, and implement agency performance standards with a documented compliance tracking and evaluation process by Q4.",
-          "metric": "",
-          "tasks": [
-            {
-              "text": "Develop committee mandate, scope, mission, goals.",
-              "status": "not-started"
-            },
-            {
-              "text": "Establish structure and roles.",
-              "status": "not-started"
-            },
-            {
-              "text": "Identify potential members and recruit.",
-              "status": "not-started"
-            },
-            {
-              "text": "Develop appropriate policies and procedures.",
-              "status": "not-started"
-            },
-            {
-              "text": "Inventory and evaluate existing items.",
-              "status": "not-started"
-            },
-            {
-              "text": "Implement agency performance standards and develop a compliance tracking process.",
-              "status": "not-started"
-            }
-          ]
-        },
-        {
-          "id": "P4.26.G3",
-          "year": "FY26",
-          "domain": "Clinical Quality",
-          "predecessor": null,
-          "owner": "TBD",
-          "statement": "Achieve the AHA Mission Lifeline Gold Rating by monitoring all required cardiac care metrics quarterly, verifying protocol alignment with current best practices, and submitting a complete Mission Lifeline application with supporting data by Q4.",
-          "metric": "",
-          "tasks": [
-            {
-              "text": "Monitor current and future metrics.",
-              "status": "not-started"
-            },
-            {
-              "text": "Ensure protocols continue to meet best practices.",
-              "status": "not-started"
-            },
-            {
-              "text": "Quarterly reporting of data.",
-              "status": "not-started"
-            },
-            {
-              "text": "Submit measures for Mission Lifeline Gold Rating evaluation.",
-              "status": "not-started"
-            }
-          ]
-        },
-        {
           "id": "P4.27.G3",
           "year": "FY27",
           "domain": "Clinical Quality",
@@ -1260,6 +1299,33 @@
             },
             {
               "text": "Present ALS coverage improvement plan to executive leadership by Q4.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P4.28.G1",
+          "year": "FY28",
+          "domain": "Accreditation and Compliance",
+          "predecessor": "P4.27.G2",
+          "owner": "TBD",
+          "statement": "Develop a centralized digital records management system including a complete record inventory, file mapping, access controls, migration of all active records not meeting retention, and completed disposition of records that have met retention requirements with the Clerk's office by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Meet with staff to develop record inventory.",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop record library system.",
+              "status": "not-started"
+            },
+            {
+              "text": "Migrate records that have not met retention to centralized record library.",
+              "status": "not-started"
+            },
+            {
+              "text": "Inventory electronic records having met retention, review with staff, and complete necessary disposals with the Clerk's office.",
               "status": "not-started"
             }
           ]
@@ -1322,6 +1388,41 @@
             },
             {
               "text": "Present implementation recommendations and prioritization strategy to executive leadership by Q4.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P4.29.G1",
+          "year": "FY29",
+          "domain": "Accreditation and Compliance",
+          "predecessor": "P4.27.G1",
+          "owner": "TBD",
+          "statement": "Establish a Historical and Archive Committee with a formal mandate, recruited membership, and completed initial inventory of historical items by Q2, and implement agency performance standards with a documented compliance tracking and evaluation process by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Develop committee mandate, scope, mission, goals.",
+              "status": "not-started"
+            },
+            {
+              "text": "Establish structure and roles.",
+              "status": "not-started"
+            },
+            {
+              "text": "Identify potential members and recruit.",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop appropriate policies and procedures.",
+              "status": "not-started"
+            },
+            {
+              "text": "Inventory and evaluate existing items.",
+              "status": "not-started"
+            },
+            {
+              "text": "Implement agency performance standards and develop a compliance tracking process.",
               "status": "not-started"
             }
           ]

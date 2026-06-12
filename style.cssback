@@ -7,54 +7,49 @@
    Each pillar gets a distinct color tuned for its background.
    ============================================================ */
 
-/* ── DARK theme pillar colors ──
-   Aligned to NPFR institutional palette:
-     PROG_COLOR: EMS #1565C0 · Fire #B71C1C · Hazmat #E65100 · Rescue #6A1B9A
-     RISK_COLOR: Low #00B050 · Moderate #D4A000 · High #CC0000 · Maximum #7030A0
-   Brightened for legibility on dark backgrounds.
-── */
+/* ── DARK theme pillar colors (bright enough to read as text on dark bg) ── */
 :root {
-  --pillar-1-accent: #EF5350; /* Fire red (lifted)           — Operational Readiness   */
-  --pillar-2-accent: #42A5F5; /* EMS blue (lifted)           — Workforce Development    */
-  --pillar-3-accent: #FF7043; /* Hazmat orange (lifted)      — Personnel Health         */
-  --pillar-4-accent: #AB47BC; /* Rescue purple (lifted)      — Community Risk Reduction */
-  --pillar-5-accent: #2ECC71; /* Risk-green (lifted)         — Clinical Excellence      */
-  --pillar-6-accent: #26C6DA; /* Steel cyan (distinct)       — Infrastructure           */
+  --pillar-1-accent: #4DB6AC; /* Teal        — Operational Readiness      */
+  --pillar-2-accent: #EF7C6B; /* Coral        — Workforce Development      */
+  --pillar-3-accent: #FFB74D; /* Amber        — Personnel Health           */
+  --pillar-4-accent: #B39DDB; /* Soft violet  — Community Risk Reduction   */
+  --pillar-5-accent: #7CB87A; /* Sage green   — Clinical Excellence        */
+  --pillar-6-accent: #4FC3F7; /* Sky blue     — Infrastructure             */
 
   /* Text contrast on pillar-colored badge backgrounds (dark theme) */
-  --pillar-1-text: #1a0000;
-  --pillar-2-text: #00111a;
-  --pillar-3-text: #1a0800;
-  --pillar-4-text: #0f0014;
-  --pillar-5-text: #001a08;
-  --pillar-6-text: #001a1e;
+  --pillar-1-text: #0d1a19;
+  --pillar-2-text: #2a0a08;
+  --pillar-3-text: #1a1000;
+  --pillar-4-text: #0f0a1a;
+  --pillar-5-text: #0a1a0a;
+  --pillar-6-text: #051520;
 }
 
-/* ── RED/NPFR theme pillar colors (warm-shifted for dark maroon bg) ── */
+/* ── RED theme pillar colors (warm-shifted, contrast against dark maroon bg) ── */
 body.theme-npfr {
-  --pillar-1-accent: #FF6659; /* Fire red — lifted for maroon bg             */
-  --pillar-2-accent: #5CB8FF; /* EMS blue — brightened for contrast          */
-  --pillar-3-accent: #FF8A65; /* Hazmat orange — softened warm               */
-  --pillar-4-accent: #C06CD4; /* Rescue purple — lightened                   */
-  --pillar-5-accent: #45D97B; /* Risk-green — vivid                          */
-  --pillar-6-accent: #4DD6E8; /* Steel cyan — vivid against deep red         */
+  --pillar-1-accent: #5EC4B8; /* Teal — slightly brighter against dark red  */
+  --pillar-2-accent: #F4907F; /* Coral — shifted warm to harmonise           */
+  --pillar-3-accent: #FFC86A; /* Amber — warmer gold tone                    */
+  --pillar-4-accent: #C3ACEE; /* Violet — lightened for maroon bg            */
+  --pillar-5-accent: #8FCA8D; /* Sage — brighter on dark maroon              */
+  --pillar-6-accent: #63CEFC; /* Sky — vivid against deep red                */
 
-  --pillar-1-text: #1a0000;
-  --pillar-2-text: #001120;
-  --pillar-3-text: #1a0800;
-  --pillar-4-text: #0f0018;
-  --pillar-5-text: #001a08;
-  --pillar-6-text: #001a1e;
+  --pillar-1-text: #051a18;
+  --pillar-2-text: #1a0805;
+  --pillar-3-text: #1a1000;
+  --pillar-4-text: #100a1a;
+  --pillar-5-text: #071507;
+  --pillar-6-text: #031520;
 }
 
-/* ── LIGHT theme pillar colors — direct institutional values, hold on white bg ── */
+/* ── LIGHT theme pillar colors (deeper/darker so they hold on white bg) ── */
 body.theme-light {
-  --pillar-1-accent: #B71C1C; /* Fire red — direct institutional color       */
-  --pillar-2-accent: #1565C0; /* EMS blue — direct institutional color       */
-  --pillar-3-accent: #E65100; /* Hazmat orange — direct institutional color  */
-  --pillar-4-accent: #6A1B9A; /* Rescue purple — direct institutional color  */
-  --pillar-5-accent: #1B7A3E; /* Risk-green — deepened for white bg          */
-  --pillar-6-accent: #00838F; /* Steel teal — deep, distinct from EMS blue   */
+  --pillar-1-accent: #00897B; /* Deep teal                                   */
+  --pillar-2-accent: #E53935; /* Deep coral-red — distinct from P1 links     */
+  --pillar-3-accent: #F57C00; /* Deep amber/orange                           */
+  --pillar-4-accent: #7B1FA2; /* Deep violet                                 */
+  --pillar-5-accent: #388E3C; /* Deep sage green                             */
+  --pillar-6-accent: #0277BD; /* Deep sky blue                               */
 
   --pillar-1-text: #fff;
   --pillar-2-text: #fff;
