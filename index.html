@@ -19,7 +19,6 @@
   <div id="snapshot-nav" class="snapshot-nav">
     <button class="snap-arrow" id="snap-prev" onclick="stepSnapshot(-1)" title="Previous snapshot">‹</button>
     <select id="snapshot-select" onchange="loadSnapshot(this.value)" title="View historical snapshot">
-      <option value="">Current</option>
     </select>
     <button class="snap-arrow" id="snap-next" onclick="stepSnapshot(1)" title="Next snapshot">›</button>
   </div>
@@ -37,7 +36,7 @@
     <button class="theme-btn" onclick="setTheme('npfr',this)">RED</button>
     <button class="theme-btn" onclick="setTheme('light',this)">Light</button>
   </div>
-  <button class="hdr-btn hdr-btn-sec" onclick="openExportModal()" title="Export JSON for /data">↑ Export</button>
+  <button id="export-btn" class="hdr-btn hdr-btn-sec" onclick="openExportModal()" title="Save changes to JSON" style="display:none">↑ Save</button>
   <button class="hdr-btn hdr-btn-pri" onclick="downloadExcel()">↓ Excel</button>
 </header>
 
@@ -94,19 +93,43 @@
 <div class="modal-overlay" id="modal-export">
   <div class="modal">
     <button class="modal-close" onclick="closeModal('modal-export')">✕</button>
-    <div class="modal-title">Export Status JSON</div>
+    <div class="modal-title" id="export-modal-title">Save Changes</div>
+
+    <!-- Mode toggle -->
     <div class="form-group">
-      <label class="form-label">Export label</label>
-      <input class="form-input" id="export-label" placeholder="e.g. Q2 review — updated P2 goals">
+      <div class="export-mode-toggle">
+        <button class="export-mode-btn active" id="export-mode-correction" onclick="setExportMode('correction')">Correction</button>
+        <button class="export-mode-btn" id="export-mode-snapshot" onclick="setExportMode('snapshot')">New Snapshot</button>
+      </div>
+      <div class="export-mode-desc" id="export-mode-desc"></div>
     </div>
+
+    <!-- Snapshot-only: label + filename preview -->
+    <div id="export-snapshot-fields" style="display:none">
+      <div class="form-group">
+        <label class="form-label">Snapshot label</label>
+        <input class="form-input" id="export-label" placeholder="e.g. FY26 Q2 — P2 goals updated" oninput="updateExportFilename()">
+      </div>
+      <div class="form-group">
+        <label class="form-label">New filename</label>
+        <div class="export-filename" id="export-filename"></div>
+      </div>
+    </div>
+
+    <!-- Changes log -->
     <div class="form-group">
       <label class="form-label">Session changes (<span id="cl-count">0</span>)</label>
       <div class="changelog-preview" id="cl-preview">No changes this session.</div>
     </div>
-    <div class="modal-actions">
+
+    <div class="modal-actions" id="export-actions">
       <button class="modal-btn modal-btn-sec" onclick="closeModal('modal-export')">Cancel</button>
-      <button class="modal-btn modal-btn-pri" onclick="doExportJSON()">Download JSON</button>
+      <button class="modal-btn modal-btn-copy" id="export-copy-json" onclick="doCopyJSON()">⎘ Copy JSON</button>
+      <button class="modal-btn modal-btn-copy" id="export-copy-index" onclick="doCopyIndex()" style="display:none">⎘ Copy index.json</button>
     </div>
+
+    <!-- Copy feedback -->
+    <div id="export-copy-feedback" style="display:none;margin-top:10px;font-size:12px;color:var(--accent);text-align:right"></div>
   </div>
 </div>
 
@@ -294,13 +317,13 @@ function discardDraft() {
 /* ── Load ── */
 async function loadPlan() {
   try {
-    const idxRes = await fetch('data/index.json');
+    const idxRes = await fetch('data/index.json', { cache: 'no-store' });
     if (!idxRes.ok) { showOfflineWarning(); return; }
     const idx = await idxRes.json();
     _snapshots = idx.files || [];
     _snapshotLabels = idx.labels || {};
     if (!idx.latest) { showOfflineWarning(); return; }
-    const res = await fetch(`data/${idx.latest}`);
+    const res = await fetch(`data/${idx.latest}`, { cache: 'no-store' });
     if (!res.ok) { showOfflineWarning(); return; }
     PLAN = await res.json();
     renderSnapshotDropdown();
@@ -318,28 +341,6 @@ async function loadPlan() {
 
 function showOfflineWarning() {
   showBanner('banner-unsaved', '⚠ Could not load data/index.json. Run the app via <code>python -m http.server 8080</code> — opening index.html directly as a file does not support fetch().');
-}
-
-async function loadSnapshot(filename) {
-  if (!filename) {
-    _viewingSnapshot = null;
-    hideBanner('banner-snapshot');
-    await loadPlan();
-    return;
-  }
-  try {
-    const res = await fetch(`data/${filename}`);
-    if (!res.ok) return;
-    PLAN = await res.json();
-    _viewingSnapshot = filename;
-    const date = filename.replace('statuses_','').replace('.json','');
-    const fmt = date.length===8 ? `${date.slice(0,4)}-${date.slice(4,6)}-${date.slice(6,8)}` : date;
-    renderAll();
-    showBanner('banner-snapshot',
-      `Viewing snapshot: ${fmt}${PLAN.label ? ' — '+PLAN.label : ''}.
-       <button class="banner-btn" onclick="document.getElementById('snapshot-select').value='';loadSnapshot('')">Back to current</button>`
-    );
-  } catch(e) { console.warn('Snapshot load failed:', e); }
 }
 
 /* ── Derived data helpers ── */
@@ -922,7 +923,7 @@ async function loadPrevSnapshot(currentFilename) {
   const prevFile = _snapshots[idx + 1];
   if (!prevFile) { _prevSnapshot = null; return; }
   try {
-    const res = await fetch(`data/${prevFile}`);
+    const res = await fetch(`data/${prevFile}`, { cache: 'no-store' });
     if (res.ok) _prevSnapshot = await res.json();
     else _prevSnapshot = null;
   } catch(e) { _prevSnapshot = null; }
@@ -1237,6 +1238,7 @@ function toggleEditMode() {
   const btn = document.getElementById('edit-toggle');
   btn.classList.toggle('active', _editMode);
   btn.textContent = _editMode ? '✎ Editing' : '✎ Edit';
+  document.getElementById('export-btn').style.display = _editMode ? '' : 'none';
   if (_editMode) showBanner('banner-edit');
   else hideBanner('banner-edit');
 }
@@ -1440,30 +1442,31 @@ function snapshotLabel(filename) {
 function renderSnapshotDropdown() {
   const sel = document.getElementById('snapshot-select');
   // files array is already descending (newest first) from index.json
-  // "Current" = latest, skip it from the historical list
-  const historical = _snapshots.filter(f => f !== (_snapshotLabels['__latest'] || _snapshots[0]) || Object.keys(_snapshotLabels).length === 0
-    ? true : true);
-  sel.innerHTML = '<option value="">Current</option>' +
-    _snapshots.map(f =>
-      `<option value="${f}">${snapshotLabel(f)}</option>`
-    ).join('');
+  // No "Current" option — latest snapshot is selected by default
+  sel.innerHTML = _snapshots.map(f =>
+    `<option value="${f}">${snapshotLabel(f)}</option>`
+  ).join('');
+  // Default to latest (first in list) when not viewing a historical snapshot
+  if (!_viewingSnapshot && _snapshots.length) {
+    sel.value = _snapshots[0];
+  } else if (_viewingSnapshot) {
+    sel.value = _viewingSnapshot;
+  }
   updateSnapArrows();
 }
 
 function updateSnapArrows() {
-  const cur = _viewingSnapshot || '';
-  // Full list: '' (current) + each historical file in order
-  const allEntries = ['', ..._snapshots];
-  const idx = allEntries.indexOf(cur);
+  const cur = _viewingSnapshot || (_snapshots.length ? _snapshots[0] : '');
+  const idx = _snapshots.indexOf(cur);
+  // Newest = index 0 (prev disabled), oldest = last index (next disabled)
   document.getElementById('snap-prev').disabled = idx <= 0;
-  document.getElementById('snap-next').disabled = idx >= allEntries.length - 1;
+  document.getElementById('snap-next').disabled = idx < 0 || idx >= _snapshots.length - 1;
 }
 
 function stepSnapshot(dir) {
-  const allEntries = ['', ..._snapshots];
-  const cur = _viewingSnapshot || '';
-  const idx = allEntries.indexOf(cur);
-  const next = allEntries[idx + dir];
+  const cur = _viewingSnapshot || (_snapshots.length ? _snapshots[0] : '');
+  const idx = _snapshots.indexOf(cur);
+  const next = _snapshots[idx + dir];
   if (next === undefined) return;
   document.getElementById('snapshot-select').value = next;
   loadSnapshot(next);
@@ -1474,67 +1477,186 @@ async function loadSnapshot(filename) {
     _viewingSnapshot = null;
     _prevSnapshot = null;
     hideBanner('banner-snapshot');
-    document.getElementById('snapshot-select').value = '';
     updateSnapArrows();
     await loadPlan();
     return;
   }
+  const isLatest = _snapshots.length && filename === _snapshots[0];
   try {
-    const res = await fetch(`data/${filename}`);
+    const res = await fetch(`data/${filename}`, { cache: 'no-store' });
     if (!res.ok) return;
     PLAN = await res.json();
-    _viewingSnapshot = filename;
-    await loadPrevSnapshot(filename);
+    _viewingSnapshot = isLatest ? null : filename;
+    if (!isLatest) {
+      await loadPrevSnapshot(filename);
+    } else {
+      _prevSnapshot = null;
+    }
     const label = snapshotLabel(filename);
     renderAll();
     updateSnapArrows();
-    showBanner('banner-snapshot',
-      `Viewing snapshot: <strong>${label}</strong>${PLAN.label && PLAN.label !== label ? ' — '+PLAN.label : ''}.
-       <button class="banner-btn" onclick="document.getElementById('snapshot-select').value='';loadSnapshot('')">Back to current</button>`
-    );
+    if (isLatest) {
+      hideBanner('banner-snapshot');
+    } else {
+      showBanner('banner-snapshot',
+        `Viewing snapshot: <strong>${label}</strong>${PLAN.label && PLAN.label !== label ? ' — '+PLAN.label : ''}.
+         <button class="banner-btn" onclick="document.getElementById('snapshot-select').value='${_snapshots[0]}';loadSnapshot('${_snapshots[0]}')">Back to current</button>`
+      );
+    }
   } catch(e) { console.warn('Snapshot load failed:', e); }
 }
 
 /* ── Export ── */
+/* ── Export modal ── */
+let _exportMode = 'correction'; // 'correction' | 'snapshot'
+
 function openExportModal() {
-  document.getElementById('export-label').value=PLAN.label||'';
-  document.getElementById('cl-count').textContent=_changelog.length;
-  const preview=document.getElementById('cl-preview');
-  if(_changelog.length===0){
-    preview.innerHTML='<div style="color:var(--text-dim);font-style:italic">No changes this session.</div>';
+  // Default to correction if editing existing, snapshot if no existing snapshots
+  _exportMode = _snapshots.length ? 'correction' : 'snapshot';
+  _applyExportMode();
+
+  const sessionEntries = _changelog;
+  const storedEntries = PLAN.changelog || [];
+  const totalCount = sessionEntries.length + storedEntries.length;
+
+  document.getElementById('cl-count').textContent = totalCount;
+  const preview = document.getElementById('cl-preview');
+
+  if (totalCount === 0) {
+    preview.innerHTML = '<div style="color:var(--text-dim);font-style:italic">No changes recorded.</div>';
   } else {
-    preview.innerHTML=[..._changelog].reverse().map(e=>`<div class="cl-entry">
-      <span class="cl-ts">${new Date(e.timestamp).toLocaleTimeString()}</span>
+    const renderEntry = e => `<div class="cl-entry">
+      <span class="cl-ts">${new Date(e.timestamp).toLocaleString(undefined,{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'})}</span>
       <span style="margin:0 6px;color:var(--accent)">${e.type}</span>
       <span>${e.goalId||''} ${e.note||e.taskText||''} ${e.from?`${e.from}→${e.to}`:''}</span>
-    </div>`).join('');
+    </div>`;
+
+    let html = '';
+    if (sessionEntries.length) {
+      html += `<div class="cl-section-label">This session (${sessionEntries.length})</div>`;
+      html += [...sessionEntries].reverse().map(renderEntry).join('');
+    }
+    if (storedEntries.length) {
+      html += `<div class="cl-section-label" style="margin-top:8px">In file (${storedEntries.length})</div>`;
+      html += [...storedEntries].reverse().slice(0, 20).map(renderEntry).join('');
+      if (storedEntries.length > 20) {
+        html += `<div style="color:var(--text-dim);font-size:11px;padding:4px 0">… ${storedEntries.length - 20} older entries in file</div>`;
+      }
+    }
+    preview.innerHTML = html;
   }
+
+  document.getElementById('export-copy-feedback').style.display = 'none';
+  updateExportFilename();
   openModal('modal-export');
 }
 
-function doExportJSON() {
-  PLAN.label=document.getElementById('export-label').value.trim();
-  PLAN.exported=new Date().toISOString();
-  // Merge session changelog into plan changelog
-  PLAN.changelog=[...(PLAN.changelog||[]),..._changelog];
-  _changelog=[];
-  const now=new Date();
-  const pad=n=>String(n).padStart(2,'0');
-  const dateStr=`${now.getFullYear()}${pad(now.getMonth()+1)}${pad(now.getDate())}`;
-  const blob=new Blob([JSON.stringify(PLAN,null,2)],{type:'application/json'});
-  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`statuses_${dateStr}.json`;a.click();URL.revokeObjectURL(a.href);
-  _unsaved=false;hideBanner('banner-unsaved');
-  clearDraft();
-  closeModal('modal-export');
+function setExportMode(mode) {
+  _exportMode = mode;
+  _applyExportMode();
+}
+
+function _applyExportMode() {
+  const isSnap = _exportMode === 'snapshot';
+  document.getElementById('export-mode-correction').classList.toggle('active', !isSnap);
+  document.getElementById('export-mode-snapshot').classList.toggle('active', isSnap);
+  document.getElementById('export-snapshot-fields').style.display = isSnap ? '' : 'none';
+  document.getElementById('export-copy-index').style.display = isSnap ? '' : 'none';
+  document.getElementById('export-mode-desc').textContent = isSnap
+    ? 'Creates a new dated snapshot file and updates index.json. Use for quarterly reviews or milestone saves.'
+    : 'Overwrites the current file in place. Use for typo fixes, wording corrections, or data cleanup.';
+  document.getElementById('export-modal-title').textContent = isSnap ? 'New Snapshot' : 'Save Correction';
+  updateExportFilename();
+}
+
+function _getExportFilename() {
+  if (_exportMode === 'correction') {
+    // Overwrite the latest existing file
+    return _snapshots.length ? _snapshots[0] : _buildDateFilename();
+  }
+  return _buildDateFilename();
+}
+
+function _buildDateFilename() {
+  const now = new Date();
+  const pad = n => String(n).padStart(2, '0');
+  return `statuses_${now.getFullYear()}${pad(now.getMonth()+1)}${pad(now.getDate())}.json`;
+}
+
+function updateExportFilename() {
+  const el = document.getElementById('export-filename');
+  if (el) el.textContent = _getExportFilename();
+}
+
+function _buildExportedPlan(includeLabel) {
+  const plan = JSON.parse(JSON.stringify(PLAN)); // deep clone
+  if (includeLabel) {
+    plan.label = (document.getElementById('export-label').value || '').trim() || plan.label;
+  }
+  plan.exported = new Date().toISOString();
+  plan.changelog = [...(plan.changelog || []), ..._changelog];
+  return plan;
+}
+
+function _buildIndexJSON(newFilename, label) {
+  // Build an updated index.json with the new file prepended
+  const files = _snapshots.slice(); // copy
+  // If correction (same filename), don't add a duplicate
+  if (!files.includes(newFilename)) files.unshift(newFilename);
+  const labels = Object.assign({}, _snapshotLabels);
+  if (label) labels[newFilename] = label;
+  return { latest: files[0], files, labels };
+}
+
+async function doCopyJSON() {
+  const isSnap = _exportMode === 'snapshot';
+  const label = isSnap ? (document.getElementById('export-label').value || '').trim() : '';
+  const plan = _buildExportedPlan(isSnap);
+  const json = JSON.stringify(plan, null, 2);
+  try {
+    await navigator.clipboard.writeText(json);
+    _showCopyFeedback(`✓ JSON copied (${_getExportFilename()}) — paste into /data/`);
+    // Commit the session changelog now that it's been copied
+    PLAN = plan;
+    _changelog = [];
+    _unsaved = false;
+    hideBanner('banner-unsaved');
+    clearDraft();
+  } catch(e) {
+    _showCopyFeedback('⚠ Clipboard failed — try again or use a modern browser.', true);
+  }
+}
+
+async function doCopyIndex() {
+  const isSnap = _exportMode === 'snapshot';
+  if (!isSnap) return;
+  const label = (document.getElementById('export-label').value || '').trim();
+  const filename = _getExportFilename();
+  const idx = _buildIndexJSON(filename, label);
+  try {
+    await navigator.clipboard.writeText(JSON.stringify(idx, null, 2));
+    _showCopyFeedback('✓ index.json copied — paste into /data/index.json');
+  } catch(e) {
+    _showCopyFeedback('⚠ Clipboard failed — try again.', true);
+  }
+}
+
+function _showCopyFeedback(msg, isError = false) {
+  const el = document.getElementById('export-copy-feedback');
+  el.textContent = msg;
+  el.style.color = isError ? 'var(--danger)' : 'var(--accent)';
+  el.style.display = 'block';
 }
 
 async function downloadExcel() {
   try {
-    const res=await fetch('data/index.json');
+    const res=await fetch('data/index.json', { cache: 'no-store' });
     if(res.ok){
       const idx=await res.json();
-      const date=idx.latest?idx.latest.replace('statuses_','').replace('.json',''):new Date().toISOString().slice(0,10).replace(/-/g,'');
-      const a=document.createElement('a');a.href=`exports/NPFR_Strategic_Plan_${date}.xlsx`;a.download=`NPFR_Strategic_Plan_${date}.xlsx`;a.click();
+      const latest=idx.latest||'';
+      const rawLabel=idx.labels&&idx.labels[latest]?idx.labels[latest]:latest.replace('statuses_','').replace('.json','');
+      const safeLabel=rawLabel.replace(/[\/\s]/g,'-');
+      const a=document.createElement('a');a.href=`exports/NPFR_Strategic_Plan_${safeLabel}.xlsx`;a.download=`NPFR_Strategic_Plan_${safeLabel}.xlsx`;a.click();
       return;
     }
   } catch(e){}

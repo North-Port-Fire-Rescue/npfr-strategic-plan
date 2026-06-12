@@ -426,6 +426,15 @@ body.theme-npfr .modal-btn-pri{color:#1C0505}
 .modal-btn-sec:hover{color:var(--text);border-color:var(--text-dim)}
 .modal-btn-danger{background:transparent;color:#e24b4a;border:1px solid #5a2020}
 .modal-btn-danger:hover{background:rgba(226,75,74,0.12)}
+.modal-btn-copy{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+.modal-btn-copy:hover{background:rgba(var(--accent-rgb,99,179,237),.12)}
+
+/* ══ Export mode toggle ══ */
+.export-mode-toggle{display:flex;border:1px solid var(--border);border-radius:7px;overflow:hidden;margin-bottom:8px}
+.export-mode-btn{flex:1;padding:7px 0;font-size:13px;font-weight:600;background:transparent;border:none;cursor:pointer;color:var(--text-muted);transition:all .15s}
+.export-mode-btn.active{background:var(--accent);color:#fff}
+.export-mode-desc{font-size:12px;color:var(--text-dim);line-height:1.5}
+.export-filename{font-size:13px;font-family:monospace;color:var(--accent);background:var(--card);border:1px solid var(--border);border-radius:5px;padding:6px 10px}
 
 /* ══ Export modal changelog preview ══ */
 .changelog-preview{

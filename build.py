@@ -371,9 +371,19 @@ def build_changelog_sheet(wb, plan):
 # ── Rebuild index.json ─────────────────────────────────────────────────────
 def rebuild_index():
     files = sorted([f.name for f in DATA.glob("statuses_*.json")], reverse=True)
-    idx = {"files":files,"latest":files[0] if files else None,
-           "generated":datetime.now().isoformat(timespec="seconds")}
-    with open(DATA/"index.json","w") as f: json.dump(idx,f,indent=2)
+    # Preserve existing labels so they survive a rebuild
+    existing_labels = {}
+    idx_path = DATA / "index.json"
+    if idx_path.exists():
+        try:
+            with open(idx_path) as f:
+                existing_labels = json.load(f).get("labels", {})
+        except Exception:
+            pass
+    idx = {"files": files, "latest": files[0] if files else None,
+           "labels": existing_labels,
+           "generated": datetime.now().isoformat(timespec="seconds")}
+    with open(idx_path, "w") as f: json.dump(idx, f, indent=2)
     print(f"  index.json → {len(files)} file(s), latest: {idx['latest']}")
 
 # ── Main ───────────────────────────────────────────────────────────────────
@@ -398,10 +408,24 @@ def main():
         print(f"  {p['id']}  {p['name']}")
     build_dep_sheet(wb, plan, gate_map)
     build_changelog_sheet(wb, plan)
-    date_str = datetime.now().strftime("%Y%m%d")
-    out = EXPORTS / f"NPFR_Strategic_Plan_{date_str}.xlsx"
+    # Use the snapshot label from index.json as the filename (e.g. "2026-Q2"),
+    # falling back to the date portion of the filename, then today's date.
+    latest_file = src.name  # e.g. "statuses_20260301.json"
+    idx_path = DATA / "index.json"
+    file_label = None
+    if idx_path.exists():
+        try:
+            with open(idx_path) as f:
+                file_label = json.load(f).get("labels", {}).get(latest_file)
+        except Exception:
+            pass
+    if not file_label:
+        file_label = latest_file.replace("statuses_", "").replace(".json", "")
+    # Sanitize for use in a filename (replace slashes/spaces with hyphens)
+    safe_label = file_label.replace("/", "-").replace(" ", "-")
+    out = EXPORTS / f"NPFR_Strategic_Plan_{safe_label}.xlsx"
     wb.save(out)
-    print(f"\n  Saved: exports/NPFR_Strategic_Plan_{date_str}.xlsx")
+    print(f"\n  Saved: exports/NPFR_Strategic_Plan_{safe_label}.xlsx")
     print("\n[4] Completion summary")
     total, done = task_counts(plan)
     for p in plan["pillars"]:

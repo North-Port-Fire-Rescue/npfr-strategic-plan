@@ -1,6 +1,6 @@
 {
-  "exported": "2026-06-11T18:33:52.362Z",
-  "label": "Restructured \u2014 4 pillars, 12 domains",
+  "exported": "2026-06-12T21:43:09.231Z",
+  "label": "Restructured — 4 pillars, 12 domains",
   "mission": "Provide exceptional public safety services in a safe, compassionate, and professional manner.",
   "vision": "To be confirmed by command staff",
   "values": [
@@ -27,11 +27,11 @@
           "tasks": [
             {
               "text": "Identify major incident threat types across all hazard types.",
-              "status": "not-started"
+              "status": "complete"
             },
             {
               "text": "Develop a response plan for each identified threat.",
-              "status": "not-started"
+              "status": "complete"
             },
             {
               "text": "Plan and conduct a large-scale drill including active shooter scenario.",
@@ -343,7 +343,7 @@
           "tasks": [
             {
               "text": "Identify personnel leaving within the next five years.",
-              "status": "not-started"
+              "status": "complete"
             },
             {
               "text": "Develop written succession plan.",
@@ -370,7 +370,7 @@
           "tasks": [
             {
               "text": "Update and revise job descriptions.",
-              "status": "not-started"
+              "status": "complete"
             },
             {
               "text": "Develop education program.",
@@ -811,7 +811,7 @@
     {
       "id": "P3",
       "name": "Community Risk Reduction and Public Education",
-      "steward": "TBD",
+      "steward": "Nick Satterly",
       "purpose": "Reduce community risk and enhance public safety through data-driven prevention programs, targeted education, and meaningful community engagement.",
       "goals": [
         {
@@ -1115,7 +1115,7 @@
       "domains": [
         {
           "name": "Data and Risk Assessment",
-          "purpose": "Ground all CRR activity in current, multi-source community risk data \u2014 establishing a baseline, tracking program performance, and producing regular analytical reports that drive resource and program decisions."
+          "purpose": "Ground all CRR activity in current, multi-source community risk data — establishing a baseline, tracking program performance, and producing regular analytical reports that drive resource and program decisions."
         },
         {
           "name": "Program Development and Delivery",
@@ -1130,7 +1130,7 @@
     {
       "id": "P4",
       "name": "Professional Standards and Service Excellence",
-      "steward": "TBD",
+      "steward": "Rick Wilbert",
       "purpose": "Uphold the highest standards of accreditation, clinical quality, and service innovation to ensure NPFR remains a model organization committed to continuous improvement.",
       "goals": [
         {
@@ -1500,6 +1500,54 @@
           "purpose": "Advance NPFR's clinical capabilities by developing and launching Mobile Integrated Healthcare and specialty EMS programs grounded in feasibility analysis, community need, and sustainable operational frameworks."
         }
       ]
+    }
+  ],
+  "changelog": [
+    {
+      "timestamp": "2026-06-12T21:33:47.803Z",
+      "type": "status",
+      "goalId": "P1.26.G1",
+      "taskIdx": 0,
+      "taskText": "Identify major incident threat types across all hazard types.",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2026-06-12T21:33:48.410Z",
+      "type": "status",
+      "goalId": "P1.26.G1",
+      "taskIdx": 1,
+      "taskText": "Develop a response plan for each identified threat.",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2026-06-12T21:33:56.329Z",
+      "type": "status",
+      "goalId": "P2.26.G2",
+      "taskIdx": 0,
+      "taskText": "Update and revise job descriptions.",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2026-06-12T21:33:57.627Z",
+      "type": "status",
+      "goalId": "P2.26.G1",
+      "taskIdx": 0,
+      "taskText": "Identify personnel leaving within the next five years.",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2026-06-12T21:42:54.225Z",
+      "type": "edit_pillar",
+      "note": "P3 → P3: Community Risk Reduction and Public Education"
+    },
+    {
+      "timestamp": "2026-06-12T21:43:01.168Z",
+      "type": "edit_pillar",
+      "note": "P4 → P4: Professional Standards and Service Excellence"
     }
   ]
 }
