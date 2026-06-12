@@ -1,0 +1,1404 @@
+{
+  "exported": "2026-06-11T18:33:52.362Z",
+  "label": "Restructured \u2014 4 pillars, 12 domains",
+  "mission": "Provide exceptional public safety services in a safe, compassionate, and professional manner.",
+  "vision": "To be confirmed by command staff",
+  "values": [
+    "Trust",
+    "Family",
+    "Dedication",
+    "Compassion"
+  ],
+  "pillars": [
+    {
+      "id": "P1",
+      "name": "Operational Readiness and Deployment",
+      "steward": "Scott Lane",
+      "purpose": "Maintain and advance NPFR's capacity to respond safely and effectively to all emergency incidents within the community, with a well-equipped, well-positioned, and well-prepared operational force.",
+      "goals": [
+        {
+          "id": "P1.26.G1",
+          "year": "FY26",
+          "domain": "Incident Preparedness",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Develop and validate a comprehensive major incident response plan for each identified threat type within NPFR's response model, with at least one plan tested through a full-scale or functional drill by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Identify major incident threat types across all hazard types.",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop a response plan for each identified threat.",
+              "status": "not-started"
+            },
+            {
+              "text": "Plan and conduct a large-scale drill including active shooter scenario.",
+              "status": "not-started"
+            },
+            {
+              "text": "Re-evaluate plans following drill and identify additional needs.",
+              "status": "not-started"
+            },
+            {
+              "text": "Document plans and establish a regular review cycle.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P1.27.G1",
+          "year": "FY27",
+          "domain": "Incident Preparedness",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Increase the number of Hazardous Materials Technician-certified personnel by a minimum of three, establish a target hazard pre-plan library for all identified city sites, and conduct at least one HOT training or tabletop exercise by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Increase the number of personnel certified to the Hazardous Materials Technician level to serve as future Fire FTOs.",
+              "status": "not-started"
+            },
+            {
+              "text": "Create a target hazard list for the city and develop incident response pre-plans for each site.",
+              "status": "not-started"
+            },
+            {
+              "text": "Conduct Hazmat targeted training.",
+              "status": "not-started"
+            },
+            {
+              "text": "Evaluate the need for additional equipment to effect safe response and mitigation.",
+              "status": "not-started"
+            },
+            {
+              "text": "Complete any needed policy updates.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P1.27.G2",
+          "year": "FY27",
+          "domain": "Equipment, Logistics, and Readiness",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Conduct a comprehensive PPE inventory assessment, establish minimum reserve inventory standards, develop a long-term lifecycle replacement model with annual funding projections, and implement a sustainable PPE readiness program by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Conduct a comprehensive assessment of the department's PPE inventory.",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop minimum reserve PPE inventory standards.",
+              "status": "not-started"
+            },
+            {
+              "text": "Create a long-term PPE lifecycle replacement model.",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop procedures.",
+              "status": "not-started"
+            },
+            {
+              "text": "Implement a sustainable PPE readiness program.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P1.27.G3",
+          "year": "FY27",
+          "domain": "Equipment, Logistics, and Readiness",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Evaluate the need for logistics resource hubs with locker technology at identified station locations, with installed inventory management systems, documented SOGs, trained personnel, and an initial effectiveness evaluation completed by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Conduct a needs assessment and geographic analysis.",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop a Logistics Resource Hub program.",
+              "status": "not-started"
+            },
+            {
+              "text": "Purchase and install inventory management system.",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop and implement standard operating guidelines and training for personnel.",
+              "status": "not-started"
+            },
+            {
+              "text": "Evaluate the effectiveness of the Logistics Resource Hub program.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P1.28.G1",
+          "year": "FY28",
+          "domain": "Equipment, Logistics, and Readiness",
+          "predecessor": "P1.27.G3",
+          "owner": "TBD",
+          "statement": "Develop and adopt a Logistics Division continuity plan that documents all critical functions, assigns position-specific continuity guides and SOPs, establishes a cross-training program covering all critical roles, and completes a program appraisal by Q4.",
+          "metric": "Continuity plan adopted with guides for all critical functions. Depends on completion of both PPE program (P1.27.G2) and logistics hubs program (P1.27.G3).",
+          "tasks": [
+            {
+              "text": "Identify critical logistics functions, systems, responsibilities, and operational processes.",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop position-specific continuity guides and standard operating procedures for critical logistics functions.",
+              "status": "not-started"
+            },
+            {
+              "text": "Establish a cross-training program.",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop a Logistics Division continuity plan.",
+              "status": "not-started"
+            },
+            {
+              "text": "Complete program appraisal.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P1.29.G1",
+          "year": "FY29",
+          "domain": "Equipment, Logistics, and Readiness",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Complete a fleet readiness and maintenance assessment that analyzes program effectiveness, calculates annual maintenance costs by apparatus, measures downtime against manufacturer PM schedules, identifies highest-burden units, and establishes KPIs for apparatus availability by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Analyze maintenance program effectiveness and collect data to determine apparatus downtime.",
+              "status": "not-started"
+            },
+            {
+              "text": "Compare PM schedule to that recommended by manufacturers.",
+              "status": "not-started"
+            },
+            {
+              "text": "Calculate annual maintenance cost for all apparatus and vehicles.",
+              "status": "not-started"
+            },
+            {
+              "text": "Identify which apparatus have the highest maintenance burden.",
+              "status": "not-started"
+            },
+            {
+              "text": "Create key performance indicators for apparatus availability rates.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P1.28.G2",
+          "year": "FY28",
+          "domain": "Interagency Collaboration",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Complete a structured assessment of all mutual aid and automatic aid agreements, radio interoperability, and CAD integration with primary mutual aid partners, and deliver a prioritized gap report to command staff by Q2.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Compare mutual and automatic aid responses.",
+              "status": "not-started"
+            },
+            {
+              "text": "Review department ESZs for coverage and response alignment.",
+              "status": "not-started"
+            },
+            {
+              "text": "Assess radio and CAD interoperability with primary mutual aid partners.",
+              "status": "not-started"
+            },
+            {
+              "text": "Document findings and prioritize gaps by operational impact.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P1.28.G3",
+          "year": "FY28",
+          "domain": "Interagency Collaboration",
+          "predecessor": "P1.28.G2",
+          "owner": "TBD",
+          "statement": "Develop updated mutual aid agreements, joint training protocols, and communications interoperability solutions addressing all gaps identified in the FY28 assessment, with all draft agreements delivered to partner agencies for review by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Collaborate with mutual aid partners on updated response procedures.",
+              "status": "not-started"
+            },
+            {
+              "text": "Formulate joint interagency training plans.",
+              "status": "not-started"
+            },
+            {
+              "text": "Identify technology or protocol solutions for interoperability gaps.",
+              "status": "not-started"
+            },
+            {
+              "text": "Draft updated mutual aid agreements where needed.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P1.29.G2",
+          "year": "FY29",
+          "domain": "Interagency Collaboration",
+          "predecessor": "P1.28.G3",
+          "owner": "TBD",
+          "statement": "Execute signed updates to all mutual aid agreements, deliver a minimum of one joint interagency training exercise, and verify communications interoperability with all primary mutual aid partners by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Hold regular interagency coordination meetings.",
+              "status": "not-started"
+            },
+            {
+              "text": "Formalize and execute updated mutual aid agreements.",
+              "status": "not-started"
+            },
+            {
+              "text": "Deliver at least one joint interagency training exercise.",
+              "status": "not-started"
+            },
+            {
+              "text": "Document outcomes and establish an annual review cycle.",
+              "status": "not-started"
+            }
+          ]
+        }
+      ],
+      "domains": [
+        {
+          "name": "Incident Preparedness",
+          "purpose": "Ensure NPFR maintains validated, tested response plans for all identified major incident threat types, with trained personnel and exercised protocols that support effective activation under any hazard scenario."
+        },
+        {
+          "name": "Equipment, Logistics, and Readiness",
+          "purpose": "Sustain a resilient logistics program that keeps apparatus, PPE, and operational supplies mission-ready through standardized inventory management, lifecycle planning, distributed resource hubs, and continuity safeguards."
+        },
+        {
+          "name": "Interagency Collaboration",
+          "purpose": "Strengthen NPFR's mutual aid posture by formalizing agreements, closing communications interoperability gaps, and building joint training relationships with primary partner agencies."
+        }
+      ]
+    },
+    {
+      "id": "P2",
+      "name": "Workforce Development and Succession",
+      "steward": "Nick Herlihy",
+      "purpose": "Develop, retain, and advance a skilled, credentialed, and resilient workforce through purposeful succession planning, training excellence, and a strong organizational culture.",
+      "goals": [
+        {
+          "id": "P2.26.G1",
+          "year": "FY26",
+          "domain": "Succession and Development",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Develop and adopt a written department-wide succession plan that identifies all personnel eligible to separate within five years, maps critical position vacancies, and assigns developmental actions to identified successors by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Identify personnel leaving within the next five years.",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop written succession plan.",
+              "status": "not-started"
+            },
+            {
+              "text": "Review NFPA standards.",
+              "status": "not-started"
+            },
+            {
+              "text": "Survey local and regional departments.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P2.26.G2",
+          "year": "FY26",
+          "domain": "Succession and Development",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Complete a full audit of the Officer Development Program, revise curriculum and job descriptions to reflect current competency expectations and CFAI credentialing categories, and relaunch with a documented delivery schedule by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Update and revise job descriptions.",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop education program.",
+              "status": "not-started"
+            },
+            {
+              "text": "Collect and review feedback forms.",
+              "status": "not-started"
+            },
+            {
+              "text": "Relaunch revised ODP with defined enrollment criteria and delivery schedule.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P2.26.G4",
+          "year": "FY26",
+          "domain": "Succession and Development",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Implement a targeted recruitment program that includes formal partnerships with a minimum of four local technical schools, a functioning online recruitment portal, standardized interview questions, a documented scoring system, and an active recruitment committee by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Evaluate last fiscal year's applicant pool.",
+              "status": "complete"
+            },
+            {
+              "text": "Partner with four local technical schools.",
+              "status": "complete"
+            },
+            {
+              "text": "Develop an online recruitment portal with QR code access.",
+              "status": "complete"
+            },
+            {
+              "text": "Develop standardized interview questions and a documented scoring system.",
+              "status": "complete"
+            },
+            {
+              "text": "Establish a recruitment committee.",
+              "status": "complete"
+            }
+          ]
+        },
+        {
+          "id": "P2.27.G1",
+          "year": "FY27",
+          "domain": "Succession and Development",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Complete a comprehensive evaluation of EMS organizational span of control, staffing gaps, and succession needs including QA/QI, accreditation, and specialty program requirements, and present findings with specific recommendations to command staff by Q3.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Conduct comprehensive review of EMS span of control and organizational responsibilities by Q2.",
+              "status": "not-started"
+            },
+            {
+              "text": "Evaluate staffing needs based on projected call volume growth and service demands by Q2.",
+              "status": "not-started"
+            },
+            {
+              "text": "Identify future staffing requirements for QA/QI, accreditation, MIH, and specialty programs by Q3.",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop succession planning recommendations for EMS leadership positions by Q3.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P2.27.G2",
+          "year": "FY27",
+          "domain": "Succession and Development",
+          "predecessor": "P2.26.G1",
+          "owner": "TBD",
+          "statement": "Plan Fire Academy",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Determine effectiveness of current programs.",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop action plan for new programs.",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop adjustments to current programs.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P2.28.G1",
+          "year": "FY28",
+          "domain": "Succession and Development",
+          "predecessor": "P2.27.G1",
+          "owner": "TBD",
+          "statement": "Complete a formal evaluation of EMS supervisory roles, field coverage effectiveness, and future deployment models, and present findings with implementation recommendations to command staff by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Define EMS supervisor roles, responsibilities, and performance expectations by Q1.",
+              "status": "not-started"
+            },
+            {
+              "text": "Evaluate field supervision coverage and operational effectiveness by Q2.",
+              "status": "not-started"
+            },
+            {
+              "text": "Assess opportunities for enhanced clinical oversight and workforce development by Q3.",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop recommendations for future EMS supervisory positions and deployment models by Q3.",
+              "status": "not-started"
+            },
+            {
+              "text": "Present EMS supervisor evaluation findings and implementation recommendations by Q4.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P2.29.G1",
+          "year": "FY29",
+          "domain": "Succession and Development",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Achieve and document 90% or greater professional credentialing of all applicable positions aligned to CFAI credentialing categories, with individual completion plans in place for all remaining uncredentialed personnel by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Meet with all staff that have an associated CFAI credential category.",
+              "status": "not-started"
+            },
+            {
+              "text": "Integrate in the department succession plan document.",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop an individual plan for completion for all staff as applicable.",
+              "status": "not-started"
+            },
+            {
+              "text": "Incorporate into the NPFR Officer Development Program.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P2.29.G2",
+          "year": "FY29",
+          "domain": "Succession and Development",
+          "predecessor": "P2.28.G1",
+          "owner": "TBD",
+          "statement": "Develop and present a workforce growth plan that identifies staffing needs through FY32 based on call volume trends and community growth data, includes a phased onboarding model with hiring timeline, employment terms, career progression, and retention strategies, by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Analyze population demographics, call volume trends, and urban vs rural growth projections.",
+              "status": "not-started"
+            },
+            {
+              "text": "Identify emerging staffing needs across all divisions through FY32.",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop a phased onboarding plan including hiring, employment terms, career progression, and retention strategies.",
+              "status": "not-started"
+            },
+            {
+              "text": "Present workforce growth plan to command staff with supporting data.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P2.29.G3",
+          "year": "FY29",
+          "domain": "Succession and Development",
+          "predecessor": "P2.28.G1",
+          "owner": "TBD",
+          "statement": "Develop a financial plan addressing projected staffing growth needs through FY32, incorporating position cost modeling, identified funding sources, and a phased hiring timeline aligned to call volume thresholds, and present for command staff adoption by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Consider grants and identify available funding sources.",
+              "status": "not-started"
+            },
+            {
+              "text": "Calculate base salaries for projected future positions.",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop phased budget request aligned to hiring timeline.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P2.26.G3",
+          "year": "FY26",
+          "domain": "Training Operations",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Establish documented roles, responsibilities, and reporting structure for all training division positions, and implement a continuous evaluation framework for workload, span of control, and operational needs by Q3.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Assess current staffing and workload distribution.",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop clear job descriptions and roles for specific training functions.",
+              "status": "not-started"
+            },
+            {
+              "text": "Establish reporting structure for division oversight.",
+              "status": "not-started"
+            },
+            {
+              "text": "Implement a continuous evaluation process for workload and span of control.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P2.28.G2",
+          "year": "FY28",
+          "domain": "Training Operations",
+          "predecessor": "P2.27.G3",
+          "owner": "TBD",
+          "statement": "Execute formal partnership agreements with a minimum of four regional educational institutions, establish documented shared-resource access protocols for training infrastructure, and develop a joint recruitment pipeline pathway with at least two institutions by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Strengthen relationships with decision makers at regional educational institutions.",
+              "status": "not-started"
+            },
+            {
+              "text": "Establish or maintain articulation agreements with a minimum of four local institutions.",
+              "status": "not-started"
+            },
+            {
+              "text": "Inventory potential shared training resources including towers, props, and simulation equipment.",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop protocols for shared resource access across partner institutions.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P2.28.G3",
+          "year": "FY28",
+          "domain": "Training Operations",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Establish Fire Academy",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Identify specialized areas of training aligned to operational needs.",
+              "status": "not-started"
+            },
+            {
+              "text": "Conduct low-acuity, high-risk training as identified.",
+              "status": "not-started"
+            },
+            {
+              "text": "Deliver live fire training within the fiscal year.",
+              "status": "not-started"
+            },
+            {
+              "text": "Assess initial training effectiveness and document findings for program refinement.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P2.29.G4",
+          "year": "FY29",
+          "domain": "Training Operations",
+          "predecessor": "P2.28.G3",
+          "owner": "TBD",
+          "statement": "Achieve recognized training center status, host a minimum of two training sessions, increase collaborative training events with external agencies by 50% over the FY28 baseline, and increase external trainee participation in NPFR-led courses by 30% by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Ensure accreditation requirements are met and submit necessary applications.",
+              "status": "not-started"
+            },
+            {
+              "text": "Host a minimum of two accredited training sessions within the fiscal year.",
+              "status": "not-started"
+            },
+            {
+              "text": "Establish joint training agreements targeting a 50% increase in collaborative events.",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop promotional materials and an online portal to increase external trainee participation by 30%.",
+              "status": "not-started"
+            },
+            {
+              "text": "Host one regional training symposium.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P2.27.G4",
+          "year": "FY27",
+          "domain": "Culture and Internal Communication",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Design and launch a structured internal communication program that establishes regular information flow between command staff and line personnel through scheduled station visits covering all stations at least twice annually, a quarterly department periodical, and a digital communication platform for shift-based staff, with all three components operational by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Identify avenues for contact and exposure from officer to line personnel.",
+              "status": "not-started"
+            },
+            {
+              "text": "Explore creation of rotating schedule for all administrative officers to take turns visiting each station.",
+              "status": "not-started"
+            },
+            {
+              "text": "Design and launch a department periodical published at minimum quarterly.",
+              "status": "not-started"
+            },
+            {
+              "text": "Evaluate and implement a digital communication platform suitable for shift-based staff.",
+              "status": "not-started"
+            },
+            {
+              "text": "Assess program effectiveness at six and twelve months using personnel feedback.",
+              "status": "not-started"
+            }
+          ]
+        }
+      ],
+      "domains": [
+        {
+          "name": "Succession and Development",
+          "purpose": "Build a pipeline of credentialed, career-ready personnel by identifying succession gaps, developing targeted professional programs, and executing workforce growth plans that align staffing to projected community demand."
+        },
+        {
+          "name": "Training Operations",
+          "purpose": "Establish a structured, regionally recognized training division with accredited programs, educational partnerships, and delivery capacity that supports both internal development and broader community training goals."
+        },
+        {
+          "name": "Culture and Internal Communication",
+          "purpose": "Foster a connected, informed organizational culture through consistent leadership visibility, structured communication channels, and platforms that keep all shift-based personnel engaged with department direction."
+        }
+      ]
+    },
+    {
+      "id": "P3",
+      "name": "Community Risk Reduction and Public Education",
+      "steward": "TBD",
+      "purpose": "Reduce community risk and enhance public safety through data-driven prevention programs, targeted education, and meaningful community engagement.",
+      "goals": [
+        {
+          "id": "P3.26.G1",
+          "year": "FY26",
+          "domain": "Data and Risk Assessment",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Gather, organize, and evaluate community risk data from five sources including ImageTrend, police reporting, GIS, Mobile-Eyes, and regional data, and deliver a ranked baseline risk report identifying highest-priority program areas to the CRR team by Q2.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Access and compile data from ImageTrend, police reporting, GIS, Mobile-Eyes, and regional sources.",
+              "status": "not-started"
+            },
+            {
+              "text": "Organize data and rank by importance, financial impact, and organizational capacity.",
+              "status": "not-started"
+            },
+            {
+              "text": "Evaluate data to identify highest-priority risk areas for program development.",
+              "status": "not-started"
+            },
+            {
+              "text": "Document baseline findings and present to CRR team.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P3.28.G1",
+          "year": "FY28",
+          "domain": "Data and Risk Assessment",
+          "predecessor": "P3.27.G2",
+          "owner": "TBD",
+          "statement": "Gather updated CRR and EMS program data from all relevant sources, analyze incident trends to identify high-risk populations and areas, and deliver a written report documenting program strengths, weaknesses, and data-driven recommendations for program improvement by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Access data from ImageTrend, CARES database, GIS, regional sources, and external surveys.",
+              "status": "not-started"
+            },
+            {
+              "text": "Analyze EMS incident data to identify high-risk areas and vulnerable populations.",
+              "status": "not-started"
+            },
+            {
+              "text": "Compare previous data to current to identify program performance markers.",
+              "status": "not-started"
+            },
+            {
+              "text": "Research and document program strengths and weaknesses for reporting.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P3.26.G2",
+          "year": "FY26",
+          "domain": "Program Development and Delivery",
+          "predecessor": "P3.26.G1",
+          "owner": "TBD",
+          "statement": "Design and launch two new community risk reduction programs targeting the highest-priority risk categories identified in the FY26 baseline report, including a formalized Elementary School CRR Education program and a Senior Public Education program, with both programs operational and baseline data collection underway by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Establish programs based on greatest identified need from data evaluation.",
+              "status": "not-started"
+            },
+            {
+              "text": "Formalize Elementary School CRR Education program.",
+              "status": "not-started"
+            },
+            {
+              "text": "Formalize Senior Public Education program.",
+              "status": "not-started"
+            },
+            {
+              "text": "Formalize SOGs for Fire Marshal program delivery.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P3.27.G1",
+          "year": "FY27",
+          "domain": "Program Development and Delivery",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Analyze EMS incident data to identify priority community health risks, develop and launch targeted prevention initiatives addressing CPR, falls, stroke awareness, drowning prevention, and severe weather preparedness, and establish performance measures for all EMS-related CRR activities by Q3.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Analyze EMS incident data to identify priority community health risks by Q1.",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop targeted prevention initiatives addressing CPR, falls, stroke awareness, drowning prevention, and severe weather preparedness by Q2.",
+              "status": "not-started"
+            },
+            {
+              "text": "Strengthen partnerships with hospitals and community organizations by Q2.",
+              "status": "not-started"
+            },
+            {
+              "text": "Establish performance measures to evaluate EMS-related CRR activities by Q3.",
+              "status": "not-started"
+            },
+            {
+              "text": "Complete annual review to ensure outreach efforts align with identified community risks by Q4.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P3.27.G2",
+          "year": "FY27",
+          "domain": "Program Development and Delivery",
+          "predecessor": "P3.26.G1",
+          "owner": "TBD",
+          "statement": "Develop a minimum of three new CRR program policies with supporting content by Q1, and complete phased rollout of a minimum of four CRR programs with Programs 1 and 2 operational by Q3 and Programs 3 and 4 operational by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Build out three new CRR program policies and supporting content by Q1.",
+              "status": "not-started"
+            },
+            {
+              "text": "Identify staffing requirements and incorporate scheduling for program delivery.",
+              "status": "not-started"
+            },
+            {
+              "text": "Implement Programs 1 and 2 by Q3.",
+              "status": "not-started"
+            },
+            {
+              "text": "Implement Programs 3 and 4 by Q4.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P3.27.G3",
+          "year": "FY27",
+          "domain": "Program Development and Delivery",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Complete a CRR staffing capacity analysis relative to identified program delivery requirements, present a staffing needs recommendation to command staff by Q3, and establish interim capacity solutions including cross-training and volunteer engagement by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Review CRR program workload against identified community risk priorities.",
+              "status": "not-started"
+            },
+            {
+              "text": "Evaluate current staffing capacity against program delivery requirements.",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop a staffing needs analysis identifying positions required for full program implementation.",
+              "status": "not-started"
+            },
+            {
+              "text": "Submit staffing request through appropriate budget and HR channels if confirmed.",
+              "status": "not-started"
+            },
+            {
+              "text": "Establish interim capacity solutions including cross-training and volunteer engagement.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P3.29.G1",
+          "year": "FY29",
+          "domain": "Program Development and Delivery",
+          "predecessor": "P3.28.G1",
+          "owner": "TBD",
+          "statement": "Expand the three highest-performing CRR programs identified through FY28 data analysis by increasing reach, delivery frequency, or target population coverage, with documented expansion outcomes reported by Q2.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Identify the three programs with strongest performance data.",
+              "status": "not-started"
+            },
+            {
+              "text": "Expand upon proven strengths in reach, impact, and delivery.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P3.29.G2",
+          "year": "FY29",
+          "domain": "Program Development and Delivery",
+          "predecessor": "P3.28.G1",
+          "owner": "TBD",
+          "statement": "Implement targeted improvement plans for the three lowest-performing CRR programs identified through FY28 data analysis, with all improvement actions executed and outcomes assessed by Q3.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Identify three programs with weakest performance data.",
+              "status": "not-started"
+            },
+            {
+              "text": "Discuss and list specific ways to improve each program.",
+              "status": "not-started"
+            },
+            {
+              "text": "Implement improvement plans for all three programs by Q3.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P3.28.G2",
+          "year": "FY28",
+          "domain": "Community Engagement",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Develop a Fire Explorer and Cadet pathway program in partnership with a minimum of two local high schools, conduct annual station visits and career days, and complete a formal program appraisal of the established Cadet Program by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Develop a Fire Explorer/Cadet pathway with local high schools.",
+              "status": "not-started"
+            },
+            {
+              "text": "Create annual station visits and career days for students.",
+              "status": "not-started"
+            },
+            {
+              "text": "Complete program appraisal for established Cadet Program.",
+              "status": "not-started"
+            },
+            {
+              "text": "Explore Summer Camp concept.",
+              "status": "not-started"
+            },
+            {
+              "text": "Analyze for potential financial impacts or needs.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P3.28.G3",
+          "year": "FY28",
+          "domain": "Community Engagement",
+          "predecessor": "P3.27.G3",
+          "owner": "TBD",
+          "statement": "Establish a Community Outreach Team of trained firefighters capable of supporting public education presentations and community events, with a defined team structure, trained membership, and a minimum of two community events delivered by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Train firefighters interested in public education.",
+              "status": "not-started"
+            },
+            {
+              "text": "Create a group of dedicated members who can assist with presentations and events.",
+              "status": "not-started"
+            },
+            {
+              "text": "Analyze impact of line personnel engaged in CRR activities both internally and externally.",
+              "status": "not-started"
+            },
+            {
+              "text": "Evaluate the potential of using retired firefighters as volunteers.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P3.29.G3",
+          "year": "FY29",
+          "domain": "Community Engagement",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Identify and address a minimum of two gaps in community outreach coverage targeting underserved geographic areas or demographic groups not currently reached by active CRR programs, with adapted or new program delivery operational in both identified gap areas by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Identify two underserved geographic areas or demographic groups with no active program coverage.",
+              "status": "not-started"
+            },
+            {
+              "text": "Prioritize outreach gaps based on risk profile and feasibility of delivery.",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop or adapt program delivery models appropriate for each gap population.",
+              "status": "not-started"
+            },
+            {
+              "text": "Launch adapted or new delivery in both identified gap areas by Q4.",
+              "status": "not-started"
+            }
+          ]
+        }
+      ],
+      "domains": [
+        {
+          "name": "Data and Risk Assessment",
+          "purpose": "Ground all CRR activity in current, multi-source community risk data \u2014 establishing a baseline, tracking program performance, and producing regular analytical reports that drive resource and program decisions."
+        },
+        {
+          "name": "Program Development and Delivery",
+          "purpose": "Design, launch, and continuously refine a portfolio of risk reduction programs that address the community's highest-priority hazards with measurable outcomes, sufficient staffing, and responsive improvement cycles."
+        },
+        {
+          "name": "Community Engagement",
+          "purpose": "Expand NPFR's public presence and trust through youth pathways, a trained community outreach team, and deliberate effort to reach underserved populations not yet covered by active programs."
+        }
+      ]
+    },
+    {
+      "id": "P4",
+      "name": "Professional Standards and Service Excellence",
+      "steward": "TBD",
+      "purpose": "Uphold the highest standards of accreditation, clinical quality, and service innovation to ensure NPFR remains a model organization committed to continuous improvement.",
+      "goals": [
+        {
+          "id": "P4.26.G1",
+          "year": "FY26",
+          "domain": "Accreditation and Compliance",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Achieve CFAI accreditation candidate status by formalizing the Accreditation SOG, implementing compliant processes across all applicable categories, gathering documented proof of compliance, and submitting the CFAI candidate application by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Formalize Accreditation SOG.",
+              "status": "not-started"
+            },
+            {
+              "text": "Implement processes and move toward best practice alignment.",
+              "status": "not-started"
+            },
+            {
+              "text": "Gather proof of compliance.",
+              "status": "not-started"
+            },
+            {
+              "text": "Achieve CFAI applicant status.",
+              "status": "not-started"
+            },
+            {
+              "text": "Deliver training on SOG including outlier response time policies.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P4.26.G2",
+          "year": "FY26",
+          "domain": "Accreditation and Compliance",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Complete all ISO 1 annual compliance requirements including needs assessment, departmental collaboration, data documentation, and proof of compliance, and deliver a site visit readiness package by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Review all criteria required to maintain ISO 1.",
+              "status": "complete"
+            },
+            {
+              "text": "Assess organizational needs against ISO requirements.",
+              "status": "complete"
+            },
+            {
+              "text": "Assign needs and collaborate with other departments.",
+              "status": "complete"
+            },
+            {
+              "text": "Document all required data and proof of compliance.",
+              "status": "complete"
+            },
+            {
+              "text": "Prepare for ISO site visit.",
+              "status": "complete"
+            }
+          ]
+        },
+        {
+          "id": "P4.27.G1",
+          "year": "FY27",
+          "domain": "Accreditation and Compliance",
+          "predecessor": "P4.26.G1",
+          "owner": "TBD",
+          "statement": "Advance CFAI accreditation progress by completing all assigned tasks, incorporating 11th edition manual requirements, gathering ongoing proof of compliance across all categories, and reaching the next defined accreditation milestone by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Follow up on all currently assigned accreditation tasks.",
+              "status": "not-started"
+            },
+            {
+              "text": "Implement processes and continue moving toward best practice alignment.",
+              "status": "not-started"
+            },
+            {
+              "text": "Gather ongoing proof of compliance.",
+              "status": "not-started"
+            },
+            {
+              "text": "Incorporate 11th edition manual requirements.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P4.27.G2",
+          "year": "FY27",
+          "domain": "Accreditation and Compliance",
+          "predecessor": "P4.26.G2",
+          "owner": "TBD",
+          "statement": "Complete CAAS re-accreditation by incorporating all 4th edition manual requirements, obtaining annual proofs of compliance across all applicable categories, submitting the re-accreditation application, completing the PedReady renewal, and achieving a successful on-site review by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Review CAAS 4th edition manual requirements and identify all applicable changes from the previous accreditation cycle.",
+              "status": "not-started"
+            },
+            {
+              "text": "Conduct an internal gap assessment comparing current processes and documentation to 4th edition standards.",
+              "status": "not-started"
+            },
+            {
+              "text": "Gather and organize annual proofs of compliance for all required CAAS categories.",
+              "status": "not-started"
+            },
+            {
+              "text": "Prepare and submit CAAS re-accreditation application by Q3.",
+              "status": "not-started"
+            },
+            {
+              "text": "Conduct internal pre-site-visit readiness review, address identified deficiencies, and prepare staff for on-site evaluation.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P4.28.G1",
+          "year": "FY28",
+          "domain": "Accreditation and Compliance",
+          "predecessor": "P4.27.G2",
+          "owner": "TBD",
+          "statement": "Develop a centralized digital records management system including a complete record inventory, file mapping, access controls, migration of all active records not meeting retention, and completed disposition of records that have met retention requirements with the Clerk's office by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Meet with staff to develop record inventory.",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop record library system.",
+              "status": "not-started"
+            },
+            {
+              "text": "Migrate records that have not met retention to centralized record library.",
+              "status": "not-started"
+            },
+            {
+              "text": "Inventory electronic records having met retention, review with staff, and complete necessary disposals with the Clerk's office.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P4.29.G1",
+          "year": "FY29",
+          "domain": "Accreditation and Compliance",
+          "predecessor": "P4.27.G1",
+          "owner": "TBD",
+          "statement": "Establish a Historical and Archive Committee with a formal mandate, recruited membership, and completed initial inventory of historical items by Q2, and implement agency performance standards with a documented compliance tracking and evaluation process by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Develop committee mandate, scope, mission, goals.",
+              "status": "not-started"
+            },
+            {
+              "text": "Establish structure and roles.",
+              "status": "not-started"
+            },
+            {
+              "text": "Identify potential members and recruit.",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop appropriate policies and procedures.",
+              "status": "not-started"
+            },
+            {
+              "text": "Inventory and evaluate existing items.",
+              "status": "not-started"
+            },
+            {
+              "text": "Implement agency performance standards and develop a compliance tracking process.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P4.26.G3",
+          "year": "FY26",
+          "domain": "Clinical Quality",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Achieve the AHA Mission Lifeline Gold Rating by monitoring all required cardiac care metrics quarterly, verifying protocol alignment with current best practices, and submitting a complete Mission Lifeline application with supporting data by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Monitor current and future metrics.",
+              "status": "complete"
+            },
+            {
+              "text": "Ensure protocols continue to meet best practices.",
+              "status": "complete"
+            },
+            {
+              "text": "Quarterly reporting of data.",
+              "status": "complete"
+            },
+            {
+              "text": "Submit measures for Mission Lifeline Gold Rating evaluation.",
+              "status": "complete"
+            }
+          ]
+        },
+        {
+          "id": "P4.27.G3",
+          "year": "FY27",
+          "domain": "Clinical Quality",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Complete an annual analysis of EMS response times, unit utilization, and call demand, map all EMS coverage gaps and high-demand response zones, evaluate rescue staffing models and resource allocation strategies, and present an ALS coverage improvement plan with specific recommendations to executive leadership by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Complete annual analysis of EMS response times, unit utilization, and call demand by Q2.",
+              "status": "not-started"
+            },
+            {
+              "text": "Identify and map EMS coverage gaps and high demand response zones by Q2.",
+              "status": "not-started"
+            },
+            {
+              "text": "Evaluate rescue staffing models and resource allocation strategies by Q3.",
+              "status": "not-started"
+            },
+            {
+              "text": "Present ALS coverage improvement plan to executive leadership by Q4.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P4.28.G2",
+          "year": "FY28",
+          "domain": "Innovation and Advanced Programs",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Develop a Mobile Integrated Healthcare operational framework including target population analysis, partner identification, performance measures, referral pathways, and a financial and staffing feasibility evaluation, and present an MIH implementation recommendation to command staff by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Analyze EMS incident data to identify target populations and service gaps by Q2.",
+              "status": "not-started"
+            },
+            {
+              "text": "Identify potential healthcare and community partners for MIH program collaboration by Q2.",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop MIH operational framework, performance measures, and referral pathways by Q3.",
+              "status": "not-started"
+            },
+            {
+              "text": "Evaluate financial, staffing, and regulatory requirements for program implementation by Q3.",
+              "status": "not-started"
+            },
+            {
+              "text": "Present MIH feasibility study and implementation recommendations by Q4.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P4.28.G3",
+          "year": "FY28",
+          "domain": "Innovation and Advanced Programs",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Evaluate the demand, financial viability, staffing requirements, and operational feasibility of a minimum of two advanced EMS service models, and present a prioritized implementation strategy with go/no-go recommendations to executive leadership by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Evaluate demand and operational feasibility for specialty care transport services by Q2.",
+              "status": "not-started"
+            },
+            {
+              "text": "Analyze reimbursement opportunities and financial impacts of advanced EMS programs by Q3.",
+              "status": "not-started"
+            },
+            {
+              "text": "Identify staffing, training, credentialing, and equipment requirements for advanced EMS services by Q3.",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop operational frameworks and response criteria for potential advanced EMS programs by Q4.",
+              "status": "not-started"
+            },
+            {
+              "text": "Present implementation recommendations and prioritization strategy to executive leadership by Q4.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P4.29.G2",
+          "year": "FY29",
+          "domain": "Innovation and Advanced Programs",
+          "predecessor": "P4.28.G2",
+          "owner": "TBD",
+          "statement": "Implement the Mobile Integrated Healthcare program by establishing formal healthcare partnerships, completing all policy and documentation frameworks, launching a pilot serving identified high-utilizer or at-risk populations by Q4, and initiating quarterly outcomes tracking.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Establish formal partnerships with healthcare providers and community organizations by Q2.",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop MIH policies, procedures, and documentation standards by Q3.",
+              "status": "not-started"
+            },
+            {
+              "text": "Implement MIH pilot program serving identified high-utilizer or at-risk populations by Q4.",
+              "status": "not-started"
+            },
+            {
+              "text": "Track patient outcomes, EMS utilization impacts, and program effectiveness quarterly.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P4.29.G3",
+          "year": "FY29",
+          "domain": "Innovation and Advanced Programs",
+          "predecessor": "P4.28.G3",
+          "owner": "TBD",
+          "statement": "Implement a minimum of one advanced EMS service model based on FY28 feasibility findings with a documented operational framework, trained personnel, and structured outcomes tracking, and deliver a first-year performance report to command staff by Q4.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Establish Specialty Care Transport framework.",
+              "status": "not-started"
+            },
+            {
+              "text": "Train specialty transport personnel.",
+              "status": "not-started"
+            },
+            {
+              "text": "Implement at least one advanced EMS program or pilot initiative by Q4.",
+              "status": "not-started"
+            },
+            {
+              "text": "Measure operational, clinical, and financial outcomes and report findings annually.",
+              "status": "not-started"
+            }
+          ]
+        }
+      ],
+      "domains": [
+        {
+          "name": "Accreditation and Compliance",
+          "purpose": "Achieve and sustain CFAI, ISO 1, and CAAS accreditation standing through disciplined annual compliance cycles, centralized records management, and a culture of continuous process improvement."
+        },
+        {
+          "name": "Clinical Quality",
+          "purpose": "Deliver measurably excellent pre-hospital care by monitoring cardiac and EMS performance metrics, aligning protocols to best practice, and identifying coverage gaps that inform resource and staffing decisions."
+        },
+        {
+          "name": "Innovation and Advanced Programs",
+          "purpose": "Advance NPFR's clinical capabilities by developing and launching Mobile Integrated Healthcare and specialty EMS programs grounded in feasibility analysis, community need, and sustainable operational frameworks."
+        }
+      ]
+    }
+  ]
+}

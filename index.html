@@ -16,16 +16,22 @@
   <div class="agency">North Port Fire Rescue</div>
   <div class="plan-title">Strategic Plan 2026–2029</div>
   <div class="hdr-spacer"></div>
-  <select id="snapshot-select" onchange="loadSnapshot(this.value)" title="View historical snapshot">
-    <option value="">Current</option>
-  </select>
+  <div id="snapshot-nav" class="snapshot-nav">
+    <button class="snap-arrow" id="snap-prev" onclick="stepSnapshot(-1)" title="Previous snapshot">‹</button>
+    <select id="snapshot-select" onchange="loadSnapshot(this.value)" title="View historical snapshot">
+      <option value="">Current</option>
+    </select>
+    <button class="snap-arrow" id="snap-next" onclick="stepSnapshot(1)" title="Next snapshot">›</button>
+  </div>
   <nav class="nav-tabs">
     <button class="nav-tab active" onclick="showView('overview')">Overview</button>
     <button class="nav-tab" onclick="showView('year')">By Year</button>
     <button class="nav-tab" onclick="showView('pillars')">Pillars</button>
-    <button class="nav-tab" onclick="showView('dependencies')">Dependencies</button>
   </nav>
   <button id="edit-toggle" onclick="toggleEditMode()">✎ Edit</button>
+  <div class="hdr-search-wrap">
+    <input id="hdr-search" class="hdr-search" type="search" placeholder="Search goals & tasks…" oninput="applySearch(this.value)" autocomplete="off">
+  </div>
   <div class="theme-switcher">
     <button class="theme-btn active" onclick="setTheme('dark',this)">Dark</button>
     <button class="theme-btn" onclick="setTheme('npfr',this)">RED</button>
@@ -53,11 +59,11 @@
     <div id="sidebar-nav"></div>
     <div class="sidebar-sep"></div>
     <div class="sidebar-label" style="margin-top:4px">Views</div>
-    <div class="pillar-nav" onclick="showView('year')">
-      <span class="pillar-num" style="font-size:14px;margin-top:3px">📅</span>
+    <div class="pillar-nav" onclick="showView('changes')">
+      <span class="pillar-num" style="font-size:14px;margin-top:3px">📋</span>
       <div class="pillar-nav-text">
-        <div class="pillar-nav-name">By Fiscal Year</div>
-        <div class="pillar-nav-meta">All goals across all pillars</div>
+        <div class="pillar-nav-name">Update Log</div>
+        <div class="pillar-nav-meta">Changes &amp; restructure history</div>
       </div>
     </div>
     <div class="pillar-nav" onclick="showView('dependencies')">
@@ -78,6 +84,7 @@
       <div class="dep-view-sub">Goals with a gold left border are gates — their completion is required before downstream goals can begin. Click any node to jump to that goal.</div>
       <div id="dep-content"></div>
     </div>
+    <div id="view-changes" class="view"></div>
   </main>
 </div>
 
@@ -126,6 +133,12 @@
         <label class="form-label">Pillar</label>
         <select class="form-select" id="ge-pillar"></select>
       </div>
+      <div class="form-group">
+        <label class="form-label">Domain</label>
+        <input class="form-input" id="ge-domain" placeholder="e.g. Incident Preparedness">
+      </div>
+    </div>
+    <div class="form-row">
       <div class="form-group">
         <label class="form-label">Predecessor Goal ID</label>
         <select class="form-select" id="ge-predecessor"></select>
@@ -214,7 +227,8 @@ let PLAN = null;
 let _changelog = [];
 let _unsaved = false;
 let _editMode = false;
-let _snapshots = [];
+let _snapshots = [];   // ordered array of filenames (descending, latest first)
+let _snapshotLabels = {}; // filename → display label
 let _viewingSnapshot = null;
 const THEME_KEY  = 'npfr_splan_theme';
 const DRAFT_KEY  = 'npfr_splan_draft';
@@ -284,6 +298,7 @@ async function loadPlan() {
     if (!idxRes.ok) { showOfflineWarning(); return; }
     const idx = await idxRes.json();
     _snapshots = idx.files || [];
+    _snapshotLabels = idx.labels || {};
     if (!idx.latest) { showOfflineWarning(); return; }
     const res = await fetch(`data/${idx.latest}`);
     if (!res.ok) { showOfflineWarning(); return; }
@@ -369,6 +384,113 @@ function renderAll() {
   renderYearView();
   renderPillars();
   renderDependencies();
+  renderChangelog();
+}
+
+/* ── Domain tooltip helpers ── */
+function showDomainTip(id) {
+  const el = document.getElementById(id);
+  if (el) el.classList.add('visible');
+}
+function hideDomainTip(id) {
+  const el = document.getElementById(id);
+  if (el) el.classList.remove('visible');
+}
+
+/* ── Search ── */
+function applySearch(raw) {
+  const q = raw.trim().toLowerCase();
+  const view = document.querySelector('.view.active')?.id || '';
+
+  if (view === 'view-pillars') {
+    // Goal cards: hide non-matching, highlight matches
+    document.querySelectorAll('.goal-card').forEach(card => {
+      const gid = card.id.replace('card-','').replace(/_/g,'.');
+      const g = getGoalById(gid);
+      if (!g) return;
+      const haystack = [g.id, g.statement, g.domain||'', g.owner||'',
+        ...g.tasks.map(t=>t.text)].join(' ').toLowerCase();
+      const match = !q || haystack.includes(q);
+      card.style.display = match ? '' : 'none';
+      // Highlight: strip old marks, re-add
+      card.querySelectorAll('.gc-statement,.task-text').forEach(el => {
+        el.innerHTML = match && q
+          ? escHtml(el.textContent).replace(new RegExp(escRegex(q),'gi'), m=>`<mark class="sh">${m}</mark>`)
+          : escHtml(el.textContent);
+      });
+      if (match && q) card.classList.add('open');
+    });
+    // Hide yr-divider rows that have no visible cards
+    document.querySelectorAll('.yr-divider').forEach(div => {
+      let sib = div.nextElementSibling;
+      let anyVisible = false;
+      while (sib && !sib.classList.contains('yr-divider') && !sib.classList.contains('pillar-header')) {
+        if (sib.classList.contains('goal-card') && sib.style.display !== 'none') anyVisible = true;
+        sib = sib.nextElementSibling;
+      }
+      div.style.display = anyVisible || !q ? '' : 'none';
+    });
+  }
+
+  if (view === 'view-year') {
+    document.querySelectorAll('.year-goal-row').forEach(row => {
+      const gid = row.dataset.goal;
+      const g = getGoalById(gid);
+      if (!g) return;
+      const haystack = [g.id, g.statement, g.domain||'', g.owner||'',
+        ...g.tasks.map(t=>t.text)].join(' ').toLowerCase();
+      const match = !q || haystack.includes(q);
+      row.style.display = match ? '' : 'none';
+      row.querySelectorAll('.ygr-stmt,.task-text').forEach(el => {
+        el.innerHTML = match && q
+          ? escHtml(el.textContent).replace(new RegExp(escRegex(q),'gi'), m=>`<mark class="sh">${m}</mark>`)
+          : escHtml(el.textContent);
+      });
+      if (match && q) row.classList.add('open');
+    });
+    // Hide pillar separators with no visible rows
+    document.querySelectorAll('.yr-pillar-row').forEach(pr => {
+      let sib = pr.nextElementSibling;
+      let anyVisible = false;
+      while (sib && !sib.classList.contains('yr-pillar-row') && !sib.classList.contains('year-band')) {
+        if (sib.classList.contains('year-goal-row') && sib.style.display !== 'none') anyVisible = true;
+        sib = sib.nextElementSibling;
+      }
+      pr.style.display = anyVisible || !q ? '' : 'none';
+    });
+    // Hide year-band headers with no visible rows
+    document.querySelectorAll('.year-band').forEach(yb => {
+      let sib = yb.nextElementSibling;
+      let anyVisible = false;
+      while (sib && !sib.classList.contains('year-band')) {
+        if ((sib.classList.contains('year-goal-row') || sib.classList.contains('yr-pillar-row'))
+            && sib.style.display !== 'none') anyVisible = true;
+        sib = sib.nextElementSibling;
+      }
+      yb.style.display = anyVisible || !q ? '' : 'none';
+    });
+  }
+
+  if (view === 'view-overview') {
+    // Redirect to pillars view and apply search there
+    redirectToView('pillars');
+    applySearch(raw);
+    return;
+  }
+}
+
+function escRegex(s) { return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'); }
+
+// Clear search when switching views
+function showView(name) {
+  // Called by nav tabs — clear search and switch
+  document.getElementById('hdr-search').value = '';
+  _showView(name);
+}
+
+function redirectToView(name) {
+  // Called programmatically (e.g. search redirect) — preserves search input
+  _showView(name);
 }
 
 /* ── Sidebar ── */
@@ -422,6 +544,24 @@ function renderOverview() {
       </div>`;
     }).join('');
 
+    // Domains section
+    const domains = p.domains || [...new Set(p.goals.map(g=>g.domain).filter(Boolean))].map(n=>({name:n,purpose:''}));
+    const domainsHtml = domains.map(dom => {
+      const domGoals = p.goals.filter(g=>g.domain===dom.name);
+      const domTotal = domGoals.reduce((a,g)=>a+g.tasks.length,0);
+      const domDone  = domGoals.reduce((a,g)=>a+g.tasks.filter(t=>t.status==='complete').length,0);
+      const domPct   = domTotal ? Math.round(domDone/domTotal*100) : 0;
+      const safeId   = `tt-${p.id}-${dom.name.replace(/\s+/g,'-').replace(/[^a-zA-Z0-9-]/g,'')}`;
+      return `<div class="oc-domain" onclick="event.stopPropagation();navigatePillar('${p.id}')" onmouseenter="showDomainTip('${safeId}')" onmouseleave="hideDomainTip('${safeId}')">
+        <div class="oc-domain-row">
+          <span class="oc-domain-name" style="color:${accentVar}">${escHtml(dom.name)}</span>
+          <span class="oc-domain-count">${domGoals.length} goal${domGoals.length!==1?'s':''}</span>
+        </div>
+        <div class="oc-domain-bar-track"><div class="oc-domain-bar-fill" style="width:${domPct}%;background:${accentVar}"></div></div>
+        ${dom.purpose ? `<div class="oc-domain-tip" id="${safeId}">${escHtml(dom.purpose)}</div>` : ''}
+      </div>`;
+    }).join('');
+
     return `<div class="overview-card pillar-color-${pIdx}" data-pillar="${p.id}" onclick="navigatePillar('${p.id}')">
       <div class="oc-num">${p.id}</div>
       <div class="oc-name">${p.name}</div>
@@ -431,6 +571,7 @@ function renderOverview() {
         <span class="oc-badge oc-badge-g">${p.goals.length} Goals</span>
         ${gateCount ? `<span class="oc-badge oc-badge-gate">${gateCount} Gate${gateCount>1?'s':''}</span>` : ''}
       </div>
+      <div class="oc-domains">${domainsHtml}</div>
       <div class="oc-fy-progress">${fyProgress}</div>
     </div>`;
   }).join('');
@@ -451,24 +592,21 @@ function renderYearView() {
   let html = '';
 
   years.forEach(yr => {
-    // Count totals for the year header
     const yrGoals = PLAN.pillars.flatMap(p => p.goals.filter(g=>g.year===yr).map(g=>({g,p})));
     const yrDone  = yrGoals.reduce((a,{g})=>a+g.tasks.filter(t=>t.status==='complete').length,0);
     const yrTotal = yrGoals.reduce((a,{g})=>a+g.tasks.length,0);
 
-    html += `<div class="year-band">
+    html += `<div class="year-band" data-yr="${yr}">
       <span class="year-label">${yr}</span>
       <span class="year-meta">${yrGoals.length} goals · ${yrDone}/${yrTotal} tasks</span>
     </div>`;
 
-    // Group goals by pillar within this year
     PLAN.pillars.forEach(p => {
       const pGoals = p.goals.filter(g => g.year === yr);
       if (!pGoals.length) return;
       const pIdx = PLAN.pillars.indexOf(p) + 1;
       const accentVar = `var(--pillar-${pIdx}-accent)`;
 
-      // Pillar separator row
       html += `<div class="yr-pillar-row" style="
         border-left: 3px solid ${accentVar};
         background: color-mix(in srgb, ${accentVar} 8%, transparent);
@@ -484,17 +622,100 @@ function renderYearView() {
         const gs = deriveGoalStatus(g);
         const scls = {complete:'pill-comp','in-progress':'pill-inp','not-started':'pill-ns'}[gs];
         const {done,total} = taskCounts(g);
-        html += `<div class="year-goal-row" onclick="navigatePillar('${p.id}');setTimeout(()=>scrollToCard('${g.id}'),200)" style="margin-left:8px">
-          <span class="ygr-id" style="background:${accentVar};color:var(--pillar-${pIdx}-text)">${g.id}</span>
-          <span class="ygr-stmt">${g.statement}</span>
-          <span class="ygr-owner">${g.owner||''}</span>
-          <span class="ygr-status pill ${scls}">${statusLabel(gs)} ${done}/${total}</span>
+        const gid = g.id.replace(/\./g,'_');
+
+        // Inline task list — same controls as pillar card
+        const taskItems = g.tasks.map((t,i) => {
+          const ts = t.status;
+          const cls = ts==='complete'?'comp':ts==='in-progress'?'inp':'';
+          return `<li class="task-item ${cls}" id="ytask-${gid}-${i}">
+            <span class="task-num">T${i+1}</span>
+            <span class="task-text">${escHtml(t.text)}</span>
+            <div class="task-ctrl">
+              <button class="tbtn tbtn-ns${ts==='not-started'?' on':''}" onclick="setTask('${g.id}',${i},'not-started',event);rerenderYearRow('${g.id}')">—</button>
+              <button class="tbtn tbtn-ip${ts==='in-progress'?' on':''}" onclick="setTask('${g.id}',${i},'in-progress',event);rerenderYearRow('${g.id}')">IP</button>
+              <button class="tbtn tbtn-co${ts==='complete'?' on':''}" onclick="setTask('${g.id}',${i},'complete',event);rerenderYearRow('${g.id}')">✓</button>
+            </div>
+          </li>`;
+        }).join('');
+
+        html += `<div class="year-goal-row" id="yrow-${gid}" data-goal="${g.id}" style="margin-left:8px">
+          <div class="ygr-summary" onclick="toggleYearRow('${gid}')">
+            <span class="ygr-id" style="background:${accentVar};color:var(--pillar-${pIdx}-text)">${g.id}</span>
+            <span class="ygr-stmt">${escHtml(g.statement)}</span>
+            <span class="ygr-owner">${g.owner&&g.owner!=='TBD'?escHtml(g.owner):''}</span>
+            <div class="ygr-status-col">
+              <span class="ygr-status pill ${scls}">${statusLabel(gs)} ${done}/${total}</span>
+              ${g.domain ? `<span class="pill pill-domain ygr-domain">${escHtml(g.domain)}</span>` : ''}
+            </div>
+            <span class="ygr-toggle">⌄</span>
+          </div>
+          <div class="ygr-tasks">
+            <ul class="task-list">${taskItems}</ul>
+          </div>
         </div>`;
       });
     });
   });
 
-  document.getElementById('view-year').innerHTML = `<div class="section-heading">Goals by Fiscal Year</div>${html}`;
+  document.getElementById('view-year').innerHTML = `<div class="section-heading">Goals by Fiscal Year<div class="expand-all-btns"><button onclick="expandAllCards('year')">Expand All</button><button onclick="collapseAllCards('year')">Collapse All</button></div></div>${html}`;
+}
+
+function toggleYearRow(gid) {
+  const row = document.getElementById(`yrow-${gid}`);
+  if (row) row.classList.toggle('open');
+}
+
+function expandAllCards(view) {
+  if (view === 'pillars') {
+    document.querySelectorAll('#view-pillars .goal-card').forEach(el => el.classList.add('open'));
+  } else {
+    document.querySelectorAll('#view-year .year-goal-row').forEach(el => el.classList.add('open'));
+  }
+}
+
+function collapseAllCards(view) {
+  if (view === 'pillars') {
+    document.querySelectorAll('#view-pillars .goal-card').forEach(el => el.classList.remove('open'));
+  } else {
+    document.querySelectorAll('#view-year .year-goal-row').forEach(el => el.classList.remove('open'));
+  }
+}
+
+function rerenderYearRow(goalId) {
+  // Refresh just the task list inside a year row after a status change
+  const gid = goalId.replace(/\./g,'_');
+  const row = document.getElementById(`yrow-${gid}`);
+  if (!row) return;
+  const g = getGoalById(goalId);
+  if (!g) return;
+  const gs = deriveGoalStatus(g);
+  const scls = {complete:'pill-comp','in-progress':'pill-inp','not-started':'pill-ns'}[gs];
+  const {done,total} = taskCounts(g);
+
+  // Update status pill
+  const statusEl = row.querySelector('.ygr-status');
+  if (statusEl) { statusEl.className=`ygr-status pill ${scls}`; statusEl.textContent=`${statusLabel(gs)} ${done}/${total}`; }
+
+  // Re-render task items
+  const ul = row.querySelector('.task-list');
+  if (!ul) return;
+  const p = PLAN.pillars.find(p=>p.goals.some(x=>x.id===goalId));
+  const pIdx = p ? PLAN.pillars.indexOf(p)+1 : 1;
+  const accentVar = `var(--pillar-${pIdx}-accent)`;
+  ul.innerHTML = g.tasks.map((t,i) => {
+    const ts = t.status;
+    const cls = ts==='complete'?'comp':ts==='in-progress'?'inp':'';
+    return `<li class="task-item ${cls}" id="ytask-${gid}-${i}">
+      <span class="task-num">T${i+1}</span>
+      <span class="task-text">${escHtml(t.text)}</span>
+      <div class="task-ctrl">
+        <button class="tbtn tbtn-ns${ts==='not-started'?' on':''}" onclick="setTask('${goalId}',${i},'not-started',event);rerenderYearRow('${goalId}')">—</button>
+        <button class="tbtn tbtn-ip${ts==='in-progress'?' on':''}" onclick="setTask('${goalId}',${i},'in-progress',event);rerenderYearRow('${goalId}')">IP</button>
+        <button class="tbtn tbtn-co${ts==='complete'?' on':''}" onclick="setTask('${goalId}',${i},'complete',event);rerenderYearRow('${goalId}')">✓</button>
+      </div>
+    </li>`;
+  }).join('');
 }
 
 /* ── Goal card HTML ── */
@@ -514,6 +735,10 @@ function goalCardHtml(g, gates) {
     g.owner&&g.owner!=='TBD' ? `<span class="pill pill-owner">${g.owner}</span>` : ''
   ].filter(Boolean).join('');
 
+  const idCol = g.domain
+    ? `<div class="gc-id-col"><span class="gc-id">${g.id}</span><span class="pill pill-domain gc-domain-pill">${escHtml(g.domain)}</span></div>`
+    : `<span class="gc-id">${g.id}</span>`;
+
   const tasks = g.tasks.map((t,i) => {
     const ts = t.status;
     const cls = ts==='complete'?'comp':ts==='in-progress'?'inp':'';
@@ -532,7 +757,7 @@ function goalCardHtml(g, gates) {
 
   return `<div class="goal-card${isGate?' is-gate':''}" id="card-${g.id.replace(/\./g,'_')}">
     <div class="gc-header" onclick="toggleCard(this.parentElement)">
-      <span class="gc-id">${g.id}</span>
+      ${idCol}
       <div class="gc-main">
         <div class="gc-statement">${escHtml(g.statement)}</div>
         <div class="gc-pills">${pills}</div>
@@ -577,19 +802,23 @@ function renderPillars() {
     const {total,done} = pillarCounts(p);
     const pct = total ? Math.round(done/total*100) : 0;
     const years = [...new Set(p.goals.map(g=>g.year))].sort();
+    const pIdx = PLAN.pillars.indexOf(p) + 1;
+
     const yearSections = years.map(yr => {
       const yrGoals = p.goals.filter(g=>g.year===yr);
       const yrDone = yrGoals.reduce((a,g)=>a+g.tasks.filter(t=>t.status==='complete').length,0);
       const yrTotal = yrGoals.reduce((a,g)=>a+g.tasks.length,0);
+
+      let goalsHtml = yrGoals.map(g=>goalCardHtml(g,gates)).join('');
+
       return `<div class="yr-divider">
           <span class="yr-divider-label">${yr}</span>
           <span class="yr-divider-meta">${yrGoals.length} goal${yrGoals.length>1?'s':''} · ${yrDone}/${yrTotal} tasks</span>
         </div>
-        ${yrGoals.map(g=>goalCardHtml(g,gates)).join('')}
+        ${goalsHtml}
         <button class="add-goal-btn" onclick="openAddGoal('${p.id}','${yr}')">+ Add goal in ${yr}</button>`;
     }).join('');
 
-    const pIdx = PLAN.pillars.indexOf(p) + 1;
     return `<div class="pillar-section pillar-color-${pIdx}" id="pillar-${p.id}">
       <div class="pillar-header">
         <div class="ph-eyebrow">${p.id} — Strategic Pillar <button class="edit-btn" onclick="openPillarEdit('${p.id}',event)">✎ Edit pillar</button></div>
@@ -606,7 +835,8 @@ function renderPillars() {
     </div>`;
   }).join('');
 
-  document.getElementById('view-pillars').innerHTML = html;
+  document.getElementById('view-pillars').innerHTML =
+    `<div class="section-heading">Strategic Pillars<div class="expand-all-btns"><button onclick="expandAllCards('pillars')">Expand All</button><button onclick="collapseAllCards('pillars')">Collapse All</button></div></div>` + html;
 }
 
 /* ── Dependencies ── */
@@ -641,6 +871,7 @@ function renderDependencies() {
           onclick="navigatePillar('${id.split('.')[0]}');setTimeout(()=>scrollToCard('${id}'),200)">
           <div class="dep-node-id" style="color:${nAccent}">${id} <span style="font-size:9px;color:var(--text-dim)">${done}/${total}</span></div>
           <div class="dep-node-stmt">${g.statement.substring(0,60)}…</div>
+          ${g.domain?`<div class="dep-node-domain">${escHtml(g.domain)}</div>`:''}
         </div>`;
       });
       const flow=nodes.reduce((acc,n,i)=>i<nodes.length-1?[...acc,n,'<div class="dep-arrow">→</div>']:[...acc,n],[]).join('');
@@ -654,17 +885,18 @@ function renderDependencies() {
 }
 
 /* ── Navigation ── */
-function showView(v) {
+function _showView(v) {
   document.querySelectorAll('.view').forEach(el=>el.classList.remove('active'));
   document.querySelectorAll('.nav-tab').forEach(el=>el.classList.remove('active'));
   document.getElementById('view-'+v).classList.add('active');
-  const tabMap={overview:0,year:1,pillars:2,dependencies:3};
+  const tabMap={overview:0,year:1,pillars:2};
   if(tabMap[v]!==undefined) document.querySelectorAll('.nav-tab')[tabMap[v]].classList.add('active');
   if(v!=='pillars') document.querySelectorAll('.pillar-nav[data-pillar]').forEach(el=>el.classList.remove('active'));
 }
 
 function navigatePillar(pillarId) {
-  showView('pillars');
+  _showView('pillars');
+  document.getElementById('hdr-search').value = '';
   document.querySelectorAll('.pillar-nav[data-pillar]').forEach(el=>el.classList.remove('active'));
   const sEl=document.querySelector(`.pillar-nav[data-pillar="${pillarId}"]`);
   if(sEl)sEl.classList.add('active');
@@ -677,6 +909,274 @@ function scrollToCard(goalId) {
 }
 
 function toggleCard(el){el.classList.toggle('open');}
+
+/* ── Changelog / Live Diff ── */
+
+// _prevSnapshot is loaded alongside _viewingSnapshot for live diffing
+let _prevSnapshot = null;
+
+async function loadPrevSnapshot(currentFilename) {
+  if (!currentFilename) { _prevSnapshot = null; return; }
+  const idx = _snapshots.indexOf(currentFilename);
+  // Previous = next entry in the descending list (older)
+  const prevFile = _snapshots[idx + 1];
+  if (!prevFile) { _prevSnapshot = null; return; }
+  try {
+    const res = await fetch(`data/${prevFile}`);
+    if (res.ok) _prevSnapshot = await res.json();
+    else _prevSnapshot = null;
+  } catch(e) { _prevSnapshot = null; }
+}
+
+function diffSnapshots(prev, curr) {
+  if (!prev || !curr) return null;
+  const prevGoals = {};
+  const currGoals = {};
+  prev.pillars.forEach(p => p.goals.forEach(g => prevGoals[g.id] = {goal: g, pillar: p}));
+  curr.pillars.forEach(p => p.goals.forEach(g => currGoals[g.id] = {goal: g, pillar: p}));
+
+  const changes = [];
+
+  // Task status changes (net only — current vs previous state)
+  Object.keys(currGoals).forEach(gid => {
+    if (!prevGoals[gid]) return; // new goal, handled separately
+    const pg = prevGoals[gid].goal;
+    const cg = currGoals[gid].goal;
+    cg.tasks.forEach((t, i) => {
+      const prevStatus = pg.tasks[i]?.status || 'not-started';
+      if (t.status !== prevStatus) {
+        changes.push({
+          type: 'status',
+          goalId: gid,
+          goalStmt: cg.statement,
+          domain: cg.domain || '',
+          pillar: currGoals[gid].pillar.id,
+          taskIdx: i,
+          taskText: t.text,
+          from: prevStatus,
+          to: t.status
+        });
+      }
+    });
+    // Task count changes
+    if (cg.tasks.length > pg.tasks.length) {
+      for (let i = pg.tasks.length; i < cg.tasks.length; i++) {
+        changes.push({type:'task_added', goalId:gid, goalStmt:cg.statement,
+          domain:cg.domain||'', pillar:currGoals[gid].pillar.id,
+          taskText: cg.tasks[i].text});
+      }
+    }
+    // Goal statement changed
+    if (pg.statement.trim() !== cg.statement.trim()) {
+      changes.push({type:'goal_edited', goalId:gid,
+        from: pg.statement, to: cg.statement,
+        domain: cg.domain||'', pillar: currGoals[gid].pillar.id});
+    }
+  });
+
+  // New goals
+  Object.keys(currGoals).forEach(gid => {
+    if (!prevGoals[gid]) {
+      const cg = currGoals[gid].goal;
+      changes.push({type:'goal_added', goalId:gid, goalStmt:cg.statement,
+        domain:cg.domain||'', pillar:currGoals[gid].pillar.id, year:cg.year});
+    }
+  });
+
+  // Removed goals
+  Object.keys(prevGoals).forEach(gid => {
+    if (!currGoals[gid]) {
+      const pg = prevGoals[gid].goal;
+      changes.push({type:'goal_removed', goalId:gid, goalStmt:pg.statement,
+        pillar:prevGoals[gid].pillar.id, year:pg.year});
+    }
+  });
+
+  return changes;
+}
+
+function renderChangelog() {
+  const el = document.getElementById('view-changes');
+  const isSnapshot = !!_viewingSnapshot;
+  const restructure = (isSnapshot && PLAN.restructure) ? PLAN.restructure : null;
+  const diff = (isSnapshot && _prevSnapshot) ? diffSnapshots(_prevSnapshot, PLAN) : null;
+  const prevLabel = _prevSnapshot ? snapshotLabel(_snapshots[_snapshots.indexOf(_viewingSnapshot)+1]) : null;
+  const currLabel = isSnapshot ? snapshotLabel(_viewingSnapshot) : 'Current';
+
+  let html = `<div class="section-heading">Update Log${isSnapshot ? ` — ${currLabel}` : ''}</div>`;
+
+  if (!isSnapshot) {
+    // Combine stored plan changelog + live session entries, newest first
+    const stored = [...(PLAN.changelog || [])].reverse();
+    const session = [..._changelog].reverse();
+    const allEntries = [...session, ...stored];
+
+    if (allEntries.length === 0) {
+      html += `<div class="cl-empty">No changes recorded yet. Updates you make will appear here.</div>`;
+    } else {
+      if (session.length > 0) {
+        html += `<div class="cl-session-note">This session (not yet exported)</div>`;
+        html += session.map(e => clEntryHtml(e)).join('');
+        if (stored.length > 0) {
+          html += `<div class="cl-session-note" style="margin-top:16px">Previously recorded</div>`;
+        }
+      }
+      if (stored.length > 0) {
+        if (session.length === 0) {
+          html += `<div class="cl-session-note">Recorded changes — newest first</div>`;
+        }
+        html += stored.map(e => clEntryHtml(e)).join('');
+      }
+    }
+    el.innerHTML = html;
+    return;
+  }
+
+  // Restructure notices first
+  if (restructure && restructure.length) {
+    html += `<div class="cl-section-head cl-restructure-head">⚡ Plan Restructure</div>`;
+    html += `<div class="cl-restructure-block">`;
+    restructure.forEach(r => {
+      html += restructureEntryHtml(r);
+    });
+    html += `</div>`;
+  }
+
+  // Live diff
+  if (!_prevSnapshot) {
+    html += `<div class="cl-empty">No previous snapshot available to compare against.</div>`;
+  } else {
+    html += `<div class="cl-section-head">Comparing <strong>${prevLabel}</strong> → <strong>${currLabel}</strong></div>`;
+    if (!diff || diff.length === 0) {
+      html += `<div class="cl-empty">No changes detected between these two snapshots.</div>`;
+    } else {
+      // Group by type
+      const completions  = diff.filter(c => c.type==='status' && c.to==='complete');
+      const regressions  = diff.filter(c => c.type==='status' && c.to!=='complete');
+      const goalsAdded   = diff.filter(c => c.type==='goal_added');
+      const goalsRemoved = diff.filter(c => c.type==='goal_removed');
+      const goalsEdited  = diff.filter(c => c.type==='goal_edited');
+      const tasksAdded   = diff.filter(c => c.type==='task_added');
+
+      const sections = [
+        {label:`✓ Tasks Completed (${completions.length})`, items:completions, cls:'cl-comp'},
+        {label:`↩ Status Changes (${regressions.length})`, items:regressions, cls:'cl-reg'},
+        {label:`+ Goals Added (${goalsAdded.length})`, items:goalsAdded, cls:'cl-add'},
+        {label:`− Goals Removed (${goalsRemoved.length})`, items:goalsRemoved, cls:'cl-rem'},
+        {label:`✎ Goals Edited (${goalsEdited.length})`, items:goalsEdited, cls:'cl-edit'},
+        {label:`+ Tasks Added (${tasksAdded.length})`, items:tasksAdded, cls:'cl-add'},
+      ];
+
+      sections.forEach(({label, items, cls}) => {
+        if (!items.length) return;
+        html += `<div class="cl-section-head ${cls}">${label}</div>`;
+        items.forEach(c => { html += diffEntryHtml(c); });
+      });
+    }
+  }
+  el.innerHTML = html;
+}
+
+function restructureEntryHtml(r) {
+  const typeLabels = {
+    architecture: '🏗 Architecture',
+    pillar_retired: '🗂 Pillar Retired',
+    pillar_renamed: '🔄 Pillar Renamed',
+    goals_dropped: '⬇ Goals Dropped',
+    goals_completed_prior_cycle: '✓ Prior Cycle Completions',
+    goals_rewritten: '✎ Goals Rewritten'
+  };
+  const label = typeLabels[r.type] || r.type;
+  let body = `<div class="cl-re-entry">
+    <div class="cl-re-type">${label}</div>
+    <div class="cl-re-summary">${escHtml(r.summary)}</div>`;
+  if (r.detail) body += `<div class="cl-re-detail">${escHtml(r.detail)}</div>`;
+  if (r.from && r.to) body += `<div class="cl-re-from-to"><span class="cl-re-from">${escHtml(r.from)}</span><span class="cl-arrow">→</span><span class="cl-re-to">${escHtml(r.to)}</span></div>`;
+  if (r.goals) {
+    body += `<ul class="cl-re-goals">` + r.goals.map(g =>
+      `<li><span class="cl-re-gid">${g.id}</span> ${escHtml(g.statement)}${g.note?`<span class="cl-re-note"> — ${escHtml(g.note)}</span>`:''}</li>`
+    ).join('') + `</ul>`;
+  }
+  body += `</div>`;
+  return body;
+}
+
+function diffEntryHtml(c) {
+  const pIdx = PLAN.pillars.findIndex(p=>p.id===c.pillar)+1;
+  const accentVar = pIdx > 0 ? `var(--pillar-${pIdx}-accent)` : 'var(--accent)';
+  if (c.type === 'status') {
+    const fromCls = {complete:'pill-comp','in-progress':'pill-inp','not-started':'pill-ns'}[c.from]||'pill-ns';
+    const toCls   = {complete:'pill-comp','in-progress':'pill-inp','not-started':'pill-ns'}[c.to]||'pill-ns';
+    return `<div class="cl-diff-row">
+      <span class="cl-diff-gid" style="background:${accentVar}">${c.goalId}</span>
+      <div class="cl-diff-body">
+        <div class="cl-diff-task">T${c.taskIdx+1}: ${escHtml(c.taskText)}</div>
+        <div class="cl-diff-stmt">${escHtml(c.goalStmt.substring(0,80))}${c.goalStmt.length>80?'…':''}</div>
+        <div class="cl-diff-pills">
+          <span class="pill ${fromCls}">${statusLabel(c.from)}</span>
+          <span class="cl-arrow">→</span>
+          <span class="pill ${toCls}">${statusLabel(c.to)}</span>
+          ${c.domain?`<span class="pill pill-domain">${escHtml(c.domain)}</span>`:''}
+        </div>
+      </div>
+    </div>`;
+  }
+  if (c.type === 'goal_added') {
+    return `<div class="cl-diff-row">
+      <span class="cl-diff-gid" style="background:${accentVar}">${c.goalId}</span>
+      <div class="cl-diff-body">
+        <div class="cl-diff-stmt">${escHtml(c.goalStmt.substring(0,100))}${c.goalStmt.length>100?'…':''}</div>
+        <div class="cl-diff-pills"><span class="pill pill-year">${c.year}</span>${c.domain?`<span class="pill pill-domain">${escHtml(c.domain)}</span>`:''}</div>
+      </div>
+    </div>`;
+  }
+  if (c.type === 'goal_removed') {
+    return `<div class="cl-diff-row cl-diff-removed">
+      <span class="cl-diff-gid">${c.goalId}</span>
+      <div class="cl-diff-body">
+        <div class="cl-diff-stmt">${escHtml(c.goalStmt.substring(0,100))}${c.goalStmt.length>100?'…':''}</div>
+        <div class="cl-diff-pills"><span class="pill pill-year">${c.year}</span></div>
+      </div>
+    </div>`;
+  }
+  if (c.type === 'goal_edited') {
+    return `<div class="cl-diff-row">
+      <span class="cl-diff-gid" style="background:${accentVar}">${c.goalId}</span>
+      <div class="cl-diff-body">
+        <div class="cl-diff-from">Was: ${escHtml(c.from.substring(0,80))}${c.from.length>80?'…':''}</div>
+        <div class="cl-diff-to">Now: ${escHtml(c.to.substring(0,80))}${c.to.length>80?'…':''}</div>
+        ${c.domain?`<div class="cl-diff-pills"><span class="pill pill-domain">${escHtml(c.domain)}</span></div>`:''}
+      </div>
+    </div>`;
+  }
+  if (c.type === 'task_added') {
+    return `<div class="cl-diff-row">
+      <span class="cl-diff-gid" style="background:${accentVar}">${c.goalId}</span>
+      <div class="cl-diff-body">
+        <div class="cl-diff-task">New task: ${escHtml(c.taskText)}</div>
+      </div>
+    </div>`;
+  }
+  return '';
+}
+
+function clEntryHtml(e) {
+  const ts = e.timestamp ? new Date(e.timestamp).toLocaleString() : '';
+  const pIdx = e.goalId ? (() => { const p = PLAN.pillars.find(p=>p.goals.some(g=>g.id===e.goalId)); return p ? PLAN.pillars.indexOf(p)+1 : 0; })() : 0;
+  const accentVar = pIdx > 0 ? `var(--pillar-${pIdx}-accent)` : 'var(--text-dim)';
+  let body = `<div class="cl-diff-row"><span class="cl-diff-gid" style="background:${accentVar}">${e.goalId||'—'}</span><div class="cl-diff-body">`;
+  if (e.type === 'status') {
+    const fromCls = {complete:'pill-comp','in-progress':'pill-inp','not-started':'pill-ns'}[e.from]||'pill-ns';
+    const toCls   = {complete:'pill-comp','in-progress':'pill-inp','not-started':'pill-ns'}[e.to]||'pill-ns';
+    body += `<div class="cl-diff-task">T${e.taskIdx+1}: ${escHtml(e.taskText||'')}</div>`;
+    body += `<div class="cl-diff-pills"><span class="pill ${fromCls}">${statusLabel(e.from)}</span><span class="cl-arrow">→</span><span class="pill ${toCls}">${statusLabel(e.to)}</span></div>`;
+  } else {
+    body += `<div class="cl-diff-stmt">${escHtml(e.note||e.type)}</div>`;
+  }
+  if (ts) body += `<div class="cl-diff-ts">${ts}</div>`;
+  body += `</div></div>`;
+  return body;
+}
 
 /* ── Task status ── */
 function setTask(goalId, taskIdx, newStatus, event) {
@@ -748,6 +1248,7 @@ function openGoalEdit(goalId, event) {
   document.getElementById('ge-orig-id').value=goalId;
   document.getElementById('ge-id').value=g.id;
   document.getElementById('ge-year').value=g.year;
+  document.getElementById('ge-domain').value=g.domain||'';
   document.getElementById('ge-statement').value=g.statement;
   document.getElementById('ge-owner').value=g.owner||'';
   document.getElementById('ge-metric').value=g.metric||'';
@@ -771,6 +1272,7 @@ function openAddGoal(pillarId, year) {
   document.getElementById('ge-orig-id').value='';
   document.getElementById('ge-id').value=newId;
   document.getElementById('ge-year').value=year;
+  document.getElementById('ge-domain').value='';
   document.getElementById('ge-statement').value='';
   document.getElementById('ge-owner').value='TBD';
   document.getElementById('ge-metric').value='';
@@ -786,6 +1288,7 @@ function saveGoalEdit() {
   const origId=document.getElementById('ge-orig-id').value;
   const newId=document.getElementById('ge-id').value.trim();
   const year=document.getElementById('ge-year').value;
+  const domain=document.getElementById('ge-domain').value.trim();
   const targetPillarId=document.getElementById('ge-pillar').value;
   const predecessor=document.getElementById('ge-predecessor').value||null;
   const statement=document.getElementById('ge-statement').value.trim();
@@ -808,12 +1311,12 @@ function saveGoalEdit() {
     } else {
       g.id=newId;
     }
-    g.year=year;g.predecessor=predecessor;g.statement=statement;g.owner=owner;g.metric=metric;
-    _changelog.push({timestamp:new Date().toISOString(),type:'edit_goal',goalId:newId,note:`Edited: year=${year}, predecessor=${predecessor||'none'}`});
+    g.year=year;g.domain=domain;g.predecessor=predecessor;g.statement=statement;g.owner=owner;g.metric=metric;
+    _changelog.push({timestamp:new Date().toISOString(),type:'edit_goal',goalId:newId,note:`Edited: year=${year}, domain=${domain||'none'}, predecessor=${predecessor||'none'}`});
   } else {
     // New goal
     const tgtPillar=PLAN.pillars.find(p=>p.id===targetPillarId);if(!tgtPillar)return;
-    tgtPillar.goals.push({id:newId,year,predecessor,owner,statement,metric,tasks:[]});
+    tgtPillar.goals.push({id:newId,year,domain,predecessor,owner,statement,metric,tasks:[]});
     _changelog.push({timestamp:new Date().toISOString(),type:'add_goal',goalId:newId,note:`Added to ${targetPillarId}`});
   }
   markUnsaved();
@@ -929,14 +1432,67 @@ function deletePillar() {
 }
 
 /* ── Snapshot dropdown ── */
+function snapshotLabel(filename) {
+  if (!filename) return 'Current';
+  return _snapshotLabels[filename] || filename.replace('statuses_','').replace('.json','');
+}
+
 function renderSnapshotDropdown() {
-  const sel=document.getElementById('snapshot-select');
-  sel.innerHTML='<option value="">Current</option>'+
-    _snapshots.map(f=>{
-      const d=f.replace('statuses_','').replace('.json','');
-      const fmt=d.length===8?`${d.slice(0,4)}-${d.slice(4,6)}-${d.slice(6,8)}`:d;
-      return `<option value="${f}">${fmt}</option>`;
-    }).join('');
+  const sel = document.getElementById('snapshot-select');
+  // files array is already descending (newest first) from index.json
+  // "Current" = latest, skip it from the historical list
+  const historical = _snapshots.filter(f => f !== (_snapshotLabels['__latest'] || _snapshots[0]) || Object.keys(_snapshotLabels).length === 0
+    ? true : true);
+  sel.innerHTML = '<option value="">Current</option>' +
+    _snapshots.map(f =>
+      `<option value="${f}">${snapshotLabel(f)}</option>`
+    ).join('');
+  updateSnapArrows();
+}
+
+function updateSnapArrows() {
+  const cur = _viewingSnapshot || '';
+  // Full list: '' (current) + each historical file in order
+  const allEntries = ['', ..._snapshots];
+  const idx = allEntries.indexOf(cur);
+  document.getElementById('snap-prev').disabled = idx <= 0;
+  document.getElementById('snap-next').disabled = idx >= allEntries.length - 1;
+}
+
+function stepSnapshot(dir) {
+  const allEntries = ['', ..._snapshots];
+  const cur = _viewingSnapshot || '';
+  const idx = allEntries.indexOf(cur);
+  const next = allEntries[idx + dir];
+  if (next === undefined) return;
+  document.getElementById('snapshot-select').value = next;
+  loadSnapshot(next);
+}
+
+async function loadSnapshot(filename) {
+  if (!filename) {
+    _viewingSnapshot = null;
+    _prevSnapshot = null;
+    hideBanner('banner-snapshot');
+    document.getElementById('snapshot-select').value = '';
+    updateSnapArrows();
+    await loadPlan();
+    return;
+  }
+  try {
+    const res = await fetch(`data/${filename}`);
+    if (!res.ok) return;
+    PLAN = await res.json();
+    _viewingSnapshot = filename;
+    await loadPrevSnapshot(filename);
+    const label = snapshotLabel(filename);
+    renderAll();
+    updateSnapArrows();
+    showBanner('banner-snapshot',
+      `Viewing snapshot: <strong>${label}</strong>${PLAN.label && PLAN.label !== label ? ' — '+PLAN.label : ''}.
+       <button class="banner-btn" onclick="document.getElementById('snapshot-select').value='';loadSnapshot('')">Back to current</button>`
+    );
+  } catch(e) { console.warn('Snapshot load failed:', e); }
 }
 
 /* ── Export ── */

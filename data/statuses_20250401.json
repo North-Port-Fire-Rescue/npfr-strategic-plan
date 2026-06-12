@@ -1,0 +1,2442 @@
+{
+  "mission": "Provide exceptional public safety services in a safe, compassionate and professional manner.",
+  "vision": "",
+  "values": [
+    "Trust",
+    "Family",
+    "Dedication",
+    "Compassion"
+  ],
+  "changelog": [
+    {
+      "timestamp": "2025-04-01T00:00:00",
+      "type": "status",
+      "goalId": "P1.25.G1",
+      "taskIdx": 2,
+      "taskText": "Cost comparison of our fleet maintenance",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2025-04-01T00:00:00",
+      "type": "status",
+      "goalId": "P1.25.G2",
+      "taskIdx": 0,
+      "taskText": "Develop 5-year replacement plan",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2025-04-01T00:00:00",
+      "type": "status",
+      "goalId": "P1.25.G3",
+      "taskIdx": 0,
+      "taskText": "Search grant opportunities",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2025-04-01T00:00:00",
+      "type": "status",
+      "goalId": "P1.25.G3",
+      "taskIdx": 1,
+      "taskText": "Evaluate and create better replacement program",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2025-04-01T00:00:00",
+      "type": "status",
+      "goalId": "P2.25.G1",
+      "taskIdx": 1,
+      "taskText": "Create and conduct a department-wide training survey",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2025-04-01T00:00:00",
+      "type": "status",
+      "goalId": "P2.25.G1",
+      "taskIdx": 2,
+      "taskText": "Observe field trainings",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2025-04-01T00:00:00",
+      "type": "status",
+      "goalId": "P2.25.G1",
+      "taskIdx": 3,
+      "taskText": "Compile a training needs report",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2025-04-01T00:00:00",
+      "type": "status",
+      "goalId": "P2.25.G2",
+      "taskIdx": 0,
+      "taskText": "Audit existing training program",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2025-04-01T00:00:00",
+      "type": "status",
+      "goalId": "P2.25.G2",
+      "taskIdx": 1,
+      "taskText": "Assess participation rates",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2025-04-01T00:00:00",
+      "type": "status",
+      "goalId": "P2.25.G2",
+      "taskIdx": 2,
+      "taskText": "Gather feedback from personnel and instructors",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2025-04-01T00:00:00",
+      "type": "status",
+      "goalId": "P2.25.G2",
+      "taskIdx": 3,
+      "taskText": "Compare training objectives operational performance",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2025-04-01T00:00:00",
+      "type": "status",
+      "goalId": "P2.25.G3",
+      "taskIdx": 2,
+      "taskText": "Standardize lesson plans",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2025-04-01T00:00:00",
+      "type": "status",
+      "goalId": "P3.25.G1",
+      "taskIdx": 0,
+      "taskText": "Obtain and Update HOA Contacts",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2025-04-01T00:00:00",
+      "type": "status",
+      "goalId": "P3.25.G1",
+      "taskIdx": 1,
+      "taskText": "Life style managers @ each subdivision",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2025-04-01T00:00:00",
+      "type": "status",
+      "goalId": "P3.25.G1",
+      "taskIdx": 2,
+      "taskText": "Share community messaging boards",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2025-04-01T00:00:00",
+      "type": "status",
+      "goalId": "P3.25.G1",
+      "taskIdx": 3,
+      "taskText": "Social media",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2025-04-01T00:00:00",
+      "type": "status",
+      "goalId": "P3.25.G1",
+      "taskIdx": 4,
+      "taskText": "Mass email",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2025-04-01T00:00:00",
+      "type": "status",
+      "goalId": "P3.25.G2",
+      "taskIdx": 0,
+      "taskText": "School contacts established",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2025-04-01T00:00:00",
+      "type": "status",
+      "goalId": "P3.25.G2",
+      "taskIdx": 1,
+      "taskText": "Resource officer contacts",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2025-04-01T00:00:00",
+      "type": "status",
+      "goalId": "P3.25.G2",
+      "taskIdx": 2,
+      "taskText": "School board approval for programs",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2025-04-01T00:00:00",
+      "type": "status",
+      "goalId": "P3.25.G2",
+      "taskIdx": 3,
+      "taskText": "Develop 1 yr program - framework lesson plan",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2025-04-01T00:00:00",
+      "type": "status",
+      "goalId": "P3.25.G3",
+      "taskIdx": 0,
+      "taskText": "Outline job description",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2025-04-01T00:00:00",
+      "type": "status",
+      "goalId": "P3.25.G3",
+      "taskIdx": 1,
+      "taskText": "Outline credentials",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2025-04-01T00:00:00",
+      "type": "status",
+      "goalId": "P4.25.G2",
+      "taskIdx": 3,
+      "taskText": "Establish FTO PDP",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2025-04-01T00:00:00",
+      "type": "status",
+      "goalId": "P4.25.G2",
+      "taskIdx": 4,
+      "taskText": "Implement Program",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2025-04-01T00:00:00",
+      "type": "status",
+      "goalId": "P4.25.G3",
+      "taskIdx": 1,
+      "taskText": "Create new policies / procedures for compliance",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2025-04-01T00:00:00",
+      "type": "status",
+      "goalId": "P4.25.G3",
+      "taskIdx": 2,
+      "taskText": "Identify gaps",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2025-04-01T00:00:00",
+      "type": "status",
+      "goalId": "P4.25.G3",
+      "taskIdx": 3,
+      "taskText": "Annual reaccred proofs of compliance",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2025-04-01T00:00:00",
+      "type": "status",
+      "goalId": "P4.25.G3",
+      "taskIdx": 4,
+      "taskText": "Time sensitive standards",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2025-04-01T00:00:00",
+      "type": "status",
+      "goalId": "P5.25.G1",
+      "taskIdx": 2,
+      "taskText": "Communicate changes to staff and public for ed",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2025-04-01T00:00:00",
+      "type": "status",
+      "goalId": "P5.25.G1",
+      "taskIdx": 3,
+      "taskText": "Realize reduction in staff time dedicated",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2025-04-01T00:00:00",
+      "type": "status",
+      "goalId": "P6.26.G2",
+      "taskIdx": 4,
+      "taskText": "EM SOP/ SOG",
+      "from": "not-started",
+      "to": "complete"
+    }
+  ],
+  "exported": "2025-04-01T00:00:00",
+  "label": "FY25 Q3 \u2014 April 2025",
+  "pillars": [
+    {
+      "id": "P1",
+      "name": "Emergency Services",
+      "steward": "Scott Lane",
+      "backup": "Scott Titus",
+      "purpose": "Provide for a safe community by saving lives and protecting property to the citizens and visitors of North Port.",
+      "goals": [
+        {
+          "id": "P1.25.G1",
+          "year": "FY25",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Identify cost effective solutions to ensure long-term operations and sustainability.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Review maintenace records - on-going",
+              "status": "complete"
+            },
+            {
+              "text": "Compare fleet breakdowns to other fire maintenance facilities.",
+              "status": "complete"
+            },
+            {
+              "text": "Cost comparison of our fleet maintenance",
+              "status": "complete"
+            }
+          ]
+        },
+        {
+          "id": "P1.25.G2",
+          "year": "FY25",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Develop structured procurement plan",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Develop 5-year replacement plan",
+              "status": "complete"
+            }
+          ]
+        },
+        {
+          "id": "P1.25.G3",
+          "year": "FY25",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Identify and secure funding for procurement plan",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Search grant opportunities",
+              "status": "complete"
+            },
+            {
+              "text": "Evaluate and create better replacement program",
+              "status": "complete"
+            }
+          ]
+        },
+        {
+          "id": "P1.26.G1",
+          "year": "FY26",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Establish a succession plan",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "ID personnel leaving in the next 5-years",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop written succession plan.",
+              "status": "not-started"
+            },
+            {
+              "text": "Review NFPA standards",
+              "status": "not-started"
+            },
+            {
+              "text": "Survey local & regional departments",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P1.26.G2",
+          "year": "FY26",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Review and Revise ODP",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Update and revise job descriptions",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop education program",
+              "status": "not-started"
+            },
+            {
+              "text": "Collect and review feedback forms",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P1.26.G3",
+          "year": "FY26",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Implement professional development program.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Determine effectiveness of current programs.",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop action plan for new programs.",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop adjustments to current programs.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P1.27.G1",
+          "year": "FY27",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Identify best practices",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Evaluate NFPA Standard",
+              "status": "not-started"
+            },
+            {
+              "text": "Evaluate State Standards",
+              "status": "not-started"
+            },
+            {
+              "text": "Survey Regional Data",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P1.27.G2",
+          "year": "FY27",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Establish agency performance standards",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Implement new fairness standards",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P1.27.G3",
+          "year": "FY27",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Establish a program for measuring compliance",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Track outcome data from fairness standards",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop a detailed evaluation plan.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P1.28.G1",
+          "year": "FY28",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Identify gaps in interagency collaboration and interoperability",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Compare mutual and auto aid responses.",
+              "status": "not-started"
+            },
+            {
+              "text": "Review department's ESZ's",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P1.28.G2",
+          "year": "FY28",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Develop solutions to address gaps and needs",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Collaborate on response procedures",
+              "status": "not-started"
+            },
+            {
+              "text": "Formulate interagency training plans",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P1.28.G3",
+          "year": "FY28",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Implement solutions to address gaps and needs",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Hold regular meetings",
+              "status": "not-started"
+            },
+            {
+              "text": "Formulate agreements",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P1.29.G1",
+          "year": "FY29",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Identify emerging staffing needs to address community growth",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Analyze population demographics",
+              "status": "not-started"
+            },
+            {
+              "text": "Determining if there is an increase in call volumes",
+              "status": "not-started"
+            },
+            {
+              "text": "Analyze population shifts",
+              "status": "not-started"
+            },
+            {
+              "text": "Analyze urban vs rural growth",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P1.29.G2",
+          "year": "FY29",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Develop a finacial plan to facilitate future staffing needs",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Consider grants, Funding Sources",
+              "status": "not-started"
+            },
+            {
+              "text": "Calculate base salaries for future positions",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P1.29.G3",
+          "year": "FY29",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Develop a plan to onboard future staffing needs",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Hiring",
+              "status": "not-started"
+            },
+            {
+              "text": "Outlining Employment terms",
+              "status": "not-started"
+            },
+            {
+              "text": "Career Progression & mentorship",
+              "status": "not-started"
+            },
+            {
+              "text": "Retention Strategies",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P2",
+      "name": "Training",
+      "steward": "Adam Inlow",
+      "backup": "Famke Wolbers",
+      "purpose": "Provide comprehensive training and education through specialized developmental learning opportunities to deliver the highest level of safety, efficiency, and operational readiness.",
+      "goals": [
+        {
+          "id": "P2.25.G1",
+          "year": "FY25",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Identify Training needs for efficiency by Q3",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Review compliance and requirements",
+              "status": "complete"
+            },
+            {
+              "text": "Create and conduct a department-wide training survey",
+              "status": "complete"
+            },
+            {
+              "text": "Observe field trainings",
+              "status": "complete"
+            },
+            {
+              "text": "Compile a training needs report",
+              "status": "complete"
+            },
+            {
+              "text": "Develop a comprehensive program from survey",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P2.25.G2",
+          "year": "FY25",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Evaluate current training plan compared to training needs",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Audit existing training program",
+              "status": "complete"
+            },
+            {
+              "text": "Assess participation rates",
+              "status": "complete"
+            },
+            {
+              "text": "Gather feedback from personnel and instructors",
+              "status": "complete"
+            },
+            {
+              "text": "Compare training objectives operational performance",
+              "status": "complete"
+            },
+            {
+              "text": "Develop a training evaluation report",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P2.25.G3",
+          "year": "FY25",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Develop job specific training plans",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Define core objectives",
+              "status": "complete"
+            },
+            {
+              "text": "Align annual training calendar with core objectives",
+              "status": "complete"
+            },
+            {
+              "text": "Standardize lesson plans",
+              "status": "complete"
+            },
+            {
+              "text": "Establish performance metrics and evaluation metrics",
+              "status": "complete"
+            },
+            {
+              "text": "Develop a written policy establishing mandatory training",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P2.26.G1",
+          "year": "FY26",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Implement a targeted outreach program to increase applicants",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Evaluate last fiscal year's applicant pool",
+              "status": "not-started"
+            },
+            {
+              "text": "Partner with 4 local technical schools",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop an online recruitment portal - QR code",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P2.26.G2",
+          "year": "FY26",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Develop department-aligned selection process to meet operational needs",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Develop standardized interview questions",
+              "status": "not-started"
+            },
+            {
+              "text": "Create scoring system for evaluation / documented",
+              "status": "not-started"
+            },
+            {
+              "text": "Establish recruitment committee",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P2.26.G3",
+          "year": "FY26",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Evaluate selection process by employee performance in 12-months review",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Conduct performance evaluation of new employees",
+              "status": "not-started"
+            },
+            {
+              "text": "Identify where recruitment efforts are effective",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P2.27.G1",
+          "year": "FY27",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Establish roles, responsibilites, and division oversight",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Asses current staffing & workload distribution",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop clear job descriptions & roles for specific training function",
+              "status": "not-started"
+            },
+            {
+              "text": "Establish reporting structure for division oversight",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P2.27.G2",
+          "year": "FY27",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Continuous evaluation of needs based on growth",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Contiunious evaluation of workload and job. roles",
+              "status": "not-started"
+            },
+            {
+              "text": "Establish best practice for training division span of control based on industry standards.",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P2.28.G1",
+          "year": "FY28",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Partner with 4 regional educational institutions by Q1",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Establish/ strengthen relationships with decision makers",
+              "status": "not-started"
+            },
+            {
+              "text": "Establish/Maintain articulation",
+              "status": "not-started"
+            },
+            {
+              "text": "Agreements with local institutions",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P2.28.G2",
+          "year": "FY28",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Reduce reliance upon external training by utilizing shared resources (training towers, props, simulation equipment).",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Inventory potential shared resources",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P2.28.G3",
+          "year": "FY28",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Roll out specialized courses, conduct live fire, and assess initial training effectiveness",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Identify specialized areas of training",
+              "status": "not-started"
+            },
+            {
+              "text": "Conduct low acuity high risk training as identified",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P2.29.G1",
+          "year": "FY29",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Gain regional accreditation and host 2 accredited training sessions by year end.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Ensure accreditation requirements are met",
+              "status": "not-started"
+            },
+            {
+              "text": "Submit necessary applications and dollars",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop partnerships",
+              "status": "not-started"
+            },
+            {
+              "text": "Align programs and standards",
+              "status": "not-started"
+            },
+            {
+              "text": "Host 2 training sessions",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P2.29.G2",
+          "year": "FY29",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Increase collaborative training events by 50% with external agencies.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Establish joint training agreements",
+              "status": "not-started"
+            },
+            {
+              "text": "Offer mutual aid training to enhance interoperability",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop cross-discipline training",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P2.29.G3",
+          "year": "FY29",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Increase external trainee participation by 30% in department-led courses",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Develop promotional materials",
+              "status": "not-started"
+            },
+            {
+              "text": "Create online portal",
+              "status": "not-started"
+            },
+            {
+              "text": "Host one regional training symposium",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P3",
+      "name": "Prevention / CRR",
+      "steward": "Peter Marietti",
+      "backup": "Rob Needy",
+      "purpose": "Proactively protect lives and property within our community by actively educating the public on fire safety, rigorously enforcing fire codes, and collaborating with stakeholders to minimize fire risks, prevent injuries, and death.",
+      "goals": [
+        {
+          "id": "P3.25.G1",
+          "year": "FY25",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Develop four ways to interact across generation gaps",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Obtain and Update HOA Contacts",
+              "status": "complete"
+            },
+            {
+              "text": "Life style managers @ each subdivision",
+              "status": "complete"
+            },
+            {
+              "text": "Share community messaging boards",
+              "status": "complete"
+            },
+            {
+              "text": "Social media",
+              "status": "complete"
+            },
+            {
+              "text": "Mass email",
+              "status": "complete"
+            }
+          ]
+        },
+        {
+          "id": "P3.25.G2",
+          "year": "FY25",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Develop two ways interact within 25% schools",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "School contacts established",
+              "status": "complete"
+            },
+            {
+              "text": "Resource officer contacts",
+              "status": "complete"
+            },
+            {
+              "text": "School board approval for programs",
+              "status": "complete"
+            },
+            {
+              "text": "Develop 1 yr program - framework lesson plan",
+              "status": "complete"
+            }
+          ]
+        },
+        {
+          "id": "P3.25.G3",
+          "year": "FY25",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Hire (1) dedicated staff position for CRR/CRA and public outreach by the end of the fiscal year",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Outline job description",
+              "status": "complete"
+            },
+            {
+              "text": "Outline credentials",
+              "status": "complete"
+            },
+            {
+              "text": "Hire position",
+              "status": "complete"
+            },
+            {
+              "text": "Train position",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P3.26.G1",
+          "year": "FY26",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Gather data from 5 task areas by the end of the quarter",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Imagetrend",
+              "status": "not-started"
+            },
+            {
+              "text": "Police reporting",
+              "status": "not-started"
+            },
+            {
+              "text": "GIS",
+              "status": "not-started"
+            },
+            {
+              "text": "Mobile- eyes",
+              "status": "not-started"
+            },
+            {
+              "text": "Regional data",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P3.26.G2",
+          "year": "FY26",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Evaluating the data from 5 task areas by the end of 2nd fiscal quarter",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Organize data",
+              "status": "not-started"
+            },
+            {
+              "text": "Rank by importance",
+              "status": "not-started"
+            },
+            {
+              "text": "Evaluate financial/ organizational impact",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P3.26.G3",
+          "year": "FY26",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Create two new programs to implement",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Establish programs based on greatest need",
+              "status": "not-started"
+            },
+            {
+              "text": "Formilize Elementary School CRR Education",
+              "status": "not-started"
+            },
+            {
+              "text": "Formilize Senior Public Education",
+              "status": "not-started"
+            },
+            {
+              "text": "Formilize SOG's for Fire Marshal",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P3.27.G1",
+          "year": "FY27",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Build out (3) new policies and content by end of the fiscal qrt 1",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Outline for CRR program",
+              "status": "not-started"
+            },
+            {
+              "text": "Identify needs",
+              "status": "not-started"
+            },
+            {
+              "text": "Identify staffing req",
+              "status": "not-started"
+            },
+            {
+              "text": "Incorporate scheduling",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P3.27.G2",
+          "year": "FY27",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Hire a second staff for implementation of the priorities of CRA by the end of the 1st qrt",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Outline job description",
+              "status": "not-started"
+            },
+            {
+              "text": "Outline credentials",
+              "status": "not-started"
+            },
+            {
+              "text": "Hire",
+              "status": "not-started"
+            },
+            {
+              "text": "Train new staff member",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P3.27.G3",
+          "year": "FY27",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Begin phased program roll out by end of 4th qrt",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Program 1 implementation",
+              "status": "not-started"
+            },
+            {
+              "text": "Program 2 implementation",
+              "status": "not-started"
+            },
+            {
+              "text": "Program 3 implementation",
+              "status": "not-started"
+            },
+            {
+              "text": "Program 4 implementatin",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P3.28.G1",
+          "year": "FY28",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Gather internal data by end of 2nd qtr",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Access data from image trend",
+              "status": "not-started"
+            },
+            {
+              "text": "Access data from cares database",
+              "status": "not-started"
+            },
+            {
+              "text": "Access data from GIS",
+              "status": "not-started"
+            },
+            {
+              "text": "Access regional data",
+              "status": "not-started"
+            },
+            {
+              "text": "Access data from external surveys",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P3.28.G2",
+          "year": "FY28",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Analyze internal data by end of 2nd qrt",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Compare previous data to new",
+              "status": "not-started"
+            },
+            {
+              "text": "Search for program markers for effectiveness",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P3.28.G3",
+          "year": "FY28",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Identify trends by end of 4th qrt",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Research and identify strengths",
+              "status": "not-started"
+            },
+            {
+              "text": "Research and identify weakness",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P3.29.G1",
+          "year": "FY29",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Expand on 3 successful programs by end of 2nd qrt",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Expand upon proven strengths",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P3.29.G2",
+          "year": "FY29",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Improve upon 3 weak programs by end of 3rd qrt",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Discuss and list ways to improve",
+              "status": "not-started"
+            },
+            {
+              "text": "Implement improvement plans for weak programs",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P3.29.G3",
+          "year": "FY29",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Address 2 gaps in outreach efforts by end of 4th qrt",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Explore future options to address gaps",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P4",
+      "name": "EMS",
+      "steward": "Nick Satterly",
+      "backup": "Famke Wolbers",
+      "purpose": "To provide high quality medical care in a prompt, compassionate, and skilled manner ensuring the safety and well-being of all citizens and visitors of North Port.",
+      "goals": [
+        {
+          "id": "P4.25.G1",
+          "year": "FY25",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Cadet Program",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Develop policy and procedures",
+              "status": "complete"
+            },
+            {
+              "text": "Assign 5 advisors",
+              "status": "complete"
+            },
+            {
+              "text": "Develop first year outline",
+              "status": "complete"
+            },
+            {
+              "text": "Approval and select applicants",
+              "status": "complete"
+            },
+            {
+              "text": "Implement Program",
+              "status": "complete"
+            }
+          ]
+        },
+        {
+          "id": "P4.25.G2",
+          "year": "FY25",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Field Training Officer Apprenticeship",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Develop policy and procedures",
+              "status": "complete"
+            },
+            {
+              "text": "Establish requirements",
+              "status": "complete"
+            },
+            {
+              "text": "Establish timeline",
+              "status": "complete"
+            },
+            {
+              "text": "Establish FTO PDP",
+              "status": "complete"
+            },
+            {
+              "text": "Implement Program",
+              "status": "complete"
+            }
+          ]
+        },
+        {
+          "id": "P4.25.G3",
+          "year": "FY25",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Transition to CAAS Accreditation 4.0",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Evaluate new requirements",
+              "status": "complete"
+            },
+            {
+              "text": "Create new policies / procedures for compliance",
+              "status": "complete"
+            },
+            {
+              "text": "Identify gaps",
+              "status": "complete"
+            },
+            {
+              "text": "Annual reaccred proofs of compliance",
+              "status": "complete"
+            },
+            {
+              "text": "Time sensitive standards",
+              "status": "complete"
+            }
+          ]
+        },
+        {
+          "id": "P4.26.G1",
+          "year": "FY26",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Earn Gold Rating - Mission Lifeline",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Monitor current and future metrics",
+              "status": "complete"
+            },
+            {
+              "text": "Ensure protocols continue to meet best practices",
+              "status": "not-started"
+            },
+            {
+              "text": "Quarterly reporting of data",
+              "status": "complete"
+            },
+            {
+              "text": "Submit measures for Mission Lifeline",
+              "status": "complete"
+            }
+          ]
+        },
+        {
+          "id": "P4.26.G2",
+          "year": "FY26",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Research and Development Program EMS",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Evaluate Equipment based on industry trends & standards",
+              "status": "not-started"
+            },
+            {
+              "text": "Evaluate policies and protocols based on industry trends & standards",
+              "status": "not-started"
+            },
+            {
+              "text": "Formulate committee",
+              "status": "not-started"
+            },
+            {
+              "text": "Idendify funding sources (grants, budgeting)",
+              "status": "not-started"
+            },
+            {
+              "text": "Identify and implementation of new EHR/RMS",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P4.26.G3",
+          "year": "FY26",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Implement Major Incident Plan",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Identify major incident threats",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop plan for each threat",
+              "status": "not-started"
+            },
+            {
+              "text": "Plan large scale drill (active shooter)",
+              "status": "not-started"
+            },
+            {
+              "text": "Re-evaulate Plans",
+              "status": "not-started"
+            },
+            {
+              "text": "Identify additional needs",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P4.27.G1",
+          "year": "FY27",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Establish Advanced Life Support Coverage Plan",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Idendity coverage dead response zones",
+              "status": "not-started"
+            },
+            {
+              "text": "Identify areas with extended reflex time",
+              "status": "not-started"
+            },
+            {
+              "text": "Analize zone response data",
+              "status": "not-started"
+            },
+            {
+              "text": "Adjust rescue PAR as needed",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P4.27.G2",
+          "year": "FY27",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Complete EMS Organizational Structure-Scope",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Evaluate span of control",
+              "status": "not-started"
+            },
+            {
+              "text": "Identify personnel gaps",
+              "status": "not-started"
+            },
+            {
+              "text": "Recommend improvements",
+              "status": "not-started"
+            },
+            {
+              "text": "Succession Planning",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P4.27.G3",
+          "year": "FY27",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Renew Accreditation",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Annual reaccred proofs of compliance 25,26,27",
+              "status": "not-started"
+            },
+            {
+              "text": "Submit application for re-accred",
+              "status": "not-started"
+            },
+            {
+              "text": "August 2027 On-Site review",
+              "status": "not-started"
+            },
+            {
+              "text": "Re-New PedReady",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P4.28.G1",
+          "year": "FY28",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "EMS Supervision Evaluation",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Identify response location",
+              "status": "not-started"
+            },
+            {
+              "text": "Establish roles and responsibilities",
+              "status": "not-started"
+            },
+            {
+              "text": "Establish qualifications",
+              "status": "not-started"
+            },
+            {
+              "text": "Evaluate budget",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P4.28.G2",
+          "year": "FY28",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Mobile Integrated Healthcare Implementation",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Conduct community health needs assessment",
+              "status": "not-started"
+            },
+            {
+              "text": "Establish partnership with health care stake holders",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop program framework and protocols",
+              "status": "not-started"
+            },
+            {
+              "text": "Explore funding sources and cost benefit",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P4.28.G3",
+          "year": "FY28",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "EMS Community Risk Reduction enhancements",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Analyze incident data to identify high risk areas",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop targeted health education campaigns",
+              "status": "not-started"
+            },
+            {
+              "text": "Establish partnership with public health and social service agencies",
+              "status": "not-started"
+            },
+            {
+              "text": "Implement data driven evaluation process",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P4.29.G1",
+          "year": "FY29",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "In House Paramedic School",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Establish partnership with Coamesp school",
+              "status": "not-started"
+            },
+            {
+              "text": "Secure funding and infrastructure",
+              "status": "not-started"
+            },
+            {
+              "text": "Recruit and train instructors",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P4.29.G2",
+          "year": "FY29",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Advanced EMS Programs",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Identify high value advanced EMS courses",
+              "status": "not-started"
+            },
+            {
+              "text": "Conduct advance training for EMS personnel",
+              "status": "not-started"
+            },
+            {
+              "text": "Secure necessary equipment and supplies",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop advanced protocols and scope of practice",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P5",
+      "name": "Administration",
+      "steward": "Nick Herlihy",
+      "backup": "Scott Titus",
+      "purpose": "Support all areas of fire rescue services provision to internal and external stakeholders by leading, managing, evaluating, and planning to meet needs in a transparent, progressive manner focused on exceptional public service.",
+      "goals": [
+        {
+          "id": "P5.25.G1",
+          "year": "FY25",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Reduce staff time dedicated to smoke detector program.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Determine current staff time dedicated to program",
+              "status": "complete"
+            },
+            {
+              "text": "Streamline program delivery based on best time use",
+              "status": "complete"
+            },
+            {
+              "text": "Communicate changes to staff and public for ed",
+              "status": "complete"
+            },
+            {
+              "text": "Realize reduction in staff time dedicated",
+              "status": "complete"
+            }
+          ]
+        },
+        {
+          "id": "P5.26.G1",
+          "year": "FY26",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Advocate for connectivity of E & W corridors",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Meet with public works",
+              "status": "complete"
+            },
+            {
+              "text": "Meet with new developers",
+              "status": "not-started"
+            },
+            {
+              "text": "Ensure opticom works during construction",
+              "status": "not-started"
+            },
+            {
+              "text": "Monitor connectivity progress and price construction",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P5.26.G2",
+          "year": "FY26",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Maintain ISO 1",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Review criteria to maintain",
+              "status": "not-started"
+            },
+            {
+              "text": "Assess needs",
+              "status": "not-started"
+            },
+            {
+              "text": "Assign needs/ collaborate with other depts",
+              "status": "not-started"
+            },
+            {
+              "text": "Document all needed data, proof of compliance",
+              "status": "not-started"
+            },
+            {
+              "text": "Prepare for site visit",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P5.26.G3",
+          "year": "FY26",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Obtain CFAI",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Formilize Acceeditation SOG",
+              "status": "not-started"
+            },
+            {
+              "text": "Implement processes move towards best practice",
+              "status": "not-started"
+            },
+            {
+              "text": "Gather proof of compliance",
+              "status": "not-started"
+            },
+            {
+              "text": "Go to Applicant status",
+              "status": "not-started"
+            },
+            {
+              "text": "Deliver training on SOG (outlier response time)",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P5.27.G1",
+          "year": "FY27",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Maintain CAAS",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Incorporate 4th edition manual",
+              "status": "not-started"
+            },
+            {
+              "text": "Assess needs",
+              "status": "not-started"
+            },
+            {
+              "text": "Assign task of what is needed",
+              "status": "not-started"
+            },
+            {
+              "text": "Obtain proof of compliance yearly",
+              "status": "not-started"
+            },
+            {
+              "text": "Prepare for re-accreditation",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P5.27.G2",
+          "year": "FY27",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Maintain ISO 1",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Review criteria to maintain",
+              "status": "not-started"
+            },
+            {
+              "text": "Assess needs",
+              "status": "not-started"
+            },
+            {
+              "text": "Assign needs/ collaborate with other depts",
+              "status": "not-started"
+            },
+            {
+              "text": "Document all needed data, proof of compliance",
+              "status": "not-started"
+            },
+            {
+              "text": "Prepare for site visit",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P5.27.G3",
+          "year": "FY27",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Obtain CFAI",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Follow up on current assigned tasks",
+              "status": "not-started"
+            },
+            {
+              "text": "Implement processes move towards best practice",
+              "status": "not-started"
+            },
+            {
+              "text": "Gather proof of compliance",
+              "status": "not-started"
+            },
+            {
+              "text": "Go to Applicant status",
+              "status": "not-started"
+            },
+            {
+              "text": "Incorporate 11th edition manual",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P5.28.G1",
+          "year": "FY28",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Obtain proper funding and resources to obtain a fire academy.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Establish state requirements for an academy and gain approval",
+              "status": "not-started"
+            },
+            {
+              "text": "Cost needed / budget",
+              "status": "not-started"
+            },
+            {
+              "text": "Determine staffing model needed",
+              "status": "not-started"
+            },
+            {
+              "text": "Evaluate alternative instructor compensation",
+              "status": "not-started"
+            },
+            {
+              "text": "Acquire structures needed",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P5.28.G2",
+          "year": "FY28",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Obtain proper funding and resources to start volunteer program",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Gain approval through budget process",
+              "status": "not-started"
+            },
+            {
+              "text": "Establish policies and procedures",
+              "status": "not-started"
+            },
+            {
+              "text": "Determine staff support needed",
+              "status": "not-started"
+            },
+            {
+              "text": "Advertise and recruit volunteers",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P5.28.G3",
+          "year": "FY28",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Maintain quarterly turn over rate below 1% excluding retirement",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Obtain data broken into categories",
+              "status": "not-started"
+            },
+            {
+              "text": "Monitor necessary categories",
+              "status": "not-started"
+            },
+            {
+              "text": "Internal evaluation of why",
+              "status": "not-started"
+            },
+            {
+              "text": "Implement change based on the why",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P5.29.G1",
+          "year": "FY29",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Maintain or exceed current performance meaures based on established target.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Monitor real time performance monthly, qrt, yr",
+              "status": "not-started"
+            },
+            {
+              "text": "Identify areas in need of additional funding",
+              "status": "not-started"
+            },
+            {
+              "text": "Request necessary funding",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P6",
+      "name": "Emergency Management",
+      "steward": "Stacy Aloisio",
+      "backup": "Mike Neverez",
+      "purpose": "Committed to building resilience by safeguarding the well-being and property of the community through an all-hazards approach to disaster management.",
+      "goals": [
+        {
+          "id": "P6.25.G1",
+          "year": "FY25",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Break ground of new EOC by September 2025",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Complete EOC design",
+              "status": "complete"
+            },
+            {
+              "text": "Obtain bids and contracts",
+              "status": "complete"
+            },
+            {
+              "text": "Obtain approval from legal",
+              "status": "complete"
+            },
+            {
+              "text": "Present to commission and get approval",
+              "status": "not-started"
+            },
+            {
+              "text": "Obtain permits / break ground",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P6.25.G2",
+          "year": "FY25",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Expand EOC program by May 2025",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Evaluate needs for more EOC staff",
+              "status": "complete"
+            },
+            {
+              "text": "Assign staff to C & D shift",
+              "status": "complete"
+            },
+            {
+              "text": "Implement E-role program",
+              "status": "complete"
+            },
+            {
+              "text": "Create SOGs / check lists for positions",
+              "status": "complete"
+            },
+            {
+              "text": "Train and exercise all EOC staff",
+              "status": "complete"
+            }
+          ]
+        },
+        {
+          "id": "P6.25.G3",
+          "year": "FY25",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Expand EM staffing plan by September 2025",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Evaluate need for new EM staff",
+              "status": "complete"
+            },
+            {
+              "text": "Create job description and justification",
+              "status": "complete"
+            },
+            {
+              "text": "Present and obtain approval",
+              "status": "complete"
+            },
+            {
+              "text": "Post positions to begin FY-26",
+              "status": "complete"
+            },
+            {
+              "text": "Evaluate need for future staffing needs",
+              "status": "complete"
+            }
+          ]
+        },
+        {
+          "id": "P6.26.G1",
+          "year": "FY26",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Create a project management plan for continual plan updates by Q2.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Hire an EM planner",
+              "status": "complete"
+            },
+            {
+              "text": "Planner orientation/ plan inventory",
+              "status": "complete"
+            },
+            {
+              "text": "Create project mgmt plan",
+              "status": "complete"
+            },
+            {
+              "text": "Coordinate with directors",
+              "status": "not-started"
+            },
+            {
+              "text": "Evaluate",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P6.26.G2",
+          "year": "FY26",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Execute plan updates in coordination with partners completing updates by the end of year.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "CEMP Base plan",
+              "status": "not-started"
+            },
+            {
+              "text": "COOP",
+              "status": "complete"
+            },
+            {
+              "text": "THIRA",
+              "status": "complete"
+            },
+            {
+              "text": "CEMP analysis",
+              "status": "complete"
+            },
+            {
+              "text": "EM SOP/ SOG",
+              "status": "complete"
+            }
+          ]
+        },
+        {
+          "id": "P6.26.G3",
+          "year": "FY26",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Perform gap analysis to ID missing plan by May 2026",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Review plan inventory, share and get feedback",
+              "status": "not-started"
+            },
+            {
+              "text": "Review list of suggested plans",
+              "status": "not-started"
+            },
+            {
+              "text": "Review THIRA for additional gaps",
+              "status": "not-started"
+            },
+            {
+              "text": "Coordinate with partners to prioritize",
+              "status": "not-started"
+            },
+            {
+              "text": "Add to project mgmt plan for completion",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P6.27.G1",
+          "year": "FY27",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Coordinate with Communications Division to improve EM exposure by February 2027",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Create EM logo and branding",
+              "status": "not-started"
+            },
+            {
+              "text": "Create and mgt EM social media",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop outreach materials",
+              "status": "not-started"
+            },
+            {
+              "text": "Create interactive seminars",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P6.27.G2",
+          "year": "FY27",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Collaborate with partners to spread EM messaging by May 2027.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Regular appearances on WKDW 8 and city podcast",
+              "status": "complete"
+            },
+            {
+              "text": "Hurricane season overview commission",
+              "status": "complete"
+            },
+            {
+              "text": "All hazards guides from county",
+              "status": "complete"
+            },
+            {
+              "text": "CERT collaboratiion",
+              "status": "complete"
+            },
+            {
+              "text": "Coordinate with partners to increase hurricane seminars",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P6.27.G3",
+          "year": "FY27",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Analyze and improve upon outreach events and materials by May 2027.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "ID how to improve interactions at open house",
+              "status": "not-started"
+            },
+            {
+              "text": "Evaluate and update hurricane expo",
+              "status": "complete"
+            },
+            {
+              "text": "Participate in new comers day",
+              "status": "complete"
+            },
+            {
+              "text": "Evaluate the need for specific brochures/ trifolds",
+              "status": "complete"
+            }
+          ]
+        },
+        {
+          "id": "P6.28.G1",
+          "year": "FY28",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Perform gap analysis to ID trainings and excersice need by December 2028.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Review AARs and plans to ID needed trainings",
+              "status": "not-started"
+            },
+            {
+              "text": "Coordinate with directors on training for staff",
+              "status": "not-started"
+            },
+            {
+              "text": "Hire a training ex. coordinator",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P6.28.G2",
+          "year": "FY28",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Develop training and excercise calendar by January 2028.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Hold an IPPW to prioritize trainings and exercises",
+              "status": "not-started"
+            },
+            {
+              "text": "Create training calendar",
+              "status": "not-started"
+            },
+            {
+              "text": "Share calendar with directors for final approval.",
+              "status": "not-started"
+            },
+            {
+              "text": "Send IPP to county for integration",
+              "status": "not-started"
+            },
+            {
+              "text": "Participate in regional IPPW",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P6.28.G3",
+          "year": "FY28",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Facilitate Training and excercises per the intergrated preparedness plan.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "ID trainings we can teach in-house",
+              "status": "not-started"
+            },
+            {
+              "text": "ID trainings we need outside help-find instructors",
+              "status": "not-started"
+            },
+            {
+              "text": "Create exercise planning team for annual exercise",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop & facilitate exercise",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop AAR & track corrective actions",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P6.29.G1",
+          "year": "FY29",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Identify potential stakeholders and make contact by February 2029.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Work with stakeholders to identify additional partners",
+              "status": "not-started"
+            },
+            {
+              "text": "Reach out to FBOs for interest on working with the city.",
+              "status": "not-started"
+            },
+            {
+              "text": "Develop FBO/NFP Specific Seminar",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P6.29.G2",
+          "year": "FY29",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Create a process for integration into the EOC/Recovery by May 2029.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Create workshop for FBO/NFP",
+              "status": "not-started"
+            },
+            {
+              "text": "Invite partners to workshop to get info on available resources.",
+              "status": "not-started"
+            },
+            {
+              "text": "Create a method for communication/ coordination between EOC and faith based organizations and non-profit.",
+              "status": "not-started"
+            },
+            {
+              "text": "Appoint FBO/NFP Liaisons for EOC",
+              "status": "not-started"
+            },
+            {
+              "text": "Hold a drill to practice this process",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "id": "P6.29.G3",
+          "year": "FY29",
+          "predecessor": null,
+          "owner": "TBD",
+          "statement": "Create the pre-disaster recovery plan and post-disaster recovery framework by December 31, 2029.",
+          "metric": "",
+          "tasks": [
+            {
+              "text": "Evaluate need for a consultant to assist if budget needed for consultant add to FY 30",
+              "status": "not-started"
+            },
+            {
+              "text": "Create list of necessary stakeholders.",
+              "status": "not-started"
+            },
+            {
+              "text": "Review NDRF and Sarasota Plan for compliance measure.",
+              "status": "not-started"
+            },
+            {
+              "text": "Determine recovery org chart",
+              "status": "not-started"
+            },
+            {
+              "text": "ID recover gaps",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

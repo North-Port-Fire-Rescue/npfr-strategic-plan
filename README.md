@@ -1,4 +1,4 @@
-# NPFR Strategic Plan — `/npfr-strategic-plan`
+# NPFR Strategic Plan — `/splan`
 
 Interactive web application for viewing, navigating, and tracking the North Port Fire Rescue Strategic Plan (FY2026–FY2029). Hosted on GitHub Pages at:
 
@@ -11,7 +11,7 @@ https://northportfirerescue.github.io/npfr-strategic-plan
 ## Repository structure
 
 ```
-npfr-strategic-plan/
+splan/
 ├── index.html                        # Application shell and all JS logic
 ├── style.css                         # All styles — themes, pillar colors, layout
 ├── build.py                          # Pre-push build script (index + Excel)
