@@ -13,6 +13,7 @@
 
 <!-- ═══ HEADER ═══ -->
 <header id="header">
+  <button id="sidebar-toggle" onclick="toggleSidebar()" aria-label="Open navigation">☰</button>
   <div class="agency">North Port Fire Rescue</div>
   <div class="plan-title">Strategic Plan 2026–2029</div>
   <div class="hdr-spacer"></div>
@@ -46,6 +47,9 @@
   <div id="banner-snapshot" class="banner banner-info"></div>
   <div id="banner-edit"    class="banner banner-edit">✎ Edit mode active — changes are session-only until exported.</div>
 </div>
+
+<!-- Mobile sidebar backdrop -->
+<div id="sidebar-backdrop" onclick="closeSidebar()"></div>
 
 <!-- ═══ LAYOUT ═══ -->
 <div id="layout">
@@ -118,7 +122,11 @@
 
     <!-- Changes log -->
     <div class="form-group">
-      <label class="form-label">Session changes (<span id="cl-count">0</span>)</label>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">
+        <label class="form-label" style="margin:0">Session changes (<span id="cl-count">0</span>)</label>
+        <button class="cl-toggle-all" id="cl-check-all" onclick="setAllChangelogs(true)" style="display:none">Check all</button>
+        <button class="cl-toggle-all" id="cl-uncheck-all" onclick="setAllChangelogs(false)" style="display:none">Uncheck all</button>
+      </div>
       <div class="changelog-preview" id="cl-preview">No changes this session.</div>
     </div>
 
@@ -254,13 +262,17 @@ let _snapshots = [];   // ordered array of filenames (descending, latest first)
 let _snapshotLabels = {}; // filename → display label
 let _viewingSnapshot = null;
 const THEME_KEY  = 'npfr_splan_theme';
-const DRAFT_KEY  = 'npfr_splan_draft';
+const DRAFT_KEY_BASE = 'npfr_splan_draft';
 const EDIT_KEY   = 'npfr_edit_unlocked';
+
+function _draftKey() {
+  return _viewingSnapshot ? `${DRAFT_KEY_BASE}_${_viewingSnapshot}` : DRAFT_KEY_BASE;
+}
 
 /* ── Draft auto-save ── */
 function saveDraft() {
   try {
-    localStorage.setItem(DRAFT_KEY, JSON.stringify({
+    localStorage.setItem(_draftKey(), JSON.stringify({
       savedAt:   new Date().toISOString(),
       plan:      PLAN,
       changelog: _changelog
@@ -269,12 +281,12 @@ function saveDraft() {
 }
 
 function clearDraft() {
-  try { localStorage.removeItem(DRAFT_KEY); } catch(e) {}
+  try { localStorage.removeItem(_draftKey()); } catch(e) {}
 }
 
 function loadDraftIfAny() {
   try {
-    const raw = localStorage.getItem(DRAFT_KEY);
+    const raw = localStorage.getItem(_draftKey());
     if (!raw) return false;
     const draft = JSON.parse(raw);
     if (!draft || !draft.plan) return false;
@@ -642,12 +654,14 @@ function renderYearView() {
 
         html += `<div class="year-goal-row" id="yrow-${gid}" data-goal="${g.id}" style="margin-left:8px">
           <div class="ygr-summary" onclick="toggleYearRow('${gid}')">
-            <span class="ygr-id" style="background:${accentVar};color:var(--pillar-${pIdx}-text)">${g.id}</span>
+            <div class="ygr-id-col">
+              <span class="ygr-id" style="background:${accentVar};color:var(--pillar-${pIdx}-text)">${g.id}</span>
+              ${g.domain ? `<span class="pill pill-domain ygr-domain">${escHtml(g.domain)}</span>` : ''}
+            </div>
             <span class="ygr-stmt">${escHtml(g.statement)}</span>
             <span class="ygr-owner">${g.owner&&g.owner!=='TBD'?escHtml(g.owner):''}</span>
             <div class="ygr-status-col">
               <span class="ygr-status pill ${scls}">${statusLabel(gs)} ${done}/${total}</span>
-              ${g.domain ? `<span class="pill pill-domain ygr-domain">${escHtml(g.domain)}</span>` : ''}
             </div>
             <span class="ygr-toggle">⌄</span>
           </div>
@@ -885,7 +899,12 @@ function renderDependencies() {
   document.getElementById('dep-content').innerHTML=html||'<div style="color:var(--text-muted);font-size:13px">No dependency chains found.</div>';
 }
 
-/* ── Navigation ── */
+function showView(v) {
+  if (v === 'year') renderYearView();
+  if (v === 'pillars') renderPillars();
+  _showView(v);
+}
+
 function _showView(v) {
   document.querySelectorAll('.view').forEach(el=>el.classList.remove('active'));
   document.querySelectorAll('.nav-tab').forEach(el=>el.classList.remove('active'));
@@ -1182,7 +1201,6 @@ function clEntryHtml(e) {
 /* ── Task status ── */
 function setTask(goalId, taskIdx, newStatus, event) {
   event.stopPropagation();
-  if(_viewingSnapshot)return;
   const g=getGoalById(goalId);if(!g)return;
   const old=g.tasks[taskIdx].status;
   if(old===newStatus)return;
@@ -1487,19 +1505,25 @@ async function loadSnapshot(filename) {
     if (!res.ok) return;
     PLAN = await res.json();
     _viewingSnapshot = isLatest ? null : filename;
+    _changelog = [];
+    _unsaved = false;
     if (!isLatest) {
       await loadPrevSnapshot(filename);
+      loadDraftIfAny(); // offer to restore any previously saved edits to this snapshot
     } else {
       _prevSnapshot = null;
     }
     const label = snapshotLabel(filename);
     renderAll();
     updateSnapArrows();
+    const editBtn = document.getElementById('edit-toggle');
+    if (editBtn) { editBtn.disabled = false; editBtn.title = ''; }
     if (isLatest) {
       hideBanner('banner-snapshot');
     } else {
       showBanner('banner-snapshot',
         `Viewing snapshot: <strong>${label}</strong>${PLAN.label && PLAN.label !== label ? ' — '+PLAN.label : ''}.
+         Edits will overwrite this snapshot on export.
          <button class="banner-btn" onclick="document.getElementById('snapshot-select').value='${_snapshots[0]}';loadSnapshot('${_snapshots[0]}')">Back to current</button>`
       );
     }
@@ -1511,44 +1535,88 @@ async function loadSnapshot(filename) {
 let _exportMode = 'correction'; // 'correction' | 'snapshot'
 
 function openExportModal() {
-  // Default to correction if editing existing, snapshot if no existing snapshots
-  _exportMode = _snapshots.length ? 'correction' : 'snapshot';
+  // If viewing a historical snapshot, always default to correction (overwrite that file)
+  // If on latest or no snapshots, use normal logic
+  if (_viewingSnapshot) {
+    _exportMode = 'correction';
+  } else {
+    _exportMode = _snapshots.length ? 'correction' : 'snapshot';
+  }
   _applyExportMode();
 
   const sessionEntries = _changelog;
   const storedEntries = PLAN.changelog || [];
   const totalCount = sessionEntries.length + storedEntries.length;
 
-  document.getElementById('cl-count').textContent = totalCount;
+  document.getElementById('cl-count').textContent = sessionEntries.length;
   const preview = document.getElementById('cl-preview');
+  const checkAll = document.getElementById('cl-check-all');
+  const uncheckAll = document.getElementById('cl-uncheck-all');
+
+  const typeLabel = t => ({
+    status:'Status', edit_goal:'Edit Goal', add_goal:'Add Goal', delete_goal:'Delete Goal',
+    move_goal:'Move Goal', edit_task:'Edit Task', add_task:'Add Task', delete_task:'Delete Task',
+    edit_pillar:'Edit Pillar', add_pillar:'Add Pillar', delete_pillar:'Delete Pillar'
+  }[t] || t);
 
   if (totalCount === 0) {
     preview.innerHTML = '<div style="color:var(--text-dim);font-style:italic">No changes recorded.</div>';
+    checkAll.style.display = 'none';
+    uncheckAll.style.display = 'none';
   } else {
-    const renderEntry = e => `<div class="cl-entry">
-      <span class="cl-ts">${new Date(e.timestamp).toLocaleString(undefined,{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'})}</span>
-      <span style="margin:0 6px;color:var(--accent)">${e.type}</span>
-      <span>${e.goalId||''} ${e.note||e.taskText||''} ${e.from?`${e.from}→${e.to}`:''}</span>
-    </div>`;
-
+    checkAll.style.display = '';
+    uncheckAll.style.display = '';
     let html = '';
+
     if (sessionEntries.length) {
-      html += `<div class="cl-section-label">This session (${sessionEntries.length})</div>`;
-      html += [...sessionEntries].reverse().map(renderEntry).join('');
+      html += `<div class="cl-section-label">This session — check to include in log</div>`;
+      sessionEntries.forEach((e, i) => {
+        const ts = new Date(e.timestamp).toLocaleString(undefined,{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});
+        const desc = [e.goalId, e.note||e.taskText, e.from ? `${e.from} → ${e.to}` : ''].filter(Boolean).join(' · ');
+        html += `<label class="cl-entry cl-entry-check">
+          <input type="checkbox" class="cl-cb" data-idx="${i}" checked>
+          <span class="cl-entry-body">
+            <span class="cl-ts">${ts}</span>
+            <span class="cl-type" style="color:var(--accent)">${typeLabel(e.type)}</span>
+            <span class="cl-desc">${escHtml(desc)}</span>
+          </span>
+        </label>`;
+      });
     }
+
     if (storedEntries.length) {
-      html += `<div class="cl-section-label" style="margin-top:8px">In file (${storedEntries.length})</div>`;
-      html += [...storedEntries].reverse().slice(0, 20).map(renderEntry).join('');
-      if (storedEntries.length > 20) {
-        html += `<div style="color:var(--text-dim);font-size:11px;padding:4px 0">… ${storedEntries.length - 20} older entries in file</div>`;
+      html += `<div class="cl-section-label" style="margin-top:10px">Already in file (${storedEntries.length}) — uncheck to remove from export</div>`;
+      const reversed = [...storedEntries].reverse();
+      const showAll = reversed.length <= 15;
+      const toShow = showAll ? reversed : reversed.slice(0, 15);
+      toShow.forEach((e, i) => {
+        const realIdx = storedEntries.length - 1 - i; // index into original storedEntries array
+        const ts = new Date(e.timestamp).toLocaleString(undefined,{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});
+        const desc = [e.goalId, e.note||e.taskText, e.from ? `${e.from} → ${e.to}` : ''].filter(Boolean).join(' · ');
+        html += `<label class="cl-entry cl-entry-check">
+          <input type="checkbox" class="cl-cb-stored" data-idx="${realIdx}" checked>
+          <span class="cl-entry-body">
+            <span class="cl-ts">${ts}</span>
+            <span class="cl-type" style="color:var(--text-muted)">${typeLabel(e.type)}</span>
+            <span class="cl-desc">${escHtml(desc)}</span>
+          </span>
+        </label>`;
+      });
+      if (reversed.length > 15) {
+        html += `<div style="color:var(--text-dim);font-size:11px;padding:4px 0">… ${reversed.length - 15} older entries not shown</div>`;
       }
     }
+
     preview.innerHTML = html;
   }
 
   document.getElementById('export-copy-feedback').style.display = 'none';
   updateExportFilename();
   openModal('modal-export');
+}
+
+function setAllChangelogs(checked) {
+  document.querySelectorAll('#cl-preview .cl-cb, #cl-preview .cl-cb-stored').forEach(cb => cb.checked = checked);
 }
 
 function setExportMode(mode) {
@@ -1571,7 +1639,8 @@ function _applyExportMode() {
 
 function _getExportFilename() {
   if (_exportMode === 'correction') {
-    // Overwrite the latest existing file
+    // If viewing a historical snapshot, overwrite that specific file
+    if (_viewingSnapshot) return _viewingSnapshot;
     return _snapshots.length ? _snapshots[0] : _buildDateFilename();
   }
   return _buildDateFilename();
@@ -1594,7 +1663,28 @@ function _buildExportedPlan(includeLabel) {
     plan.label = (document.getElementById('export-label').value || '').trim() || plan.label;
   }
   plan.exported = new Date().toISOString();
-  plan.changelog = [...(plan.changelog || []), ..._changelog];
+
+  // Session entries: only include checked ones
+  const checkedSession = new Set(
+    [...document.querySelectorAll('#cl-preview .cl-cb')]
+      .filter(cb => cb.checked)
+      .map(cb => parseInt(cb.dataset.idx))
+  );
+  const sessionToInclude = _changelog.filter((_, i) => checkedSession.has(i));
+
+  // Stored entries: only include checked ones (uncheck = remove from file)
+  const checkedStored = new Set(
+    [...document.querySelectorAll('#cl-preview .cl-cb-stored')]
+      .filter(cb => cb.checked)
+      .map(cb => parseInt(cb.dataset.idx))
+  );
+  const storedEntries = PLAN.changelog || [];
+  // If no stored checkboxes rendered (e.g. modal not open), keep all stored entries
+  const storedToInclude = document.querySelectorAll('#cl-preview .cl-cb-stored').length > 0
+    ? storedEntries.filter((_, i) => checkedStored.has(i))
+    : storedEntries;
+
+  plan.changelog = [...storedToInclude, ...sessionToInclude];
   return plan;
 }
 
@@ -1721,6 +1811,35 @@ function setTheme(theme,btn){
 /* ── Utility ── */
 function escHtml(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 
+/* ── Mobile sidebar drawer ── */
+function toggleSidebar() {
+  const sidebar  = document.getElementById('sidebar');
+  const backdrop = document.getElementById('sidebar-backdrop');
+  const isOpen   = sidebar.classList.contains('open');
+  if (isOpen) { closeSidebar(); } else { openSidebar(); }
+}
+function openSidebar() {
+  document.getElementById('sidebar').classList.add('open');
+  document.getElementById('sidebar-backdrop').classList.add('visible');
+  document.body.style.overflow = 'hidden';
+}
+function closeSidebar() {
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('sidebar-backdrop').classList.remove('visible');
+  document.body.style.overflow = '';
+}
+// Close drawer automatically after a nav item is tapped on mobile
+(function patchSidebarNavClose() {
+  document.addEventListener('click', function(e) {
+    const nav = e.target.closest('#sidebar .pillar-nav');
+    if (nav && window.innerWidth <= 768) { closeSidebar(); }
+  });
+})();
+// Close drawer on resize back to desktop
+window.addEventListener('resize', function() {
+  if (window.innerWidth > 768) { closeSidebar(); }
+});
+
 /* ── Init ── */
 loadPlan();
 
@@ -1728,6 +1847,22 @@ loadPlan();
 const _bannerObserver = new ResizeObserver(() => adjustBannerLayout());
 const _bannerWrap = document.getElementById('banner-wrap');
 if (_bannerWrap) _bannerObserver.observe(_bannerWrap);
+
+// Keep --header-h in sync on mobile (header wraps into multiple rows)
+function adjustHeaderHeight() {
+  const hdr = document.getElementById('header');
+  if (!hdr) return;
+  if (window.innerWidth <= 768) {
+    document.documentElement.style.setProperty('--header-h', hdr.getBoundingClientRect().height + 'px');
+  } else {
+    // Restore the desktop default so the layout offset doesn't drift
+    document.documentElement.style.removeProperty('--header-h');
+  }
+}
+const _headerObserver = new ResizeObserver(adjustHeaderHeight);
+const _hdr = document.getElementById('header');
+if (_hdr) _headerObserver.observe(_hdr);
+adjustHeaderHeight();
 </script>
 </body>
 </html>

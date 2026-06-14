@@ -662,6 +662,61 @@ body.theme-npfr .modal-btn-pri{color:#1C0505}
 /* ── Year view goal row ID badge per pillar — requires data attribute ── */
 /* These are set via inline style in renderYearView since rows are not
    wrapped in a pillar-color container. No CSS needed here — handled in JS. */
+/* ── Year view: ID + domain pill wrapper ── */
+.ygr-id-col {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-shrink: 0;
+}
+.ygr-id-col .ygr-id { flex-shrink: 0; }
+.ygr-id-col .ygr-domain { max-width: 160px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* ── Export modal: checkable changelog entries ── */
+.cl-toggle-all {
+  font-size: 11px;
+  color: var(--text-muted);
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2px 7px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.cl-toggle-all:hover { color: var(--text); border-color: var(--accent); }
+
+.cl-entry-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 5px 6px;
+  margin-bottom: 2px;
+  transition: background .1s;
+}
+.cl-entry-check:hover { background: rgba(255,255,255,0.04); }
+body.theme-light .cl-entry-check:hover { background: rgba(0,0,0,0.04); }
+.cl-entry-check input[type=checkbox] { margin-top: 3px; flex-shrink: 0; accent-color: var(--accent); }
+.cl-entry-check:has(input:not(:checked)) { opacity: 0.45; }
+
+.cl-entry-body { display: flex; flex-wrap: wrap; gap: 4px; align-items: baseline; }
+.cl-type { font-size: 11px; font-weight: 600; letter-spacing: 0.04em; }
+.cl-desc { font-size: 12px; color: var(--text-muted); }
+
+.cl-entry-stored {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-items: baseline;
+  padding: 4px 6px;
+  opacity: 0.5;
+  font-size: 12px;
+}
+
+/* Task status buttons — only visible in edit mode */
+body:not(.edit-mode) .tbtn { display: none; }
+
 /* ══ Domain pills ══ */
 .pill-domain {
   background: rgba(255,255,255,0.07);
@@ -739,3 +794,260 @@ body.theme-light .cl-section-head{background:rgba(0,0,0,0.04)}
 .cl-diff-from{font-size:11px;color:var(--text-dim);text-decoration:line-through;margin-bottom:3px}
 .cl-diff-to{font-size:11px;color:var(--text);margin-bottom:3px}
 .cl-diff-ts{font-size:10px;color:var(--text-dim);margin-top:4px}
+/* ══════════════════════════════════════════════════════════════
+   MOBILE RESPONSIVE STYLES
+   Breakpoints: 768px (tablet), 480px (phone)
+   Strategy:
+     - Header: collapse to two rows; hide less-critical controls
+     - Sidebar: hidden by default; slides in as an overlay drawer
+     - Main: full-width, reduced padding
+     - Goal cards / year view: reflow pills and grid columns
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── Hamburger / sidebar toggle (hidden on desktop) ── */
+#sidebar-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  border-radius: 6px;
+  width: 34px;
+  height: 34px;
+  font-size: 18px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background .15s, color .15s;
+}
+#sidebar-toggle:hover { background: rgba(255,255,255,0.07); color: var(--text); }
+body.theme-light #sidebar-toggle:hover { background: rgba(0,0,0,0.05); }
+
+/* Sidebar overlay backdrop */
+#sidebar-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 149;
+  background: rgba(0,0,0,0.5);
+}
+#sidebar-backdrop.visible { display: block; }
+
+@media (max-width: 768px) {
+
+  /* ── Header ── */
+  #header {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 8px 12px;
+    gap: 6px;
+    row-gap: 6px;
+  }
+
+  /* Row 1: hamburger | agency name | spacer | theme switcher */
+  #sidebar-toggle { display: flex; }
+
+  .agency { font-size: 14px; }
+  .plan-title { display: none; }   /* hidden on mobile — too long */
+  .hdr-spacer { flex: 1; min-width: 0; }
+
+  .theme-switcher { order: 10; }
+  .theme-btn { font-size: 11px; padding: 3px 7px; }
+
+  /* Row 2: nav tabs + search (full width) */
+  .nav-tabs {
+    order: 20;
+    width: 100%;
+    gap: 2px;
+  }
+  .nav-tab { flex: 1; text-align: center; font-size: 12px; padding: 5px 4px; }
+
+  .hdr-search-wrap {
+    order: 30;
+    width: 100%;
+    flex-shrink: 0;
+  }
+  .hdr-search { width: 100% !important; font-size: 13px; box-sizing: border-box; }
+  .hdr-search:focus { width: 100% !important; }
+
+  /* Snapshot nav — keep compact */
+  #snapshot-nav { order: 5; flex-shrink: 0; }
+  #snapshot-select { max-width: 110px; font-size: 11px; }
+
+  /* Edit + export buttons — smaller */
+  #edit-toggle { font-size: 12px; padding: 4px 9px; order: 8; }
+  #export-btn  { font-size: 12px; padding: 4px 9px; order: 9; }
+  .hdr-btn     { font-size: 11px; padding: 4px 9px; }
+
+  /* Excel download: hide label, keep icon */
+  .hdr-btn.hdr-btn-pri { font-size: 0; padding: 5px 8px; }
+  .hdr-btn.hdr-btn-pri::before { content: "↓ XLS"; font-size: 11px; }
+
+  /* Prevent horizontal overflow */
+  body, #layout, #main { overflow-x: hidden; }
+  html { overflow-x: hidden; }
+
+  /* ── Sidebar becomes an off-canvas drawer ── */
+  #sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 260px;
+    min-width: 260px;
+    z-index: 150;
+    transform: translateX(-100%);
+    transition: transform .25s ease;
+    /* override sticky so the fixed positioning works */
+    top: 0 !important;
+    height: 100vh !important;
+    overflow-y: auto;
+  }
+  #sidebar.open {
+    transform: translateX(0);
+  }
+
+  /* ── Main content: full width ── */
+  #layout { display: block; margin-top: calc(var(--header-h) + var(--banner-h)); }
+  #main   { padding: 16px 12px; max-width: 100%; box-sizing: border-box; width: 100%; }
+
+  /* ── Overview cards: single column ── */
+  #overview-grid { grid-template-columns: 1fr !important; }
+
+  /* ── Year view rows: reflow to badge-on-top layout ── */
+  .ygr-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 10px 12px;
+    position: relative;
+  }
+  /* Top line: badge + domain pill, chevron anchored top-right */
+  .ygr-id-col {
+    margin-bottom: 6px;
+    align-self: flex-start;
+    flex-wrap: wrap;
+    max-width: calc(100% - 28px); /* don't run under chevron */
+  }
+  .ygr-toggle {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+  }
+  /* Statement takes full width */
+  .ygr-stmt {
+    font-size: 13px;
+    padding-right: 24px;
+  }
+  /* Hide status + owner columns; show them in expanded body */
+  .ygr-status-col { display: none; }
+  .ygr-owner      { display: none; }
+  /* When row is open, reveal status as a small footer inside tasks area */
+  .year-goal-row.open .ygr-status-col {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+    padding: 8px 14px 4px;
+  }
+
+  /* ── Goal card header: stack badge above text on mobile ── */
+  .gc-header {
+    padding: 12px 12px;
+    gap: 0;
+    flex-wrap: wrap;        /* allow badge row + toggle to sit on top line */
+  }
+  /* Badge + domain pill row — full width, sits above the statement */
+  .gc-id-col {
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    width: calc(100% - 28px); /* leave room for toggle chevron */
+    margin-bottom: 7px;
+    margin-top: 0;
+  }
+  /* Toggle chevron stays top-right */
+  .gc-actions {
+    margin-left: auto;
+    margin-top: 0;
+    align-self: flex-start;
+  }
+  /* Statement + pills take full width below badge */
+  .gc-main {
+    width: 100%;
+    flex: none;
+  }
+  .gc-statement { font-size: 14px; margin-bottom: 6px; }
+  .gc-pills   { gap: 3px; }
+  .pill       { font-size: 10px; padding: 2px 5px; }
+
+  /* Domain pill max-width relaxed on mobile (more horizontal space available) */
+  .gc-domain-pill { max-width: 160px; }
+
+  /* ── Pillar header ── */
+  .ph-title  { font-size: 20px; }
+  .ph-purpose { font-size: 13px; }
+
+  /* ── Dependency nodes — stretch full width, arrow points down ── */
+  .dep-chain { padding: 14px; }
+  .dep-chain-flow {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    width: 100%;
+  }
+  .dep-node {
+    min-width: 0;
+    max-width: none;
+    width: auto;
+    align-self: stretch;
+    flex: 1 1 auto;
+    box-sizing: border-box;
+  }
+  /* Rotate arrow: hide → character, show ↓ via pseudo-element */
+  .dep-arrow {
+    padding: 0;
+    text-align: center;
+    font-size: 0;
+    line-height: 1;
+    margin: 4px 0;
+    align-self: center;
+  }
+  .dep-arrow::after {
+    content: '↓';
+    font-size: 17px;
+    color: var(--text-dim);
+    display: block;
+    text-align: center;
+  }
+
+  /* ── Modal ── */
+  .modal { padding: 20px 16px; }
+  .form-row { grid-template-columns: 1fr; }   /* stack two-column fields */
+
+  /* ── Banner ── */
+  .banner { font-size: 12px; padding: 6px 14px; }
+}
+
+/* ── Extra-narrow phones ── */
+@media (max-width: 480px) {
+  .agency { font-size: 13px; }
+  .nav-tab { font-size: 11px; padding: 4px 2px; }
+
+  .gc-statement { font-size: 13px; }
+  .ph-title     { font-size: 18px; }
+  .year-label   { font-size: 18px; }
+
+  /* Snapshot nav: shrink the select */
+  #snapshot-select { max-width: 90px; font-size: 10px; }
+  .snap-arrow     { font-size: 13px; padding: 2px 5px; }
+
+  /* Goal card body padding */
+  .gc-body { padding: 0 10px 12px; }
+
+  /* Section heading: stack expand/collapse buttons below title */
+  .section-heading { flex-wrap: wrap; gap: 8px; font-size: 17px; }
+  .expand-all-btns { margin-left: 0; width: 100%; justify-content: flex-start; }
+}

@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-14T11:54:36.488Z",
+  "exported": "2026-06-14T11:53:10.285Z",
   "label": "Restructured — 4 pillars, 12 domains",
   "mission": "Provide exceptional public safety services in a safe, compassionate, and professional manner.",
   "vision": "To be confirmed by command staff",
@@ -374,11 +374,11 @@
             },
             {
               "text": "Develop education program.",
-              "status": "complete"
+              "status": "not-started"
             },
             {
               "text": "Collect and review feedback forms.",
-              "status": "complete"
+              "status": "not-started"
             },
             {
               "text": "Relaunch revised ODP with defined enrollment criteria and delivery schedule.",
@@ -397,11 +397,11 @@
           "tasks": [
             {
               "text": "Assess current staffing and workload distribution.",
-              "status": "complete"
+              "status": "not-started"
             },
             {
               "text": "Develop clear job descriptions and roles for specific training functions.",
-              "status": "complete"
+              "status": "not-started"
             },
             {
               "text": "Establish reporting structure for division oversight.",
@@ -599,7 +599,7 @@
           "id": "P2.28.G2",
           "year": "FY28",
           "domain": "Training Operations",
-          "predecessor": "",
+          "predecessor": "P2.27.G3",
           "owner": "TBD",
           "statement": "Execute formal partnership agreements with a minimum of four regional educational institutions, establish documented shared-resource access protocols for training infrastructure, and develop a joint recruitment pipeline pathway with at least two institutions by Q4.",
           "metric": "Formal partnership agreements executed with a minimum of four regional educational institutions by Q4, shared-resource access protocols documented, and joint recruitment pipeline established with at least two institutions.",
@@ -825,11 +825,11 @@
           "tasks": [
             {
               "text": "Access and compile data from ImageTrend, police reporting, GIS, Mobile-Eyes, and regional sources.",
-              "status": "complete"
+              "status": "not-started"
             },
             {
               "text": "Organize data and rank by importance, financial impact, and organizational capacity.",
-              "status": "complete"
+              "status": "not-started"
             },
             {
               "text": "Evaluate data to identify highest-priority risk areas for program development.",
@@ -852,15 +852,15 @@
           "tasks": [
             {
               "text": "Establish programs based on greatest identified need from data evaluation.",
-              "status": "complete"
+              "status": "not-started"
             },
             {
               "text": "Formalize Elementary School CRR Education program.",
-              "status": "complete"
+              "status": "not-started"
             },
             {
               "text": "Formalize Senior Public Education program.",
-              "status": "complete"
+              "status": "not-started"
             },
             {
               "text": "Formalize SOGs for Fire Marshal program delivery.",
@@ -1143,23 +1143,23 @@
           "metric": "CFAI candidate application submitted by Q4, with Accreditation SOG formalized and documented proof of compliance gathered across all applicable categories.",
           "tasks": [
             {
-              "text": "Strategic Plan adopted by the AHJ",
+              "text": "Formalize Accreditation SOG.",
               "status": "not-started"
             },
             {
               "text": "Implement processes and move toward best practice alignment.",
-              "status": "complete"
+              "status": "not-started"
             },
             {
               "text": "Gather proof of compliance.",
-              "status": "complete"
+              "status": "not-started"
             },
             {
               "text": "Achieve CFAI applicant status.",
-              "status": "complete"
+              "status": "not-started"
             },
             {
-              "text": "CRA SOC Adopted by the AHJ",
+              "text": "Deliver training on SOG including outlier response time policies.",
               "status": "not-started"
             }
           ]
@@ -1253,10 +1253,10 @@
           "id": "P4.27.G2",
           "year": "FY27",
           "domain": "Accreditation and Compliance",
-          "predecessor": "",
+          "predecessor": "P4.26.G2",
           "owner": "TBD",
-          "statement": "Complete CAAS re-accreditation by incorporating all 4th edition manual requirements, obtaining annual proofs of compliance across all applicable categories, submitting the re-accreditation application, and achieving a successful on-site review by Q4.",
-          "metric": "CAAS re-accreditation achieved by Q4, with 4th edition manual requirements incorporated, all annual proofs of compliance gathered, re-accreditation application submitted, and successful on-site review conducted.",
+          "statement": "Complete CAAS re-accreditation by incorporating all 4th edition manual requirements, obtaining annual proofs of compliance across all applicable categories, submitting the re-accreditation application, completing the PedReady renewal, and achieving a successful on-site review by Q4.",
+          "metric": "CAAS re-accreditation achieved by Q4, with 4th edition manual requirements incorporated, all annual proofs of compliance gathered, re-accreditation application submitted, PedReady renewal complete, and successful on-site review conducted.",
           "tasks": [
             {
               "text": "Review CAAS 4th edition manual requirements and identify all applicable changes from the previous accreditation cycle.",
@@ -1311,7 +1311,7 @@
           "id": "P4.28.G1",
           "year": "FY28",
           "domain": "Accreditation and Compliance",
-          "predecessor": "",
+          "predecessor": "P4.27.G2",
           "owner": "TBD",
           "statement": "Develop a centralized digital records management system including a complete record inventory, file mapping, access controls, migration of all active records not meeting retention, and completed disposition of records that have met retention requirements with the Clerk's office by Q4.",
           "metric": "Centralized digital records management system operational by Q4, with complete record inventory documented, all active records migrated, and records meeting retention requirements dispositioned with the Clerk's office.",
@@ -1570,132 +1570,6 @@
       "goalId": "P1.26.G1",
       "taskIdx": 3,
       "taskText": "Re-evaluate plans following drill and identify additional needs.",
-      "from": "not-started",
-      "to": "complete"
-    },
-    {
-      "timestamp": "2026-06-14T11:53:52.167Z",
-      "type": "status",
-      "goalId": "P2.26.G2",
-      "taskIdx": 1,
-      "taskText": "Develop education program.",
-      "from": "not-started",
-      "to": "complete"
-    },
-    {
-      "timestamp": "2026-06-14T11:53:54.938Z",
-      "type": "status",
-      "goalId": "P2.26.G2",
-      "taskIdx": 2,
-      "taskText": "Collect and review feedback forms.",
-      "from": "not-started",
-      "to": "complete"
-    },
-    {
-      "timestamp": "2026-06-14T11:53:56.405Z",
-      "type": "status",
-      "goalId": "P2.26.G2",
-      "taskIdx": 3,
-      "taskText": "Relaunch revised ODP with defined enrollment criteria and delivery schedule.",
-      "from": "not-started",
-      "to": "complete"
-    },
-    {
-      "timestamp": "2026-06-14T11:54:00.882Z",
-      "type": "status",
-      "goalId": "P2.26.G2",
-      "taskIdx": 3,
-      "taskText": "Relaunch revised ODP with defined enrollment criteria and delivery schedule.",
-      "from": "complete",
-      "to": "not-started"
-    },
-    {
-      "timestamp": "2026-06-14T11:54:05.057Z",
-      "type": "status",
-      "goalId": "P2.26.G3",
-      "taskIdx": 0,
-      "taskText": "Assess current staffing and workload distribution.",
-      "from": "not-started",
-      "to": "complete"
-    },
-    {
-      "timestamp": "2026-06-14T11:54:05.576Z",
-      "type": "status",
-      "goalId": "P2.26.G3",
-      "taskIdx": 1,
-      "taskText": "Develop clear job descriptions and roles for specific training functions.",
-      "from": "not-started",
-      "to": "complete"
-    },
-    {
-      "timestamp": "2026-06-14T11:54:09.076Z",
-      "type": "status",
-      "goalId": "P3.26.G1",
-      "taskIdx": 0,
-      "taskText": "Access and compile data from ImageTrend, police reporting, GIS, Mobile-Eyes, and regional sources.",
-      "from": "not-started",
-      "to": "complete"
-    },
-    {
-      "timestamp": "2026-06-14T11:54:09.487Z",
-      "type": "status",
-      "goalId": "P3.26.G1",
-      "taskIdx": 1,
-      "taskText": "Organize data and rank by importance, financial impact, and organizational capacity.",
-      "from": "not-started",
-      "to": "complete"
-    },
-    {
-      "timestamp": "2026-06-14T11:54:20.987Z",
-      "type": "status",
-      "goalId": "P3.26.G2",
-      "taskIdx": 0,
-      "taskText": "Establish programs based on greatest identified need from data evaluation.",
-      "from": "not-started",
-      "to": "complete"
-    },
-    {
-      "timestamp": "2026-06-14T11:54:21.652Z",
-      "type": "status",
-      "goalId": "P3.26.G2",
-      "taskIdx": 1,
-      "taskText": "Formalize Elementary School CRR Education program.",
-      "from": "not-started",
-      "to": "complete"
-    },
-    {
-      "timestamp": "2026-06-14T11:54:21.996Z",
-      "type": "status",
-      "goalId": "P3.26.G2",
-      "taskIdx": 2,
-      "taskText": "Formalize Senior Public Education program.",
-      "from": "not-started",
-      "to": "complete"
-    },
-    {
-      "timestamp": "2026-06-14T11:54:24.641Z",
-      "type": "status",
-      "goalId": "P4.26.G1",
-      "taskIdx": 3,
-      "taskText": "Achieve CFAI applicant status.",
-      "from": "not-started",
-      "to": "complete"
-    },
-    {
-      "timestamp": "2026-06-14T11:54:25.872Z",
-      "type": "status",
-      "goalId": "P4.26.G1",
-      "taskIdx": 2,
-      "taskText": "Gather proof of compliance.",
-      "from": "not-started",
-      "to": "complete"
-    },
-    {
-      "timestamp": "2026-06-14T11:54:26.362Z",
-      "type": "status",
-      "goalId": "P4.26.G1",
-      "taskIdx": 1,
-      "taskText": "Implement processes and move toward best practice alignment.",
       "from": "not-started",
       "to": "complete"
     }

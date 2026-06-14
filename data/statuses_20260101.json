@@ -1,6 +1,6 @@
 {
-  "exported": "2026-10-01T00:00:00.000Z",
-  "label": "FY26 Q1 \u2014 October 2026",
+  "exported": "2026-06-14T11:45:57.988Z",
+  "label": "FY26 Q1 — October 2026",
   "mission": "Provide exceptional public safety services in a safe, compassionate, and professional manner.",
   "vision": "To be confirmed by command staff",
   "values": [
@@ -23,19 +23,19 @@
           "predecessor": null,
           "owner": "TBD",
           "statement": "Develop and validate a comprehensive major incident response plan for each identified threat type within NPFR's response model, with at least one plan tested through a full-scale or functional drill by Q4.",
-          "metric": "",
+          "metric": "Major incident response plans validated through at least one full-scale or functional drill by Q4, with after-action documentation on file.",
           "tasks": [
             {
               "text": "Identify major incident threat types across all hazard types.",
-              "status": "not-started"
+              "status": "complete"
             },
             {
               "text": "Develop a response plan for each identified threat.",
-              "status": "not-started"
+              "status": "complete"
             },
             {
               "text": "Plan and conduct a large-scale drill including active shooter scenario.",
-              "status": "not-started"
+              "status": "complete"
             },
             {
               "text": "Re-evaluate plans following drill and identify additional needs.",
@@ -54,7 +54,7 @@
           "predecessor": null,
           "owner": "Kyle Dent",
           "statement": "Develop and implement a comprehensive station facility maintenance monitoring program that identifies all high-use items by responsible party (Facilities or FD), establishes service and replacement schedules for each category, and creates an internal tracking system to ensure timely completion of all maintenance actions by Q4.",
-          "metric": "",
+          "metric": "Station facility maintenance monitoring program operational by Q4, with all items inventoried by responsible party, service schedules documented, and internal tracking system active.",
           "tasks": [
             {
               "text": "Review and document items serviced by Facilities (A/C, garage doors, landscaping, etc.) and establish an internal monitoring process to track and prompt completion.",
@@ -81,7 +81,7 @@
           "predecessor": null,
           "owner": "TBD",
           "statement": "Increase the number of Hazardous Materials Technician-certified personnel by a minimum of three, establish a target hazard pre-plan library for all identified city sites, and conduct at least one HOT training or tabletop exercise by Q4.",
-          "metric": "",
+          "metric": "Minimum three additional Hazardous Materials Technician-certified personnel achieved, target hazard pre-plan library complete for all identified city sites, and at least one HOT training or tabletop exercise conducted by Q4.",
           "tasks": [
             {
               "text": "Increase the number of personnel certified to the Hazardous Materials Technician level to serve as future Fire FTOs.",
@@ -112,7 +112,7 @@
           "predecessor": null,
           "owner": "TBD",
           "statement": "Conduct a comprehensive PPE inventory assessment, establish minimum reserve inventory standards, develop a long-term lifecycle replacement model with annual funding projections, and implement a sustainable PPE readiness program by Q4.",
-          "metric": "",
+          "metric": "PPE inventory assessed, minimum reserve standards established, lifecycle replacement model documented with annual funding projections, and sustainable PPE readiness program implemented by Q4.",
           "tasks": [
             {
               "text": "Conduct a comprehensive assessment of the department's PPE inventory.",
@@ -143,7 +143,7 @@
           "predecessor": null,
           "owner": "TBD",
           "statement": "Evaluate the need for logistics resource hubs with locker technology at identified station locations, with installed inventory management systems, documented SOGs, trained personnel, and an initial effectiveness evaluation completed by Q4.",
-          "metric": "",
+          "metric": "Needs assessment complete, logistics resource hub program developed with inventory management system installed, SOGs documented, personnel trained, and initial effectiveness evaluation completed by Q4.",
           "tasks": [
             {
               "text": "Conduct a needs assessment and geographic analysis.",
@@ -174,7 +174,7 @@
           "predecessor": "P1.27.G3",
           "owner": "TBD",
           "statement": "Develop and adopt a Logistics Division continuity plan that documents all critical functions, assigns position-specific continuity guides and SOPs, establishes a cross-training program covering all critical roles, and completes a program appraisal by Q4.",
-          "metric": "Continuity plan adopted with guides for all critical functions. Depends on completion of both PPE program (P1.27.G2) and logistics hubs program (P1.27.G3).",
+          "metric": "Logistics Division continuity plan adopted with position-specific guides and SOPs for all critical functions, cross-training program established, and program appraisal completed by Q4.",
           "tasks": [
             {
               "text": "Identify critical logistics functions, systems, responsibilities, and operational processes.",
@@ -205,7 +205,7 @@
           "predecessor": null,
           "owner": "TBD",
           "statement": "Complete a structured assessment of all mutual aid and automatic aid agreements, radio interoperability, and CAD integration with primary mutual aid partners, and deliver a prioritized gap report to command staff by Q2.",
-          "metric": "",
+          "metric": "Structured assessment of all mutual aid agreements, radio interoperability, and CAD integration complete, with prioritized gap report delivered to command staff by Q2.",
           "tasks": [
             {
               "text": "Compare mutual and automatic aid responses.",
@@ -232,7 +232,7 @@
           "predecessor": "P1.28.G2",
           "owner": "TBD",
           "statement": "Develop updated mutual aid agreements, joint training protocols, and communications interoperability solutions addressing all gaps identified in the FY28 assessment, with all draft agreements delivered to partner agencies for review by Q4.",
-          "metric": "",
+          "metric": "Updated mutual aid agreements, joint training protocols, and communications interoperability solutions developed and delivered to all partner agencies for review by Q4.",
           "tasks": [
             {
               "text": "Collaborate with mutual aid partners on updated response procedures.",
@@ -259,7 +259,7 @@
           "predecessor": null,
           "owner": "TBD",
           "statement": "Complete a fleet readiness and maintenance assessment that analyzes program effectiveness, calculates annual maintenance costs by apparatus, measures downtime against manufacturer PM schedules, identifies highest-burden units, and establishes KPIs for apparatus availability by Q4.",
-          "metric": "",
+          "metric": "Fleet readiness and maintenance assessment complete by Q4, with annual maintenance costs calculated per apparatus, downtime measured against manufacturer PM schedules, highest-burden units identified, and KPIs for apparatus availability established.",
           "tasks": [
             {
               "text": "Analyze maintenance program effectiveness and collect data to determine apparatus downtime.",
@@ -290,7 +290,7 @@
           "predecessor": "P1.28.G3",
           "owner": "TBD",
           "statement": "Execute signed updates to all mutual aid agreements, deliver a minimum of one joint interagency training exercise, and verify communications interoperability with all primary mutual aid partners by Q4.",
-          "metric": "",
+          "metric": "Signed updates to all mutual aid agreements executed, minimum one joint interagency training exercise delivered, and communications interoperability verified with all primary mutual aid partners by Q4.",
           "tasks": [
             {
               "text": "Hold regular interagency coordination meetings.",
@@ -339,15 +339,15 @@
           "predecessor": null,
           "owner": "TBD",
           "statement": "Develop and adopt a written department-wide succession plan that identifies all personnel eligible to separate within five years, maps critical position vacancies, and assigns developmental actions to identified successors by Q4.",
-          "metric": "",
+          "metric": "Written department-wide succession plan adopted by Q4, identifying all personnel eligible to separate within five years, mapping critical position vacancies, and assigning developmental actions to identified successors.",
           "tasks": [
             {
               "text": "Identify personnel leaving within the next five years.",
-              "status": "not-started"
+              "status": "complete"
             },
             {
               "text": "Develop written succession plan.",
-              "status": "not-started"
+              "status": "complete"
             },
             {
               "text": "Review NFPA standards.",
@@ -366,15 +366,15 @@
           "predecessor": null,
           "owner": "TBD",
           "statement": "Complete a full audit of the Officer Development Program, revise curriculum and job descriptions to reflect current competency expectations and CFAI credentialing categories, and relaunch with a documented delivery schedule by Q4.",
-          "metric": "",
+          "metric": "Revised Officer Development Program relaunched by Q4 with updated curriculum, current competency expectations aligned to CFAI credentialing categories, and a documented delivery schedule.",
           "tasks": [
             {
               "text": "Update and revise job descriptions.",
-              "status": "not-started"
+              "status": "complete"
             },
             {
               "text": "Develop education program.",
-              "status": "not-started"
+              "status": "complete"
             },
             {
               "text": "Collect and review feedback forms.",
@@ -393,11 +393,11 @@
           "predecessor": null,
           "owner": "TBD",
           "statement": "Establish documented roles, responsibilities, and reporting structure for all training division positions, and implement a continuous evaluation framework for workload, span of control, and operational needs by Q3.",
-          "metric": "",
+          "metric": "Documented roles, responsibilities, and reporting structure established for all training division positions, and continuous evaluation framework for workload and span of control implemented by Q3.",
           "tasks": [
             {
               "text": "Assess current staffing and workload distribution.",
-              "status": "not-started"
+              "status": "complete"
             },
             {
               "text": "Develop clear job descriptions and roles for specific training functions.",
@@ -420,11 +420,11 @@
           "predecessor": null,
           "owner": "TBD",
           "statement": "Implement a targeted recruitment program that includes formal partnerships with a minimum of four local technical schools, a functioning online recruitment portal, standardized interview questions, a documented scoring system, and an active recruitment committee by Q4.",
-          "metric": "",
+          "metric": "Recruitment program operational by Q4 with formal partnerships at a minimum of four local technical schools, functioning online portal, standardized interview questions, documented scoring system, and active recruitment committee.",
           "tasks": [
             {
               "text": "Evaluate last fiscal year's applicant pool.",
-              "status": "not-started"
+              "status": "complete"
             },
             {
               "text": "Partner with four local technical schools.",
@@ -451,7 +451,7 @@
           "predecessor": null,
           "owner": "TBD",
           "statement": "Complete a comprehensive evaluation of EMS organizational span of control, staffing gaps, and succession needs including QA/QI, accreditation, and specialty program requirements, and present findings with specific recommendations to command staff by Q3.",
-          "metric": "",
+          "metric": "Comprehensive EMS organizational evaluation complete by Q3, with findings and specific staffing recommendations for QA/QI, accreditation, and specialty program positions presented to command staff.",
           "tasks": [
             {
               "text": "Conduct comprehensive review of EMS span of control and organizational responsibilities by Q2.",
@@ -478,7 +478,7 @@
           "predecessor": "P2.26.G1",
           "owner": "TBD",
           "statement": "Conduct a comprehensive evaluation of training academy models, regional partnerships, and facility requirements to determine the feasibility and preferred approach for establishing an NPFR-hosted training academy, and present findings with a recommended implementation pathway to command staff by Q4.",
-          "metric": "",
+          "metric": "Feasibility report on NPFR-hosted training academy presented to command staff by Q4, with recommended implementation pathway, cost estimates, and regional partnership options documented.",
           "tasks": [
             {
               "text": "Research existing training academy models at comparable agencies.",
@@ -509,7 +509,7 @@
           "predecessor": null,
           "owner": "TBD",
           "statement": "Complete a formal evaluation of sleep health challenges facing shift-based personnel, including review of current crew-quarters configuration, existing research on firefighter sleep deprivation, and peer agency solutions, and present findings with recommendations to command staff by Q4.",
-          "metric": "",
+          "metric": "Sleep health evaluation complete by Q4, with findings on crew-quarters configuration, personnel survey results, and facility and policy recommendations presented to command staff.",
           "tasks": [
             {
               "text": "Review current literature and peer agency practices on firefighter sleep health and shift-based sleep deprivation.",
@@ -540,7 +540,7 @@
           "predecessor": null,
           "owner": "TBD",
           "statement": "Design and launch a structured internal communication program that establishes regular information flow between command staff and line personnel through scheduled station visits covering all stations at least twice annually, a quarterly department periodical, and a digital communication platform for shift-based staff, with all three components operational by Q4.",
-          "metric": "",
+          "metric": "Internal communication program fully operational by Q4, with all stations visited a minimum of twice, quarterly department periodical published, and digital communication platform active for shift-based staff.",
           "tasks": [
             {
               "text": "Identify avenues for contact and exposure from officer to line personnel.",
@@ -571,7 +571,7 @@
           "predecessor": "P2.27.G1",
           "owner": "TBD",
           "statement": "Complete a formal evaluation of EMS supervisory roles, field coverage effectiveness, and future deployment models, and present findings with implementation recommendations to command staff by Q4.",
-          "metric": "",
+          "metric": "EMS supervisory evaluation complete by Q4, with findings on field coverage effectiveness, clinical oversight opportunities, and implementation recommendations for future supervisory positions presented to command staff.",
           "tasks": [
             {
               "text": "Define EMS supervisor roles, responsibilities, and performance expectations by Q1.",
@@ -599,10 +599,10 @@
           "id": "P2.28.G2",
           "year": "FY28",
           "domain": "Training Operations",
-          "predecessor": "P2.27.G3",
+          "predecessor": "",
           "owner": "TBD",
           "statement": "Execute formal partnership agreements with a minimum of four regional educational institutions, establish documented shared-resource access protocols for training infrastructure, and develop a joint recruitment pipeline pathway with at least two institutions by Q4.",
-          "metric": "",
+          "metric": "Formal partnership agreements executed with a minimum of four regional educational institutions by Q4, shared-resource access protocols documented, and joint recruitment pipeline established with at least two institutions.",
           "tasks": [
             {
               "text": "Strengthen relationships with decision makers at regional educational institutions.",
@@ -629,7 +629,7 @@
           "predecessor": null,
           "owner": "TBD",
           "statement": "Establish a functioning NPFR Training Academy by implementing the pathway recommended in the FY27 evaluation, securing necessary facility arrangements and partnerships, and delivering a minimum of one formally structured training program to internal personnel by Q4.",
-          "metric": "",
+          "metric": "NPFR Training Academy established by Q4, with facility and partnership agreements in place and a minimum of one formally structured training program delivered to internal personnel with outcomes documented.",
           "tasks": [
             {
               "text": "Implement facility and partnership agreements identified in FY27 evaluation.",
@@ -660,7 +660,7 @@
           "predecessor": "P2.27.G3",
           "owner": "TBD",
           "statement": "Implement the sleep health improvement recommendations identified in the FY27 sleep study, including retrofit of individual sleeping rooms at Brix station and adoption of station-level sleep hygiene protocols, with all primary facility modifications complete by Q4.",
-          "metric": "",
+          "metric": "Individual sleeping room retrofit at Brix station complete by Q4, station-level sleep hygiene protocols adopted, and personnel survey conducted to assess improvement in self-reported sleep quality.",
           "tasks": [
             {
               "text": "Develop project scope and cost estimate for Brix station individual room retrofit.",
@@ -691,7 +691,7 @@
           "predecessor": null,
           "owner": "TBD",
           "statement": "Achieve and document 90% or greater professional credentialing of all applicable positions aligned to CFAI credentialing categories, with individual completion plans in place for all remaining uncredentialed personnel by Q4.",
-          "metric": "",
+          "metric": "90% or greater professional credentialing of all applicable positions documented by Q4, with individual completion plans on file for all remaining uncredentialed personnel.",
           "tasks": [
             {
               "text": "Meet with all staff that have an associated CFAI credential category.",
@@ -718,7 +718,7 @@
           "predecessor": "P2.28.G1",
           "owner": "TBD",
           "statement": "Develop and present a workforce growth plan that identifies staffing needs through FY32 based on call volume trends and community growth data, includes a phased onboarding model with hiring timeline, employment terms, career progression, and retention strategies, by Q4.",
-          "metric": "",
+          "metric": "Workforce growth plan presented to command staff by Q4, projecting staffing needs through FY32 with a phased onboarding model covering hiring timeline, employment terms, career progression, and retention strategies.",
           "tasks": [
             {
               "text": "Analyze population demographics, call volume trends, and urban vs rural growth projections.",
@@ -745,7 +745,7 @@
           "predecessor": "P2.28.G1",
           "owner": "TBD",
           "statement": "Develop a financial plan addressing projected staffing growth needs through FY32, incorporating position cost modeling, identified funding sources, and a phased hiring timeline aligned to call volume thresholds, and present for command staff adoption by Q4.",
-          "metric": "",
+          "metric": "Financial plan addressing projected staffing growth through FY32 presented for command staff adoption by Q4, with position cost modeling, identified funding sources, and phased hiring timeline aligned to call volume thresholds.",
           "tasks": [
             {
               "text": "Consider grants and identify available funding sources.",
@@ -768,7 +768,7 @@
           "predecessor": "P2.28.G3",
           "owner": "TBD",
           "statement": "Achieve recognized training center status, host a minimum of two training sessions, increase collaborative training events with external agencies by 50% over the FY28 baseline, and increase external trainee participation in NPFR-led courses by 30% by Q4.",
-          "metric": "",
+          "metric": "Recognized training center status achieved, minimum two training sessions hosted, collaborative training events with external agencies increased 50% over FY28 baseline, and external trainee participation in NPFR-led courses increased 30% by Q4.",
           "tasks": [
             {
               "text": "Ensure accreditation requirements are met and submit necessary applications.",
@@ -821,11 +821,11 @@
           "predecessor": null,
           "owner": "TBD",
           "statement": "Gather, organize, and evaluate community risk data from five sources including ImageTrend, police reporting, GIS, Mobile-Eyes, and regional data, and deliver a ranked baseline risk report identifying highest-priority program areas to the CRR team by Q2.",
-          "metric": "",
+          "metric": "Ranked baseline risk report identifying highest-priority program areas delivered to the CRR team by Q2, drawing from a minimum of five data sources.",
           "tasks": [
             {
               "text": "Access and compile data from ImageTrend, police reporting, GIS, Mobile-Eyes, and regional sources.",
-              "status": "not-started"
+              "status": "complete"
             },
             {
               "text": "Organize data and rank by importance, financial impact, and organizational capacity.",
@@ -848,11 +848,11 @@
           "predecessor": "P3.26.G1",
           "owner": "TBD",
           "statement": "Design and launch two new community risk reduction programs targeting the highest-priority risk categories identified in the FY26 baseline report, including a formalized Elementary School CRR Education program and a Senior Public Education program, with both programs operational and baseline data collection underway by Q4.",
-          "metric": "",
+          "metric": "Elementary School CRR Education program and Senior Public Education program both operational by Q4, with baseline data collection underway for each.",
           "tasks": [
             {
               "text": "Establish programs based on greatest identified need from data evaluation.",
-              "status": "not-started"
+              "status": "complete"
             },
             {
               "text": "Formalize Elementary School CRR Education program.",
@@ -875,7 +875,7 @@
           "predecessor": null,
           "owner": "TBD",
           "statement": "Analyze EMS incident data to identify priority community health risks, develop and launch targeted prevention initiatives addressing CPR, falls, stroke awareness, drowning prevention, and severe weather preparedness, and establish performance measures for all EMS-related CRR activities by Q3.",
-          "metric": "",
+          "metric": "Targeted EMS prevention initiatives addressing CPR, falls, stroke awareness, drowning prevention, and severe weather preparedness launched by Q3, with performance measures established for all EMS-related CRR activities.",
           "tasks": [
             {
               "text": "Analyze EMS incident data to identify priority community health risks by Q1.",
@@ -906,7 +906,7 @@
           "predecessor": "P3.26.G1",
           "owner": "TBD",
           "statement": "Develop a minimum of three new CRR program policies with supporting content by Q1, and complete phased rollout of a minimum of four CRR programs with Programs 1 and 2 operational by Q3 and Programs 3 and 4 operational by Q4.",
-          "metric": "",
+          "metric": "Minimum three new CRR program policies with supporting content complete by Q1, Programs 1 and 2 operational by Q3, and Programs 3 and 4 operational by Q4.",
           "tasks": [
             {
               "text": "Build out three new CRR program policies and supporting content by Q1.",
@@ -933,7 +933,7 @@
           "predecessor": null,
           "owner": "TBD",
           "statement": "Complete a CRR staffing capacity analysis relative to identified program delivery requirements, present a staffing needs recommendation to command staff by Q3, and establish interim capacity solutions including cross-training and volunteer engagement by Q4.",
-          "metric": "",
+          "metric": "CRR staffing capacity analysis presented to command staff by Q3, and interim capacity solutions including cross-training and volunteer engagement established by Q4.",
           "tasks": [
             {
               "text": "Review CRR program workload against identified community risk priorities.",
@@ -964,7 +964,7 @@
           "predecessor": "P3.27.G2",
           "owner": "TBD",
           "statement": "Gather updated CRR and EMS program data from all relevant sources, analyze incident trends to identify high-risk populations and areas, and deliver a written report documenting program strengths, weaknesses, and data-driven recommendations for program improvement by Q4.",
-          "metric": "",
+          "metric": "Written report documenting CRR and EMS program strengths, weaknesses, and data-driven improvement recommendations delivered by Q4, based on updated multi-source data analysis.",
           "tasks": [
             {
               "text": "Access data from ImageTrend, CARES database, GIS, regional sources, and external surveys.",
@@ -991,7 +991,7 @@
           "predecessor": null,
           "owner": "TBD",
           "statement": "Develop a Fire Explorer and Cadet pathway program in partnership with a minimum of two local high schools, conduct annual station visits and career days, and complete a formal program appraisal of the established Cadet Program by Q4.",
-          "metric": "",
+          "metric": "Fire Explorer and Cadet pathway program established in partnership with a minimum of two local high schools by Q4, annual station visits and career days implemented, and formal program appraisal of Cadet Program completed.",
           "tasks": [
             {
               "text": "Develop a Fire Explorer/Cadet pathway with local high schools.",
@@ -1022,7 +1022,7 @@
           "predecessor": "P3.27.G3",
           "owner": "TBD",
           "statement": "Establish a Community Outreach Team of trained firefighters capable of supporting public education presentations and community events, with a defined team structure, trained membership, and a minimum of two community events delivered by Q4.",
-          "metric": "",
+          "metric": "Community Outreach Team established with defined structure and trained membership by Q4, and a minimum of two community events delivered.",
           "tasks": [
             {
               "text": "Train firefighters interested in public education.",
@@ -1049,7 +1049,7 @@
           "predecessor": "P3.28.G1",
           "owner": "TBD",
           "statement": "Expand the three highest-performing CRR programs identified through FY28 data analysis by increasing reach, delivery frequency, or target population coverage, with documented expansion outcomes reported by Q2.",
-          "metric": "",
+          "metric": "Expansion of the three highest-performing CRR programs documented and reported by Q2, with measurable increases in reach, delivery frequency, or target population coverage.",
           "tasks": [
             {
               "text": "Identify the three programs with strongest performance data.",
@@ -1068,7 +1068,7 @@
           "predecessor": "P3.28.G1",
           "owner": "TBD",
           "statement": "Implement targeted improvement plans for the three lowest-performing CRR programs identified through FY28 data analysis, with all improvement actions executed and outcomes assessed by Q3.",
-          "metric": "",
+          "metric": "Improvement plans for the three lowest-performing CRR programs implemented and outcomes assessed by Q3.",
           "tasks": [
             {
               "text": "Identify three programs with weakest performance data.",
@@ -1091,7 +1091,7 @@
           "predecessor": null,
           "owner": "TBD",
           "statement": "Identify and address a minimum of two gaps in community outreach coverage targeting underserved geographic areas or demographic groups not currently reached by active CRR programs, with adapted or new program delivery operational in both identified gap areas by Q4.",
-          "metric": "",
+          "metric": "Adapted or new program delivery operational in a minimum of two identified underserved geographic areas or demographic gap populations by Q4.",
           "tasks": [
             {
               "text": "Identify two underserved geographic areas or demographic groups with no active program coverage.",
@@ -1115,7 +1115,7 @@
       "domains": [
         {
           "name": "Data and Risk Assessment",
-          "purpose": "Ground all CRR activity in current, multi-source community risk data \u2014 establishing a baseline, tracking program performance, and producing regular analytical reports that drive resource and program decisions."
+          "purpose": "Ground all CRR activity in current, multi-source community risk data — establishing a baseline, tracking program performance, and producing regular analytical reports that drive resource and program decisions."
         },
         {
           "name": "Program Development and Delivery",
@@ -1140,10 +1140,10 @@
           "predecessor": null,
           "owner": "TBD",
           "statement": "Achieve CFAI accreditation candidate status by formalizing the Accreditation SOG, implementing compliant processes across all applicable categories, gathering documented proof of compliance, and submitting the CFAI candidate application by Q4.",
-          "metric": "",
+          "metric": "CFAI candidate application submitted by Q4, with Accreditation SOG formalized and documented proof of compliance gathered across all applicable categories.",
           "tasks": [
             {
-              "text": "Formalize Accreditation SOG.",
+              "text": "Strategic Plan adopted by the AHJ",
               "status": "not-started"
             },
             {
@@ -1152,14 +1152,14 @@
             },
             {
               "text": "Gather proof of compliance.",
-              "status": "not-started"
+              "status": "complete"
             },
             {
               "text": "Achieve CFAI applicant status.",
-              "status": "not-started"
+              "status": "complete"
             },
             {
-              "text": "Deliver training on SOG including outlier response time policies.",
+              "text": "CRA SOC Adopted by the AHJ",
               "status": "not-started"
             }
           ]
@@ -1171,27 +1171,27 @@
           "predecessor": null,
           "owner": "TBD",
           "statement": "Complete all ISO 1 annual compliance requirements including needs assessment, departmental collaboration, data documentation, and proof of compliance, and deliver a site visit readiness package by Q4.",
-          "metric": "",
+          "metric": "ISO 1 annual compliance package complete by Q4, with all required data documented and site visit readiness package delivered.",
           "tasks": [
             {
               "text": "Review all criteria required to maintain ISO 1.",
-              "status": "not-started"
+              "status": "complete"
             },
             {
               "text": "Assess organizational needs against ISO requirements.",
-              "status": "not-started"
+              "status": "complete"
             },
             {
               "text": "Assign needs and collaborate with other departments.",
-              "status": "not-started"
+              "status": "complete"
             },
             {
               "text": "Document all required data and proof of compliance.",
-              "status": "not-started"
+              "status": "complete"
             },
             {
               "text": "Prepare for ISO site visit.",
-              "status": "not-started"
+              "status": "complete"
             }
           ]
         },
@@ -1202,15 +1202,15 @@
           "predecessor": null,
           "owner": "TBD",
           "statement": "Achieve the AHA Mission Lifeline Gold Rating by monitoring all required cardiac care metrics quarterly, verifying protocol alignment with current best practices, and submitting a complete Mission Lifeline application with supporting data by Q4.",
-          "metric": "",
+          "metric": "Mission Lifeline Gold Rating application submitted by Q4 with supporting quarterly cardiac care data and protocol alignment verified.",
           "tasks": [
             {
               "text": "Monitor current and future metrics.",
-              "status": "not-started"
+              "status": "complete"
             },
             {
               "text": "Ensure protocols continue to meet best practices.",
-              "status": "not-started"
+              "status": "complete"
             },
             {
               "text": "Quarterly reporting of data.",
@@ -1229,7 +1229,7 @@
           "predecessor": "P4.26.G1",
           "owner": "TBD",
           "statement": "Advance CFAI accreditation progress by completing all assigned tasks, incorporating 11th edition manual requirements, gathering ongoing proof of compliance across all categories, and reaching the next defined accreditation milestone by Q4.",
-          "metric": "",
+          "metric": "All assigned accreditation tasks completed, 11th edition manual requirements incorporated, and next defined CFAI accreditation milestone reached by Q4.",
           "tasks": [
             {
               "text": "Follow up on all currently assigned accreditation tasks.",
@@ -1253,25 +1253,29 @@
           "id": "P4.27.G2",
           "year": "FY27",
           "domain": "Accreditation and Compliance",
-          "predecessor": "P4.26.G2",
+          "predecessor": "",
           "owner": "TBD",
-          "statement": "CAAS re-accred",
-          "metric": "",
+          "statement": "Complete CAAS re-accreditation by incorporating all 4th edition manual requirements, obtaining annual proofs of compliance across all applicable categories, submitting the re-accreditation application, and achieving a successful on-site review by Q4.",
+          "metric": "CAAS re-accreditation achieved by Q4, with 4th edition manual requirements incorporated, all annual proofs of compliance gathered, re-accreditation application submitted, and successful on-site review conducted.",
           "tasks": [
             {
-              "text": "Review and assess needs for ISO 1 criteria maintenance.",
+              "text": "Review CAAS 4th edition manual requirements and identify all applicable changes from the previous accreditation cycle.",
               "status": "not-started"
             },
             {
-              "text": "Incorporate CAAS 4th edition manual requirements and obtain annual proofs of compliance.",
+              "text": "Conduct an internal gap assessment comparing current processes and documentation to 4th edition standards.",
               "status": "not-started"
             },
             {
-              "text": "Prepare CAAS re-accreditation application and PedReady renewal.",
+              "text": "Gather and organize annual proofs of compliance for all required CAAS categories.",
               "status": "not-started"
             },
             {
-              "text": "Document all compliance evidence and prepare for scheduled site visits.",
+              "text": "Prepare and submit CAAS re-accreditation application by Q3.",
+              "status": "not-started"
+            },
+            {
+              "text": "Conduct internal pre-site-visit readiness review, address identified deficiencies, and prepare staff for on-site evaluation.",
               "status": "not-started"
             }
           ]
@@ -1283,7 +1287,7 @@
           "predecessor": null,
           "owner": "TBD",
           "statement": "Complete an annual analysis of EMS response times, unit utilization, and call demand, map all EMS coverage gaps and high-demand response zones, evaluate rescue staffing models and resource allocation strategies, and present an ALS coverage improvement plan with specific recommendations to executive leadership by Q4.",
-          "metric": "",
+          "metric": "ALS coverage improvement plan with specific resource and staffing recommendations presented to executive leadership by Q4, based on completed response time analysis, coverage gap mapping, and staffing model evaluation.",
           "tasks": [
             {
               "text": "Complete annual analysis of EMS response times, unit utilization, and call demand by Q2.",
@@ -1307,10 +1311,10 @@
           "id": "P4.28.G1",
           "year": "FY28",
           "domain": "Accreditation and Compliance",
-          "predecessor": "P4.27.G2",
+          "predecessor": "",
           "owner": "TBD",
           "statement": "Develop a centralized digital records management system including a complete record inventory, file mapping, access controls, migration of all active records not meeting retention, and completed disposition of records that have met retention requirements with the Clerk's office by Q4.",
-          "metric": "",
+          "metric": "Centralized digital records management system operational by Q4, with complete record inventory documented, all active records migrated, and records meeting retention requirements dispositioned with the Clerk's office.",
           "tasks": [
             {
               "text": "Meet with staff to develop record inventory.",
@@ -1337,7 +1341,7 @@
           "predecessor": null,
           "owner": "TBD",
           "statement": "Develop a Mobile Integrated Healthcare operational framework including target population analysis, partner identification, performance measures, referral pathways, and a financial and staffing feasibility evaluation, and present an MIH implementation recommendation to command staff by Q4.",
-          "metric": "",
+          "metric": "MIH implementation recommendation presented to command staff by Q4, with completed operational framework, target population analysis, partner identification, performance measures, referral pathways, and financial and staffing feasibility evaluation.",
           "tasks": [
             {
               "text": "Analyze EMS incident data to identify target populations and service gaps by Q2.",
@@ -1368,7 +1372,7 @@
           "predecessor": null,
           "owner": "TBD",
           "statement": "Evaluate the demand, financial viability, staffing requirements, and operational feasibility of a minimum of two advanced EMS service models, and present a prioritized implementation strategy with go/no-go recommendations to executive leadership by Q4.",
-          "metric": "",
+          "metric": "Prioritized implementation strategy with go/no-go recommendations for a minimum of two advanced EMS service models presented to executive leadership by Q4.",
           "tasks": [
             {
               "text": "Evaluate demand and operational feasibility for specialty care transport services by Q2.",
@@ -1399,7 +1403,7 @@
           "predecessor": "P4.27.G1",
           "owner": "TBD",
           "statement": "Establish a Historical and Archive Committee with a formal mandate, recruited membership, and completed initial inventory of historical items by Q2, and implement agency performance standards with a documented compliance tracking and evaluation process by Q4.",
-          "metric": "",
+          "metric": "Historical and Archive Committee established with formal mandate, recruited membership, and initial inventory of historical items complete by Q2; agency performance standards implemented with documented compliance tracking process by Q4.",
           "tasks": [
             {
               "text": "Develop committee mandate, scope, mission, goals.",
@@ -1434,7 +1438,7 @@
           "predecessor": "P4.28.G2",
           "owner": "TBD",
           "statement": "Implement the Mobile Integrated Healthcare program by establishing formal healthcare partnerships, completing all policy and documentation frameworks, launching a pilot serving identified high-utilizer or at-risk populations by Q4, and initiating quarterly outcomes tracking.",
-          "metric": "",
+          "metric": "MIH pilot program launched by Q4 serving identified high-utilizer or at-risk populations, with formal healthcare partnerships established, policy and documentation frameworks complete, and quarterly outcomes tracking initiated.",
           "tasks": [
             {
               "text": "Establish formal partnerships with healthcare providers and community organizations by Q2.",
@@ -1461,7 +1465,7 @@
           "predecessor": "P4.28.G3",
           "owner": "TBD",
           "statement": "Implement a minimum of one advanced EMS service model based on FY28 feasibility findings with a documented operational framework, trained personnel, and structured outcomes tracking, and deliver a first-year performance report to command staff by Q4.",
-          "metric": "",
+          "metric": "Minimum one advanced EMS service model implemented by Q4, with documented operational framework, trained personnel, structured outcomes tracking, and first-year performance report delivered to command staff.",
           "tasks": [
             {
               "text": "Establish Specialty Care Transport framework.",
@@ -1498,5 +1502,195 @@
       ]
     }
   ],
-  "changelog": []
+  "changelog": [
+    {
+      "timestamp": "2026-06-14T11:38:29.361Z",
+      "type": "status",
+      "goalId": "P1.26.G1",
+      "taskIdx": 0,
+      "taskText": "Identify major incident threat types across all hazard types.",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2026-06-14T11:38:30.185Z",
+      "type": "status",
+      "goalId": "P1.26.G1",
+      "taskIdx": 1,
+      "taskText": "Develop a response plan for each identified threat.",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2026-06-14T11:38:31.083Z",
+      "type": "status",
+      "goalId": "P1.26.G1",
+      "taskIdx": 2,
+      "taskText": "Plan and conduct a large-scale drill including active shooter scenario.",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2026-06-14T11:43:39.985Z",
+      "type": "status",
+      "goalId": "P1.26.G1",
+      "taskIdx": 3,
+      "taskText": "Re-evaluate plans following drill and identify additional needs.",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2026-06-14T11:43:44.742Z",
+      "type": "status",
+      "goalId": "P1.26.G1",
+      "taskIdx": 3,
+      "taskText": "Re-evaluate plans following drill and identify additional needs.",
+      "from": "complete",
+      "to": "not-started"
+    },
+    {
+      "timestamp": "2026-06-14T11:43:55.455Z",
+      "type": "status",
+      "goalId": "P2.26.G1",
+      "taskIdx": 0,
+      "taskText": "Identify personnel leaving within the next five years.",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2026-06-14T11:43:56.281Z",
+      "type": "status",
+      "goalId": "P2.26.G1",
+      "taskIdx": 1,
+      "taskText": "Develop written succession plan.",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2026-06-14T11:44:03.405Z",
+      "type": "status",
+      "goalId": "P2.26.G2",
+      "taskIdx": 0,
+      "taskText": "Update and revise job descriptions.",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2026-06-14T11:44:04.029Z",
+      "type": "status",
+      "goalId": "P2.26.G2",
+      "taskIdx": 1,
+      "taskText": "Develop education program.",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2026-06-14T11:44:10.711Z",
+      "type": "status",
+      "goalId": "P2.26.G3",
+      "taskIdx": 0,
+      "taskText": "Assess current staffing and workload distribution.",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2026-06-14T11:44:22.413Z",
+      "type": "status",
+      "goalId": "P2.26.G4",
+      "taskIdx": 0,
+      "taskText": "Evaluate last fiscal year's applicant pool.",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2026-06-14T11:44:34.381Z",
+      "type": "status",
+      "goalId": "P3.26.G1",
+      "taskIdx": 0,
+      "taskText": "Access and compile data from ImageTrend, police reporting, GIS, Mobile-Eyes, and regional sources.",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2026-06-14T11:44:46.507Z",
+      "type": "status",
+      "goalId": "P3.26.G2",
+      "taskIdx": 0,
+      "taskText": "Establish programs based on greatest identified need from data evaluation.",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2026-06-14T11:44:51.675Z",
+      "type": "status",
+      "goalId": "P4.26.G1",
+      "taskIdx": 0,
+      "taskText": "Formalize Accreditation SOG.",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2026-06-14T11:45:04.778Z",
+      "type": "status",
+      "goalId": "P4.26.G2",
+      "taskIdx": 0,
+      "taskText": "Review all criteria required to maintain ISO 1.",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2026-06-14T11:45:06.431Z",
+      "type": "status",
+      "goalId": "P4.26.G2",
+      "taskIdx": 1,
+      "taskText": "Assess organizational needs against ISO requirements.",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2026-06-14T11:45:06.983Z",
+      "type": "status",
+      "goalId": "P4.26.G2",
+      "taskIdx": 2,
+      "taskText": "Assign needs and collaborate with other departments.",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2026-06-14T11:45:07.439Z",
+      "type": "status",
+      "goalId": "P4.26.G2",
+      "taskIdx": 3,
+      "taskText": "Document all required data and proof of compliance.",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2026-06-14T11:45:08.113Z",
+      "type": "status",
+      "goalId": "P4.26.G2",
+      "taskIdx": 4,
+      "taskText": "Prepare for ISO site visit.",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2026-06-14T11:45:14.587Z",
+      "type": "status",
+      "goalId": "P4.26.G3",
+      "taskIdx": 0,
+      "taskText": "Monitor current and future metrics.",
+      "from": "not-started",
+      "to": "complete"
+    },
+    {
+      "timestamp": "2026-06-14T11:45:17.335Z",
+      "type": "status",
+      "goalId": "P4.26.G3",
+      "taskIdx": 1,
+      "taskText": "Ensure protocols continue to meet best practices.",
+      "from": "not-started",
+      "to": "complete"
+    }
+  ]
 }
