@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-14T11:54:36.488Z",
+  "exported": "2026-06-15T16:08:35.593Z",
   "label": "Restructured — 4 pillars, 12 domains",
   "mission": "Provide exceptional public safety services in a safe, compassionate, and professional manner.",
   "vision": "To be confirmed by command staff",
@@ -524,7 +524,7 @@
               "status": "not-started"
             },
             {
-              "text": "Identify facility and policy solutions including retrofit options, quiet-hour protocols, and scheduling adjustments.",
+              "text": "Identify facility and policy solutions, including retrofit options, and quiet-hour protocols.",
               "status": "not-started"
             },
             {
@@ -1503,67 +1503,6 @@
     }
   ],
   "changelog": [
-    {
-      "timestamp": "2026-06-12T21:33:47.803Z",
-      "type": "status",
-      "goalId": "P1.26.G1",
-      "taskIdx": 0,
-      "taskText": "Identify major incident threat types across all hazard types.",
-      "from": "not-started",
-      "to": "complete"
-    },
-    {
-      "timestamp": "2026-06-12T21:33:48.410Z",
-      "type": "status",
-      "goalId": "P1.26.G1",
-      "taskIdx": 1,
-      "taskText": "Develop a response plan for each identified threat.",
-      "from": "not-started",
-      "to": "complete"
-    },
-    {
-      "timestamp": "2026-06-12T21:33:56.329Z",
-      "type": "status",
-      "goalId": "P2.26.G2",
-      "taskIdx": 0,
-      "taskText": "Update and revise job descriptions.",
-      "from": "not-started",
-      "to": "complete"
-    },
-    {
-      "timestamp": "2026-06-12T21:33:57.627Z",
-      "type": "status",
-      "goalId": "P2.26.G1",
-      "taskIdx": 0,
-      "taskText": "Identify personnel leaving within the next five years.",
-      "from": "not-started",
-      "to": "complete"
-    },
-    {
-      "timestamp": "2026-06-12T21:42:54.225Z",
-      "type": "edit_pillar",
-      "note": "P3 → P3: Community Risk Reduction and Public Education"
-    },
-    {
-      "timestamp": "2026-06-12T21:43:01.168Z",
-      "type": "edit_pillar",
-      "note": "P4 → P4: Professional Standards and Service Excellence"
-    },
-    {
-      "timestamp": "2026-06-13T17:14:02.045Z",
-      "type": "edit_goal",
-      "goalId": "P1.27.G1",
-      "note": "Edited: year=FY27, domain=Incident Preparedness, predecessor=none"
-    },
-    {
-      "timestamp": "2026-06-14T11:53:04.624Z",
-      "type": "status",
-      "goalId": "P1.26.G1",
-      "taskIdx": 2,
-      "taskText": "Plan and conduct a large-scale drill including active shooter scenario.",
-      "from": "not-started",
-      "to": "complete"
-    },
     {
       "timestamp": "2026-06-14T11:53:05.361Z",
       "type": "status",
