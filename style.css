@@ -167,7 +167,8 @@ body.theme-npfr .hdr-btn-pri{color:#1C0505}
 mark.sh{background:rgba(255,210,60,0.35);color:inherit;border-radius:2px;padding:0 1px}
 body.theme-light mark.sh{background:rgba(255,180,0,0.3)}
 /* Year view row expand */
-.ygr-summary{display:grid;grid-template-columns:110px 1fr 130px 110px 24px;gap:12px;align-items:center;cursor:pointer;padding:10px 14px}
+.ygr-summary{display:grid;grid-template-columns:110px 1fr 130px 110px 68px 24px;gap:12px;align-items:center;cursor:pointer;padding:10px 14px}
+.ygr-summary .edit-btn{white-space:nowrap;justify-self:end}
 .ygr-toggle{font-size:14px;color:var(--text-dim);transition:transform .2s;text-align:center;line-height:1}
 .year-goal-row.open .ygr-toggle{transform:rotate(180deg)}
 .ygr-tasks{display:none;padding:0 14px 12px 14px;border-top:1px solid var(--border)}
@@ -934,6 +935,10 @@ body.theme-light #sidebar-toggle:hover { background: rgba(0,0,0,0.05); }
     position: absolute;
     top: 12px;
     right: 12px;
+  }
+  .ygr-summary .edit-btn {
+    align-self: flex-end;
+    margin-top: 6px;
   }
   /* Statement takes full width */
   .ygr-stmt {

@@ -648,6 +648,7 @@ function renderYearView() {
               <button class="tbtn tbtn-ns${ts==='not-started'?' on':''}" onclick="setTask('${g.id}',${i},'not-started',event);rerenderYearRow('${g.id}')">—</button>
               <button class="tbtn tbtn-ip${ts==='in-progress'?' on':''}" onclick="setTask('${g.id}',${i},'in-progress',event);rerenderYearRow('${g.id}')">IP</button>
               <button class="tbtn tbtn-co${ts==='complete'?' on':''}" onclick="setTask('${g.id}',${i},'complete',event);rerenderYearRow('${g.id}')">✓</button>
+              <button class="tbtn task-edit-btn" onclick="openTaskEdit('${g.id}',${i},event)">✎</button>
             </div>
           </li>`;
         }).join('');
@@ -663,10 +664,12 @@ function renderYearView() {
             <div class="ygr-status-col">
               <span class="ygr-status pill ${scls}">${statusLabel(gs)} ${done}/${total}</span>
             </div>
+            <button class="edit-btn" onclick="openGoalEdit('${g.id}',event)">✎ Edit goal</button>
             <span class="ygr-toggle">⌄</span>
           </div>
           <div class="ygr-tasks">
             <ul class="task-list">${taskItems}</ul>
+            <button class="add-task-btn" onclick="addTask('${g.id}')">+ Add task</button>
           </div>
         </div>`;
       });
@@ -728,6 +731,7 @@ function rerenderYearRow(goalId) {
         <button class="tbtn tbtn-ns${ts==='not-started'?' on':''}" onclick="setTask('${goalId}',${i},'not-started',event);rerenderYearRow('${goalId}')">—</button>
         <button class="tbtn tbtn-ip${ts==='in-progress'?' on':''}" onclick="setTask('${goalId}',${i},'in-progress',event);rerenderYearRow('${goalId}')">IP</button>
         <button class="tbtn tbtn-co${ts==='complete'?' on':''}" onclick="setTask('${goalId}',${i},'complete',event);rerenderYearRow('${goalId}')">✓</button>
+        <button class="tbtn task-edit-btn" onclick="openTaskEdit('${goalId}',${i},event)">✎</button>
       </div>
     </li>`;
   }).join('');
