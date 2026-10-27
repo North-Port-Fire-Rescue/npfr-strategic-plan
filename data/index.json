@@ -1,6 +1,7 @@
 {
-  "latest": "statuses_20260902.json",
+  "latest": "statuses_20261027.json",
   "files": [
+    "statuses_20261027.json",
     "statuses_20260902.json",
     "statuses_20260728.json",
     "statuses_20260301.json",
@@ -19,6 +20,7 @@
     "statuses_20250101.json": "2025-Q2",
     "statuses_20241001.json": "2025-Q1",
     "statuses_20260728.json": "2026-Q3",
-    "statuses_20260902.json": "2026-Q4"
+    "statuses_20260902.json": "2026-Q4",
+    "statuses_20261027.json": "2026-Final"
   }
 }
