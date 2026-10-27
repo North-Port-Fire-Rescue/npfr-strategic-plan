@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-27T10:58:38.495Z",
+  "exported": "2026-10-27T17:28:47.712Z",
   "label": "FY2026 - Close Out",
   "mission": "Provide exceptional public safety services in a safe, compassionate, and professional manner.",
   "vision": "To be confirmed by command staff",
@@ -172,7 +172,7 @@
           "year": "FY28",
           "domain": "Equipment, Logistics, and Readiness",
           "predecessor": "P1.27.G3",
-          "owner": "TBD",
+          "owner": "Lt. John Willis",
           "statement": "Develop and adopt a Logistics Division continuity plan that documents all critical functions, assigns position-specific continuity guides and SOPs, establishes a cross-training program covering all critical roles, and completes a program appraisal by Q4.",
           "metric": "Logistics Division continuity plan adopted with position-specific guides and SOPs for all critical functions, cross-training program established, and program appraisal completed by Q4.",
           "tasks": [
@@ -203,7 +203,7 @@
           "year": "FY28",
           "domain": "Interagency Collaboration",
           "predecessor": null,
-          "owner": "TBD",
+          "owner": "Division Chief David Hawes",
           "statement": "Complete a structured assessment of all mutual aid and automatic aid agreements, radio interoperability, and CAD integration with primary mutual aid partners, and deliver a prioritized gap report to command staff by Q2.",
           "metric": "Structured assessment of all mutual aid agreements, radio interoperability, and CAD integration complete, with prioritized gap report delivered to command staff by Q2.",
           "tasks": [
@@ -230,7 +230,7 @@
           "year": "FY28",
           "domain": "Interagency Collaboration",
           "predecessor": "P1.28.G2",
-          "owner": "TBD",
+          "owner": "Division Chief David Hawes",
           "statement": "Develop updated mutual aid agreements, joint training protocols, and communications interoperability solutions addressing all gaps identified in the FY28 assessment, with all draft agreements delivered to partner agencies for review by Q4.",
           "metric": "Updated mutual aid agreements, joint training protocols, and communications interoperability solutions developed and delivered to all partner agencies for review by Q4.",
           "tasks": [
@@ -569,7 +569,7 @@
           "year": "FY28",
           "domain": "Succession and Development",
           "predecessor": "P2.27.G1",
-          "owner": "TBD",
+          "owner": "Division Chief Nick Satterly",
           "statement": "Complete a formal evaluation of EMS supervisory roles, field coverage effectiveness, and future deployment models, and present findings with implementation recommendations to command staff by Q4.",
           "metric": "EMS supervisory evaluation complete by Q4, with findings on field coverage effectiveness, clinical oversight opportunities, and implementation recommendations for future supervisory positions presented to command staff.",
           "tasks": [
@@ -627,7 +627,7 @@
           "year": "FY28",
           "domain": "Training Operations",
           "predecessor": null,
-          "owner": "TBD",
+          "owner": "Battalion Chief Adam Inlow",
           "statement": "Establish a functioning NPFR Training Academy by implementing the pathway recommended in the FY27 evaluation, securing necessary facility arrangements and partnerships, and delivering a minimum of one formally structured training program to internal personnel by Q4.",
           "metric": "NPFR Training Academy established by Q4, with facility and partnership agreements in place and a minimum of one formally structured training program delivered to internal personnel with outcomes documented.",
           "tasks": [
@@ -658,8 +658,8 @@
           "year": "FY28",
           "domain": "Culture and Employee Wellness",
           "predecessor": "P2.27.G3",
-          "owner": "TBD",
-          "statement": "Implement the sleep health improvement recommendations identified in the FY27 sleep study, including retrofit of individual sleeping rooms at Brix station and adoption of station-level sleep hygiene protocols, with all primary facility modifications complete by Q4.",
+          "owner": "Division Chief Nick Satterly",
+          "statement": "Implement the sleep health improvement recommendations identified in the FY27 sleep study, including retrofit of individual sleeping rooms at Bryx station and adoption of station-level sleep hygiene protocols, with all primary facility modifications complete by Q4.",
           "metric": "Individual sleeping room retrofit at Brix station complete by Q4, station-level sleep hygiene protocols adopted, and personnel survey conducted to assess improvement in self-reported sleep quality.",
           "tasks": [
             {
@@ -962,7 +962,7 @@
           "year": "FY28",
           "domain": "Data and Risk Assessment",
           "predecessor": "P3.27.G2",
-          "owner": "TBD",
+          "owner": "FF/PM Jay Sousa",
           "statement": "Gather updated CRR and EMS program data from all relevant sources, analyze incident trends to identify high-risk populations and areas, and deliver a written report documenting program strengths, weaknesses, and data-driven recommendations for program improvement by Q4.",
           "metric": "Written report documenting CRR and EMS program strengths, weaknesses, and data-driven improvement recommendations delivered by Q4, based on updated multi-source data analysis.",
           "tasks": [
@@ -989,8 +989,8 @@
           "year": "FY28",
           "domain": "Community Engagement",
           "predecessor": null,
-          "owner": "TBD",
-          "statement": "Develop a Fire Explorer and Cadet pathway program in partnership with a minimum of two local high schools, conduct annual station visits and career days, and complete a formal program appraisal of the established Cadet Program by Q4.",
+          "owner": "Battalion Chief Famke Wolbers",
+          "statement": "Develop a Fire Cadet pathway program in partnership with a minimum of two local high schools, conduct annual station visits and career days, and complete a formal program appraisal of the established Cadet Program by Q4.",
           "metric": "Fire Explorer and Cadet pathway program established in partnership with a minimum of two local high schools by Q4, annual station visits and career days implemented, and formal program appraisal of Cadet Program completed.",
           "tasks": [
             {
@@ -1020,7 +1020,7 @@
           "year": "FY28",
           "domain": "Community Engagement",
           "predecessor": "P3.27.G3",
-          "owner": "TBD",
+          "owner": "FF/PM Jay Sousa",
           "statement": "Establish a Community Outreach Team of trained firefighters capable of supporting public education presentations and community events, with a defined team structure, trained membership, and a minimum of two community events delivered by Q4.",
           "metric": "Community Outreach Team established with defined structure and trained membership by Q4, and a minimum of two community events delivered.",
           "tasks": [
@@ -1311,8 +1311,8 @@
           "id": "P4.28.G1",
           "year": "FY28",
           "domain": "Accreditation and Compliance",
-          "predecessor": "",
-          "owner": "TBD",
+          "predecessor": null,
+          "owner": "Sr. Executive Assistant Anna Duffey",
           "statement": "Develop a centralized digital records management system including a complete record inventory, file mapping, access controls, migration of all active records not meeting retention, and completed disposition of records that have met retention requirements with the Clerk's office by Q4.",
           "metric": "Centralized digital records management system operational by Q4, with complete record inventory documented, all active records migrated, and records meeting retention requirements dispositioned with the Clerk's office.",
           "tasks": [
@@ -1339,7 +1339,7 @@
           "year": "FY28",
           "domain": "Innovation and Advanced Programs",
           "predecessor": null,
-          "owner": "TBD",
+          "owner": "Division Chief Nick Satterly",
           "statement": "Develop a Mobile Integrated Healthcare operational framework including target population analysis, partner identification, performance measures, referral pathways, and a financial and staffing feasibility evaluation, and present an MIH implementation recommendation to command staff by Q4.",
           "metric": "MIH implementation recommendation presented to command staff by Q4, with completed operational framework, target population analysis, partner identification, performance measures, referral pathways, and financial and staffing feasibility evaluation.",
           "tasks": [
@@ -1370,7 +1370,7 @@
           "year": "FY28",
           "domain": "Innovation and Advanced Programs",
           "predecessor": null,
-          "owner": "TBD",
+          "owner": "Lt. Rick Wilbert",
           "statement": "Evaluate the demand, financial viability, staffing requirements, and operational feasibility of a minimum of two advanced EMS service models, and present a prioritized implementation strategy with go/no-go recommendations to executive leadership by Q4.",
           "metric": "Prioritized implementation strategy with go/no-go recommendations for a minimum of two advanced EMS service models presented to executive leadership by Q4.",
           "tasks": [
@@ -1631,6 +1631,120 @@
       "taskText": "Review and document items serviced by Facilities (A/C, garage doors, landscaping, etc.) and establish an internal monitoring process to track and prompt completion.",
       "from": "in-progress",
       "to": "complete"
+    },
+    {
+      "timestamp": "2026-10-27T17:10:28.138Z",
+      "type": "edit_goal",
+      "goalId": "P1.28.G1",
+      "note": "Edited: year=FY28, domain=Equipment, Logistics, and Readiness, predecessor=P1.27.G3"
+    },
+    {
+      "timestamp": "2026-10-27T17:10:41.124Z",
+      "type": "edit_goal",
+      "goalId": "P1.28.G2",
+      "note": "Edited: year=FY28, domain=Interagency Collaboration, predecessor=none"
+    },
+    {
+      "timestamp": "2026-10-27T17:11:18.807Z",
+      "type": "edit_goal",
+      "goalId": "P1.28.G3",
+      "note": "Edited: year=FY28, domain=Interagency Collaboration, predecessor=P1.28.G2"
+    },
+    {
+      "timestamp": "2026-10-27T17:12:24.672Z",
+      "type": "edit_goal",
+      "goalId": "P2.28.G1",
+      "note": "Edited: year=FY28, domain=Succession and Development, predecessor=P2.27.G1"
+    },
+    {
+      "timestamp": "2026-10-27T17:12:38.450Z",
+      "type": "edit_goal",
+      "goalId": "P1.28.G2",
+      "note": "Edited: year=FY28, domain=Interagency Collaboration, predecessor=none"
+    },
+    {
+      "timestamp": "2026-10-27T17:12:45.738Z",
+      "type": "edit_goal",
+      "goalId": "P1.28.G3",
+      "note": "Edited: year=FY28, domain=Interagency Collaboration, predecessor=P1.28.G2"
+    },
+    {
+      "timestamp": "2026-10-27T17:15:04.207Z",
+      "type": "edit_goal",
+      "goalId": "P2.28.G3",
+      "note": "Edited: year=FY28, domain=Training Operations, predecessor=none"
+    },
+    {
+      "timestamp": "2026-10-27T17:15:16.705Z",
+      "type": "edit_goal",
+      "goalId": "P2.28.G4",
+      "note": "Edited: year=FY28, domain=Culture and Employee Wellness, predecessor=P2.27.G3"
+    },
+    {
+      "timestamp": "2026-10-27T17:16:55.376Z",
+      "type": "edit_goal",
+      "goalId": "P4.28.G2",
+      "note": "Edited: year=FY28, domain=Innovation and Advanced Programs, predecessor=none"
+    },
+    {
+      "timestamp": "2026-10-27T17:17:04.830Z",
+      "type": "edit_goal",
+      "goalId": "P4.28.G3",
+      "note": "Edited: year=FY28, domain=Innovation and Advanced Programs, predecessor=none"
+    },
+    {
+      "timestamp": "2026-10-27T17:17:40.418Z",
+      "type": "edit_goal",
+      "goalId": "P4.28.G1",
+      "note": "Edited: year=FY28, domain=Accreditation and Compliance, predecessor=none"
+    },
+    {
+      "timestamp": "2026-10-27T17:18:17.442Z",
+      "type": "edit_goal",
+      "goalId": "P2.28.G4",
+      "note": "Edited: year=FY28, domain=Culture and Employee Wellness, predecessor=P2.27.G3"
+    },
+    {
+      "timestamp": "2026-10-27T17:18:43.412Z",
+      "type": "edit_goal",
+      "goalId": "P3.28.G1",
+      "note": "Edited: year=FY28, domain=Data and Risk Assessment, predecessor=P3.27.G2"
+    },
+    {
+      "timestamp": "2026-10-27T17:18:52.268Z",
+      "type": "edit_goal",
+      "goalId": "P3.28.G3",
+      "note": "Edited: year=FY28, domain=Community Engagement, predecessor=P3.27.G3"
+    },
+    {
+      "timestamp": "2026-10-27T17:19:07.678Z",
+      "type": "edit_goal",
+      "goalId": "P3.28.G2",
+      "note": "Edited: year=FY28, domain=Community Engagement, predecessor=none"
+    },
+    {
+      "timestamp": "2026-10-27T17:21:06.752Z",
+      "type": "edit_goal",
+      "goalId": "P3.28.G3",
+      "note": "Edited: year=FY28, domain=Community Engagement, predecessor=P3.27.G3"
+    },
+    {
+      "timestamp": "2026-10-27T17:21:47.286Z",
+      "type": "edit_goal",
+      "goalId": "P3.28.G2",
+      "note": "Edited: year=FY28, domain=Community Engagement, predecessor=none"
+    },
+    {
+      "timestamp": "2026-10-27T17:23:06.454Z",
+      "type": "edit_goal",
+      "goalId": "P3.28.G3",
+      "note": "Edited: year=FY28, domain=Community Engagement, predecessor=P3.27.G3"
+    },
+    {
+      "timestamp": "2026-10-27T17:23:28.394Z",
+      "type": "edit_goal",
+      "goalId": "P4.28.G3",
+      "note": "Edited: year=FY28, domain=Innovation and Advanced Programs, predecessor=none"
     }
   ]
 }
